@@ -43,14 +43,14 @@ h3 {
   background-size: contain;
   background-position: center center;
   position: relative;
-  border-radius: 5px; }
+  border-radius: 5px 5px 0px 0px; }
 
 /**----------------------------------- USER DETAILS */
 .username {
-  width: 400px;
+  width: 150px;
   height: 35px;
   background-color: #f5f5f5;
   border: 1px solid #336666;
   border-radius: 5px; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */

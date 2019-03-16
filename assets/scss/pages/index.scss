@@ -1,18 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Bubblegum+Sans:100,200,300,400,500,600,700|Fredoka+One:100,200,300,400,500,600,700');
-
-//----------------------------------- VARIABLES
-
-// Brand colours
-
-$dark-blue: #336666;
-$light-blue: #33cccc;
-$off-white: #f5f5f5;
-
-// Fonts
-
-$simple-font: 'Fredoka One', cursive;
-$fun-font: 'Bubblegum Sans', cursive;
-
 /**----------------------------------- HEADINGS */
 
 h1 {
@@ -80,13 +65,13 @@ h3 {
         position: center center;
     }
     position: relative;
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 0px;
 }
 
 /**----------------------------------- USER DETAILS */
 
 .username {
-    width: 400px;
+    width: 150px;
     height: 35px;
     background-color: $off-white;
     border: 1px solid $dark-blue;

@@ -10,7 +10,6 @@ h1 {
     color: $light-blue;
 }
 
-/*does not work!*/
 h2 {
     font: {
         family: $fun-font;
@@ -94,7 +93,7 @@ h3 {
 }
 
 .high-score {
-    width: 100%;
+    width: 80%;
     height: 155px;
     position: relative;
 }

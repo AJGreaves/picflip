@@ -7,7 +7,6 @@ h1 {
   text-align: center;
   color: #33cccc; }
 
-/*does not work!*/
 h2 {
   font-family: "Bubblegum Sans", cursive;
   font-size: 30px;
@@ -64,7 +63,7 @@ h3 {
   height: 35px; }
 
 .high-score {
-  width: 100%;
+  width: 80%;
   height: 155px;
   position: relative; }
 

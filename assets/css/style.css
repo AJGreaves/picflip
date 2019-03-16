@@ -7,4 +7,50 @@ h1 {
   text-align: center;
   color: #33cccc; }
 
+h3 {
+  font-family: "Fredoka One", cursive;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+  color: #336666; }
+
+/**----------------------------------- CONTAINERS */
+/* to get rid of overflow on pages*/
+.row, .container-fluid {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0; }
+
+.dashboard {
+  height: 100vh;
+  background-color: #33cccc; }
+
+.game-board {
+  height: 100vh;
+  background-color: #f5f5f5; }
+
+.user-info {
+  height: 200px; }
+
+/**----------------------------------- IMAGES */
+.avatar {
+  width: 120px;
+  height: 120px;
+  background-image: url("https://i.ibb.co/DQkPDHb/main-logo.png");
+  background-color: #f5f5f5;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: relative;
+  border-radius: 5px; }
+
+/**----------------------------------- USER DETAILS */
+.username {
+  width: 400px;
+  height: 35px;
+  background-color: #f5f5f5;
+  border: 1px solid #336666;
+  border-radius: 5px; }
+
 /*# sourceMappingURL=style.css.map */

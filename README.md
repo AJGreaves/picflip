@@ -71,6 +71,9 @@ In addition, if it is not obvious, you should also describe how to run your code
 ## Credits
 
 ### Content
+
+- The images for the cards were taken from: http://www.kidsunder7.com/2012/07/memory-card-game.html#.XIzkXhJ7kkI
+
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media

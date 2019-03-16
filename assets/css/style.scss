@@ -26,3 +26,69 @@ h1 {
     }
     color: $light-blue;
 }
+
+h3 {
+    font: {
+        family: $simple-font;
+        size: 20px;
+        weight: 100;
+    };
+    text: {
+        align: center;
+    }
+    color: $dark-blue;
+}
+
+/**----------------------------------- CONTAINERS */
+
+/* to get rid of overflow on pages*/
+.row, .container-fluid { 
+    margin: {
+        left: 0;
+        right: 0;
+    }
+    padding: {
+        left: 0;
+        right: 0;
+    }
+}
+
+.dashboard {
+    height: 100vh;
+    background-color: $light-blue;
+}
+
+.game-board {
+    height: 100vh;
+    background-color: $off-white;
+}
+
+.user-info {
+    height: 200px;
+}
+
+/**----------------------------------- IMAGES */
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    background: {
+        image: url("https://i.ibb.co/DQkPDHb/main-logo.png");
+        color: $off-white;
+        repeat: no-repeat;
+        size: contain;
+        position: center center;
+    }
+    position: relative;
+    border-radius: 5px;
+}
+
+/**----------------------------------- USER DETAILS */
+
+.username {
+    width: 400px;
+    height: 35px;
+    background-color: $off-white;
+    border: 1px solid $dark-blue;
+    border-radius: 5px;
+}

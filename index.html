@@ -15,9 +15,48 @@
     <title>PicFlip!</title>
 </head>
 <body>
-    <h1>Heading scss tester</h1>
-
-
+    <!--Game-->
+    <div class="container-fluid">
+        <div class="row">
+            <!--Dashboard-->
+            <div class="col-sm-12 col-md-4 dashboard">
+                <!--User info-->
+                <div class="row user-info justify-content-center">
+                    <!--User avatar and name-->
+                    <div class="username pt-1 mt-3 mr-md-5 ml-md-5"><h3>Name</h3></div>
+                    <div class="col-sm-6 col-md-12 col-lg-6">
+                        <div class="avatar mx-auto"></div>
+                    </div>
+                    <!--User high score-->
+                    <div class="col-sm-6 col-md-12 col-lg-6 high-score"></div>
+                </div>
+                <!--Difficulty selection-->
+                <div class="row difficulty-select">
+                    <div class="col-12"><h3>Difficulty</h3></div>       <!--Take out titles once components are in -->
+                    <div class="col-4 difficulty-select-button easy"></div>
+                    <div class="col-4 difficulty-select-button medium"></div>
+                    <div class="col-4 difficulty-select-button hard"></div>
+                </div>
+                <!--Style selection-->
+                <div class="row style-select">
+                    <div class="col-12"><h3>Style</h3></div>            <!--Take out titles once components are in -->
+                    <div class="col-4 style-select-button vehicles"></div>
+                    <div class="col-4 style-select-button nature"></div>
+                    <div class="col-4 style-select-button food"></div>
+                </div>
+                <!--Controls-->
+                <div class="row controls justify-content-center">
+                    <div class="col-12"><h3>Controls</h3></div>         <!--Take out titles once components are in -->
+                    <div class="col-4 mute-button"></div>
+                    <div class="col-4 reset-button"></div>
+                </div>
+            </div>
+            <!--game board-->
+            <div class="col-sm-12 col-md-8 game-board">
+                
+            </div>
+        </div>
+    </div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script> 

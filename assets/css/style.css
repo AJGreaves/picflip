@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Bubblegum+Sans:100,200,300,400,500,600,700|Fredoka+One:100,200,300,400,500,600,700");
+/**----------------------------------- HEADINGS */
 h1 {
-  font-size: 30px;
-  font-weight: 500;
+  font-family: "Fredoka One", cursive;
+  font-size: 40px;
+  font-weight: 100;
   text-align: center;
-  text-transform: uppercase; }
+  color: #33cccc; }
 
 /*# sourceMappingURL=style.css.map */

@@ -11,7 +11,7 @@
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+    <link rel="stylesheet" href="assets/scss/main.css" type="text/css" />
     <title>PicFlip!</title>
 </head>
 <body>
@@ -19,16 +19,18 @@
     <div class="container-fluid">
         <div class="row">
             <!--Dashboard-->
-            <div class="col-sm-12 col-md-4 dashboard">
+            <div class="col-sm-12 col-md-5 dashboard">
                 <!--User info-->
                 <div class="row user-info justify-content-center">
                     <!--User avatar and name-->
-                    <div class="col-sm-6 col-md-12 col-lg-6 p-0">
-                        <div class="avatar mx-auto mt-3"></div>
-                        <div class="username mx-auto pt-1"><h3>Name</h3></div> <!--Put username variable here -->
+                    <div class="col-md-12 col-xl-4 p-0">
+                        <div class="avatar mx-auto mt-3 box-white-curved-corners"></div>
+                        <div class="username mx-auto pt-1 box-white-curved-corners"><h3>Name</h3></div> <!--Put username variable here -->
                     </div>
                     <!--User high score-->
-                    <div class="col-sm-6 col-md-12 col-lg-6 high-score"></div>
+                    <div class="col-sm-8 col-md-12 col-lg-8 box-white-curved-corners high-score mt-3">
+                        <h2>Your high score</h2>
+                    </div>
                 </div>
                 <!--Difficulty selection-->
                 <div class="row difficulty-select">
@@ -52,13 +54,14 @@
                 </div>
             </div>
             <!--game board-->
-            <div class="col-sm-12 col-md-8 game-board">
+            <div class="col-sm-12 col-md-7 game-board">
                 
             </div>
         </div>
     </div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> 
 </body>
 </html>

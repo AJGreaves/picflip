@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Bubblegum+Sans:100,200,300,400,500,600,700|Fredoka+One:100,200,300,400,500,600,700");
-/**----------------------------------- HEADINGS */
+/*----------------------------------- HEADINGS */
 h1 {
   font-family: "Fredoka One", cursive;
   font-size: 40px;
@@ -14,7 +14,7 @@ h3 {
   text-align: center;
   color: #336666; }
 
-/**----------------------------------- CONTAINERS */
+/*----------------------------------- CONTAINERS */
 /* to get rid of overflow on pages*/
 .row, .container-fluid {
   margin-left: 0;
@@ -33,7 +33,7 @@ h3 {
 .user-info {
   height: 200px; }
 
-/**----------------------------------- IMAGES */
+/*----------------------------------- IMAGES */
 .avatar {
   width: 120px;
   height: 120px;
@@ -45,7 +45,7 @@ h3 {
   position: relative;
   border-radius: 5px 5px 0px 0px; }
 
-/**----------------------------------- USER DETAILS */
+/*----------------------------------- USER DETAILS */
 .username {
   width: 150px;
   height: 35px;

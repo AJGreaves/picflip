@@ -1,4 +1,4 @@
-/**----------------------------------- HEADINGS */
+/*----------------------------------- HEADINGS */
 
 h1 {
     font: {
@@ -24,7 +24,7 @@ h3 {
     color: $dark-blue;
 }
 
-/**----------------------------------- CONTAINERS */
+/*----------------------------------- CONTAINERS */
 
 /* to get rid of overflow on pages*/
 .row, .container-fluid { 
@@ -52,7 +52,7 @@ h3 {
     height: 200px;
 }
 
-/**----------------------------------- IMAGES */
+/*----------------------------------- IMAGES */
 
 .avatar {
     width: 120px;
@@ -68,7 +68,7 @@ h3 {
     border-radius: 5px 5px 0px 0px;
 }
 
-/**----------------------------------- USER DETAILS */
+/*----------------------------------- USER DETAILS */
 
 .username {
     width: 150px;

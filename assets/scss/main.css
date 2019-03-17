@@ -22,6 +22,16 @@ h3 {
   text-align: center;
   color: #336666; }
 
+h4 {
+  font-family: "Bubblegum Sans", cursive;
+  font-size: 40px;
+  font-weight: 100;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  padding-top: 4px;
+  /*fixes alignment with h1*/
+  color: #336666; }
+
 p {
   font-family: "Bubblegum Sans", cursive;
   font-size: 20px;
@@ -148,11 +158,11 @@ button p {
   .dashboard {
     height: 100%; }
 
-  h1 {
+  h1, h4 {
     font-size: 25px; } }
 @media screen and (max-width: 992px) {
   /*phones and tablets*/
-  h1 {
+  h1, h4 {
     font-size: 30px; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -33,6 +33,18 @@ h3 {
     color: $dark-blue;
 }
 
+h4 {
+    font: {
+        family: $fun-font;
+        size: 40px;
+        weight: 100;
+    }
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    padding-top: 4px; /*fixes alignment with h1*/
+    color: $dark-blue;
+}
+
 p {
     font: {
         family: $fun-font;
@@ -201,13 +213,14 @@ button p {
     .dashboard {
         height: 100%;
     }
-    h1 {
-    font-size: 25px;
+    h1, h4 {
+        font-size: 25px;
     }
+
 }
 
 @media screen and (max-width: 992px) { /*phones and tablets*/
-    h1 {
+    h1, h4 {
     font-size: 30px;
     }
 }

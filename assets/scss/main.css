@@ -140,4 +140,10 @@ button p {
   font-size: 2.5rem;
   color: #336666; }
 
+/*----------------------------------- MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+  /*phones*/
+  .dashboard {
+    height: 100%; } }
+
 /*# sourceMappingURL=main.css.map */

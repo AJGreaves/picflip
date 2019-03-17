@@ -70,8 +70,8 @@ h3 {
 
 .box-white-curved-corners {
     background-color: $off-white;
-    border: 1px solid $dark-blue;
-    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 2px;
 }
 
 .avatar {
@@ -84,6 +84,7 @@ h3 {
         position: center center;
     }
     position: relative;
+    box-shadow: 0 0px 3px rgba(0,0,0,0.12), 0 0px 2px rgba(0,0,0,0.24); /*removes bottom shadow from .box-white-curved-corners so it looks like it is in line with name box*/
     border-radius: 5px 5px 0px 0px;
 }
 
@@ -96,6 +97,7 @@ h3 {
     width: 80%;
     height: 155px;
     position: relative;
+    text-align: center;
 }
 
 .trophy {
@@ -108,4 +110,10 @@ h3 {
         position: center center;
     }
     margin: 1rem 0rem 1rem 0rem;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: $yellow;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }

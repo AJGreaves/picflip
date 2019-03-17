@@ -15,10 +15,8 @@ h2 {
         family: $fun-font;
         size: 30px;
         weight: 100;
-    };
-    text: {
-        align: center;
     }
+    text-align: center;
     color: $dark-blue;
 }
 
@@ -27,10 +25,8 @@ h3 {
         family: $simple-font;
         size: 20px;
         weight: 100;
-    };
-    text: {
-        align: center;
     }
+    text-align: center;
     color: $dark-blue;
 }
 
@@ -57,7 +53,7 @@ h3 {
 }
 
 .user-info {
-   // height: 200px;
+   box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22);
 }
 
 ///*----------------------------------- IMAGES */

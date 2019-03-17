@@ -30,6 +30,16 @@ h3 {
     color: $dark-blue;
 }
 
+p {
+    font: {
+        family: $fun-font;
+        size: 15px;
+        weight: 100;
+    }
+    text-align: center;
+    color: white;
+}
+
 /*----------------------------------- CONTAINERS */
 
 /* to get rid of overflow on pages*/
@@ -57,8 +67,15 @@ h3 {
 /*----------------------------------- DASHBOARD */
 /* USER INFO SECTION */
 
+<<<<<<< HEAD
 .user-info {
    box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22);
+=======
+.dashboard-section {
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22);
+>>>>>>> development
 }
 
 .box-white-curved-corners {
@@ -96,9 +113,31 @@ h3 {
 }
 
 .star {
-    font-size: 1.5rem;
     color: $yellow;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
+<<<<<<< HEAD
 /* DIFFICULTY SELECTION SECTION */
+=======
+.stars .star {
+    font-size: 1.5rem;
+}
+
+/* DIFFICULTY SELECTION SECTION */
+
+button .star {
+    font-size: 0.5rem;
+    color: white;
+}
+
+button p {
+    line-height: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.difficulty-selection button {
+    width: 60px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+>>>>>>> development

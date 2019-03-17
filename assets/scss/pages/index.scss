@@ -118,6 +118,11 @@ p {
 
 /* DIFFICULTY SELECTION SECTION */
 
+.btn {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 2px;
+}
+
 button .star {
     font-size: 0.5rem;
     color: white;
@@ -144,7 +149,7 @@ button p {
     background: {
         image: url("https://i.ibb.co/x1wmBCq/lightning-main.jpg");
         repeat: no-repeat;
-        size: contain;
+        size: cover;
         position: center center;
     }
 }
@@ -153,7 +158,7 @@ button p {
     background: {
         image: url("https://i.ibb.co/b77KKd9/Elsa-Anna-main.jpg");
         repeat: no-repeat;
-        size: contain;
+        size: cover;
         position: center center;
     }
 }
@@ -162,7 +167,7 @@ button p {
     background: {
         image: url("https://i.ibb.co/Lh6Y23z/woody-main.jpg");
         repeat: no-repeat;
-        size: contain;
+        size: cover;
         position: center center;
     }
 }

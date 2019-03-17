@@ -85,6 +85,10 @@ p {
   font-size: 1.5rem; }
 
 /* DIFFICULTY SELECTION SECTION */
+.btn {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 2px; }
+
 button .star {
   font-size: 0.5rem;
   color: white; }
@@ -105,19 +109,19 @@ button p {
 .cars-cover {
   background-image: url("https://i.ibb.co/x1wmBCq/lightning-main.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center center; }
 
 .frozen-cover {
   background-image: url("https://i.ibb.co/b77KKd9/Elsa-Anna-main.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center center; }
 
 .toystory-cover {
   background-image: url("https://i.ibb.co/Lh6Y23z/woody-main.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center center; }
 
 /*# sourceMappingURL=main.css.map */

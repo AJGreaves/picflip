@@ -44,7 +44,7 @@
                 </div>
                 <!--Difficulty selection section-->
                 <div class="row dashboard-section box-white-curved-corners justify-content-center">
-                    <div class="col-4 my-2 difficulty-selection text-right">
+                    <div class="col-4 my-2 difficulty-selection text-right p-0">
                         <button type="button" class="btn btn-success">
                             <p>Easy
                             <br>
@@ -52,7 +52,7 @@
                             </p>
                         </button>
                     </div>
-                    <div class="col-4 my-2 difficulty-selection text-center">
+                    <div class="col-4 my-2 difficulty-selection text-center p-0">
                         <button type="button" class="btn btn-warning">
                             <p>Med
                             <br>
@@ -61,7 +61,7 @@
                             </p>
                         </button>
                     </div>
-                    <div class="col-4 my-2 difficulty-selection text-left">
+                    <div class="col-4 my-2 difficulty-selection text-left p-0">
                         <button type="button" class="btn btn-danger">
                             <p>Hard
                             <br>
@@ -84,14 +84,21 @@
                 </div>
                 
                 <!--card pack selection section-->
-                <div class="row justify-content-center">
-                    <div class="col-4 text-right">
-                        <button type="button" class="btn btn-dark circle-btn">
-                            <i class="fas fa-volume-mute"></i> <!-- write logic to show this icon when clicked: <i class="fas fa-volume-off"></i> -->
+                <div class="row m-3">
+                    <div class="col-4 text-right p-0">
+                        <button type="button" class="btn btn-dark circle-btn how-to-play-btn"> <!-- TO DO: How to Play modal pops up when clicked -->
+                            <i class="fas fa-question"></i>
                         </button>
                     </div>
-                    <div class="col-4 text-left">
-                        <button type="button" class="btn btn-dark circle-btn">
+                    <!-- TO DO: write logic to show this icon when clicked: <i class="fas fa-volume-off"></i> -->
+                    <div class="col-4 text-center p-0">
+                        <button type="button" class="btn btn-dark circle-btn mute-btn">
+                            <i class="fas fa-volume-mute"></i> 
+                        </button>
+                    </div>
+                    <!-- TO DO: Resets game & reshuffles cards when clicked. Does not rest difficulty or style setting -->
+                    <div class="col-4 text-left p-0">
+                        <button type="button" class="btn btn-dark circle-btn restart-btn"> 
                             <i class="fas fa-undo-alt"></i>
                         </button>
                     </div>

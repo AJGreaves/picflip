@@ -33,7 +33,7 @@ h3 {
 p {
     font: {
         family: $fun-font;
-        size: 15px;
+        size: 20px;
         weight: 100;
     }
     text-align: center;
@@ -130,20 +130,22 @@ p {
 .btn {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     border-radius: 2px;
+    border: 3px solid $dark-blue;
 }
 
 button .star {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     color: white;
 }
 
 button p {
-    line-height: 1rem;
+    line-height: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
 .difficulty-selection button {
-    width: 60px;
+    height: 80px;
+    width: 80px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
@@ -195,4 +197,12 @@ button p {
 .circle-btn .fas {
     font-size: 2.5rem;
     color: $dark-blue;
+}
+
+/*----------------------------------- MEDIA QUERIES */
+
+@media screen and (max-width: 768px){ /*phones*/
+    .dashboard {
+        height: 100%;
+    }
 }

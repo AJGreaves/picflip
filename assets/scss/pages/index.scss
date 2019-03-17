@@ -52,13 +52,16 @@ h3 {
     padding: 0;
 }
 
-.user-info {
-   box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22);
-}
-
 ///*----------------------------------- IMAGES */
 
-/*----------------------------------- USER DETAILS */
+/*----------------------------------- DASHBOARD */
+/* USER INFO SECTION */
+
+.dashboard-section {
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22);
+}
 
 .box-white-curved-corners {
     background-color: $off-white;
@@ -95,7 +98,22 @@ h3 {
 }
 
 .star {
-    font-size: 1.5rem;
     color: $yellow;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+.stars .star {
+    font-size: 1.5rem;
+}
+
+/* DIFFICULTY SELECTION SECTION */
+
+button .star {
+    font-size: 0.5rem;
+    color: white;
+}
+
+button p {
+    line-height: 1rem;
+    margin-bottom: 0.5rem;
 }

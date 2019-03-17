@@ -97,3 +97,15 @@ h3 {
     height: 155px;
     position: relative;
 }
+
+.trophy {
+    width: 120px;
+    height: 120px;
+    background: {
+        image: url("https://i.ibb.co/1JD5mS2/trophy.png");
+        repeat: no-repeat;
+        size: contain;
+        position: center center;
+    }
+    margin: 1rem 0rem 1rem 0rem;
+}

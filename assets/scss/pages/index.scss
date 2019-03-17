@@ -6,8 +6,11 @@ h1 {
         size: 40px;
         weight: 100;
     }
-    text-align: center;
-    color: $light-blue;
+    text: {
+        align: center;
+        shadow: 0 1px 1px rgba(0,0,0,0.5);
+    }
+    color: $dark-blue;
 }
 
 h2 {
@@ -194,7 +197,17 @@ button p {
 /*----------------------------------- MEDIA QUERIES */
 
 @media screen and (max-width: 768px){ /*phones*/
+    /* fixes dashboard height issue on phones*/
     .dashboard {
         height: 100%;
+    }
+    h1 {
+    font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 992px) { /*phones and tablets*/
+    h1 {
+    font-size: 30px;
     }
 }

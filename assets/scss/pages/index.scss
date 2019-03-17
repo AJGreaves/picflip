@@ -171,3 +171,19 @@ button p {
         position: center center;
     }
 }
+
+/* DASHBOARD CONTROLS */
+
+.circle-btn {
+    height: 80px;
+    width: 80px;
+    border: 4px solid $dark-blue;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.circle-btn .fas {
+    font-size: 2.5rem;
+    color: $dark-blue;
+}

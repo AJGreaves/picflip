@@ -16,57 +16,35 @@
 </head>
 <body>
     <!--Game-->
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="row">
             <!--Dashboard-->
-            <div class="col-sm-12 col-md-5 dashboard">
+            <div class="col-12 col-md-5 dashboard">
                 <!--User info-->
-                <div class="row user-info justify-content-center">
-                    <!--User avatar and name-->
-                    <div class="col-md-12 col-lg-4 p-0">
-                        <div class="avatar mx-auto mt-3 box-white-curved-corners"></div>
-                        <div class="username mx-auto pt-1 box-white-curved-corners"><h3>Name</h3></div> <!--Put username variable here -->
+                <div class="row user-info box-white-curved-corners p-3 m-3">
+                    <!--User name-->
+                    <div class="col-12 username"><h3>Name</h3></div><!--Put username variable here -->
+                    <!--User avatar-->
+                    <div class="col-12 col-md-6">
+                        <div class="avatar box-white-curved-corners mx-auto"></div>
                     </div>
+                    <!--Trophy image-->
+                    <div class="col-12 col-md-6 trophy mx-auto"></div>
                     <!--User high score-->
-                    <div class="col-sm-8 col-md-10 col-lg-7 box-white-curved-corners high-score m-3">
-                        <div class="row">
-                            <div class="col-12 col-md-4 trophy"></div>
-                            <div class="col-12 col-md-8 mt-4">
-                                <h3 class="mt-2">Your high score</h3>
-                                <div class="stars stars-4-out-of-5">
-                                    <i class="star fas fa-star" aria-hidden="true"></i>
-                                    <i class="star fas fa-star" aria-hidden="true"></i>
-                                    <i class="star fas fa-star" aria-hidden="true"></i>
-                                    <i class="star fas fa-star" aria-hidden="true"></i>
-                                    <i class="star far fa-star" aria-hidden="true"></i>
-                                </div>
-                            </div>
+                    <div class="col-12 text-center">
+                        <h3>Your high score</h3>
+                        <div class="stars stars-4-out-of-5">
+                            <i class="star fas fa-star" aria-hidden="true"></i>
+                            <i class="star fas fa-star" aria-hidden="true"></i>
+                            <i class="star fas fa-star" aria-hidden="true"></i>
+                            <i class="star fas fa-star" aria-hidden="true"></i>
+                            <i class="star far fa-star" aria-hidden="true"></i>
                         </div>
                     </div>
                 </div>
-                <!--Difficulty selection-->
-                <!--<div class="row difficulty-select">
-                <!--    <div class="col-12"><h3>Difficulty</h3></div>       <!--Take out titles once components are in -->
-                <!--    <div class="col-4 difficulty-select-button easy"></div>
-                    <div class="col-4 difficulty-select-button medium"></div>
-                    <div class="col-4 difficulty-select-button hard"></div>
-                </div>
-                <!--Style selection-->
-                <!--<div class="row style-select">
-                <!--    <div class="col-12"><h3>Style</h3></div>            <!--Take out titles once components are in -->
-                <!--    <div class="col-4 style-select-button vehicles"></div>
-                    <div class="col-4 style-select-button nature"></div>
-                    <div class="col-4 style-select-button food"></div>
-                </div>
-                <!--Controls-->
-                <!--<div class="row controls justify-content-center">
-                <!--    <div class="col-12"><h3>Controls</h3></div>         <!--Take out titles once components are in -->
-                <!--    <div class="col-4 mute-button"></div>
-                    <div class="col-4 reset-button"></div>
-                </div>-->
             </div>
             <!--game board-->
-            <div class="col-sm-12 col-md-7 game-board">
+            <div class="col-12 col-md-7 game-board">
                 
             </div>
         </div>

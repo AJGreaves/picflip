@@ -151,10 +151,14 @@ button p {
   color: #336666; }
 
 /*----------------------------------- GAME BOARD */
+.my-card-column {
+  /*see media queries below for adjustments to card column size to fit other screens*/
+  height: 130px; }
+
 .card-container {
   /*see media queries below for adjustments to card size to fit other screens*/
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
@@ -175,10 +179,7 @@ button p {
 
 /*----------------------------------- MEDIA QUERIES */
 @media screen and (max-width: 1200px) {
-  /*phones, tablets and smaller desktops*/
-  .card-container {
-    width: 120px;
-    height: 120px; } }
+  /*phones, tablets and smaller desktops*/ }
 @media screen and (max-width: 992px) {
   /*phones and tablets*/
   h1, h4 {
@@ -186,7 +187,10 @@ button p {
 
   .card-container {
     width: 90px;
-    height: 90px; } }
+    height: 90px; }
+
+  .my-card-column {
+    height: 100px; } }
 @media screen and (max-width: 768px) {
   /*phones*/
   /* fixes dashboard height issue on phones*/
@@ -198,12 +202,18 @@ button p {
 
   .card-container {
     width: 120px;
-    height: 120px; } }
+    height: 120px; }
+
+  .my-card-column {
+    height: 130px; } }
 @media screen and (max-width: 576px) {
   /*small phones*/
   /* fixes dashboard height issue on phones*/
   .card-container {
     width: 80px;
-    height: 80px; } }
+    height: 80px; }
+
+  .my-card-column {
+    height: 90px; } }
 
 /*# sourceMappingURL=main.css.map */

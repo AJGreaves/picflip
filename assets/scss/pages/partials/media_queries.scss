@@ -1,0 +1,46 @@
+/*----------------------------------- MEDIA QUERIES */
+
+@media screen and (max-width: 1200px) {  /*phones, tablets and smaller desktops*/
+    
+}
+
+@media screen and (max-width: 992px) { /*phones and tablets*/
+    h1, h4 {
+    font-size: 30px;
+    }
+    .card-container {
+        width: 90px;
+        height: 90px;
+    }
+    .my-card-column {
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 768px){ /*phones*/
+    /* fixes dashboard height issue on phones*/
+    .dashboard {
+        height: 100%;
+    }
+    h1, h4 {
+        font-size: 25px;
+    }
+    .card-container {
+        width: 120px;
+        height: 120px;
+    }
+    .my-card-column {
+        height: 130px;
+    }
+}
+
+@media screen and (max-width: 576px){ /*small phones*/
+    /* fixes dashboard height issue on phones*/
+    .card-container {
+        width: 80px;
+        height: 80px;
+    }
+    .my-card-column {
+        height: 90px;
+    }
+}

@@ -229,5 +229,243 @@ button p {
 
   .my-card-column {
     height: 90px; } }
+/*----------------------------------- DASHBOARD */
+.dashboard {
+  height: 100vh;
+  background-color: #33cccc;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.22);
+  padding: 0;
+  z-index: 1; }
+
+/* USER INFO SECTION */
+.dashboard-section {
+  margin: 1rem;
+  padding: 1rem 0rem;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.22); }
+
+.box-white-curved-corners {
+  background-color: #f5f5f5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 8px; }
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  background-image: url("https://i.ibb.co/DQkPDHb/main-logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  position: relative; }
+
+.username {
+  width: 150px;
+  height: 35px; }
+
+.trophy {
+  width: 120px;
+  height: 120px;
+  background-image: url("https://i.ibb.co/1JD5mS2/trophy.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center; }
+
+.star {
+  color: #ffe933;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
+
+.stars .star {
+  font-size: 1.5rem; }
+
+/* DIFFICULTY SELECTION SECTION */
+.btn {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 2px;
+  border: 3px solid #336666; }
+
+button .star {
+  font-size: 0.6rem;
+  color: white; }
+
+button p {
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem; }
+
+.difficulty-selection button {
+  height: 80px;
+  width: 80px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+/* CARD PACK SELECTION SECTION */
+.pack-selection-button {
+  height: 80px;
+  width: 80px; }
+
+.cars-cover {
+  background-image: url("https://i.ibb.co/x1wmBCq/lightning-main.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.frozen-cover {
+  background-image: url("https://i.ibb.co/b77KKd9/Elsa-Anna-main.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.toystory-cover {
+  background-image: url("https://i.ibb.co/Lh6Y23z/woody-main.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+/* DASHBOARD CONTROLS */
+.circle-btn {
+  height: 80px;
+  width: 80px;
+  border: 4px solid #336666;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+.circle-btn .fas {
+  font-size: 2.5rem;
+  color: #336666; }
+
+/*----------------------------------- GAME BOARD */
+.game-board {
+  height: 100vh;
+  padding: 0;
+  background-image: url("https://i.ibb.co/yYJqmDn/trains-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.game-board-header {
+  background-color: #f5f5f5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+.my-card-column {
+  /*see media queries below for adjustments to card column size to fit other screens*/
+  height: 130px; }
+
+.card-container {
+  /*see media queries below for adjustments to card size to fit other screens*/
+  width: 120px;
+  height: 120px; }
+
+.game-card {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5);
+  /*clearer shadow to stand out on picture background*/ }
+
+.game-card-back {
+  background-image: url("https://i.ibb.co/DQkPDHb/main-logo.png");
+  border-radius: 8px; }
+
+.game-card-lightning {
+  background-image: url("https://i.ibb.co/fXTswXC/lightning.jpg");
+  border-radius: 8px; }
+
+.game-card-cruz {
+  background-image: url("https://i.ibb.co/GJQYqrq/Cruz.jpg");
+  border-radius: 8px; }
+
+.game-card-doc {
+  background-image: url("https://i.ibb.co/N2d61bW/Doc.jpg");
+  border-radius: 8px; }
+
+.game-card-fillmore {
+  background-image: url("https://i.ibb.co/8BGbs6d/Fillmore.jpg");
+  border-radius: 8px; }
+
+.game-card-jackson-storm {
+  background-image: url("https://i.ibb.co/8MxHcbd/Jackson-Storm.jpg");
+  border-radius: 8px; }
+
+.game-card-mac {
+  background-image: url("https://i.ibb.co/PFTHfCH/Mac.jpg");
+  border-radius: 8px; }
+
+.game-card-mater {
+  background-image: url("https://i.ibb.co/R3KNZtZ/Mater.jpg");
+  border-radius: 8px; }
+
+.game-card-sally {
+  background-image: url("https://i.ibb.co/8svM53T/Sally.jpg");
+  border-radius: 8px; }
+
+/* Code for flipping cards taken from w3schools and adjusted to my needs: https://www.w3schools.com/howto/howto_css_flip_card.asp */
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  /* for 3D effect */ }
+
+/* Positions the front and back sides of card */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; }
+
+/* Horizontal flip when you move the mouse over the flip box container */
+.flip-card.active .flip-card-inner {
+  transform: rotateY(180deg); }
+
+/* Positions the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; }
+
+/* Styles the back side */
+.flip-card-back {
+  transform: rotateY(180deg); }
+
+/*----------------------------------- MEDIA QUERIES */
+@media screen and (max-width: 1200px) {
+  /*phones, tablets and smaller desktops*/ }
+@media screen and (max-width: 992px) {
+  /*phones and tablets*/
+  h1, h4 {
+    font-size: 30px; }
+
+  .card-container {
+    width: 90px;
+    height: 90px; }
+
+  .my-card-column {
+    height: 100px; } }
+@media screen and (max-width: 768px) {
+  /*phones*/
+  /* fixes dashboard height issue on phones*/
+  .dashboard {
+    height: 100%; }
+
+  h1, h4 {
+    font-size: 25px; }
+
+  .card-container {
+    width: 120px;
+    height: 120px; }
+
+  .my-card-column {
+    height: 130px; } }
+@media screen and (max-width: 576px) {
+  /*small phones*/
+  /* fixes dashboard height issue on phones*/
+  .card-container {
+    width: 80px;
+    height: 80px; }
+
+  .my-card-column {
+    height: 90px; } }
 
 /*# sourceMappingURL=main.css.map */

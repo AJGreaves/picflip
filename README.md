@@ -82,6 +82,9 @@ In addition, if it is not obvious, you should also describe how to run your code
 - The images used in this site were obtained from google images and disney.com 
 - game board background Photo by Jason Leung on Unsplash https://unsplash.com/photos/M55JcA9wOG0
 
+### Code
+- Code for the card flip animation taken from https://www.w3schools.com/howto/howto_css_flip_card.asp
+
 ### Acknowledgements
 
 - I received inspiration for this project from X

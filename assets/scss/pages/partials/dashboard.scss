@@ -1,0 +1,134 @@
+/*----------------------------------- DASHBOARD */
+
+.dashboard {
+    height: 100vh;
+    background-color: $light-blue;
+    box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22);
+    padding: 0;
+    z-index: 1;
+}
+
+/* USER INFO SECTION */
+
+.dashboard-section {
+    margin: 1rem;
+    padding: 1rem 0rem;
+    box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22);
+}
+
+.box-white-curved-corners {
+    background-color: $off-white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 8px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    background: {
+        image: url("https://i.ibb.co/DQkPDHb/main-logo.png");
+        repeat: no-repeat;
+        size: contain;
+        position: center center;
+    }
+    position: relative;
+}
+
+.username {
+    width: 150px;
+    height: 35px;
+}
+
+.trophy {
+    width: 120px;
+    height: 120px;
+    background: {
+        image: url("https://i.ibb.co/1JD5mS2/trophy.png");
+        repeat: no-repeat;
+        size: contain;
+        position: center center;
+    }
+}
+
+.star {
+    color: $yellow;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+.stars .star {
+    font-size: 1.5rem;
+}
+
+/* DIFFICULTY SELECTION SECTION */
+
+.btn {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 2px;
+    border: 3px solid $dark-blue;
+}
+
+button .star {
+    font-size: 0.6rem;
+    color: white;
+}
+
+button p {
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.difficulty-selection button {
+    height: 80px;
+    width: 80px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/* CARD PACK SELECTION SECTION */
+
+.pack-selection-button {
+    height: 80px;
+    width: 80px;
+}
+
+.cars-cover {
+    background: {
+        image: url("https://i.ibb.co/x1wmBCq/lightning-main.jpg");
+        repeat: no-repeat;
+        size: cover;
+        position: center center;
+    }
+}
+
+.frozen-cover {
+    background: {
+        image: url("https://i.ibb.co/b77KKd9/Elsa-Anna-main.jpg");
+        repeat: no-repeat;
+        size: cover;
+        position: center center;
+    }
+}
+
+.toystory-cover {
+    background: {
+        image: url("https://i.ibb.co/Lh6Y23z/woody-main.jpg");
+        repeat: no-repeat;
+        size: cover;
+        position: center center;
+    }
+}
+
+/* DASHBOARD CONTROLS */
+
+.circle-btn {
+    height: 80px;
+    width: 80px;
+    border: 4px solid $dark-blue;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.circle-btn .fas {
+    font-size: 2.5rem;
+    color: $dark-blue;
+}

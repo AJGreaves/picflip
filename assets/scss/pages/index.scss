@@ -92,7 +92,6 @@ p {
     background-color: $off-white;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     border-radius: 8px;
-    border: 3px solid $dark-blue;
 }
 
 .avatar {
@@ -208,16 +207,21 @@ button p {
 
 /*----------------------------------- GAME BOARD */
 
+.card-container {
+    width: 160px;
+    height: 160px;
+    border: 2px solid $light-blue;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
 .game-card {
     width: 100%;
-    height: 100px;
+    height: 100%;
     background: {
         repeat: no-repeat;
         size: contain;
         position: center center;
     }
-    border: 2px solid $light-blue;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .game-card-back {
@@ -225,6 +229,23 @@ button p {
 }
 
 /*----------------------------------- MEDIA QUERIES */
+
+@media screen and (max-width: 1200px) {  /*phones, tablets and smaller desktops*/
+    .card-container {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 992px) { /*phones and tablets*/
+    h1, h4 {
+    font-size: 30px;
+    }
+    .card-container {
+        width: 90px;
+        height: 90px;
+    }
+}
 
 @media screen and (max-width: 768px){ /*phones*/
     /* fixes dashboard height issue on phones*/
@@ -234,11 +255,16 @@ button p {
     h1, h4 {
         font-size: 25px;
     }
-
+    .card-container {
+        width: 120px;
+        height: 120px;
+    }
 }
 
-@media screen and (max-width: 992px) { /*phones and tablets*/
-    h1, h4 {
-    font-size: 30px;
+@media screen and (max-width: 576px){ /*small phones*/
+    /* fixes dashboard height issue on phones*/
+    .card-container {
+        width: 80px;
+        height: 80px;
     }
 }

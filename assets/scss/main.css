@@ -167,17 +167,17 @@ button p {
 .card-container {
   /*see media queries below for adjustments to card size to fit other screens*/
   width: 120px;
-  height: 120px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5);
-  /*clearer shadow to stand out on picture background*/ }
+  height: 120px; }
 
 .game-card {
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5);
+  /*clearer shadow to stand out on picture background*/ }
 
 .game-card-back {
   background-image: url("https://i.ibb.co/DQkPDHb/main-logo.png");
@@ -186,6 +186,36 @@ button p {
 .game-card-lightning {
   background-image: url("https://i.ibb.co/fXTswXC/lightning.jpg");
   border-radius: 8px; }
+
+/* Code for flipping cards taken from w3schools and adjusted to my needs: https://www.w3schools.com/howto/howto_css_flip_card.asp */
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */ }
+
+/* Positions the front and back sides of card */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; }
+
+/* Horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg); }
+
+/* Positions the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; }
+
+/* Styles the back side */
+.flip-card-back {
+  transform: rotateY(180deg); }
 
 /*----------------------------------- MEDIA QUERIES */
 @media screen and (max-width: 1200px) {

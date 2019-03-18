@@ -15,7 +15,7 @@ h2 {
   text-align: center;
   color: #336666; }
 
-.how-to-play-title h2 {
+.info-title h2 {
   font-family: "Fredoka One", cursive;
   font-size: 35px;
   font-weight: 100;
@@ -42,7 +42,7 @@ h4 {
 
 p {
   font-family: "Bubblegum Sans", cursive;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 100;
   text-align: center;
   color: #336666; }
@@ -59,6 +59,11 @@ button p {
 .row, .container-fluid {
   margin-left: 0;
   margin-right: 0; }
+
+.box-white-curved-corners {
+  background-color: #f5f5f5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 8px; }
 
 /*----------------------------------- DASHBOARD */
 .dashboard {
@@ -260,11 +265,16 @@ button p {
 .flip-card-back {
   transform: rotateY(180deg); }
 
-.how-to-play-container {
-  padding: 5rem; }
+/*----------------------------------- HOW TO PLAY MODAL */
+.info-modal-wrapper {
+  height: auto;
+  width: auto;
+  background-color: #66cc99;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 8px; }
 
-.how-to-play-title {
-  padding-bottom: 2rem; }
+.info-title {
+  padding-top: 1rem; }
 
 .fa-clone {
   color: #339966; }
@@ -274,6 +284,18 @@ button p {
 
 .fa-star {
   color: yellow; }
+
+.fa-3x {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
+
+.info-box p {
+  margin-bottom: 0.5rem;
+  line-height: 2rem; }
+
+/* See media queries for size adjustment on mobiles & tablets */
+.info-box {
+  width: 200px;
+  height: 200px; }
 
 /*----------------------------------- MEDIA QUERIES */
 @media screen and (max-width: 1200px) {
@@ -288,7 +310,11 @@ button p {
     height: 90px; }
 
   .my-card-column {
-    height: 100px; } }
+    height: 100px; }
+
+  .info-box {
+    width: auto;
+    height: auto; } }
 @media screen and (max-width: 768px) {
   /*phones*/
   /* fixes dashboard height issue on phones*/

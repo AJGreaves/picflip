@@ -78,7 +78,9 @@ In addition, if it is not obvious, you should also describe how to run your code
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
-- The photos used in this site were obtained from ...
+- the logo for this site was created using
+- The images used in this site were obtained from google images and disney.com 
+- game board background Photo by Jason Leung on Unsplash https://unsplash.com/photos/M55JcA9wOG0
 
 ### Acknowledgements
 

@@ -45,6 +45,7 @@ p {
   margin-left: 0;
   margin-right: 0; }
 
+/*----------------------------------- DASHBOARD */
 .dashboard {
   height: 100vh;
   background-color: #33cccc;
@@ -52,15 +53,6 @@ p {
   padding: 0;
   z-index: 1; }
 
-.game-board {
-  height: 100vh;
-  padding: 0;
-  background-image: url("https://i.ibb.co/yYJqmDn/trains-background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center; }
-
-/*----------------------------------- DASHBOARD */
 /* USER INFO SECTION */
 .dashboard-section {
   margin: 1rem;
@@ -156,6 +148,14 @@ button p {
   color: #336666; }
 
 /*----------------------------------- GAME BOARD */
+.game-board {
+  height: 100vh;
+  padding: 0;
+  background-image: url("https://i.ibb.co/yYJqmDn/trains-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
 .game-board-header {
   background-color: #f5f5f5;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
@@ -219,7 +219,7 @@ button p {
 .flip-card {
   background-color: transparent;
   perspective: 1000px;
-  /* Remove this if you don't want the 3D effect */ }
+  /* for 3D effect */ }
 
 /* Positions the front and back sides of card */
 .flip-card-inner {

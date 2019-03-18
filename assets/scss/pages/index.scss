@@ -68,13 +68,20 @@ p {
 .dashboard {
     height: 100vh;
     background-color: $light-blue;
+    box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22);
     padding: 0;
+    z-index: 1;
 }
 
 .game-board {
     height: 100vh;
-    background-color: $off-white;
     padding: 0;
+    background: {
+        image: url("https://i.ibb.co/yYJqmDn/trains-background.jpg");
+        repeat: no-repeat;
+        size: cover;
+        position: center center;
+    }
 }
 
 ///*----------------------------------- IMAGES */
@@ -207,6 +214,11 @@ button p {
 
 /*----------------------------------- GAME BOARD */
 
+.game-board-header {
+    background-color: $off-white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
 .my-card-column {
     /*see media queries below for adjustments to card column size to fit other screens*/
     height: 130px;
@@ -217,7 +229,7 @@ button p {
     width: 120px;
     height: 120px;
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.5); /*clearer shadow to stand out on picture background*/
 }
 
 .game-card {

@@ -65,6 +65,12 @@ button p {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 8px; }
 
+/*----------------------------------- BUTTONS */
+.selection-button button {
+  height: 80px;
+  width: 80px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
 /*----------------------------------- DASHBOARD */
 .dashboard {
   height: 100vh;
@@ -121,16 +127,7 @@ button p {
   line-height: 1.5rem;
   margin-bottom: 0.5rem; }
 
-.difficulty-selection button {
-  height: 80px;
-  width: 80px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-
 /* CARD PACK SELECTION SECTION */
-.pack-selection-button {
-  height: 80px;
-  width: 80px; }
-
 .cars-cover {
   background-image: url("https://i.ibb.co/x1wmBCq/lightning-main.jpg");
   background-repeat: no-repeat;
@@ -260,8 +257,8 @@ button p {
 .flip-card-back {
   transform: rotateY(180deg); }
 
-/*----------------------------------- HOW TO PLAY MODAL */
-.info-modal-background {
+/*----------------------------------- MODALS */
+.modal-background {
   height: auto;
   width: auto;
   background-color: #66cc99;
@@ -273,9 +270,29 @@ button p {
   background-color: transparent;
   border: none; }
 
-.info-title {
+.my-modal-title {
   padding-top: 1rem; }
 
+/* USER MODAL */
+.strawberry-cover {
+  background-image: url("../images/plant.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.toycar-cover {
+  background-image: url("../images/car.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.plant-cover {
+  background-image: url("../images/strawberry.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+/* INFO MODAL */
 .fa-clone {
   color: #339966; }
 

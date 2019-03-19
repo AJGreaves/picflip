@@ -1,0 +1,72 @@
+/*----------------------------------- MODALS */
+
+.modal-background {
+    height: auto;
+    width: auto;
+    background-color: $light-green;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 8px;
+}
+
+/* removes bootstrap background settings on modal */
+.modal-content {
+    background-color: transparent;
+    border: none;
+}
+
+.my-modal-title {
+    padding-top: 1rem;
+}
+
+
+/* USER MODAL */
+
+.strawberry-cover {
+    background: {
+        image: url("../images/plant.jpg");
+        repeat: no-repeat;
+        size: cover;
+        position: center center;
+    }
+}
+
+.toycar-cover {
+    background: {
+        image: url("../images/car.png"); 
+        repeat: no-repeat;
+        size: cover;
+        position: center center;
+    }
+}
+
+.plant-cover {
+    background: {
+        image: url("../images/strawberry.png");
+        repeat: no-repeat;
+        size: cover;
+        position: center center;
+    }
+}
+
+/* INFO MODAL */
+
+.fa-clone {
+    color: $dark-green;
+}
+
+.fa-trophy {
+    color: $orange;
+}
+
+.fa-star {
+    color: yellow;
+}
+
+.fa-3x {
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+.info-box p {
+    margin-bottom: 0.5rem;
+    line-height: 2rem;
+}

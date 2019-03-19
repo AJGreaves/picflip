@@ -49,7 +49,7 @@
                 </div>
                 <!--Difficulty selection section-->
                 <div class="row dashboard-section box-white-curved-corners justify-content-center">
-                    <div class="col-4 my-2 difficulty-selection text-right p-0">
+                    <div class="col-4 my-2 selection-button text-right p-0">
                         <button type="button" class="btn btn-success">
                             <p>Easy
                             <br>
@@ -58,7 +58,7 @@
                             <audio src="assets/audio/button.mp3"></audio>
                         </button>
                     </div>
-                    <div class="col-4 my-2 difficulty-selection text-center p-0">
+                    <div class="col-4 my-2 selection-button text-center p-0">
                         <button type="button" class="btn btn-warning">
                             <p>Med
                             <br>
@@ -68,7 +68,7 @@
                             <audio src="assets/audio/button.mp3"></audio>
                         </button>
                     </div>
-                    <div class="col-4 my-2 difficulty-selection text-left p-0">
+                    <div class="col-4 my-2 selection-button text-left p-0">
                         <button type="button" class="btn btn-danger">
                             <p>Hard
                             <br>
@@ -80,18 +80,18 @@
                         </button>
                     </div>
                     <!--card pack selection section-->
-                    <div class="col-4 text-right my-2 p-0">
-                        <button type="button" class="btn pack-selection-button cars-cover">
+                    <div class="col-4 text-right selection-button my-2 p-0">
+                        <button type="button" class="btn cars-cover">
                             <audio src="assets/audio/button.mp3"></audio>
                         </button>
                     </div>
-                    <div class="col-4 text-center my-2 p-0">
-                        <button type="button" class="btn pack-selection-button frozen-cover">
+                    <div class="col-4 text-center selection-button my-2 p-0">
+                        <button type="button" class="btn frozen-cover">
                             <audio src="assets/audio/button.mp3"></audio>
                         </button>
                     </div>
-                    <div class="col-4 text-left my-2 p-0">
-                        <button type="button" class="btn pack-selection-button toystory-cover">
+                    <div class="col-4 text-left selection-button my-2 p-0">
+                        <button type="button" class="btn toystory-cover">
                             <audio src="assets/audio/button.mp3"></audio>
                         </button>
                     </div>
@@ -306,25 +306,43 @@
         </div>
     </div>
     
-    <!-- USER INFO MODAL -->
+    <!-- USER MODAL -->
     <!--<div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="userInfoModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body"> -->
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12 info-modal-background pb-2 mb-3">
+                            <div class="col-12 modal-background pb-2 mb-3">
                                 <div class="row justify-content-center">
-                                    <div class="col-12 info-title">
+                                    <div class="col-12 my-modal-title">
                                         <h1>Who wants to play?</h1>
                                     </div>
-                                </div>
-                                <div class="row justify-content-center">
                                     <div class="col-12 text-center">
                                         
                                         <form>
                                             <div class="form-group">
                                                 <input type="text" class="form-control form-control-lg" id="username" requred>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 info-title">
+                                                    <h2>Choose a picture</h2>
+                                                </div>
+                                                <div class="col-4 text-right selection-button my-2 p-0">
+                                                    <button type="button" class="btn pack-selection-button strawberry-cover">
+                                                        <audio src="assets/audio/button.mp3"></audio>
+                                                    </button>
+                                                </div>
+                                                <div class="col-4 text-center selection-button my-2 p-0">
+                                                    <button type="button" class="btn pack-selection-button toycar-cover">
+                                                        <audio src="assets/audio/button.mp3"></audio>
+                                                    </button>
+                                                </div>
+                                                <div class="col-4 text-left selection-button my-2 p-0">
+                                                    <button type="button" class="btn pack-selection-button plant-cover">
+                                                        <audio src="assets/audio/button.mp3"></audio>
+                                                    </button>
+                                                </div>
                                             </div>
                                             <button type="submit" class="btn btn-light circle-btn tick-btn" data-dismiss="modal"> 
                                                 <i class="fas fa-check"></i>
@@ -349,9 +367,9 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12 info-modal-background pb-2 mb-3">
+                            <div class="col-12 modal-background pb-2 mb-3">
                                 <div class="row justify-content-center">
-                                    <div class="col-12 info-title">
+                                    <div class="col-12 my-modal-title">
                                         <h1>How to play</h1>
                                     </div>
                                 </div>

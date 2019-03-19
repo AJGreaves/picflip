@@ -1,6 +1,6 @@
 /*----------------------------------- HOW TO PLAY MODAL */
 
-.info-modal-wrapper {
+.info-modal-background {
     height: auto;
     width: auto;
     background-color: $light-green;
@@ -31,10 +31,4 @@
 .info-box p {
     margin-bottom: 0.5rem;
     line-height: 2rem;
-}
-
-/* See media queries for size adjustment on mobiles & tablets */
-.info-box {
-    width: 200px;
-    height: 200px;
 }

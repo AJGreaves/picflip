@@ -16,12 +16,6 @@
     box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22);
 }
 
-.box-white-curved-corners {
-    background-color: $off-white;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    border-radius: 8px;
-}
-
 .avatar {
     width: 120px;
     height: 120px;
@@ -61,7 +55,8 @@
 
 /* DIFFICULTY SELECTION SECTION */
 
-.btn {
+.btn,
+.pack-selection-button {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     border-radius: 2px;
     border: 3px solid $dark-blue;
@@ -77,18 +72,7 @@ button p {
     margin-bottom: 0.5rem;
 }
 
-.difficulty-selection button {
-    height: 80px;
-    width: 80px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
 /* CARD PACK SELECTION SECTION */
-
-.pack-selection-button {
-    height: 80px;
-    width: 80px;
-}
 
 .cars-cover {
     background: {

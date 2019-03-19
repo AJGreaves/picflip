@@ -15,6 +15,14 @@ h2 {
   text-align: center;
   color: #336666; }
 
+.info-title h2 {
+  font-family: "Fredoka One", cursive;
+  font-size: 35px;
+  font-weight: 100;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  color: #336666; }
+
 h3 {
   font-family: "Fredoka One", cursive;
   font-size: 20px;
@@ -33,6 +41,13 @@ h4 {
   color: #336666; }
 
 p {
+  font-family: "Bubblegum Sans", cursive;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+  color: #336666; }
+
+button p {
   font-family: "Bubblegum Sans", cursive;
   font-size: 20px;
   font-weight: 100;
@@ -118,7 +133,9 @@ button p {
   line-height: 1.5rem;
   margin-bottom: 0.5rem; }
 
-.difficulty-selection button {
+/*----------------------------------- BUTTONS */
+.selection-button button,
+.selection-button img {
   height: 80px;
   width: 80px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
@@ -243,11 +260,6 @@ button p {
   padding: 1rem 0rem;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.22); }
 
-.box-white-curved-corners {
-  background-color: #f5f5f5;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  border-radius: 8px; }
-
 .avatar {
   width: 120px;
   height: 120px;
@@ -277,7 +289,8 @@ button p {
   font-size: 1.5rem; }
 
 /* DIFFICULTY SELECTION SECTION */
-.btn {
+.btn,
+.pack-selection-button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 2px;
   border: 3px solid #336666; }
@@ -290,16 +303,7 @@ button p {
   line-height: 1.5rem;
   margin-bottom: 0.5rem; }
 
-.difficulty-selection button {
-  height: 80px;
-  width: 80px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-
 /* CARD PACK SELECTION SECTION */
-.pack-selection-button {
-  height: 80px;
-  width: 80px; }
-
 .cars-cover {
   background-image: url("https://i.ibb.co/x1wmBCq/lightning-main.jpg");
   background-repeat: no-repeat;
@@ -428,6 +432,77 @@ button p {
 /* Styles the back side */
 .flip-card-back {
   transform: rotateY(180deg); }
+
+/*----------------------------------- MODALS */
+.modal-background {
+  height: auto;
+  width: auto;
+  background-color: #66cc99;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 8px; }
+
+/* removes bootstrap background settings on modal */
+.modal-content {
+  background-color: transparent;
+  border: none; }
+
+.my-modal-title {
+  padding-top: 1rem; }
+
+/* USER MODAL */
+/* modal radio button fix sourced from: 
+https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons
+and ajusted to project needs*/
+/* hides radio button, makes clickable area cover button image */
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 80px;
+  height: 80px; }
+
+/* radio checked */
+[type=radio]:checked + img {
+  outline: 4px solid #33cccc; }
+
+/* adjusts radio check field input to full size of image */
+.form-check-input {
+  margin-top: 0;
+  margin-left: 0; }
+
+.strawberry-cover {
+  background-image: url("https://i.ibb.co/j3T7F2Y/plant.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.toycar-cover {
+  background-image: url("https://i.ibb.co/dfMH7zb/car.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.plant-cover {
+  background-image: url("https://i.ibb.co/LZhQ7dG/strawberry.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+/* INFO MODAL */
+.fa-clone {
+  color: #339966; }
+
+.fa-trophy {
+  color: #ffcc33; }
+
+.fa-star {
+  color: yellow; }
+
+.fa-3x {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
+
+.info-box p {
+  margin-bottom: 0.5rem;
+  line-height: 2rem; }
 
 /*----------------------------------- MEDIA QUERIES */
 @media screen and (max-width: 1200px) {

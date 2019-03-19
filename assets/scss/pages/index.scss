@@ -23,6 +23,19 @@ h2 {
     color: $dark-blue;
 }
 
+.info-title h2 {
+    font: {
+        family: $simple-font;
+        size: 35px;
+        weight: 100;
+    }
+    text: {
+        align: center;
+        shadow: 0 1px 1px rgba(0,0,0,0.5);
+    }
+    color: $dark-blue;
+}
+
 h3 {
     font: {
         family: $simple-font;
@@ -46,6 +59,16 @@ h4 {
 }
 
 p {
+    font: {
+        family: $fun-font;
+        size: 20px;
+        weight: 100;
+    }
+    text-align: center;
+    color: $dark-blue;
+}
+
+button p {
     font: {
         family: $fun-font;
         size: 20px;
@@ -164,7 +187,10 @@ button p {
     margin-bottom: 0.5rem;
 }
 
-.difficulty-selection button {
+/*----------------------------------- BUTTONS */
+
+.selection-button button,
+.selection-button img {
     height: 80px;
     width: 80px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -306,3 +332,4 @@ button p {
         height: 90px;
     }
 }
+

@@ -17,8 +17,29 @@ $(document).ready(function() {
         $(this).children('audio')[0].play();
     });
     
-    $(':radio').click(function() {
-        $(this).sibling('audio')[0].play();
+    // mute audio function
+    
+    var silence = false;
+
+    function muteAudio() {
+    
+        var allaudio = document.getElementsByTagName('audio');
+        
+        if (silence) {
+            for (var j = 0; j < allaudio.length; j++) {
+            allaudio[j].muted = false;
+            }
+            silence = true;
+        } else {
+            for (var j = 0; j < allaudio.length; j++) {
+            allaudio[j].muted = true;
+            }
+            silence = false;
+        }
+    }
+    
+    $('#muteButton').click(function() {
+        muteAudio();
     });
     
 })

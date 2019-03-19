@@ -431,6 +431,9 @@ button p {
   transform: rotateY(180deg); }
 
 /*----------------------------------- MODALS */
+.my-modal-title {
+  padding-top: 1rem; }
+
 /* MODAL BACKGROUNDS */
 .modal-background {
   height: auto;
@@ -453,9 +456,6 @@ button p {
 .modal-content {
   background-color: transparent;
   border: none; }
-
-.my-modal-title {
-  padding-top: 1rem; }
 
 /* USER MODAL */
 /* modal radio button fix sourced from: 
@@ -513,6 +513,10 @@ and ajusted to project needs*/
   line-height: 2rem; }
 
 /* WIN MODAL */
+.win-stars {
+  margin-top: 1rem;
+  margin-bottom: 2rem; }
+
 /*----------------------------------- MEDIA QUERIES */
 @media screen and (max-width: 1200px) {
   /*phones, tablets and smaller desktops*/ }

@@ -1,5 +1,9 @@
 /*----------------------------------- MODALS */
 
+.my-modal-title {
+    padding-top: 1rem;
+}
+
 /* MODAL BACKGROUNDS */
 
 .modal-background {
@@ -24,18 +28,11 @@
     background-color: $orange;
 }
 
-
-
 /* removes bootstrap background settings on modal */
 .modal-content {
     background-color: transparent;
     border: none;
 }
-
-.my-modal-title {
-    padding-top: 1rem;
-}
-
 
 /* USER MODAL */
 
@@ -114,4 +111,7 @@ and ajusted to project needs*/
 
 /* WIN MODAL */
 
-
+.win-stars {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}

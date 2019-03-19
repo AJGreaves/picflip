@@ -41,7 +41,15 @@ $(document).ready(function() {
     $('#muteButton').click(function() {
         muteAudio();
         //toggles between icons on mute button
-        $('#muteButton i').toggleClass("fa-volume-off");
+        $('#muteButton i').toggleClass('fa-volume-off');
+    });
+    
+    
+    $(".show-modal").click(function(){
+        $("#userInfoModal").modal({
+            backdrop: 'static',
+            keyboard: false
+        });
     });
     
 })

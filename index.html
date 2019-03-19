@@ -31,7 +31,7 @@
                     <div class="col-12 username"><h3>Name</h3></div><!--Put username variable here -->
                     <!--User avatar-->
                     <div class="col-12 col-sm-6 mb-3">
-                        <div class="avatar box-white-curved-corners mx-auto"></div>
+                        <div class="avatar box-white-curved-corners mx-auto" data-toggle="modal" data-target="#userInfoModal"></div>
                     </div>
                     <!--Trophy image-->
                     <div class="col-12 col-sm-6 trophy mx-auto mb-3 d-none d-sm-block"></div>
@@ -319,7 +319,6 @@
                                         <h1>Who wants to play?</h1>
                                     </div>
                                     <div class="col-12 text-center">
-                                        
                                         <form>
                                             <div class="form-group">
                                                 <input type="text" class="form-control form-control-lg" id="username" required>
@@ -349,12 +348,11 @@
                                                     <audio src="assets/audio/button.mp3"></audio> <!-- TO DO: Audio not playing, write JS function to play audio instead -->
                                                 </label>
                                             </div>
-                                            <button type="submit" class="btn btn-light circle-btn tick-btn" data-dismiss="modal"> 
+                                            <button type="submit" class="btn btn-light circle-btn tick-btn"> 
                                                 <i class="fas fa-check"></i>
                                                 <audio src="assets/audio/button.mp3"></audio>
                                             </button>
                                         </form>
-                                        
                                     </div>
                                 </div>
                             </div>

@@ -100,21 +100,22 @@
                 <!--card pack selection section-->
                 <div class="row m-3">
                     <div class="col-4 text-right p-0">
-                        <button type="button" class="btn btn-dark circle-btn info-btn" data-toggle="modal" data-target="#infoModal"> <!-- TO DO: How to Play modal pops up when clicked -->
+                        <!-- Info modal pops up when clicked -->
+                        <button type="button" class="btn btn-light circle-btn info-btn" data-toggle="modal" data-target="#infoModal"> 
                             <i class="fas fa-question"></i>
                             <audio src="assets/audio/button.mp3"></audio>
                         </button>
                     </div>
                     <!-- TO DO: write logic to show this icon when clicked: <i class="fas fa-volume-off"></i> -->
                     <div class="col-4 text-center p-0">
-                        <button type="button" class="btn btn-dark circle-btn mute-btn">
+                        <button type="button" class="btn btn-light circle-btn mute-btn">
                             <i class="fas fa-volume-mute"></i> 
                             <audio src="assets/audio/button.mp3"></audio>
                         </button>
                     </div>
                     <!-- TO DO: Resets game & reshuffles cards when clicked. Does not rest difficulty or style setting -->
                     <div class="col-4 text-left p-0">
-                        <button type="button" class="btn btn-dark circle-btn restart-btn"> 
+                        <button type="button" class="btn btn-light circle-btn restart-btn"> 
                             <i class="fas fa-undo-alt"></i>
                             <audio src="assets/audio/button.mp3"></audio>
                         </button>
@@ -130,11 +131,13 @@
                     <div class="col-8 my-3">
                         <h1>Match the cards</h1>
                     </div>
-                    <!--game turns counter--> <!-- TO DO: Code logic to count num turns taken and display -->
+                    <!-- game turns counter --> <!-- TO DO: Code logic to count num turns taken and display -->
                     <div class="col-4 my-3">
                         <h4>Turns: 0</h4>
                     </div>
                 </div>
+                
+                <!-- game board -->
                 <div class="container-fluid pt-5 p-md-4">
                     <div class="row">
                         
@@ -334,6 +337,12 @@
                                             <i class="fas fa-star fa-3x py-2"></i>
                                             <p>The fewer turns you use to win, the higher your score.</p>
                                         </div>
+                                    </div>
+                                    <div class="col-12 text-center p-0">
+                                        <button type="button" class="btn btn-light circle-btn tick-btn" data-dismiss="modal"> 
+                                            <i class="fas fa-check"></i>
+                                            <audio src="assets/audio/button.mp3"></audio>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

@@ -1,12 +1,30 @@
 /*----------------------------------- MODALS */
 
+/* MODAL BACKGROUNDS */
+
 .modal-background {
     height: auto;
     width: auto;
-    background-color: $light-green;
+    background: {
+        repeat: no-repeat;
+        size: cover;
+        position: center;
+    }
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     border-radius: 8px;
 }
+
+.info-modal-background {
+    background-color: $light-green;
+    background-image: url("https://i.ibb.co/M2hwYnc/comic-green-bg.jpg");
+}
+
+.win-modal-background {
+    background-image: url("https://i.ibb.co/T294Qz7/comic-orange-bg.jpg");
+    background-color: $orange;
+}
+
+
 
 /* removes bootstrap background settings on modal */
 .modal-content {
@@ -93,3 +111,7 @@ and ajusted to project needs*/
     margin-bottom: 0.5rem;
     line-height: 2rem;
 }
+
+/* WIN MODAL */
+
+

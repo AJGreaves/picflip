@@ -81,6 +81,7 @@ In addition, if it is not obvious, you should also describe how to run your code
 - the logo for this site was created using
 - The images used in this site were obtained from google images and disney.com 
 - The images for user profile were sourced from https://pngtree.com
+- comic-book style backgrounds were sourced from https://www.freepik.com
 - game board background Photo by Jason Leung on Unsplash https://unsplash.com/photos/M55JcA9wOG0
 - sound file for button click sourced from https://www.soundjay.com
 - sound file for card flip sourced from https://freesound.org/people/Splashdust/sounds

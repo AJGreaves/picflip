@@ -307,10 +307,10 @@
     </div>
     
     <!-- USER MODAL -->
-    <!--<div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="userInfoModal" aria-hidden="true">
+    <div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="userInfoModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-body"> -->
+                <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12 modal-background pb-2 mb-3">
@@ -322,27 +322,32 @@
                                         
                                         <form>
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-lg" id="username" requred>
+                                                <input type="text" class="form-control form-control-lg" id="username" required>
+                                                <div class="invalid-feedback">
+                                                    Write your name here.
+                                                </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-12 info-title">
-                                                    <h2>Choose a picture</h2>
+                                                    <h1>Choose a picture</h1>
                                                 </div>
-                                                <div class="col-4 text-right selection-button my-2 p-0">
-                                                    <button type="button" class="btn pack-selection-button strawberry-cover">
-                                                        <audio src="assets/audio/button.mp3"></audio>
-                                                    </button>
-                                                </div>
-                                                <div class="col-4 text-center selection-button my-2 p-0">
-                                                    <button type="button" class="btn pack-selection-button toycar-cover">
-                                                        <audio src="assets/audio/button.mp3"></audio>
-                                                    </button>
-                                                </div>
-                                                <div class="col-4 text-left selection-button my-2 p-0">
-                                                    <button type="button" class="btn pack-selection-button plant-cover">
-                                                        <audio src="assets/audio/button.mp3"></audio>
-                                                    </button>
-                                                </div>
+                                            </div>
+                                            <div class="row box-white-curved-corners info-box py-1 my-2">
+                                                <label class="col-4 text-right selection-button my-2 p-0">
+                                                    <input class="form-check-input" type="radio" name="avatarRadios" id="avatarRadios1" value="option1" required>
+                                                    <img class="pack-selection-button strawberry-cover"></img>
+                                                    <audio src="assets/audio/button.mp3"></audio> <!-- TO DO: Audio not playing, write JS function to play audio instead -->
+                                                </label>
+                                                <label class="col-4 text-center selection-button my-2 p-0">
+                                                    <input class="form-check-input" type="radio" name="avatarRadios" id="avatarRadios2" value="option2" required>
+                                                    <img class="pack-selection-button toycar-cover"></img>
+                                                    <audio src="assets/audio/button.mp3"></audio> <!-- TO DO: Audio not playing, write JS function to play audio instead -->
+                                                </label>
+                                                <label class="col-4 text-left selection-button my-2 p-0">
+                                                    <input class="form-check-input" type="radio" name="avatarRadios" id="avatarRadios3" value="option3" required>
+                                                    <img class="pack-selection-button plant-cover"></img>
+                                                    <audio src="assets/audio/button.mp3"></audio> <!-- TO DO: Audio not playing, write JS function to play audio instead -->
+                                                </label>
                                             </div>
                                             <button type="submit" class="btn btn-light circle-btn tick-btn" data-dismiss="modal"> 
                                                 <i class="fas fa-check"></i>
@@ -355,10 +360,10 @@
                             </div>
                         </div>
                     </div>
-                <!--</div>
+                </div>
             </div>
         </div>
-    </div> -->
+    </div>
     
     <!-- INFO MODAL -->
     <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModal" aria-hidden="true">

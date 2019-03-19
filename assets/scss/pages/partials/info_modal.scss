@@ -8,6 +8,12 @@
     border-radius: 8px;
 }
 
+/* removes bootstrap background settings on modal */
+.modal-content {
+    background-color: transparent;
+    border: none;
+}
+
 .info-title {
     padding-top: 1rem;
 }

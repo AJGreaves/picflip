@@ -17,7 +17,7 @@ $(document).ready(function() {
         $(this).children('audio')[0].play();
     });
     
-    // mute audio function
+    // mute audio function, original code from: https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
     
     var silence = false;
 
@@ -29,12 +29,12 @@ $(document).ready(function() {
             for (var j = 0; j < allaudio.length; j++) {
             allaudio[j].muted = false;
             }
-            silence = true;
+            silence = false;
         } else {
             for (var j = 0; j < allaudio.length; j++) {
             allaudio[j].muted = true;
             }
-            silence = false;
+            silence = true;
         }
     }
     

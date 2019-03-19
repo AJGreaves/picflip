@@ -40,6 +40,8 @@ $(document).ready(function() {
     
     $('#muteButton').click(function() {
         muteAudio();
+        //toggles between icons on mute button
+        $('#muteButton i').toggleClass("fa-volume-off");
     });
     
 })

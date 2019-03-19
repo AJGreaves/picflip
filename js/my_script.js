@@ -1,5 +1,7 @@
 $(document).ready(function() {
     
+    //------------------ MODALS
+    
     /*// code currently displays user info modal on first visit to site
     TO DO: Display only if it doesn't have user info yet
     if ($.cookie('pop') == null) {
@@ -7,18 +9,25 @@ $(document).ready(function() {
         $.cookie('pop', '7');
     }*/ 
     
-    // flips game card and plays audio on click
-    $('.flip-card').click(function() {
-        $(this).toggleClass('active');
-        $(this).find('audio')[0].play();
+    // background on user info modal can't be clicked away, input must be given first
+    $(".show-modal").click(function(){
+        $("#userInfoModal").modal({
+            backdrop: 'static',
+            keyboard: false
+        });
     });
+    
+    
+    //------------------ BUTTONS
     
     $('.btn').click(function() {
         $(this).children('audio')[0].play();
     });
     
-    // mute audio function, original code from: https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
     
+    // MUTE BUTTON
+    
+    // mute audio function, original code from: https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
     var silence = false;
 
     function muteAudio() {
@@ -44,12 +53,28 @@ $(document).ready(function() {
         $('#muteButton i').toggleClass('fa-volume-off');
     });
     
+    // DIFFICULTY SELECT BUTTONS
     
-    $(".show-modal").click(function(){
-        $("#userInfoModal").modal({
-            backdrop: 'static',
-            keyboard: false
-        });
+    $('#easyButton').click(function() {
+        $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
+    })
+    
+    $('#mediumButton').click(function() {
+        $('.my-card-column-medium').addClass('visible').removeClass('invisible');
+        $('.my-card-column-hard').addClass('invisible').removeClass('visible');
+    })
+    
+    $('#hardButton').click(function() {
+        $('.my-card-column-medium').addClass('visible').removeClass('invisible');
+        $('.my-card-column-hard').addClass('visible').removeClass('invisible');
+    })
+    
+    //------------------ GAME CARDS
+    
+    // flips game card and plays audio on click
+    $('.flip-card').click(function() {
+        $(this).toggleClass('active');
+        $(this).find('audio')[0].play();
     });
     
 })

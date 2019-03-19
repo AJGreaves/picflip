@@ -50,7 +50,7 @@
                 <!--Difficulty selection section-->
                 <div class="row dashboard-section box-white-curved-corners justify-content-center">
                     <div class="col-4 my-2 selection-button text-right p-0">
-                        <button type="button" class="btn btn-success">
+                        <button id="easyButton" type="button" class="btn btn-success">
                             <p>Easy
                             <br>
                             <i class="star fas fa-star" aria-hidden="true"></i>
@@ -59,7 +59,7 @@
                         </button>
                     </div>
                     <div class="col-4 my-2 selection-button text-center p-0">
-                        <button type="button" class="btn btn-warning">
+                        <button id="mediumButton" type="button" class="btn btn-warning">
                             <p>Med
                             <br>
                             <i class="star fas fa-star" aria-hidden="true"></i>
@@ -69,7 +69,7 @@
                         </button>
                     </div>
                     <div class="col-4 my-2 selection-button text-left p-0">
-                        <button type="button" class="btn btn-danger">
+                        <button id="hardButton" type="button" class="btn btn-danger">
                             <p>Hard
                             <br>
                             <i class="star fas fa-star" aria-hidden="true"></i>
@@ -141,47 +141,7 @@
                 <div class="container-fluid pt-5 p-md-4">
                     <div class="row">
                         
-                        <div class="col-4 col-sm-3 my-card-column">
-                            <div class="flip-card card-container mx-auto">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card game-card-sally"></div>
-                                    <audio src="assets/audio/card-flip.wav"></audio>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column">
-                            <div class="flip-card card-container mx-auto">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card game-card-lightning"></div>
-                                    <audio src="assets/audio/card-flip.wav"></audio>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column">
-                            <div class="flip-card card-container mx-auto">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card game-card-fillmore"></div>
-                                    <audio src="assets/audio/card-flip.wav"></audio>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column">
-                            <div class="flip-card card-container mx-auto">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card game-card-mater"></div>
-                                    <audio src="assets/audio/card-flip.wav"></audio>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column">
+                        <div class="col-4 col-sm-3 my-card-column-easy">
                             <div class="flip-card card-container mx-auto">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front game-card game-card-back"></div>
@@ -191,7 +151,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-4 col-sm-3 my-card-column">
+                        <div class="col-4 col-sm-3 my-card-column-easy">
                             <div class="flip-card card-container mx-auto">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front game-card game-card-back"></div>
@@ -201,7 +161,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-4 col-sm-3 my-card-column">
+                        <div class="col-4 col-sm-3 my-card-column-easy">
                             <div class="flip-card card-container mx-auto">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front game-card game-card-back"></div>
@@ -211,7 +171,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-4 col-sm-3 my-card-column">
+                        <div class="col-4 col-sm-3 my-card-column-easy">
                             <div class="flip-card card-container mx-auto">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front game-card game-card-back"></div>
@@ -221,7 +181,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-4 col-sm-3 my-card-column">
+                        <div class="col-4 col-sm-3 my-card-column-easy">
                             <div class="flip-card card-container mx-auto">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front game-card game-card-back"></div>
@@ -231,7 +191,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-4 col-sm-3 my-card-column">
+                        <div class="col-4 col-sm-3 my-card-column-easy">
                             <div class="flip-card card-container mx-auto">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front game-card game-card-back"></div>
@@ -241,7 +201,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-4 col-sm-3 my-card-column">
+                        <div class="col-4 col-sm-3 my-card-column-easy">
                             <div class="flip-card card-container mx-auto">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front game-card game-card-back"></div>
@@ -251,7 +211,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-4 col-sm-3 my-card-column">
+                        <div class="col-4 col-sm-3 my-card-column-easy">
                             <div class="flip-card card-container mx-auto">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front game-card game-card-back"></div>
@@ -261,7 +221,47 @@
                             </div>
                         </div>
                         
-                        <div class="col-4 col-sm-3 my-card-column">
+                        <div class="col-4 col-sm-3 my-card-column-medium visible">
+                            <div class="flip-card card-container mx-auto">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front game-card game-card-back"></div>
+                                    <div class="flip-card-back game-card game-card-sally"></div>
+                                    <audio src="assets/audio/card-flip.wav"></audio>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-4 col-sm-3 my-card-column-medium visible">
+                            <div class="flip-card card-container mx-auto">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front game-card game-card-back"></div>
+                                    <div class="flip-card-back game-card game-card-lightning"></div>
+                                    <audio src="assets/audio/card-flip.wav"></audio>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-4 col-sm-3 my-card-column-medium visible">
+                            <div class="flip-card card-container mx-auto">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front game-card game-card-back"></div>
+                                    <div class="flip-card-back game-card game-card-fillmore"></div>
+                                    <audio src="assets/audio/card-flip.wav"></audio>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-4 col-sm-3 my-card-column-medium visible">
+                            <div class="flip-card card-container mx-auto">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front game-card game-card-back"></div>
+                                    <div class="flip-card-back game-card game-card-mater"></div>
+                                    <audio src="assets/audio/card-flip.wav"></audio>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-4 col-sm-3 my-card-column-hard visible">
                             <div class="flip-card card-container mx-auto">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front game-card game-card-back"></div>
@@ -271,7 +271,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-4 col-sm-3 my-card-column">
+                        <div class="col-4 col-sm-3 my-card-column-hard visible">
                             <div class="flip-card card-container mx-auto">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front game-card game-card-back"></div>
@@ -281,7 +281,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-4 col-sm-3 my-card-column">
+                        <div class="col-4 col-sm-3 my-card-column-hard visible">
                             <div class="flip-card card-container mx-auto">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front game-card game-card-back"></div>
@@ -291,7 +291,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-4 col-sm-3 my-card-column">
+                        <div class="col-4 col-sm-3 my-card-column-hard visible">
                             <div class="flip-card card-container mx-auto">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front game-card game-card-back"></div>
@@ -492,5 +492,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> 
 	<script type="text/javascript" src="js/my_script.js"></script>
+	
+	
 </body>
 </html>
+

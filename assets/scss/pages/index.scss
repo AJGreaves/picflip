@@ -121,6 +121,43 @@ button p {
     background-image: url("https://i.ibb.co/Lh6Y23z/woody-main.jpg");
 }
 
+.strawberry-cover {
+    background-image: url("https://i.ibb.co/j3T7F2Y/plant.jpg");
+}
+
+.toycar-cover {
+    background-image: url("https://i.ibb.co/dfMH7zb/car.png"); 
+}
+
+.plant-cover {
+    background-image: url("https://i.ibb.co/LZhQ7dG/strawberry.png");
+}
+
+/* MODAL BACKGROUNDS */
+
+.modal-background {
+    height: auto;
+    width: auto;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 8px;
+}
+
+.info-modal-background {
+    background-color: $light-green;
+    background-image: url("https://i.ibb.co/M2hwYnc/comic-green-bg.jpg");
+}
+
+.win-modal-background {
+    background-image: url("https://i.ibb.co/T294Qz7/comic-orange-bg.jpg");
+    background-color: $orange;
+}
+
+/* removes bootstrap background settings on modal */
+.modal-content {
+    background-color: transparent;
+    border: none;
+}
+
 /*----------------------------------- CONTAINERS */
 
 /* to get rid of overflow on pages*/

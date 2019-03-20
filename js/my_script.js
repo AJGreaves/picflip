@@ -77,5 +77,24 @@ $(document).ready(function() {
         $(this).find('audio')[0].play();
     });
     
+    //------------------ USER DATA
+    
+    
+    // This would need to prevent the default behaviour (of reloading the page), 
+    // read the values and manipulate the HTML content of the user info box to show them there.
+    
+    
+    
+    $('#user-info-submit-button').click(function(e) {
+        e.preventDefault();
+        var userName = $('#username').val();
+        console.log(userName);
+        var userAvatar = $('input[name=avatarRadios]').val();;
+        console.log(userAvatar);
+    });
+    
+    
+
+    
 })
 

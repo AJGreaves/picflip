@@ -319,12 +319,9 @@
                                         <h1>Who wants to play?</h1>
                                     </div>
                                     <div class="col-12 text-center">
-                                        <form>
+                                        <form class="userInfoModalForm">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-lg" id="username" required>
-                                                <div class="invalid-feedback">
-                                                    Write your name here.
-                                                </div>
+                                                <input type="text" class="form-control form-control-lg" name="username" id="username" required>
                                             </div>
                                             <div class="row">
                                                 <div class="col-12 info-title">
@@ -348,7 +345,7 @@
                                                     <audio src="assets/audio/button.mp3"></audio> <!-- TO DO: Audio not playing, write JS function to play audio instead -->
                                                 </label>
                                             </div>
-                                            <button type="submit" class="btn btn-light circle-btn tick-btn"> 
+                                            <button type="button" id="user-info-submit-button" class="btn btn-light circle-btn tick-btn" data-dismiss="modal"> 
                                                 <i class="fas fa-check"></i>
                                                 <audio src="assets/audio/button.mp3"></audio>
                                             </button>

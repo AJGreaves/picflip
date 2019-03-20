@@ -25,8 +25,8 @@ h2 {
 
 h3 {
   font-family: "Fredoka One", cursive;
-  font-size: 20px;
-  font-weight: 100;
+  font-size: 25px;
+  font-weight: 200;
   text-align: center;
   color: #336666; }
 
@@ -38,6 +38,13 @@ h4 {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   padding-top: 4px;
   /*fixes alignment with h1*/
+  color: #336666; }
+
+h5 {
+  font-family: "Fredoka One", cursive;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
   color: #336666; }
 
 p {
@@ -63,10 +70,12 @@ button p {
 .avatar {
   width: 120px;
   height: 120px;
-  background-image: url("https://i.ibb.co/DQkPDHb/main-logo.png");
   background-size: contain;
   position: relative;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+.avatar-default {
+  background-image: url("https://i.ibb.co/DQkPDHb/main-logo.png"); }
 
 .avatar:hover {
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.22); }
@@ -87,13 +96,13 @@ button p {
 .toystory-cover {
   background-image: url("https://i.ibb.co/Lh6Y23z/woody-main.jpg"); }
 
-.strawberry-cover {
+.plant-cover {
   background-image: url("https://i.ibb.co/j3T7F2Y/plant.jpg"); }
 
 .toycar-cover {
   background-image: url("https://i.ibb.co/dfMH7zb/car.png"); }
 
-.plant-cover {
+.strawberry-cover {
   background-image: url("https://i.ibb.co/LZhQ7dG/strawberry.png"); }
 
 /* MODAL BACKGROUNDS */

@@ -79,22 +79,42 @@ $(document).ready(function() {
     
     //------------------ USER DATA
     
-    
-    // This would need to prevent the default behaviour (of reloading the page), 
-    // read the values and manipulate the HTML content of the user info box to show them there.
-    
-    
+    // TO DO: read the values and manipulate the HTML content of the user info box to show them there.
     
     $('#user-info-submit-button').click(function(e) {
+        
+        // prevents browser from reloading on click
         e.preventDefault();
+        
+        // collects data from form and assigns to variables
         var userName = $('#username').val();
-        console.log(userName);
-        var userAvatar = $('input[name=avatarRadios]').val();;
-        console.log(userAvatar);
+        var userAvatar = $('input[name=avatarRadios]:checked').val();
+        
+        $('.username').children('h3').text(userName); 
+        
+        // checks for which avatar choice was made and changes html to display it in avatar box
+        switch (userAvatar) {
+            case 'strawberry':
+                $('.avatar-default').addClass('strawberry-cover').removeClass('avatar-default');
+                break;
+            case 'car':
+                $('.avatar-default').addClass('toycar-cover').removeClass('avatar-default');
+                break;
+            case 'plant':
+                $('.avatar-default').addClass('plant-cover').removeClass('avatar-default');
+                break;
+            default:
+                break;
+        }
+        /*if (userAvatar) == 'strawberry') {
+            $('.avatar-default').addClass('strawberry-cover').removeClass('avatar-default');
+        } else if (userAvatar == 'car') {
+            $('.avatar-default').addClass('car-cover').removeClass('avatar-default');
+        } else if (userAvatar == 'plant') {
+            $('.avatar-default').addClass('plant-cover').removeClass('avatar-default');
+        } */
+        
     });
-    
-    
-
     
 })
 

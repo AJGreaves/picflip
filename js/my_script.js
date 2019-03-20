@@ -107,9 +107,14 @@ $(document).ready(function() {
     
     $('.flip-card').click(function() {
         
-		// flips game card and plays audio on click
-        $(this).toggleClass('active');
-        $(this).find('audio')[0].play();
+        //plays card flipping audio on click if card was face down
+      //  $(this).hasClass('face-down').find('audio')[0].play();
+        
+		// if game card is face down, on click: flips game card face up and plays audio.
+		if ($(this).hasClass('face-down')) {
+		    $(this).addClass('face-up').removeClass('face-down').find('audio')[0].play();
+		    
+		}
         
 		// counts flips, when 2 flips have been done the number of turns goes up by one.
         flipCounter++;
@@ -121,6 +126,7 @@ $(document).ready(function() {
     
         $('.turns-counter').text(turnsCounted);
         }
+        
     });
     
     

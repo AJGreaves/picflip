@@ -105,7 +105,7 @@
 }
 
 /* Horizontal flip when you move the mouse over the flip box container */
-.flip-card.active .flip-card-inner {
+.flip-card.face-up .flip-card-inner {
     transform: rotateY(180deg);
 }
 

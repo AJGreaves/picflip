@@ -175,7 +175,7 @@ button p {
   padding: 1rem 0rem;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.22); }
 
-.username {
+.username-container {
   width: 150px;
   height: 35px; }
 

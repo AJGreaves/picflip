@@ -80,7 +80,7 @@ $(document).ready(function() {
         var userName = $('#username').val();
         var userAvatar = $('input[name=avatarRadios]:checked').val();
         
-        $('.username').children('h3').text(userName); 
+        $('.username').text(userName); 
         
         // checks for which avatar choice was made and changes html to display it in avatar box
         switch (userAvatar) {
@@ -102,7 +102,6 @@ $(document).ready(function() {
     //------------------ CARD DECK 
     
     // turns counter
-    
     var flipCounter = 0;    
     var turnsCounter = 0;
     
@@ -120,7 +119,7 @@ $(document).ready(function() {
             
         var turnsCounted = ("Turns: " + turnsCounter);
     
-        $('.turns-counter').children('h4').text(turnsCounted);
+        $('.turns-counter').text(turnsCounted);
         }
     });
     

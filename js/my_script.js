@@ -69,17 +69,7 @@ $(document).ready(function() {
         $('.my-card-column-hard').addClass('visible').removeClass('invisible');
     })
     
-    //------------------ GAME CARDS
-    
-    // flips game card and plays audio on click
-    $('.flip-card').click(function() {
-        $(this).toggleClass('active');
-        $(this).find('audio')[0].play();
-    });
-    
     //------------------ USER DATA
-    
-    // TO DO: read the values and manipulate the HTML content of the user info box to show them there.
     
     $('#user-info-submit-button').click(function(e) {
         
@@ -106,15 +96,35 @@ $(document).ready(function() {
             default:
                 break;
         }
-        /*if (userAvatar) == 'strawberry') {
-            $('.avatar-default').addClass('strawberry-cover').removeClass('avatar-default');
-        } else if (userAvatar == 'car') {
-            $('.avatar-default').addClass('car-cover').removeClass('avatar-default');
-        } else if (userAvatar == 'plant') {
-            $('.avatar-default').addClass('plant-cover').removeClass('avatar-default');
-        } */
-        
+
     });
+    
+    //------------------ CARD DECK 
+    
+    // turns counter
+    
+    var flipCounter = 0;    
+    var turnsCounter = 0;
+    
+    $('.flip-card').click(function() {
+        
+		// flips game card and plays audio on click
+        $(this).toggleClass('active');
+        $(this).find('audio')[0].play();
+        
+		// counts flips, when 2 flips have been done the number of turns goes up by one.
+        flipCounter++;
+        
+        if ((flipCounter % 2) == 0 ) {
+            turnsCounter++; 
+            
+        var turnsCounted = ("Turns: " + turnsCounter);
+    
+        $('.turns-counter').children('h4').text(turnsCounted);
+        }
+    });
+    
+    
     
 })
 

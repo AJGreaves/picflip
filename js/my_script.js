@@ -1,4 +1,17 @@
 $(document).ready(function() {
+
+    $.ajax({
+        type: "Get",
+        url: "../assets/data/cards.json",
+        dataType: "json",
+        success: function(cardsData) {
+            
+        },
+        error: function() {
+            alert("json not found");
+            // If it's not found we handle errors here
+        }
+    });
     
     //------------------ MODALS
     
@@ -110,7 +123,6 @@ $(document).ready(function() {
 		// if game card is face down, on click: flips game card face up and plays audio.
 		if ($(this).hasClass('face-down')) {
 		    $(this).addClass('face-up').removeClass('face-down').find('audio')[0].play();
-		    
 		}
         
 		// counts flips, when 2 flips have been done the number of turns goes up by one.

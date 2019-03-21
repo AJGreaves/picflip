@@ -103,17 +103,30 @@ $(document).ready(function() {
     });
     // ------ GAME 
     
+    displayCards = [];
+    
     $.ajax({
         type: "Get",
         url: "../assets/data/cards.json",
-        dataType: "json",
+        data: 'data',
+        dataType: 'json',
         success: function(cardsData) {
-
+		    allCardsArray(cardsData)
         },
         error: function() {
             alert("json not found");
         }
     });
+    
+    // loops through first 6 cards in allCardsArray and adds them to displayCards array. 
+    function allCardsArray(cards) {
+    	for (i = 0; i < 5; i++) {
+    	    var obj = cards[i];
+            displayCards.push(obj);
+    	}
+    }
+    
+    console.log(displayCards);
     
     // turns counter
     var flipCounter = 0;    

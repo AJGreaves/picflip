@@ -307,11 +307,12 @@ button p {
   transform-style: preserve-3d;
   transform: scale(1); }
 
+/* indents card slightly on click, before flip */
 .flip-card:active {
   transform: scale(0.97);
   transition: transform .2s; }
 
-/* Horizontal flip when you move the mouse over the flip box container */
+/* Horizontal flip when you click flip box container */
 .flip-card.face-up .flip-card-inner {
   transform: rotateY(180deg); }
 

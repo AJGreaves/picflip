@@ -1,19 +1,4 @@
 $(document).ready(function() {
-
-    $.ajax({
-        type: "Get",
-        url: "../assets/data/cards.json",
-        dataType: "json",
-        success: function(cardsData) {
-            // write game logic in here
-            
-            
-        },
-        error: function() {
-            alert("json not found");
-        }
-    });
-    
     
     //------------------ MODALS
     
@@ -86,11 +71,8 @@ $(document).ready(function() {
     
     //------------------ USER DATA
     
-    $('#user-info-submit-button').click(function(e) {
-        
-        // prevents browser from reloading on click
-        e.preventDefault();
-        
+     $('#user-info-submit-button').click(function(e) {
+		
         // collects data from form and assigns to variables
         var userName = $('#username').val();
         var userAvatar = $('input[name=avatarRadios]:checked').val();
@@ -112,9 +94,26 @@ $(document).ready(function() {
                 break;
         }
 
+		if (userName && userAvatar) {
+			$('#userInfoModal').modal('hide');	
+			 e.preventDefault();
+        }
+	
+
     });
+    // ------ GAME 
     
-    //------------------ CARD DECK 
+    $.ajax({
+        type: "Get",
+        url: "../assets/data/cards.json",
+        dataType: "json",
+        success: function(cardsData) {
+
+        },
+        error: function() {
+            alert("json not found");
+        }
+    });
     
     // turns counter
     var flipCounter = 0;    
@@ -125,21 +124,19 @@ $(document).ready(function() {
 		// if game card is face down, on click: flips game card face up and plays audio.
 		if ($(this).hasClass('face-down')) {
 		    $(this).addClass('face-up').removeClass('face-down').find('audio')[0].play();
-		}
+        }
         
 		// counts flips, when 2 flips have been done the number of turns goes up by one.
         flipCounter++;
         
         if ((flipCounter % 2) == 0 ) {
             turnsCounter++; 
-            
-        var turnsCounted = ("Turns: " + turnsCounter);
-    
-        $('.turns-counter').text(turnsCounted);
-        }
+                
+            var turnsCounted = ("Turns: " + turnsCounter);
         
+            $('.turns-counter').text(turnsCounted);
+        }
     });
-    
     
     
 })

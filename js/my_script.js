@@ -28,19 +28,19 @@ $(document).ready(function() {
     // MUTE BUTTON
     
     // mute audio function, original code from: https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
-    var silence = false;
+    let silence = false;
 
     function muteAudio() {
     
-        var allaudio = document.getElementsByTagName('audio');
+        let allaudio = document.getElementsByTagName('audio');
         
         if (silence) {
-            for (var j = 0; j < allaudio.length; j++) {
+            for (let j = 0; j < allaudio.length; j++) {
             allaudio[j].muted = false;
             }
             silence = false;
         } else {
-            for (var j = 0; j < allaudio.length; j++) {
+            for (let j = 0; j < allaudio.length; j++) {
             allaudio[j].muted = true;
             }
             silence = true;
@@ -74,8 +74,8 @@ $(document).ready(function() {
      $('#user-info-submit-button').click(function(e) {
 		
         // collects data from form and assigns to variables
-        var userName = $('#username').val();
-        var userAvatar = $('input[name=avatarRadios]:checked').val();
+        let userName = $('#username').val();
+        let userAvatar = $('input[name=avatarRadios]:checked').val();
         
         $('.username').text(userName); 
         
@@ -103,34 +103,57 @@ $(document).ready(function() {
     });
     // ------ GAME 
     
-    displayCards = [];
+    let displayCardsArray = [];
+    let singleCardsArray = [];
+    let doubleCardsArray = [];
     
     $.ajax({
         type: "Get",
         url: "../assets/data/cards.json",
         data: 'data',
         dataType: 'json',
-        success: function(cardsData) {
-		    allCardsArray(cardsData)
+        success: function(data) {
+		    makeCardPack(data)
         },
         error: function() {
             alert("json not found");
         }
     });
     
-    // loops through first 6 cards in allCardsArray and adds them to displayCards array. 
-    function allCardsArray(cards) {
-    	for (i = 0; i < 5; i++) {
-    	    var obj = cards[i];
-            displayCards.push(obj);
+    // loops through first 6 cards in allCardsArray and adds them to doubleCardsArray. 
+    function makeCardPack(cards) {
+    	for (i = 0; i < 6; i++) {
+    	    let obj = cards[i];
+            singleCardsArray.push(obj);
+    	}
+    	
+    	doubleCardsArray = duplicateCards(singleCardsArray, 2) 
+    	
+    	// loop to randomize doubleCardsArray and push to displayCardsArray.
+    	for (i = 0; i < 12; i++) {
+    	    let randIndex = Math.floor(Math.random() * doubleCardsArray.length);
+            let rand = doubleCardsArray[randIndex];
+            doubleCardsArray.splice(randIndex, 1);
+            displayCardsArray.push(rand);
     	}
     }
     
-    console.log(displayCards);
+    function duplicateCards(elem, n){
+        // returns an array with element elem repeated n times.
+        let arr = [];
+    
+            for (let i = 0; i < n; i++) {
+                arr = arr.concat(elem);
+            };
+            doubleCardsArray = arr;
+            return doubleCardsArray;
+    }
+    console.log(displayCardsArray);
+
     
     // turns counter
-    var flipCounter = 0;    
-    var turnsCounter = 0;
+    let flipCounter = 0;    
+    let turnsCounter = 0;
     
     $('.flip-card').click(function() {
         
@@ -145,7 +168,7 @@ $(document).ready(function() {
         if ((flipCounter % 2) == 0 ) {
             turnsCounter++; 
                 
-            var turnsCounted = ("Turns: " + turnsCounter);
+            let turnsCounted = ("Turns: " + turnsCounter);
         
             $('.turns-counter').text(turnsCounted);
         }

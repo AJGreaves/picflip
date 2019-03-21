@@ -5,13 +5,15 @@ $(document).ready(function() {
         url: "../assets/data/cards.json",
         dataType: "json",
         success: function(cardsData) {
+            // write game logic in here
+            
             
         },
         error: function() {
             alert("json not found");
-            // If it's not found we handle errors here
         }
     });
+    
     
     //------------------ MODALS
     

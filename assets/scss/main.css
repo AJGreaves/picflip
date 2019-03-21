@@ -236,7 +236,8 @@ button p {
 .my-card-column-medium,
 .my-card-column-hard {
   /*see media queries below for adjustments to card column size to fit other screens*/
-  height: 130px; }
+  height: 130px;
+  padding: 0; }
 
 .card-container {
   /*see media queries below for adjustments to card size to fit other screens*/

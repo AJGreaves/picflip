@@ -107,9 +107,6 @@ $(document).ready(function() {
     
     $('.flip-card').click(function() {
         
-        //plays card flipping audio on click if card was face down
-      //  $(this).hasClass('face-down').find('audio')[0].play();
-        
 		// if game card is face down, on click: flips game card face up and plays audio.
 		if ($(this).hasClass('face-down')) {
 		    $(this).addClass('face-up').removeClass('face-down').find('audio')[0].play();

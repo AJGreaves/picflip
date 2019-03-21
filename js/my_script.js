@@ -120,17 +120,17 @@ $(document).ready(function() {
         }
     });
     
-    // loops through first 6 cards in allCardsArray and adds them to doubleCardsArray. 
+    // loops through first 8 cards in allCardsArray and adds them to doubleCardsArray. 
     function makeCardPack(cards) {
-    	for (i = 0; i < 6; i++) {
+    	for (i = 0; i < 8; i++) {
     	    let obj = cards[i];
             singleCardsArray.push(obj);
     	}
     	
     	doubleCardsArray = duplicateCards(singleCardsArray, 2) 
-    	
+    	let length = doubleCardsArray.length;
     	// loop to randomize doubleCardsArray and push to displayCardsArray.
-    	for (i = 0; i < 12; i++) {
+    	for (i = 0; i < length; i++) {
     	    let randIndex = Math.floor(Math.random() * doubleCardsArray.length);
             let rand = doubleCardsArray[randIndex];
             doubleCardsArray.splice(randIndex, 1);

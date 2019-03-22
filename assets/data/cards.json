@@ -4,143 +4,167 @@
    "name": "Cruz",
    "ID": 1,
    "url": "https://i.ibb.co/GJQYqrq/Cruz.jpg"
+   "class": "game-card-cruz"
  },
  {
    "category": "Cars",
    "name": "Doc",
    "ID": 2,
    "url": "https://i.ibb.co/N2d61bW/Doc.jpg"
+   "class": "game-card-doc"
  },
  {
    "category": "Cars",
    "name": "Fillmore",
    "ID": 3,
    "url": "https://i.ibb.co/8BGbs6d/Fillmore.jpg"
+   "class": "game-card-fillmore"
  },
  {
    "category": "Cars",
    "name": "Jackson-Storm",
    "ID": 4,
    "url": "https://i.ibb.co/8MxHcbd/Jackson-Storm.jpg"
+   "class": "game-card-jackson-storm"
  },
  {
    "category": "Cars",
    "name": "Lightning",
    "ID": 5,
    "url": "https://i.ibb.co/fXTswXC/lightning.jpg"
+   "class": "game-card-lightning"
  },
  {
    "category": "Cars",
    "name": "Mac",
    "ID": 6,
    "url": "https://i.ibb.co/PFTHfCH/Mac.jpg"
+   "class": "game-card-mac"
  },
  {
    "category": "Cars",
    "name": "Mater",
    "ID": 7,
    "url": "https://i.ibb.co/R3KNZtZ/Mater.jpg"
+   "class": "game-card-mater"
  },
  {
    "category": "Cars",
    "name": "Sally",
    "ID": 8,
    "url": "https://i.ibb.co/8svM53T/Sally.jpg"
+   "class": "game-card-sally"
  },
  {
    "category": "Frozen",
    "name": "Anna",
    "ID": 9,
    "url": "https://i.ibb.co/9qyMkQJ/Anna.jpg"
+   "class": "game-card-anna"
  },
  {
    "category": "Frozen",
    "name": "Elsa-Anna",
    "ID": 10,
    "url": "https://i.ibb.co/NKNX2qq/Elsa-Anna.jpg"
+   "class": "game-card-elsa-anna"
  },
  {
    "category": "Frozen",
    "name": "Elsa",
    "ID": 11,
    "url": "https://i.ibb.co/GvCLg87/Elsa.jpg"
+   "class": "game-card-elsa"
  },
  {
    "category": "Frozen",
    "name": "Hans",
    "ID": 12,
    "url": "https://i.ibb.co/tp2qxzM/Hans.jpg"
+   "class": "game-card-hans"
  },
  {
    "category": "Frozen",
    "name": "Kristoff",
    "ID": 13,
    "url": "https://i.ibb.co/JskWQhB/Kristoff.jpg"
+   "class": "game-card-kristoff"
  },
  {
    "category": "Frozen",
    "name": "Olaf-Sven",
    "ID": 14,
    "url": "https://i.ibb.co/WfPwybd/Olaf-Sven.jpg"
+   "class": "game-card-olaf-sven"
  },
  {
    "category": "Frozen",
    "name": "Olaf",
    "ID": 15,
    "url": "https://i.ibb.co/LtqC4cz/Olaf.jpg"
+   "class": "game-card-olaf"
  },
  {
    "category": "Frozen",
    "name": "Sven",
    "ID": 16,
    "url": "https://i.ibb.co/7SWWWrR/Sven.jpg"
+   "class": "game-card-sven"
  },
  {
    "category": "ToyStory",
    "name": "Alien",
    "ID": 17,
    "url": "https://i.ibb.co/gVWz130/alien.jpg"
+   "class": "game-card-alien"
  },
  {
    "category": "ToyStory",
    "name": "Bullseye",
    "ID": 18,
    "url": "https://i.ibb.co/0GPn4CN/Bullseye.jpg"
+   "class": "game-card-bullseye"
  },
  {
    "category": "ToyStory",
    "name": "Buzz",
    "ID": 19,
    "url": "https://i.ibb.co/WyhbvPT/Buzz.jpg"
+   "class": "game-card-buzz"
  },
  {
    "category": "ToyStory",
    "name": "Jessie",
    "ID": 20,
    "url": "https://i.ibb.co/2Sttw4m/Jessie.jpg"
+   "class": "game-card-jessie"
  },
  {
    "category": "ToyStory",
    "name": "Lotso",
    "ID": 21,
    "url": "https://i.ibb.co/WFBN3rC/Lotso.jpg"
+   "class": "game-card-lotso"
  },
  {
    "category": "ToyStory",
    "name": "Potato",
    "ID": 22,
    "url": "https://i.ibb.co/56ySCKB/Potato.jpg"
+   "class": "game-card-potato"
  },
  {
    "category": "ToyStory",
    "name": "Rex",
    "ID": 23,
    "url": "https://i.ibb.co/JvZZ4ht/rex.jpg"
+   "class": "game-card-rex"
  },
  {
    "category": "ToyStory",
    "name": "Woody",
    "ID": 24,
    "url": "https://i.ibb.co/rpjCZnK/Woody.jpg"
+   "class": "game-card-woody"
  }
 ]

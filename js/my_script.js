@@ -115,7 +115,10 @@ $(document).ready(function() {
         data: 'data',
         dataType: 'json',
         success: function(data) {
-		    makeCardPack(data)
+		    makeCardPack(data);
+            $('.flip-card-back').each(function(ind, val){
+                $(this).addClass(displayCardsArray[ind]['class']);
+            })
         },
         error: function() {
             alert("json not found");
@@ -152,9 +155,9 @@ $(document).ready(function() {
     }
     
     function shuffle(arr) {
-        let length = arr.length;
+        let len = arr.length;
         let arr2 = [];
-        for (i = 0; i < length; i++) {
+        for (i = 0; i < len; i++) {
         	    let randIndex = Math.floor(Math.random() * arr.length);
                 let rand = arr[randIndex];
                 arr.splice(randIndex, 1);
@@ -162,8 +165,6 @@ $(document).ready(function() {
         }
         return arr2;
     }
-    
-   // console.log(displayCardsArray);
     
     //creates new shuffled deck on button click
     $('.reset-btn').click(function () {
@@ -192,7 +193,8 @@ $(document).ready(function() {
             $('.turns-counter').text(turnsCounted);
         }
     });
+    console.log(displayCardsArray);
     
-    
+
 })
 

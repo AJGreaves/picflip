@@ -116,24 +116,28 @@ $(document).ready(function() {
         dataType: 'json',
         success: function(data) {
 		    makeCardPack(data);
-            $('.flip-card-back').each(function(ind, val){
-                $(this).addClass(displayCardsArray[ind]['class']);
-            })
+		    displayCards(data);
+         //   $('.flip-card-back').each(function(ind, val){
+         //       $(this).addClass(displayCardsArray[ind]['class']);
+         //   })
         },
         error: function() {
             alert("json not found");
         }
     });
     
-    // loops through first 8 cards in allCardsArray and adds them to doubleCardsArray. 
+    // function called in ajax to access data
+    // loops through first 8 cards in json and adds them to singleCardsArray. 
     function makeCardPack(cards) {
     	for (i = 0; i < 8; i++) {
     	    let obj = cards[i];
             singleCardsArray.push(obj);
     	}
     	
-    	doubleCardsArray = duplicateCards(singleCardsArray, 2) 
+    	//takes singleCardsArray and doubles it
+    	doubleCardsArray = duplicateCards(singleCardsArray) 
     	let length = doubleCardsArray.length;
+    	
     	// loop to randomize doubleCardsArray and push to displayCardsArray.
     	for (i = 0; i < length; i++) {
     	    let randIndex = Math.floor(Math.random() * doubleCardsArray.length);
@@ -143,11 +147,11 @@ $(document).ready(function() {
     	}
     }
     
-    function duplicateCards(elem, n){
-        // returns an array with element elem repeated n times.
+    function duplicateCards(elem){
+        // returns an array with element elem repeated twice.
         let arr = [];
     
-            for (let i = 0; i < n; i++) {
+            for (let i = 0; i < 2; i++) {
                 arr = arr.concat(elem);
             };
             doubleCardsArray = arr;
@@ -193,8 +197,13 @@ $(document).ready(function() {
             $('.turns-counter').text(turnsCounted);
         }
     });
-    console.log(displayCardsArray);
     
+    // function called in ajax to access data
+    function displayCards(cards){
+        $('.flip-card-back').each(function(ind, val){
+            $(this).addClass(displayCardsArray[ind]['class']);
+        })
+    }
 
 })
 

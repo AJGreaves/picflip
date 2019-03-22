@@ -117,9 +117,10 @@ $(document).ready(function() {
         success: function(data) {
 		    makeCardPack(data);
 		    displayCards(data);
-         //   $('.flip-card-back').each(function(ind, val){
-         //       $(this).addClass(displayCardsArray[ind]['class']);
-         //   })
+		    $('.reset-btn').click(function () {
+                displayCardsArray = shuffle(displayCardsArray);
+                displayCards(data);
+            }) 
         },
         error: function() {
             alert("json not found");
@@ -158,6 +159,7 @@ $(document).ready(function() {
             return doubleCardsArray;
     }
     
+    // shuffles cards
     function shuffle(arr) {
         let len = arr.length;
         let arr2 = [];
@@ -170,10 +172,13 @@ $(document).ready(function() {
         return arr2;
     }
     
-    //creates new shuffled deck on button click
-    $('.reset-btn').click(function () {
-       displayCardsArray = shuffle(displayCardsArray);
-    }) 
+
+    // creates new shuffled deck on button click
+
+//    $('.reset-btn').click(function () {
+//       displayCardsArray = shuffle(displayCardsArray);
+//    }) 
+
     
     // turns counter
     let flipCounter = 0;    

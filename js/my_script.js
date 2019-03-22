@@ -152,17 +152,23 @@ $(document).ready(function() {
     }
     
     function shuffle(arr) {
-    for (i = 0; i < length; i++) {
-    	    let randIndex = Math.floor(Math.random() * arr.length);
-            let rand = arr[randIndex];
-            arr.splice(randIndex, 1);
-            return arr;
-    	}
+        let length = arr.length;
+        let arr2 = [];
+        for (i = 0; i < length; i++) {
+        	    let randIndex = Math.floor(Math.random() * arr.length);
+                let rand = arr[randIndex];
+                arr.splice(randIndex, 1);
+                arr2.push(rand);
+        }
+        return arr2;
     }
     
-    console.log(displayCardsArray);
+   // console.log(displayCardsArray);
     
-    $('.reset-btn').click(shuffle(displayCardsArray)); //TO DO check this works when code to display cards is complete
+    //creates new shuffled deck on button click
+    $('.reset-btn').click(function () {
+       displayCardsArray = shuffle(displayCardsArray);
+    }) 
     
     // turns counter
     let flipCounter = 0;    

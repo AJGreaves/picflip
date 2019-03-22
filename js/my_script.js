@@ -206,6 +206,8 @@ $(document).ready(function() {
     // function called in ajax to access data
     function displayCards(cards){
         $('.flip-card-back').each(function(ind, val){
+            let lastClass = $(this).attr('class').split(' ').pop();
+            $(this).removeClass(lastClass);
             $(this).addClass(displayCardsArray[ind]['class']);
         })
     }

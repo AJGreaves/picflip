@@ -206,8 +206,10 @@ $(document).ready(function() {
     // function called in ajax to access data
     function displayCards(cards){
         $('.flip-card-back').each(function(ind, val){
+            //removes the last class from the html element
             let lastClass = $(this).attr('class').split(' ').pop();
             $(this).removeClass(lastClass);
+            // adds the class from the shuffled cards array
             $(this).addClass(displayCardsArray[ind]['class']);
         })
     }

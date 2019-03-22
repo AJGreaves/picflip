@@ -69,6 +69,8 @@ $(document).ready(function() {
         $('.my-card-column-hard').addClass('visible').removeClass('invisible');
     })
     
+    // RESET BUTTON
+    
     //------------------ USER DATA
     
      $('#user-info-submit-button').click(function(e) {
@@ -148,8 +150,19 @@ $(document).ready(function() {
             doubleCardsArray = arr;
             return doubleCardsArray;
     }
+    
+    function shuffle(arr) {
+    for (i = 0; i < length; i++) {
+    	    let randIndex = Math.floor(Math.random() * arr.length);
+            let rand = arr[randIndex];
+            arr.splice(randIndex, 1);
+            return arr;
+    	}
+    }
+    
     console.log(displayCardsArray);
-
+    
+    $('.reset-btn').click(shuffle(displayCardsArray)); //TO DO check this works when code to display cards is complete
     
     // turns counter
     let flipCounter = 0;    

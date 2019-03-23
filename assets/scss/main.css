@@ -378,6 +378,17 @@ button p {
 
 /* Horizontal flip when you click flip box container */
 .flip-card.face-up .flip-card-inner {
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
+
+.turnBack {
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
   transform: rotateY(180deg); }
 
 /* Positions the front and back side */
@@ -389,7 +400,14 @@ button p {
 
 /* Styles the back side */
 .flip-card-back {
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
   transform: rotateY(180deg); }
+
+.disabled {
+  pointer-events: none; }
 
 /*----------------------------------- MODALS */
 .my-modal-title {

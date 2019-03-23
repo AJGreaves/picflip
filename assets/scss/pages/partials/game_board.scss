@@ -181,7 +181,19 @@
 
 /* Horizontal flip when you click flip box container */
 .flip-card.face-up .flip-card-inner {
-    transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg); 
+}
+
+.turnBack {
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg); 
 }
 
 /* Positions the front and back side */
@@ -194,5 +206,13 @@
 
 /* Styles the back side */
 .flip-card-back {
-    transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg); 
 } 
+
+.disabled {
+    pointer-events: none; 
+}

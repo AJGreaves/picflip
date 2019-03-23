@@ -77,7 +77,7 @@ $('#hardButton').click(function() {
 
 $('.reset-btn').click(function () {
      displayCardsArray = shuffle(displayCardsArray);
-    displayCards(data);
+     displayCards(displayCardsArray);
 })
 
 //------------------ USER DATA

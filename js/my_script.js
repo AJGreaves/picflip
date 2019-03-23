@@ -76,17 +76,32 @@ $('#muteButton').click(function() {
 
 $('#easyButton').click(function() {
     $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
+    let num = howManyCards();
+    let newCards = makeCardPack(carsCardsArray, num);
+    displayCards(newCards);
 })
 
 $('#mediumButton').click(function() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('invisible').removeClass('visible');
+    let num = howManyCards();
+    let newCards = makeCardPack(carsCardsArray, num);
+    displayCards(newCards);
 })
 
 $('#hardButton').click(function() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('visible').removeClass('invisible');
+    let num = howManyCards();
+    let newCards = makeCardPack(carsCardsArray, num);
+    displayCards(newCards);
 })
+
+function howManyCards () {
+    let num = document.getElementsByClassName('visible').length;
+    let halfNum = (num/2);
+    return halfNum;
+}
 
 // RESET BUTTON
 
@@ -131,8 +146,10 @@ $('#user-info-submit-button').click(function(e) {
 
 // loops through first cards in card array and adds them to singleCardsArray. 
 function makeCardPack(arr, num) {
+    
+    let cutArray = cutDeck(arr,num);
     	
-    let doubleCardsArray = duplicateCards(arr);
+    let doubleCardsArray = duplicateCards(cutArray);
     let shuffledCardsArray = [];
 
 	// loop to randomize doubleCardsArray and push to displayCardsArray.
@@ -153,6 +170,12 @@ function duplicateCards(elem){
             arr = arr.concat(elem);
         };
         return arr;
+}
+
+// cuts the deck for different difficulty levels
+function cutDeck(arr, num) {
+    let cards = arr.slice(0, num);
+    return cards;
 }
 
 // shuffles cards
@@ -192,13 +215,13 @@ $('.flip-card').click(function() {
 });
 
 
-function displayCards(cards){
-    $('.flip-card-back').each(function(ind, val){
+function displayCards(cards){ //TO DO: THIS FUNCTION REMOVING TOO MANY CLASSES WHEN DIFFICULTY BUTTONS PUSHED.
+    $('.flip-card-back').each(function(i){
         //removes the last class from the html element
         let lastClass = $(this).attr('class').split(' ').pop();
         $(this).removeClass(lastClass);
         // adds the class from the shuffled cards array
-        $(this).addClass(cards[ind]);
+        $(this).addClass(cards[i]);
     })
 }
 

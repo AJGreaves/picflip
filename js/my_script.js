@@ -28,8 +28,18 @@ $('.btn').click(function() {
     $(this).children('audio')[0].play();
 });
 
+$('.cars-cover').click(function() {
+    displayCardsArray = makeCardPack(carsCardsArray, 8);
+    displayCards(displayCardsArray);
+})
+
 $('.frozen-cover').click(function() {
     displayCardsArray = makeCardPack(frozenCardsArray, 8);
+    displayCards(displayCardsArray);
+})
+
+$('.toystory-cover').click(function() {
+    displayCardsArray = makeCardPack(toystoryCardsArray, 8);
     displayCards(displayCardsArray);
 })
 

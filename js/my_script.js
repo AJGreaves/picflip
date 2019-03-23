@@ -3,7 +3,6 @@ $(document).ready(function() {
 // variables 
 
 let displayCardsArray = [];
-let doubleCardsArray = [];
 
 let carsCardsArray = ["cruz","lightning","mater","jackson-storm", "doc", "mac", "fillmore", "sally"];
 let frozenCardsArray = ["elsa","anna", "olaf", "kristoff", "hans", "sven", "elsa-anna", "olaf-sven"];
@@ -112,24 +111,16 @@ $('#user-info-submit-button').click(function(e) {
     }
 
 });
-// ------ GAME 
-
-makeCardPack(carsCardsArray, 8);
+// ------ GAME
 
 
 // loops through first cards in card array and adds them to singleCardsArray. 
 function makeCardPack(arr, num) {
-	for (i = 0; i < num; i++) {
-	    let obj = arr[i];
-        singleCardsArray.push(obj);
-	}
-	
-	//takes singleCardsArray and doubles it
-	doubleCardsArray = duplicateCards(singleCardsArray) 
-	let length = doubleCardsArray.length;
-	
+    	
+    let doubleCardsArray = duplicateCards(arr);
+
 	// loop to randomize doubleCardsArray and push to displayCardsArray.
-	for (i = 0; i < length; i++) {
+	for (i = 0; i < num*2; i++) {
 	    let randIndex = Math.floor(Math.random() * doubleCardsArray.length);
         let rand = doubleCardsArray[randIndex];
         doubleCardsArray.splice(randIndex, 1);
@@ -144,8 +135,7 @@ function duplicateCards(elem){
         for (let i = 0; i < 2; i++) {
             arr = arr.concat(elem);
         };
-        doubleCardsArray = arr;
-        return doubleCardsArray;
+        return arr;
 }
 
 // shuffles cards
@@ -195,5 +185,6 @@ function displayCards(cards){
     })
 }
 
-
+makeCardPack(carsCardsArray, 8);
+displayCards(displayCardsArray);
 })

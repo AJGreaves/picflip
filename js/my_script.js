@@ -172,21 +172,13 @@ $(document).ready(function() {
         return arr2;
     }
     
-
-    // creates new shuffled deck on button click
-
-//    $('.reset-btn').click(function () {
-//       displayCardsArray = shuffle(displayCardsArray);
-//    }) 
-
-    
     // turns counter
     let flipCounter = 0;    
     let turnsCounter = 0;
     
     $('.flip-card').click(function() {
         
-		// if game card is face down, on click: flips game card face up and plays audio.
+    	// if game card is face down, on click: flips game card face up and plays audio.
 		if ($(this).hasClass('face-down')) {
 		    $(this).addClass('face-up').removeClass('face-down').find('audio')[0].play();
         }
@@ -200,7 +192,7 @@ $(document).ready(function() {
             let turnsCounted = ("Turns: " + turnsCounter);
         
             $('.turns-counter').text(turnsCounted);
-        }
+        } 
     });
     
     // function called in ajax to access data
@@ -213,6 +205,19 @@ $(document).ready(function() {
             $(this).addClass(displayCardsArray[ind]['class']);
         })
     }
+
+  /* TO DO: ADD CLASS NAME FOR FLIPPED STATE 
+    function checkMatch() {
+        if ($('.face-up').length == 2) {
+            if ($('face-up').find('.flip-card-back').first(lastClass) == $('face-up').find('.flip-card-back').last(lastClass)) {
+                setTimeout(function() {
+                    $('face-up').each(function() {
+                        $(this).
+                    })
+                })
+            }
+        }
+    } */
 
 })
 

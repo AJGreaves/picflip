@@ -28,6 +28,11 @@ $('.btn').click(function() {
     $(this).children('audio')[0].play();
 });
 
+$('.frozen-cover').click(function() {
+    displayCardsArray = makeCardPack(frozenCardsArray, 8);
+    displayCards(displayCardsArray);
+})
+
 
 // MUTE BUTTON
 
@@ -118,14 +123,16 @@ $('#user-info-submit-button').click(function(e) {
 function makeCardPack(arr, num) {
     	
     let doubleCardsArray = duplicateCards(arr);
+    let shuffledCardsArray = [];
 
 	// loop to randomize doubleCardsArray and push to displayCardsArray.
 	for (i = 0; i < num*2; i++) {
 	    let randIndex = Math.floor(Math.random() * doubleCardsArray.length);
         let rand = doubleCardsArray[randIndex];
         doubleCardsArray.splice(randIndex, 1);
-        displayCardsArray.push(rand);
+        shuffledCardsArray.push(rand);
 	}
+	return shuffledCardsArray;
 }
 
 function duplicateCards(elem){
@@ -181,10 +188,10 @@ function displayCards(cards){
         let lastClass = $(this).attr('class').split(' ').pop();
         $(this).removeClass(lastClass);
         // adds the class from the shuffled cards array
-        $(this).addClass(displayCardsArray[ind]);
+        $(this).addClass(cards[ind]);
     })
 }
 
-makeCardPack(carsCardsArray, 8);
+displayCardsArray = makeCardPack(carsCardsArray, 8);
 displayCards(displayCardsArray);
 })

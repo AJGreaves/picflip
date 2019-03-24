@@ -7,116 +7,19 @@ let frozenCardsArray = ["elsa","anna", "olaf", "kristoff", "hans", "sven", "elsa
 let toystoryCardsArray = ["woody","buzz","rex","alien","jessie","potato","lotso","bullseye"];
 let displayCardsArray = [];
 let activeCardsArray = carsCardsArray;
+let silence = false;
 
 //------------------ MODALS
 
+//--- User Data Modal
 
-
-// background on user info modal can't be clicked away, input must be given first
+// background on user data modal can't be clicked away, input must be given first
 $(".show-modal").click(function(){
     $("#userInfoModal").modal({
         backdrop: 'static',
         keyboard: false
     });
 });
-
-
-//------------------ BUTTONS
-
-$('.btn').click(function() {
-    $(this).children('audio')[0].play();
-});
-
-$('.cars-cover').click(function() {
-    activeCardsArray = carsCardsArray;
-    let num = howManyCards();
-    let Cards = makeCardPack(activeCardsArray, num);
-    displayCards(Cards);
-})
-
-$('.frozen-cover').click(function() {
-    activeCardsArray = frozenCardsArray;
-    let num = howManyCards();
-    let Cards = makeCardPack(activeCardsArray, num);
-    displayCards(Cards);
-})
-
-$('.toystory-cover').click(function() {
-    activeCardsArray = toystoryCardsArray;
-    let num = howManyCards();
-    let Cards = makeCardPack(activeCardsArray, num);
-    displayCards(Cards);
-})
-
-
-// MUTE BUTTON
-
-// mute audio function, original code from: https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
-let silence = false;
-
-function muteAudio() {
-
-    let allaudio = document.getElementsByTagName('audio');
-    
-    if (silence) {
-        for (let j = 0; j < allaudio.length; j++) {
-        allaudio[j].muted = false;
-        }
-        silence = false;
-    } else {
-        for (let j = 0; j < allaudio.length; j++) {
-        allaudio[j].muted = true;
-        }
-        silence = true;
-    }
-}
-
-$('#muteButton').click(function() {
-    muteAudio();
-    //toggles between icons on mute button
-    $('#muteButton i').toggleClass('fa-volume-off');
-});
-
-// DIFFICULTY SELECT BUTTONS
-
-$('#easyButton').click(function() {
-    $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
-    let num = howManyCards();
-    let newCards = makeCardPack(activeCardsArray, num);
-    displayCards(newCards);
-})
-
-$('#mediumButton').click(function() {
-    $('.my-card-column-medium').addClass('visible').removeClass('invisible');
-    $('.my-card-column-hard').addClass('invisible').removeClass('visible');
-    let num = howManyCards();
-    let newCards = makeCardPack(activeCardsArray, num);
-    displayCards(newCards);
-})
-
-$('#hardButton').click(function() {
-    $('.my-card-column-medium').addClass('visible').removeClass('invisible');
-    $('.my-card-column-hard').addClass('visible').removeClass('invisible');
-    let num = howManyCards();
-    let newCards = makeCardPack(activeCardsArray, num);
-    displayCards(newCards);
-})
-
-function howManyCards () {
-    let num = document.getElementsByClassName('visible').length;
-    let halfNum = (num/2);
-    return halfNum;
-}
-
-// RESET BUTTON
-
-$('.reset-btn').click(function () {
-    let num = howManyCards();
-    let Cards = makeCardPack(activeCardsArray, num);
-    displayCards(Cards);
-})
-
-//------------------ USER DATA
 
 $('#user-info-submit-button').click(function(e) {
 	
@@ -147,10 +50,108 @@ $('#user-info-submit-button').click(function(e) {
     }
 
 });
-// ------ GAME
 
 
-// loops through first cards in card array and adds them to singleCardsArray. 
+//------------------ BUTTONS
+
+//--- play button click
+$('.btn').click(function() {
+    $(this).children('audio')[0].play();
+});
+
+//--- style selection buttons
+$('.cars-cover').click(function() {
+    activeCardsArray = carsCardsArray;
+    let num = howManyCards();
+    let Cards = makeCardPack(activeCardsArray, num);
+    displayCards(Cards);
+})
+
+$('.frozen-cover').click(function() {
+    activeCardsArray = frozenCardsArray;
+    let num = howManyCards();
+    let Cards = makeCardPack(activeCardsArray, num);
+    displayCards(Cards);
+})
+
+$('.toystory-cover').click(function() {
+    activeCardsArray = toystoryCardsArray;
+    let num = howManyCards();
+    let Cards = makeCardPack(activeCardsArray, num);
+    displayCards(Cards);
+})
+
+
+//--- mute button
+
+// mute audio function, original code from: https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
+
+function muteAudio() {
+
+    let allaudio = document.getElementsByTagName('audio');
+    
+    if (silence) {
+        for (let j = 0; j < allaudio.length; j++) {
+        allaudio[j].muted = false;
+        }
+        silence = false;
+    } else {
+        for (let j = 0; j < allaudio.length; j++) {
+        allaudio[j].muted = true;
+        }
+        silence = true;
+    }
+}
+
+$('#muteButton').click(function() {
+    muteAudio();
+    //toggles between icons on mute button
+    $('#muteButton i').toggleClass('fa-volume-off');
+});
+
+//--- difficulty selection buttons
+
+$('#easyButton').click(function() {
+    $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
+    let num = howManyCards();
+    let newCards = makeCardPack(activeCardsArray, num);
+    displayCards(newCards);
+})
+
+$('#mediumButton').click(function() {
+    $('.my-card-column-medium').addClass('visible').removeClass('invisible');
+    $('.my-card-column-hard').addClass('invisible').removeClass('visible');
+    let num = howManyCards();
+    let newCards = makeCardPack(activeCardsArray, num);
+    displayCards(newCards);
+})
+
+$('#hardButton').click(function() {
+    $('.my-card-column-medium').addClass('visible').removeClass('invisible');
+    $('.my-card-column-hard').addClass('visible').removeClass('invisible');
+    let num = howManyCards();
+    let newCards = makeCardPack(activeCardsArray, num);
+    displayCards(newCards);
+})
+
+//--- Reset button
+
+$('.reset-btn').click(function () {
+    let num = howManyCards();
+    let Cards = makeCardPack(activeCardsArray, num);
+    displayCards(Cards);
+})
+
+function howManyCards () {
+    let num = document.getElementsByClassName('visible').length;
+    let halfNum = (num/2);
+    return halfNum;
+}
+
+
+//------------------ GAME
+
+// creates pack by cutting difficulty selection, then duplicating, shuffling then returning it. 
 function makeCardPack(arr, num) {
     
     let cutArray = cutDeck(arr,num);
@@ -168,8 +169,8 @@ function makeCardPack(arr, num) {
 	return shuffledCardsArray;
 }
 
+// returns an array with element elem repeated twice.
 function duplicateCards(elem){
-    // returns an array with element elem repeated twice.
     let arr = [];
 
         for (let i = 0; i < 2; i++) {
@@ -183,19 +184,6 @@ function cutDeck(arr, num) {
     let cards = arr.slice(0, num);
     return cards;
 }
-
-// shuffles cards
-/*function shuffle(arr) {
-    let len = arr.length;
-    let arr2 = [];
-    for (i = 0; i < len; i++) {
-    	    let randIndex = Math.floor(Math.random() * arr.length);
-            let rand = arr[randIndex];
-            arr.splice(randIndex, 1);
-            arr2.push(rand);
-    }
-    return arr2;
-}*/
 
 // turns counter
 let flipCounter = 0;    
@@ -221,7 +209,7 @@ $('.flip-card').click(function() {
 });
 
 
-function displayCards(cards){ //TO DO: THIS FUNCTION REMOVING TOO MANY CLASSES WHEN DIFFICULTY BUTTONS PUSHED.
+function displayCards(cards){ 
     $('.flip-card-back').each(function(i){
         //finds the last class in html element and assigns it to lastClass
         let lastClass = $(this).attr('class').split(' ').pop();
@@ -235,6 +223,7 @@ function displayCards(cards){ //TO DO: THIS FUNCTION REMOVING TOO MANY CLASSES W
     });
 }
 
+//default setting for cards when page is first loaded
 displayCardsArray = makeCardPack(carsCardsArray, 8);
 displayCards(displayCardsArray);
 })

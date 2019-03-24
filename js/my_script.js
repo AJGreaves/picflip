@@ -217,12 +217,17 @@ $('.flip-card').click(function() {
 
 function displayCards(cards){ //TO DO: THIS FUNCTION REMOVING TOO MANY CLASSES WHEN DIFFICULTY BUTTONS PUSHED.
     $('.flip-card-back').each(function(i){
-        //removes the last class from the html element
+        //finds the last class in html element
+     //   debugger;
         let lastClass = $(this).attr('class').split(' ').pop();
-        $(this).removeClass(lastClass);
+        // need to keep 'game-card' class, so only remove class if it is 
+        if (lastClass == 'game-card') {
+            $(this).addClass('game-card').addClass(cards[i]);;
+        } else {
         // adds the class from the shuffled cards array
-        $(this).addClass(cards[i]);
-    })
+        $(this).removeClass(lastClass).addClass(cards[i]);
+        }
+    });
 }
 
 displayCardsArray = makeCardPack(carsCardsArray, 8);

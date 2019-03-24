@@ -29,7 +29,6 @@ let correctBing = document.createElement('audio');
 let applause = document.createElement('audio');
     applause.setAttribute('src', '../assets/audio/applause.mp3');
     
-    
 
 //------------------ MODALS
 

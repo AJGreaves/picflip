@@ -54,6 +54,16 @@ $('#user-info-submit-button').click(function(e) {
 
 });
 
+//--- Win Modal
+
+function checkForWin() {
+    if ($('.matched').length == ('.visible').length) {
+        $('#winModal').modal('show');
+    } else {
+        return;
+    }
+}
+
 
 //------------------ BUTTONS
 
@@ -257,6 +267,9 @@ function checkMatch() {
                 countSelected = 0;
                 flipCounter++;
                 countTurns();
+                setTimeout(function() {
+                    checkForWin();
+                }, 1000);
             })
         } else {
             // turn cards back over if not matched 

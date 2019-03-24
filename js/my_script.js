@@ -139,9 +139,13 @@ $('#hardButton').click(function() {
 //--- Reset button
 
 $('.reset-btn').click(function () {
+    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
     let num = howManyCards();
     let Cards = makeCardPack(activeCardsArray, num);
-    displayCards(Cards);
+    // delays new cards being displayed until cards have flipped back over
+    setTimeout(function() {
+      displayCards(Cards);  
+    },500);
 })
 
 function howManyCards () {

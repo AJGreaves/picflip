@@ -57,7 +57,10 @@ $('#user-info-submit-button').click(function(e) {
 //--- Win Modal
 
 function checkForWin() {
-    if ($('.matched').length == ('.visible').length) {
+    let matchedNum = $('.matched').length;
+    let visibleNum = $('.visible').length;
+   // debugger;
+    if (matchedNum == visibleNum) {
         $('#winModal').modal('show');
     } else {
         return;

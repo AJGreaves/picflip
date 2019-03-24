@@ -63,24 +63,42 @@ $('.btn').click(function() {
 
 //--- style selection buttons
 $('.cars-cover').click(function() {
+    // flips and face-up cards back over
+    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
+    // makes a new pack of cards, size depending on difficulty setting
     activeCardsArray = carsCardsArray;
     let num = howManyCards();
     let Cards = makeCardPack(activeCardsArray, num);
-    displayCards(Cards);
+    // delays new cards being displayed until cards have flipped back over
+    setTimeout(function() {
+      displayCards(Cards);  
+    },500);
 })
 
 $('.frozen-cover').click(function() {
+    // flips and face-up cards back over
+    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
+    // makes a new pack of cards, size depending on difficulty setting
     activeCardsArray = frozenCardsArray;
     let num = howManyCards();
     let Cards = makeCardPack(activeCardsArray, num);
-    displayCards(Cards);
+    // delays new cards being displayed until cards have flipped back over
+    setTimeout(function() {
+      displayCards(Cards);  
+    },500);
 })
 
 $('.toystory-cover').click(function() {
+    // flips and face-up cards back over
+    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
+    // makes a new pack of cards, size depending on difficulty setting
     activeCardsArray = toystoryCardsArray;
     let num = howManyCards();
     let Cards = makeCardPack(activeCardsArray, num);
-    displayCards(Cards);
+    // delays new cards being displayed until cards have flipped back over
+    setTimeout(function() {
+      displayCards(Cards);  
+    },500);
 })
 
 
@@ -114,32 +132,52 @@ $('#muteButton').click(function() {
 //--- difficulty selection buttons
 
 $('#easyButton').click(function() {
+    // flips and face-up cards back over
+    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
+    // makes a new pack of cards, size depending on difficulty setting
     $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
     let num = howManyCards();
     let newCards = makeCardPack(activeCardsArray, num);
-    displayCards(newCards);
+    // delays new cards being displayed until cards have flipped back over
+    setTimeout(function() {
+      displayCards(newCards);  
+    },500);
 })
 
 $('#mediumButton').click(function() {
+    // flips and face-up cards back over
+    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
+    // makes a new pack of cards, size depending on difficulty setting
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('invisible').removeClass('visible');
     let num = howManyCards();
     let newCards = makeCardPack(activeCardsArray, num);
-    displayCards(newCards);
+    // delays new cards being displayed until cards have flipped back over
+    setTimeout(function() {
+      displayCards(newCards);  
+    },500);
 })
 
 $('#hardButton').click(function() {
+    // flips and face-up cards back over
+    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
+    // makes a new pack of cards, size depending on difficulty setting
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('visible').removeClass('invisible');
     let num = howManyCards();
     let newCards = makeCardPack(activeCardsArray, num);
-    displayCards(newCards);
+    // delays new cards being displayed until cards have flipped back over
+    setTimeout(function() {
+      displayCards(newCards);  
+    },500);
 })
 
 //--- Reset button
 
 $('.reset-btn').click(function () {
+    // flips and face-up cards back over
     $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
+    // makes a new pack of cards, size depending on difficulty setting
     let num = howManyCards();
     let Cards = makeCardPack(activeCardsArray, num);
     // delays new cards being displayed until cards have flipped back over
@@ -252,7 +290,7 @@ function checkMatch() {
         //if cards match, leave them face up and disabled
         if (first == second) {
             $('.selected').each(function(x) {
-                $(this).removeClass('selected not-selected').addClass('matched disabled');
+                $(this).removeClass('selected').addClass('matched disabled');
                 $('.not-matched').removeClass('disabled');
                 counter = 0;
                 countTurns();
@@ -261,7 +299,7 @@ function checkMatch() {
             // turn cards back over if not matched 
             setTimeout(function() {
                 $('.selected').each(function(x) {
-                    $(this).removeClass('face-up selected disabled').addClass('face-down not-selected');
+                    $(this).removeClass('face-up selected disabled').addClass('face-down');
                     $('.not-matched').removeClass('disabled');
                     counter = 0;
                     countTurns();

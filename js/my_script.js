@@ -244,7 +244,7 @@ function checkMatch() {
         // turn cards back over if not matched 
         setTimeout(function() {
             $('.selected').each(function(x) {
-                $(this).removeClass('face-up selected disabled');
+                $(this).removeClass('face-up selected disabled').addClass('face-down');
             })
         },1000);  
     }

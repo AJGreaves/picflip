@@ -191,10 +191,9 @@ function cutDeck(arr, num) {
 
 // turns counter
 
-$('.face-down').click(function() {
-// counts flips, when 2 flips have been done the number of turns goes up by one.
- flipCounter++;
-
+function countTurns() {
+    // counts flips, when 2 flips have been done the number of turns goes up by one.
+    flipCounter++;
     if ((flipCounter % 2) == 0 ) {
         turnsCounter++; 
             
@@ -202,8 +201,7 @@ $('.face-down').click(function() {
     
         $('.turns-counter').text(turnsCounted);
     }
-    
-});
+}
 
 let counter = 0;
 
@@ -253,6 +251,7 @@ function checkMatch() {
                 $(this).removeClass('selected not-selected').addClass('matched disabled');
                 $('.not-matched').removeClass('disabled');
                 counter = 0;
+                countTurns();
             })
         } else {
             // turn cards back over if not matched 
@@ -261,6 +260,7 @@ function checkMatch() {
                     $(this).removeClass('face-up selected disabled').addClass('face-down not-selected');
                     $('.not-matched').removeClass('disabled');
                     counter = 0;
+                    countTurns();
                 })
             },1000);  
         }

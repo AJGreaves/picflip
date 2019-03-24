@@ -193,11 +193,11 @@ $('.flip-card').click(function() {
     
 	// if game card is face down, on click: flips game card face up and plays audio.
 	if ($(this).hasClass('face-down')) {
-	    $(this).addClass('face-up').removeClass('face-down').find('audio')[0].play();
+	    $(this).addClass('face-up').addClass('disabled').addClass('selected').removeClass('face-down').find('audio')[0].play();
     }
     
 	// counts flips, when 2 flips have been done the number of turns goes up by one.
-    flipCounter++;
+   /* flipCounter++;
     
     if ((flipCounter % 2) == 0 ) {
         turnsCounter++; 
@@ -205,23 +205,51 @@ $('.flip-card').click(function() {
         let turnsCounted = ("Turns: " + turnsCounter);
     
         $('.turns-counter').text(turnsCounted);
-    } 
+        
+    } */
+    
+    if (document.getElementsByClassName('selected').length == 2) {
+        checkMatch();
+    } else {
+        return;
+    }
+    
 });
 
-
+// displays cards
 function displayCards(cards){ 
     $('.flip-card-back').each(function(i){
         //finds the last class in html element and assigns it to lastClass
         let lastClass = $(this).attr('class').split(' ').pop();
         // need to keep 'game-card' class, so add it back in and add card from suffled array 
         if (lastClass == 'game-card') {
-            $(this).addClass('game-card').addClass(cards[i]);;
+            $(this).addClass('game-card').addClass(cards[i]);
         } else {
         // adds the class from the shuffled cards array
         $(this).removeClass(lastClass).addClass(cards[i]);
         }
     });
 }
+
+function checkMatch() {
+    let first = $('.selected').first().find('.flip-card-back').attr('class');
+    let second = $('.selected').last().find('.flip-card-back').attr('class');
+
+    //if cards match, leave them face up and disabled
+    if (first == second) {
+        $('.selected').each(function(x) {
+            $(this).removeClass('selected').addClass('matched disabled');
+        })
+    } else {
+        // turn cards back over if not matched 
+        setTimeout(function() {
+            $('.selected').each(function(x) {
+                $(this).removeClass('face-up selected disabled');
+            })
+        },1000);  
+    }
+}
+
 
 //default setting for cards when page is first loaded
 displayCardsArray = makeCardPack(carsCardsArray, 8);

@@ -185,7 +185,7 @@ function cutDeck(arr, num) {
 }
 
 // shuffles cards
-function shuffle(arr) {
+/*function shuffle(arr) {
     let len = arr.length;
     let arr2 = [];
     for (i = 0; i < len; i++) {
@@ -195,7 +195,7 @@ function shuffle(arr) {
             arr2.push(rand);
     }
     return arr2;
-}
+}*/
 
 // turns counter
 let flipCounter = 0;    

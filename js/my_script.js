@@ -2,12 +2,11 @@ $(document).ready(function() {
     
 // variables 
 
-let displayCardsArray = [];
-
 let carsCardsArray = ["cruz","lightning","mater","jackson-storm", "doc", "mac", "fillmore", "sally"];
 let frozenCardsArray = ["elsa","anna", "olaf", "kristoff", "hans", "sven", "elsa-anna", "olaf-sven"];
 let toystoryCardsArray = ["woody","buzz","rex","alien","jessie","potato","lotso","bullseye"];
-
+let displayCardsArray = [];
+let activeCardsArray = toystoryCardsArray;
 
 //------------------ MODALS
 
@@ -29,18 +28,24 @@ $('.btn').click(function() {
 });
 
 $('.cars-cover').click(function() {
-    displayCardsArray = makeCardPack(carsCardsArray, 8);
-    displayCards(displayCardsArray);
+    activeCardsArray = carsCardsArray;
+    let num = howManyCards();
+    let Cards = makeCardPack(activeCardsArray, num);
+    displayCards(Cards);
 })
 
 $('.frozen-cover').click(function() {
-    displayCardsArray = makeCardPack(frozenCardsArray, 8);
-    displayCards(displayCardsArray);
+    activeCardsArray = frozenCardsArray;
+    let num = howManyCards();
+    let Cards = makeCardPack(activeCardsArray, num);
+    displayCards(Cards);
 })
 
 $('.toystory-cover').click(function() {
-    displayCardsArray = makeCardPack(toystoryCardsArray, 8);
-    displayCards(displayCardsArray);
+    activeCardsArray = toystoryCardsArray;
+    let num = howManyCards();
+    let Cards = makeCardPack(activeCardsArray, num);
+    displayCards(Cards);
 })
 
 
@@ -77,7 +82,7 @@ $('#muteButton').click(function() {
 $('#easyButton').click(function() {
     $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
     let num = howManyCards();
-    let newCards = makeCardPack(carsCardsArray, num);
+    let newCards = makeCardPack(activeCardsArray, num);
     displayCards(newCards);
 })
 
@@ -85,7 +90,7 @@ $('#mediumButton').click(function() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('invisible').removeClass('visible');
     let num = howManyCards();
-    let newCards = makeCardPack(carsCardsArray, num);
+    let newCards = makeCardPack(activeCardsArray, num);
     displayCards(newCards);
 })
 
@@ -93,7 +98,7 @@ $('#hardButton').click(function() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('visible').removeClass('invisible');
     let num = howManyCards();
-    let newCards = makeCardPack(carsCardsArray, num);
+    let newCards = makeCardPack(activeCardsArray, num);
     displayCards(newCards);
 })
 
@@ -106,7 +111,7 @@ function howManyCards () {
 // RESET BUTTON
 
 $('.reset-btn').click(function () {
-     displayCardsArray = shuffle(displayCardsArray);
+     displayCardsArray = shuffle(activeCardsArray);
      displayCards(displayCardsArray);
 })
 
@@ -217,10 +222,9 @@ $('.flip-card').click(function() {
 
 function displayCards(cards){ //TO DO: THIS FUNCTION REMOVING TOO MANY CLASSES WHEN DIFFICULTY BUTTONS PUSHED.
     $('.flip-card-back').each(function(i){
-        //finds the last class in html element
-     //   debugger;
+        //finds the last class in html element and assigns it to lastClass
         let lastClass = $(this).attr('class').split(' ').pop();
-        // need to keep 'game-card' class, so only remove class if it is 
+        // need to keep 'game-card' class, so add it back in and add card from suffled array 
         if (lastClass == 'game-card') {
             $(this).addClass('game-card').addClass(cards[i]);;
         } else {

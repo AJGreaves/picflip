@@ -12,6 +12,25 @@ let flipCounter = 0;
 let turnsCounter = 0;
 let countSelected = 0;
 
+// audio elements
+
+let fanfare = document.createElement('audio');
+    fanfare.setAttribute('src', '../assets/audio/fanfare.flac');
+
+let buttonClick = document.createElement('audio');
+    buttonClick.setAttribute('src', '../assets/audio/button.mp3');
+    
+let cardFlip = document.createElement('audio');
+    cardFlip.setAttribute('src', '../assets/audio/card-flip.wav');
+    
+let correctBing = document.createElement('audio');
+    correctBing.setAttribute('src', '../assets/audio/correct.wav');
+    
+let applause = document.createElement('audio');
+    applause.setAttribute('src', '../assets/audio/applause.mp3');
+    
+    
+
 //------------------ MODALS
 
 //--- User Data Modal
@@ -62,6 +81,7 @@ function checkForWin() {
    // debugger;
     if (matchedNum == visibleNum) {
         $('#winModal').modal('show');
+        fanfare.play();
     } else {
         return;
     }
@@ -72,7 +92,7 @@ function checkForWin() {
 
 //--- play button click
 $('.btn').click(function() {
-    $(this).children('audio')[0].play();
+    buttonClick.play();
 });
 
 //--- style selection buttons
@@ -118,7 +138,6 @@ $('.reset-btn').click(function () {
 
 $('#win-modal-close-btn').click(function () {
     resetGame();
-  //  debugger;
     $('#winModal').modal('hide');
 })
 
@@ -232,8 +251,9 @@ function countTurns() {
 $('.flip-card').click(function() {
     
     if (checkCounter()) {
+        cardFlip.play();
         if ($(this).hasClass('face-down')) {
-            $(this).addClass('face-up disabled selected').removeClass('face-down').find('audio')[0].play();
+            $(this).addClass('face-up disabled selected').removeClass('face-down');
         }
         checkMatch();
     } 
@@ -278,8 +298,11 @@ function checkMatch() {
                 flipCounter++;
                 countTurns();
                 setTimeout(function() {
+                    correctBing.play();
+                }, 800);
+                setTimeout(function() {
                     checkForWin();
-                }, 1000);
+                }, 1500);
             })
         } else {
             // turn cards back over if not matched 

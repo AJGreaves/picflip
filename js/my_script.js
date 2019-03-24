@@ -8,6 +8,8 @@ let toystoryCardsArray = ["woody","buzz","rex","alien","jessie","potato","lotso"
 let displayCardsArray = [];
 let activeCardsArray = carsCardsArray;
 let silence = false;
+let flipCounter = 0;    
+let turnsCounter = 0;
 
 //------------------ MODALS
 
@@ -185,36 +187,44 @@ function cutDeck(arr, num) {
     return cards;
 }
 
-// turns counter
-let flipCounter = 0;    
-let turnsCounter = 0;
 
-$('.flip-card').click(function() {
-    
-	// if game card is face down, on click: flips game card face up and plays audio.
-	if ($(this).hasClass('face-down')) {
-	    $(this).addClass('face-up').addClass('disabled').addClass('selected').removeClass('face-down').find('audio')[0].play();
-    }
-    
-	// counts flips, when 2 flips have been done the number of turns goes up by one.
-   /* flipCounter++;
-    
+
+// turns counter
+
+$('.face-down').click(function() {
+// counts flips, when 2 flips have been done the number of turns goes up by one.
+ flipCounter++;
+
     if ((flipCounter % 2) == 0 ) {
         turnsCounter++; 
             
         let turnsCounted = ("Turns: " + turnsCounter);
     
         $('.turns-counter').text(turnsCounted);
-        
-    } */
-    
-    if (document.getElementsByClassName('selected').length == 2) {
-        checkMatch();
-    } else {
-        return;
     }
     
 });
+
+let counter = 0;
+
+// flips cards over on click, only allows two clicks at a time. 
+$('.flip-card').click(function() {
+    if (checkCounter()) {
+        if ($(this).hasClass('face-down')) {
+            $(this).addClass('face-up disabled selected').removeClass('face-down').find('audio')[0].play();
+        }
+        checkMatch();
+    } 
+})
+
+function checkCounter() {
+    counter++;
+    if (counter <= 2) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 // displays cards
 function displayCards(cards){ 
@@ -232,21 +242,30 @@ function displayCards(cards){
 }
 
 function checkMatch() {
-    let first = $('.selected').first().find('.flip-card-back').attr('class');
-    let second = $('.selected').last().find('.flip-card-back').attr('class');
 
-    //if cards match, leave them face up and disabled
-    if (first == second) {
-        $('.selected').each(function(x) {
-            $(this).removeClass('selected').addClass('matched disabled');
-        })
-    } else {
-        // turn cards back over if not matched 
-        setTimeout(function() {
+    if (document.getElementsByClassName('selected').length == 2) {
+        let first = $('.selected').eq(0).find('.flip-card-back').attr('class');
+        let second = $('.selected').eq(1).find('.flip-card-back').attr('class');
+
+        //if cards match, leave them face up and disabled
+        if (first == second) {
             $('.selected').each(function(x) {
-                $(this).removeClass('face-up selected disabled').addClass('face-down');
+                $(this).removeClass('selected not-selected').addClass('matched disabled');
+                $('.not-matched').removeClass('disabled');
+                counter = 0;
             })
-        },1000);  
+        } else {
+            // turn cards back over if not matched 
+            setTimeout(function() {
+                $('.selected').each(function(x) {
+                    $(this).removeClass('face-up selected disabled').addClass('face-down not-selected');
+                    $('.not-matched').removeClass('disabled');
+                    counter = 0;
+                })
+            },1000);  
+        }
+    } else {
+        return;
     }
 }
 

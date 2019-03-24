@@ -10,6 +10,7 @@ let activeCardsArray = carsCardsArray;
 let silence = false;
 let flipCounter = 0;    
 let turnsCounter = 0;
+let countSelected = 0;
 
 //------------------ MODALS
 
@@ -63,44 +64,64 @@ $('.btn').click(function() {
 
 //--- style selection buttons
 $('.cars-cover').click(function() {
-    // flips and face-up cards back over
-    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
-    // makes a new pack of cards, size depending on difficulty setting
     activeCardsArray = carsCardsArray;
-    let num = howManyCards();
-    let Cards = makeCardPack(activeCardsArray, num);
-    // delays new cards being displayed until cards have flipped back over
-    setTimeout(function() {
-      displayCards(Cards);  
-    },500);
+    resetGame();
 })
 
 $('.frozen-cover').click(function() {
-    // flips and face-up cards back over
-    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
-    // makes a new pack of cards, size depending on difficulty setting
     activeCardsArray = frozenCardsArray;
-    let num = howManyCards();
-    let Cards = makeCardPack(activeCardsArray, num);
-    // delays new cards being displayed until cards have flipped back over
-    setTimeout(function() {
-      displayCards(Cards);  
-    },500);
+    resetGame();
 })
 
 $('.toystory-cover').click(function() {
-    // flips and face-up cards back over
-    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
-    // makes a new pack of cards, size depending on difficulty setting
     activeCardsArray = toystoryCardsArray;
+    resetGame();
+})
+
+//--- difficulty selection buttons
+
+$('#easyButton').click(function() {
+    $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
+    resetGame();
+})
+
+$('#mediumButton').click(function() {
+    $('.my-card-column-medium').addClass('visible').removeClass('invisible');
+    $('.my-card-column-hard').addClass('invisible').removeClass('visible');
+    resetGame();
+})
+
+$('#hardButton').click(function() {
+    $('.my-card-column-medium').addClass('visible').removeClass('invisible');
+    $('.my-card-column-hard').addClass('visible').removeClass('invisible');
+    resetGame();
+})
+
+//--- Reset button
+
+$('.reset-btn').click(function () {
+    resetGame();
+})
+
+
+// resets game, but not difficulty level or style selections
+function resetGame() {
+    // flips and face-up cards back over
+    $('.face-up').addClass('face-down').removeClass('face-up disabled matched selected');
+    // makes a new pack of cards, size depending on difficulty setting
     let num = howManyCards();
     let Cards = makeCardPack(activeCardsArray, num);
     // delays new cards being displayed until cards have flipped back over
     setTimeout(function() {
       displayCards(Cards);  
     },500);
-})
-
+    //resets counters
+    flipCounter = 0;
+    turnsCounter = 0;
+    countSelected = 0;
+    //displays turns counter on screen
+    countTurns();
+}
 
 //--- mute button
 
@@ -129,63 +150,7 @@ $('#muteButton').click(function() {
     $('#muteButton i').toggleClass('fa-volume-off');
 });
 
-//--- difficulty selection buttons
-
-$('#easyButton').click(function() {
-    // flips and face-up cards back over
-    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
-    // makes a new pack of cards, size depending on difficulty setting
-    $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
-    let num = howManyCards();
-    let newCards = makeCardPack(activeCardsArray, num);
-    // delays new cards being displayed until cards have flipped back over
-    setTimeout(function() {
-      displayCards(newCards);  
-    },500);
-})
-
-$('#mediumButton').click(function() {
-    // flips and face-up cards back over
-    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
-    // makes a new pack of cards, size depending on difficulty setting
-    $('.my-card-column-medium').addClass('visible').removeClass('invisible');
-    $('.my-card-column-hard').addClass('invisible').removeClass('visible');
-    let num = howManyCards();
-    let newCards = makeCardPack(activeCardsArray, num);
-    // delays new cards being displayed until cards have flipped back over
-    setTimeout(function() {
-      displayCards(newCards);  
-    },500);
-})
-
-$('#hardButton').click(function() {
-    // flips and face-up cards back over
-    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
-    // makes a new pack of cards, size depending on difficulty setting
-    $('.my-card-column-medium').addClass('visible').removeClass('invisible');
-    $('.my-card-column-hard').addClass('visible').removeClass('invisible');
-    let num = howManyCards();
-    let newCards = makeCardPack(activeCardsArray, num);
-    // delays new cards being displayed until cards have flipped back over
-    setTimeout(function() {
-      displayCards(newCards);  
-    },500);
-})
-
-//--- Reset button
-
-$('.reset-btn').click(function () {
-    // flips and face-up cards back over
-    $('.face-up').addClass('face-down').removeClass('face-up disabled matched');
-    // makes a new pack of cards, size depending on difficulty setting
-    let num = howManyCards();
-    let Cards = makeCardPack(activeCardsArray, num);
-    // delays new cards being displayed until cards have flipped back over
-    setTimeout(function() {
-      displayCards(Cards);  
-    },500);
-})
-
+// finds how many cards are visible, returns number of images needed for new pack
 function howManyCards () {
     let num = document.getElementsByClassName('visible').length;
     let halfNum = (num/2);
@@ -234,21 +199,18 @@ function cutDeck(arr, num) {
 // turns counter
 
 function countTurns() {
+    
+    let turnsCounted = ("Turns: " + turnsCounter);
     // counts flips, when 2 flips have been done the number of turns goes up by one.
-    flipCounter++;
     if ((flipCounter % 2) == 0 ) {
         turnsCounter++; 
-            
-        let turnsCounted = ("Turns: " + turnsCounter);
-    
-        $('.turns-counter').text(turnsCounted);
     }
+    $('.turns-counter').text(turnsCounted);
 }
-
-let counter = 0;
 
 // flips cards over on click, only allows two clicks at a time. 
 $('.flip-card').click(function() {
+    
     if (checkCounter()) {
         if ($(this).hasClass('face-down')) {
             $(this).addClass('face-up disabled selected').removeClass('face-down').find('audio')[0].play();
@@ -258,8 +220,8 @@ $('.flip-card').click(function() {
 })
 
 function checkCounter() {
-    counter++;
-    if (counter <= 2) {
+    countSelected++;
+    if (countSelected <= 2) {
         return true;
     } else {
         return false;
@@ -292,7 +254,8 @@ function checkMatch() {
             $('.selected').each(function(x) {
                 $(this).removeClass('selected').addClass('matched disabled');
                 $('.not-matched').removeClass('disabled');
-                counter = 0;
+                countSelected = 0;
+                flipCounter++;
                 countTurns();
             })
         } else {
@@ -301,7 +264,8 @@ function checkMatch() {
                 $('.selected').each(function(x) {
                     $(this).removeClass('face-up selected disabled').addClass('face-down');
                     $('.not-matched').removeClass('disabled');
-                    counter = 0;
+                    countSelected = 0;
+                    flipCounter++;
                     countTurns();
                 })
             },1000);  
@@ -315,4 +279,5 @@ function checkMatch() {
 //default setting for cards when page is first loaded
 displayCardsArray = makeCardPack(carsCardsArray, 8);
 displayCards(displayCardsArray);
+countTurns();
 })

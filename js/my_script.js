@@ -6,7 +6,7 @@ let carsCardsArray = ["cruz","lightning","mater","jackson-storm", "doc", "mac", 
 let frozenCardsArray = ["elsa","anna", "olaf", "kristoff", "hans", "sven", "elsa-anna", "olaf-sven"];
 let toystoryCardsArray = ["woody","buzz","rex","alien","jessie","potato","lotso","bullseye"];
 let displayCardsArray = [];
-let activeCardsArray = toystoryCardsArray;
+let activeCardsArray = carsCardsArray;
 
 //------------------ MODALS
 
@@ -111,8 +111,9 @@ function howManyCards () {
 // RESET BUTTON
 
 $('.reset-btn').click(function () {
-     displayCardsArray = shuffle(activeCardsArray);
-     displayCards(displayCardsArray);
+    let num = howManyCards();
+    let Cards = makeCardPack(activeCardsArray, num);
+    displayCards(Cards);
 })
 
 //------------------ USER DATA

@@ -116,6 +116,13 @@ $('.reset-btn').click(function () {
     resetGame();
 })
 
+$('#win-modal-close-btn').click(function () {
+    resetGame();
+  //  debugger;
+    $('#winModal').modal('hide');
+})
+
+
 
 // resets game, but not difficulty level or style selections
 function resetGame() {

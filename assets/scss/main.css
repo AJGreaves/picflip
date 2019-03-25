@@ -131,11 +131,13 @@ button p {
   margin-left: 0;
   margin-right: 0; }
 
-#body-container {
+#body-wrapper {
   background-image: url("https://i.ibb.co/yYJqmDn/trains-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center; }
+  background-position: center center;
+  /* fixes background image so it does not scroll. BUG fix for mobile screens */
+  background-attachment: fixed; }
 
 .box-white-curved-corners {
   background-color: #f5f5f5;
@@ -195,7 +197,7 @@ button p {
 
 /* DIFFICULTY SELECTION SECTION */
 .btn,
-.pack-selection-button {
+#avatar-radio {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 2px;
   border: 3px solid #336666; }
@@ -207,11 +209,6 @@ button .star {
 button p {
   line-height: 1.5rem;
   margin-bottom: 0.5rem; }
-
-/* CARD PACK SELECTION SECTION */
-.pack-selection-button {
-  height: 80px;
-  width: 80px; }
 
 /* DASHBOARD CONTROLS */
 .circle-btn {
@@ -255,7 +252,7 @@ button p {
   /*clearer shadow to stand out on picture background*/ }
 
 .game-card-back {
-  background-image: url("https://i.ibb.co/DQkPDHb/main-logo.png");
+  background-image: url("https://i.ibb.co/Cvpst56/card-back.png");
   border-radius: 8px; }
 
 .lightning {
@@ -417,6 +414,7 @@ button p {
 https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons
 and ajusted to project needs*/
 /* hides radio button, makes clickable area cover button image */
+/* see media queries for reduction in size on mobiles */
 [type=radio] {
   position: absolute;
   opacity: 0;
@@ -431,6 +429,11 @@ and ajusted to project needs*/
 .form-check-input {
   margin-top: 0;
   margin-left: 0; }
+
+/* see media queries for reduction in size on mobiles */
+#avatar-radio {
+  height: 80px;
+  width: 80px; }
 
 /* INFO MODAL */
 .fa-clone {
@@ -497,6 +500,14 @@ and ajusted to project needs*/
   .my-card-column-easy,
   .my-card-column-medium,
   .my-card-column-hard {
-    height: 90px; } }
+    height: 90px; }
+
+  [type=radio], #avatar-radio {
+    height: 60px;
+    width: 60px; }
+
+  /* fixes background image display issue on 5se mobiles */
+  .game-board {
+    height: auto; } }
 
 /*# sourceMappingURL=main.css.map */

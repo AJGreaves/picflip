@@ -11,6 +11,7 @@ https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons
 and ajusted to project needs*/
 
 /* hides radio button, makes clickable area cover button image */
+/* see media queries for reduction in size on mobiles */
 [type=radio] { 
   position: absolute;
   opacity: 0;
@@ -27,6 +28,12 @@ and ajusted to project needs*/
 .form-check-input {
     margin-top: 0;
     margin-left: 0;
+}
+
+/* see media queries for reduction in size on mobiles */
+#avatar-radio {
+    height: 80px;
+    width: 80px;
 }
 
 /* INFO MODAL */

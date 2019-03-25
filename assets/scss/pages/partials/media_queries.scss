@@ -49,4 +49,12 @@
     .my-card-column-hard {
         height: 90px;
     }
+    [type=radio], #avatar-radio {
+        height: 60px;
+        width: 60px;
+    }
+    /* fixes background image display issue on 5se mobiles */
+    .game-board {
+    height: auto;
+    }
 }

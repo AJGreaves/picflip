@@ -181,13 +181,15 @@ button p {
     }
 }
 
-#body-container {
+#body-wrapper {
     background: {
         image: url("https://i.ibb.co/yYJqmDn/trains-background.jpg");
         repeat: no-repeat;
         size: cover;
         position: center center;
     }
+    /* fixes background image so it does not scroll. BUG fix for mobile screens */
+    background-attachment: fixed;
 }
 
 .box-white-curved-corners {

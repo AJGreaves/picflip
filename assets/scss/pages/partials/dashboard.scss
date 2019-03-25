@@ -51,7 +51,7 @@
 
 button .star {
     font-size: 0.6rem;
-    color: white;
+    color: white!important; //overrides color from more specific css elsewhere
 }
 
 button p {

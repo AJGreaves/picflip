@@ -200,7 +200,7 @@ button p {
 
 button .star {
   font-size: 0.6rem;
-  color: white; }
+  color: white !important; }
 
 button p {
   line-height: 1.5rem;

@@ -327,6 +327,7 @@ function checkForWin() {
    // debugger;
     if (matchedNum == visibleNum) {
         checkScore();
+        displayScore(easyScore);
         $('#winModal').modal('show');
         $('#applauseAudio')[0].play();
     } else {
@@ -390,8 +391,19 @@ function checkScore() {
     }
 }
 
-function displayScore() {
+function displayScore(numOfStars) {
+    starElems = document.getElementsByClassName('score-star');
     
+    for (i=0; i<numOfStars; i++) {
+        if ($(starElems[i]).hasClass('far')) {
+                $(starElems[i]).addClass('fas').removeClass('far');
+        }
+    }
+    for (i=numOfStars; i<5; i++) {
+        if ($(starElems[i]).hasClass('fas')) {
+                $(starElems[i]).addClass('far').removeClass('fas');
+        }
+    }
 }
 
 //default setting for cards when page is first loaded

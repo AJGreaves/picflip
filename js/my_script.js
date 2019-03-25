@@ -20,11 +20,12 @@ let userAvatar;
 let easyScore = 0;
 let mediumScore = 0;
 let hardScore = 0;
+let activeScore = 0;
 
 let easyHighScore = 0;
 let mediumHighScore = 0;
 let hardHighScore = 0;
-let activeHighScore = 0;
+let activeHighScore = hardHighScore;
 
 //------------------ MODALS
 
@@ -112,18 +113,21 @@ $('.toystory-cover').click(function() {
 
 $('#easyButton').click(function() {
     $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
+    activeHighScore = easyHighScore;
     resetGame();
 })
 
 $('#mediumButton').click(function() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('invisible').removeClass('visible');
+    activeHighScore = mediumHighScore;
     resetGame();
 })
 
 $('#hardButton').click(function() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('visible').removeClass('invisible');
+    activeHighScore = hardHighScore;
     resetGame();
 })
 
@@ -294,14 +298,9 @@ function checkMatch() {
                 countSelected = 0;
                 flipCounter++;
                 countTurns();
-                // delays correct match sound
-                setTimeout(function() {
-                    $('#correctBingAudio')[0].play();
-                }, 800);
-                // delays win modal from popping up too early.
-                setTimeout(function() {
-                    checkForWin();
-                }, 1500);
+                delayedCorrectSound();
+                checkForWin();
+                return;
             })
         } else {
             // turn cards back over if not matched 
@@ -320,6 +319,15 @@ function checkMatch() {
     }
 }
 
+function delayedCorrectSound() {
+    // delays correct match sound
+    setTimeout(function() {
+        $('#correctBingAudio')[0].play();
+    }, 800);    
+}
+
+
+
 // checks for when player has won. Works for all card pack sizes.
 function checkForWin() {
     let matchedNum = $('.matched').length;
@@ -327,21 +335,30 @@ function checkForWin() {
     
     // checks if all visible cards have been turned over
     if (matchedNum == visibleNum) {
-        checkScore();
         // launch new high score modal if beats old score
+        checkScore();
         if (checkIfHighScore()) {
-            $('#newHighScoreModal').modal('show')
-            $('#applauseAudio')[0].play();
+            delayDisplayModal('#newHighScoreModal');
+            return;
         } 
         // launch win modal if doesn't beat old score
         else {
-            displayScore(easyScore);
-            $('#winModal').modal('show');
-            $('#applauseAudio')[0].play();
+            displayScore(checkScore());
+            delayDisplayModal('#winModal');
+            return;
         };
     } else {
         return;
     }
+}
+
+// delays function so win modals do not pop up too early
+// BUG fix: moved delay into it's own function to prevent functions repeating when they shouldn't
+function delayDisplayModal(modalId) {
+    setTimeout(function() {
+        $(modalId).modal('show');
+        $('#applauseAudio')[0].play();
+    }, 1500);
 }
 
 // gets score out of 5 based on difficulty level selected and turns taken to win.
@@ -353,14 +370,19 @@ function checkScore() {
         // score for easy mode
         if (turnsCounter <= 7) {
             easyScore = 5;
+            return 5;
         } else if (turnsCounter <= 9) {
             easyScore = 4;
+            return 4;
         } else if (turnsCounter <= 11) {
             easyScore = 3;
+            return 3;
         } else if (turnsCounter <= 13) {
             easyScore = 2;
+            return 2;
         } else if (turnsCounter >= 15) {
             easyScore = 1;
+            return 1;
         } else {
             return console.log('checkScore function error easyScore if statement!');
         }
@@ -368,14 +390,19 @@ function checkScore() {
         // score for medium mode
         if (turnsCounter <= 13) {
             mediumScore = 5;
+            return 5;
         } else if (turnsCounter <= 16) {
             mediumScore = 4;
+            return 4;
         } else if (turnsCounter <= 19) {
             mediumScore = 3;
+            return 3;
         } else if (turnsCounter <= 22) {
             mediumScore = 2;
+            return 2;
         } else if (turnsCounter >= 24) {
             mediumScore = 1;
+            return 1;
         } else {
             return console.log('checkScore function error easyScore if statement!');
         }
@@ -384,14 +411,19 @@ function checkScore() {
         // score for hard mode
         if (turnsCounter <= 14) {
             mediumScore = 5;
+            return 5;
         } else if (turnsCounter <= 18) {
             mediumScore = 4;
+            return 4;
         } else if (turnsCounter <= 22) {
             mediumScore = 3;
+            return 3;
         } else if (turnsCounter <= 26) {
             mediumScore = 2;
+            return 2;
         } else if (turnsCounter >= 30) {
             mediumScore = 1;
+            return 1;
         } else {
             return console.log('checkScore function error easyScore if statement!');
         }
@@ -402,28 +434,25 @@ function checkScore() {
 
 // compares new score to highscore 
 function checkIfHighScore(){
-    if (easyScore >= easyHighScore) {
+    if (easyScore > easyHighScore) {
         easyHighScore = easyScore;
+        activeHighScore = easyHighScore;
         return true;
-        // TO DO: display new high score on high score modal and user info box
-        // TO DO: activate high score modal
-    } else if (mediumScore >= mediumHighScore) {
+    } else if (mediumScore > mediumHighScore) {
         mediumHighScore = mediumScore;
+        activeHighScore = mediumHighScore;
         return true;
-        // TO DO: display new high score on high score modal and user info box
-        // TO DO: activate high score modal
-    } else if (hardScore >= hardHighScore) {
+    } else if (hardScore > hardHighScore) {
         hardHighScore = hardScore;
+        activeHighScore = hardHighScore;
         return true;
-        // TO DO: display new high score on high score modal and user info box
-        // TO DO: activate high score modal
     } else {
         return false;
     }
 }
 
 
-// displays score on win modal when NOT high score
+// displays score on win modal
 function displayScore(numOfStars) {
     starElems = document.getElementsByClassName('score-star');
     
@@ -438,6 +467,24 @@ function displayScore(numOfStars) {
         }
     }
 }
+
+// displays score on high score modal and user info box
+function displayHighScore(numOfStars) {
+    starElems = document.getElementsByClassName('high-score-star');
+    
+    for (i=0; i<numOfStars; i++) {
+        if ($(starElems[i]).hasClass('far')) {
+                $(starElems[i]).addClass('fas').removeClass('far');
+        }
+    }
+    for (i=numOfStars; i<5; i++) {
+        if ($(starElems[i]).hasClass('fas')) {
+                $(starElems[i]).addClass('far').removeClass('fas');
+        }
+    }
+}
+
+
 
 //default setting for cards when page is first loaded
 displayCardsArray = makeCardPack(carsCardsArray, 8);

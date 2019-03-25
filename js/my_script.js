@@ -321,12 +321,13 @@ function checkMatch() {
 }
 
 // checks for when player has won. Works for all card pack sizes.
-function checkForWin() {
+function checkForWin(newScore, highScore) {
     let matchedNum = $('.matched').length;
     let visibleNum = $('.visible').length;
    // debugger;
     if (matchedNum == visibleNum) {
         checkScore();
+        checkIfHighScore();
         displayScore(easyScore);
         $('#winModal').modal('show');
         $('#applauseAudio')[0].play();
@@ -391,6 +392,30 @@ function checkScore() {
     }
 }
 
+// compares new score to highscore 
+function checkIfHighScore(){
+    if (easyScore >= easyHighScore) {
+        easyHighScore = easyScore;
+        return true;
+        // TO DO: display new high score on high score modal and user info box
+        // TO DO: activate high score modal
+    } else if (mediumScore >= mediumHighScore) {
+        mediumHighScore = mediumScore;
+        return true;
+        // TO DO: display new high score on high score modal and user info box
+        // TO DO: activate high score modal
+    } else if (hardScore >= hardHighScore) {
+        hardHighScore = hardScore;
+        return true;
+        // TO DO: display new high score on high score modal and user info box
+        // TO DO: activate high score modal
+    } else {
+        return false;
+    }
+}
+
+
+// displays score on win modal when NOT high score
 function displayScore(numOfStars) {
     starElems = document.getElementsByClassName('score-star');
     

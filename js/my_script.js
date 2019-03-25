@@ -160,6 +160,11 @@ $('#win-modal-close-btn').click(function () {
     $('#winModal').modal('hide');
 })
 
+$('#high-score-modal-close-btn').click(function () {
+    resetGame();
+})
+
+
 // resets game, but not difficulty level or style selections
 function resetGame() {
     // flips and face-up cards back over

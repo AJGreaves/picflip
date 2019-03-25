@@ -321,16 +321,24 @@ function checkMatch() {
 }
 
 // checks for when player has won. Works for all card pack sizes.
-function checkForWin(newScore, highScore) {
+function checkForWin() {
     let matchedNum = $('.matched').length;
     let visibleNum = $('.visible').length;
-   // debugger;
+    
+    // checks if all visible cards have been turned over
     if (matchedNum == visibleNum) {
         checkScore();
-        checkIfHighScore();
-        displayScore(easyScore);
-        $('#winModal').modal('show');
-        $('#applauseAudio')[0].play();
+        // launch new high score modal if beats old score
+        if (checkIfHighScore()) {
+            $('#newHighScoreModal').modal('show')
+            $('#applauseAudio')[0].play();
+        } 
+        // launch win modal if doesn't beat old score
+        else {
+            displayScore(easyScore);
+            $('#winModal').modal('show');
+            $('#applauseAudio')[0].play();
+        };
     } else {
         return;
     }

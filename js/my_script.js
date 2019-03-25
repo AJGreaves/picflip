@@ -335,15 +335,15 @@ function checkForWin() {
     
     // checks if all visible cards have been turned over
     if (matchedNum == visibleNum) {
-        // launch new high score modal if beats old score
-        checkScore();
+        activeScore = checkScore();
         if (checkIfHighScore()) {
+            displayHighScore(activeHighScore);
+            // launch new high score modal if beats old score
             delayDisplayModal('#newHighScoreModal');
             return;
-        } 
-        // launch win modal if doesn't beat old score
-        else {
-            displayScore(checkScore());
+        } else {
+            displayScore(activeScore);
+            // launch win modal if doesn't beat old score
             delayDisplayModal('#winModal');
             return;
         };
@@ -470,16 +470,20 @@ function displayScore(numOfStars) {
 
 // displays score on high score modal and user info box
 function displayHighScore(numOfStars) {
-    starElems = document.getElementsByClassName('high-score-star');
+    
+    let dashboardStarElems = document.getElementsByClassName('dashboard-score-star');
+    let highScoreStarElems = document.getElementsByClassName('win-modal-score-star');
     
     for (i=0; i<numOfStars; i++) {
-        if ($(starElems[i]).hasClass('far')) {
-                $(starElems[i]).addClass('fas').removeClass('far');
+        if ($(dashboardStarElems[i]).hasClass('far')) {
+                $(dashboardStarElems[i]).addClass('fas').removeClass('far');
+                $(highScoreStarElems[i]).addClass('fas').removeClass('far');
         }
     }
     for (i=numOfStars; i<5; i++) {
-        if ($(starElems[i]).hasClass('fas')) {
-                $(starElems[i]).addClass('far').removeClass('fas');
+        if ($(dashboardStarElems[i]).hasClass('fas')) {
+                $(dashboardStarElems[i]).addClass('far').removeClass('fas');
+                $(highScoreStarElems[i]).addClass('far').removeClass('fas');
         }
     }
 }

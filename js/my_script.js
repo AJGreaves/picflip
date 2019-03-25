@@ -27,6 +27,10 @@ let mediumHighScore = 0;
 let hardHighScore = 0;
 let activeHighScore = hardHighScore;
 
+let dashStar = 'dashboard-score-star';
+let winStar = 'score-star';
+let highWinStar = 'win-modal-score-star';
+
 //------------------ MODALS
 
 //--- User Data Modal
@@ -114,7 +118,7 @@ $('.toystory-cover').click(function() {
 $('#easyButton').click(function() {
     $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
     activeHighScore = easyHighScore;
-    displayHighScore(activeHighScore);
+    displayScore(activeHighScore, dashStar);
     resetGame();
 })
 
@@ -122,7 +126,7 @@ $('#mediumButton').click(function() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('invisible').removeClass('visible');
     activeHighScore = mediumHighScore;
-    displayHighScore(activeHighScore);
+    displayScore(activeHighScore, dashStar);
     resetGame();
 })
 
@@ -130,7 +134,7 @@ $('#hardButton').click(function() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('visible').removeClass('invisible');
     activeHighScore = hardHighScore;
-    displayHighScore(activeHighScore);
+    displayScore(activeHighScore, dashStar);
     resetGame();
 })
 
@@ -162,10 +166,10 @@ function resetGame() {
     $('.face-up').addClass('face-down').removeClass('face-up disabled matched selected');
     // makes a new pack of cards, size depending on difficulty setting
     let num = howManyCards();
-    let Cards = makeCardPack(activeCardsArray, num);
+    let cards = makeCardPack(activeCardsArray, num);
     // delays new cards being displayed until cards have flipped back over
     setTimeout(function() {
-      displayCards(Cards);  
+      displayCards(cards);  
     },500);
     //resets counters
     flipCounter = 0;
@@ -340,13 +344,15 @@ function checkForWin() {
     if (matchedNum == visibleNum) {
         activeScore = checkScore();
         if (checkIfHighScore()) {
-            displayHighScore(activeHighScore);
+        //    debugger;
             // launch new high score modal if beats old score
             delayDisplayModal('#newHighScoreModal');
+            displayScore(activeHighScore, highWinStar);
+            displayScore(activeHighScore, dashStar);
             return;
         } else {
-            displayScore(activeScore);
             // launch win modal if doesn't beat old score
+            displayScore(activeScore, winStar);
             delayDisplayModal('#winModal');
             return;
         };
@@ -455,42 +461,22 @@ function checkIfHighScore(){
 }
 
 
-// displays score on win modal
-function displayScore(numOfStars) {
-    starElems = document.getElementsByClassName('score-star');
+// displays score stars in selected place
+function displayScore(numOfStars, className) {
+    
+    let StarElems = document.getElementsByClassName(className);
     
     for (i=0; i<numOfStars; i++) {
-        if ($(starElems[i]).hasClass('far')) {
-                $(starElems[i]).addClass('fas').removeClass('far');
+        if ($(StarElems[i]).hasClass('far')) {
+                $(StarElems[i]).addClass('fas').removeClass('far');
         }
     }
     for (i=numOfStars; i<5; i++) {
-        if ($(starElems[i]).hasClass('fas')) {
-                $(starElems[i]).addClass('far').removeClass('fas');
+        if ($(StarElems[i]).hasClass('fas')) {
+                $(StarElems[i]).addClass('far').removeClass('fas');
         }
     }
 }
-
-// displays score on high score modal and user info box
-function displayHighScore(numOfStars) {
-    
-    let dashboardStarElems = document.getElementsByClassName('dashboard-score-star');
-    let highScoreStarElems = document.getElementsByClassName('win-modal-score-star');
-    
-    for (i=0; i<numOfStars; i++) {
-        if ($(dashboardStarElems[i]).hasClass('far')) {
-                $(dashboardStarElems[i]).addClass('fas').removeClass('far');
-                $(highScoreStarElems[i]).addClass('fas').removeClass('far');
-        }
-    }
-    for (i=numOfStars; i<5; i++) {
-        if ($(dashboardStarElems[i]).hasClass('fas')) {
-                $(dashboardStarElems[i]).addClass('far').removeClass('fas');
-                $(highScoreStarElems[i]).addClass('far').removeClass('fas');
-        }
-    }
-}
-
 
 
 //default setting for cards when page is first loaded

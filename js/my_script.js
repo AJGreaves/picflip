@@ -7,12 +7,23 @@ let frozenCardsArray = ["elsa","anna", "olaf", "kristoff", "hans", "sven", "elsa
 let toystoryCardsArray = ["woody","buzz","rex","alien","jessie","potato","lotso","bullseye"];
 let displayCardsArray = [];
 let activeCardsArray = carsCardsArray;
+
 let silence = false;
+
 let flipCounter = 0;    
 let turnsCounter = 0;
 let countSelected = 0;
+
 let userName;
 let userAvatar;
+
+let easyScore = 0;
+let mediumScore = 0;
+let hardScore = 0;
+
+let easyHighScore = 0;
+let mediumHighScore = 0;
+let hardHighScore = 0;
 
 //------------------ MODALS
 
@@ -23,6 +34,7 @@ let userAvatar;
 function checkForUserData() {
     if ((typeof userName === 'undefined') || (typeof userAvatar === 'undefined')) {
         setTimeout(function() {
+            // background on user data modal can't be clicked away, input must be given first
             $("#userInfoModal").modal({
                 backdrop: 'static',
                 keyboard: false
@@ -33,7 +45,7 @@ function checkForUserData() {
     }
 }
 
-// background on user data modal can't be clicked away, input must be given first
+// launches user info modal again if avatar clicked
 $(".show-modal").click(function(){
     $("#userInfoModal").modal({
         backdrop: 'static',
@@ -71,22 +83,6 @@ $('#user-info-submit-button').click(function(e) {
     }
 
 });
-
-//--- Win Modal
-
-// checks for when player has won. Works for all card pack sizes.
-function checkForWin() {
-    let matchedNum = $('.matched').length;
-    let visibleNum = $('.visible').length;
-   // debugger;
-    if (matchedNum == visibleNum) {
-        $('#winModal').modal('show');
-        $('#applauseAudio')[0].play();
-    } else {
-        return;
-    }
-}
-
 
 //------------------ BUTTONS
 
@@ -321,6 +317,77 @@ function checkMatch() {
     } else {
         return;
     }
+}
+
+// checks for when player has won. Works for all card pack sizes.
+function checkForWin() {
+    let matchedNum = $('.matched').length;
+    let visibleNum = $('.visible').length;
+   // debugger;
+    if (matchedNum == visibleNum) {
+        checkScore();
+        $('#winModal').modal('show');
+        $('#applauseAudio')[0].play();
+    } else {
+        return;
+    }
+}
+
+// gets score out of 5 based on difficulty level selected and turns taken to win.
+function checkScore() {
+    
+    let len = $('.visible').length;
+    
+    if (len === 8) {
+        // code for easy mode
+        if (turnsCounter <= 6) {
+            easyScore = 5;
+        } else if (turnsCounter <= 8) {
+            easyScore = 4;
+        } else if (turnsCounter <= 10) {
+            easyScore = 3;
+        } else if (turnsCounter <= 12) {
+            easyScore = 2;
+        } else if (turnsCounter >= 14) {
+            easyScore = 1;
+        } else {
+            return console.log('checkScore function error easyScore if statement!');
+        }
+    } else if (len === 12) {
+        // code for medium mode
+        if (turnsCounter <= 12) {
+            mediumScore = 5;
+        } else if (turnsCounter <= 15) {
+            mediumScore = 4;
+        } else if (turnsCounter <= 18) {
+            mediumScore = 3;
+        } else if (turnsCounter <= 21) {
+            mediumScore = 2;
+        } else if (turnsCounter >= 23) {
+            mediumScore = 1;
+        } else {
+            return console.log('checkScore function error easyScore if statement!');
+        }
+        
+    } else if (len === 16) {
+        // code for hard mode
+        if (turnsCounter <= 14) {
+            mediumScore = 5;
+        } else if (turnsCounter <= 18) {
+            mediumScore = 4;
+        } else if (turnsCounter <= 22) {
+            mediumScore = 3;
+        } else if (turnsCounter <= 26) {
+            mediumScore = 2;
+        } else if (turnsCounter >= 30) {
+            mediumScore = 1;
+        } else {
+            return console.log('checkScore function error easyScore if statement!');
+        }
+    } else {
+        return console.log('checkScore function error!');
+    }
+    
 }
 
 

@@ -12,24 +12,6 @@ let flipCounter = 0;
 let turnsCounter = 0;
 let countSelected = 0;
 
-// audio elements
-
-let fanfare = document.createElement('audio');
-    fanfare.setAttribute('src', '../assets/audio/fanfare.flac');
-
-let buttonClick = document.createElement('audio');
-    buttonClick.setAttribute('src', '../assets/audio/button.mp3');
-    
-let cardFlip = document.createElement('audio');
-    cardFlip.setAttribute('src', '../assets/audio/card-flip.wav');
-    
-let correctBing = document.createElement('audio');
-    correctBing.setAttribute('src', '../assets/audio/correct.wav');
-    
-let applause = document.createElement('audio');
-    applause.setAttribute('src', '../assets/audio/applause.mp3');
-    
-
 //------------------ MODALS
 
 //--- User Data Modal
@@ -82,7 +64,7 @@ function checkForWin() {
    // debugger;
     if (matchedNum == visibleNum) {
         $('#winModal').modal('show');
-        fanfare.play();
+        $('#applauseAudio')[0].play();
     } else {
         return;
     }
@@ -93,7 +75,7 @@ function checkForWin() {
 
 //--- play button click audio
 $('.btn').click(function() {
-    buttonClick.play();
+    $('#buttonClickAudio')[0].play();
 });
 
 //--- style selection buttons
@@ -140,6 +122,7 @@ $('.reset-btn').click(function () {
 //--- Mute button
 
 $('#muteButton').click(function() {
+    $('#buttonClickAudio')[0].play();
     muteAudio();
     //toggles between icons on mute button
     $('#muteButton i').toggleClass('fa-volume-off');
@@ -249,7 +232,7 @@ function countTurns() {
 $('.flip-card').click(function() {
     
     if (checkCounter()) {
-        cardFlip.play();
+        $('#cardFlipAudio')[0].play();
         if ($(this).hasClass('face-down')) {
             $(this).addClass('face-up disabled selected').removeClass('face-down');
         }
@@ -300,7 +283,7 @@ function checkMatch() {
                 countTurns();
                 // delays correct match sound
                 setTimeout(function() {
-                    correctBing.play();
+                    $('#correctBingAudio')[0].play();
                 }, 800);
                 // delays win modal from popping up too early.
                 setTimeout(function() {

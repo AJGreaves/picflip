@@ -413,28 +413,28 @@ function checkScore() {
             mediumScore = 1;
             return 1;
         } else {
-            return console.log('checkScore function error easyScore if statement!');
+            return console.log('checkScore function error mediumScore if statement!');
         }
         
     } else if (len === 16) {
         // score for hard mode
         if (turnsCounter <= 14) {
-            mediumScore = 5;
+            hardScore = 5;
             return 5;
         } else if (turnsCounter <= 18) {
-            mediumScore = 4;
+            hardScore = 4;
             return 4;
         } else if (turnsCounter <= 22) {
-            mediumScore = 3;
+            hardScore = 3;
             return 3;
         } else if (turnsCounter <= 26) {
-            mediumScore = 2;
+            hardScore = 2;
             return 2;
         } else if (turnsCounter >= 30) {
-            mediumScore = 1;
+            hardScore = 1;
             return 1;
         } else {
-            return console.log('checkScore function error easyScore if statement!');
+            return console.log('checkScore function error HardScore if statement!');
         }
     } else {
         return console.log('checkScore function error!');

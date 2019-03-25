@@ -11,10 +11,27 @@ let silence = false;
 let flipCounter = 0;    
 let turnsCounter = 0;
 let countSelected = 0;
+let userName;
+let userAvatar;
 
 //------------------ MODALS
 
 //--- User Data Modal
+
+// checks for user data, if no data then launches modal to collect it
+
+function checkForUserData() {
+    if ((typeof userName === 'undefined') || (typeof userAvatar === 'undefined')) {
+        setTimeout(function() {
+            $("#userInfoModal").modal({
+                backdrop: 'static',
+                keyboard: false
+            })
+        },500)
+    } else {
+        return;
+    }
+}
 
 // background on user data modal can't be clicked away, input must be given first
 $(".show-modal").click(function(){
@@ -27,8 +44,8 @@ $(".show-modal").click(function(){
 $('#user-info-submit-button').click(function(e) {
 	
     // collects data from form and assigns to variables
-    let userName = $('#username').val();
-    let userAvatar = $('input[name=avatarRadios]:checked').val();
+    userName = $('#username').val();
+    userAvatar = $('input[name=avatarRadios]:checked').val();
     
     $('.username').text(userName); 
     
@@ -277,7 +294,6 @@ function checkMatch() {
         if (first == second) {
             $('.selected').each(function(x) {
                 $(this).removeClass('selected').addClass('matched disabled');
-                $('.not-matched').removeClass('disabled');
                 countSelected = 0;
                 flipCounter++;
                 countTurns();
@@ -296,7 +312,6 @@ function checkMatch() {
             setTimeout(function() {
                 $('.selected').each(function(x) {
                     $(this).removeClass('face-up selected disabled').addClass('face-down');
-                    $('.not-matched').removeClass('disabled');
                     countSelected = 0;
                     flipCounter++;
                     countTurns();
@@ -313,4 +328,5 @@ function checkMatch() {
 displayCardsArray = makeCardPack(carsCardsArray, 8);
 displayCards(displayCardsArray);
 countTurns();
+checkForUserData();
 })

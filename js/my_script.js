@@ -24,6 +24,7 @@ let hardScore = 0;
 let easyHighScore = 0;
 let mediumHighScore = 0;
 let hardHighScore = 0;
+let activeHighScore = 0;
 
 //------------------ MODALS
 
@@ -339,38 +340,38 @@ function checkScore() {
     let len = $('.visible').length;
     
     if (len === 8) {
-        // code for easy mode
-        if (turnsCounter <= 6) {
+        // score for easy mode
+        if (turnsCounter <= 7) {
             easyScore = 5;
-        } else if (turnsCounter <= 8) {
+        } else if (turnsCounter <= 9) {
             easyScore = 4;
-        } else if (turnsCounter <= 10) {
+        } else if (turnsCounter <= 11) {
             easyScore = 3;
-        } else if (turnsCounter <= 12) {
+        } else if (turnsCounter <= 13) {
             easyScore = 2;
-        } else if (turnsCounter >= 14) {
+        } else if (turnsCounter >= 15) {
             easyScore = 1;
         } else {
             return console.log('checkScore function error easyScore if statement!');
         }
     } else if (len === 12) {
-        // code for medium mode
-        if (turnsCounter <= 12) {
+        // score for medium mode
+        if (turnsCounter <= 13) {
             mediumScore = 5;
-        } else if (turnsCounter <= 15) {
+        } else if (turnsCounter <= 16) {
             mediumScore = 4;
-        } else if (turnsCounter <= 18) {
+        } else if (turnsCounter <= 19) {
             mediumScore = 3;
-        } else if (turnsCounter <= 21) {
+        } else if (turnsCounter <= 22) {
             mediumScore = 2;
-        } else if (turnsCounter >= 23) {
+        } else if (turnsCounter >= 24) {
             mediumScore = 1;
         } else {
             return console.log('checkScore function error easyScore if statement!');
         }
         
     } else if (len === 16) {
-        // code for hard mode
+        // score for hard mode
         if (turnsCounter <= 14) {
             mediumScore = 5;
         } else if (turnsCounter <= 18) {
@@ -387,9 +388,11 @@ function checkScore() {
     } else {
         return console.log('checkScore function error!');
     }
-    
 }
 
+function displayScore() {
+    
+}
 
 //default setting for cards when page is first loaded
 displayCardsArray = makeCardPack(carsCardsArray, 8);

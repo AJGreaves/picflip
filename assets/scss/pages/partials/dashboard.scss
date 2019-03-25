@@ -26,8 +26,14 @@
 }
 
 .star {
-    color: $yellow;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+.star.fas, .star.far {
+    color: $yellow;
+}
+.star.far {
+    text-shadow: none;
 }
 
 .stars .star {

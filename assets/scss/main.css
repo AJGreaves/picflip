@@ -180,8 +180,13 @@ button p {
   height: 35px; }
 
 .star {
-  color: #ffe933;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
+
+.star.fas, .star.far {
+  color: #ffe933; }
+
+.star.far {
+  text-shadow: none; }
 
 .stars .star {
   font-size: 1.5rem; }
@@ -439,9 +444,6 @@ and ajusted to project needs*/
 
 .fa-trophy {
   color: #ffcc33; }
-
-.fa-star {
-  color: yellow; }
 
 .fa-3x {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }

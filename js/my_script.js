@@ -117,6 +117,7 @@ $('.toystory-cover').click(function() {
 
 $('#easyButton').click(function() {
     $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
+    $('#dashboard-high-score-text').text('Your high score: Easy')
     activeHighScore = easyHighScore;
     displayScore(activeHighScore, dashStar);
     resetGame();
@@ -125,6 +126,7 @@ $('#easyButton').click(function() {
 $('#mediumButton').click(function() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('invisible').removeClass('visible');
+    $('#dashboard-high-score-text').text('Your high score: Medium')
     activeHighScore = mediumHighScore;
     displayScore(activeHighScore, dashStar);
     resetGame();
@@ -133,6 +135,7 @@ $('#mediumButton').click(function() {
 $('#hardButton').click(function() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('visible').removeClass('invisible');
+    $('#dashboard-high-score-text').text('Your high score: Hard')
     activeHighScore = hardHighScore;
     displayScore(activeHighScore, dashStar);
     resetGame();

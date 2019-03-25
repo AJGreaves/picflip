@@ -114,6 +114,7 @@ $('.toystory-cover').click(function() {
 $('#easyButton').click(function() {
     $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
     activeHighScore = easyHighScore;
+    displayHighScore(activeHighScore);
     resetGame();
 })
 
@@ -121,6 +122,7 @@ $('#mediumButton').click(function() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('invisible').removeClass('visible');
     activeHighScore = mediumHighScore;
+    displayHighScore(activeHighScore);
     resetGame();
 })
 
@@ -128,6 +130,7 @@ $('#hardButton').click(function() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('visible').removeClass('invisible');
     activeHighScore = hardHighScore;
+    displayHighScore(activeHighScore);
     resetGame();
 })
 

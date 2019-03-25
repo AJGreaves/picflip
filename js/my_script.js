@@ -64,9 +64,10 @@ $('#user-info-submit-button').click(function(e) {
         default:
             break;
     }
-
+    // only closes modal if both username and avatar have been chosen
 	if (userName && userAvatar) {
 		$('#userInfoModal').modal('hide');	
+		//overrides submit part of button that was closing modal even when all input fields not included
 		 e.preventDefault();
     }
 
@@ -74,6 +75,7 @@ $('#user-info-submit-button').click(function(e) {
 
 //--- Win Modal
 
+// checks for when player has won. Works for all card pack sizes.
 function checkForWin() {
     let matchedNum = $('.matched').length;
     let visibleNum = $('.visible').length;
@@ -89,7 +91,7 @@ function checkForWin() {
 
 //------------------ BUTTONS
 
-//--- play button click
+//--- play button click audio
 $('.btn').click(function() {
     buttonClick.play();
 });
@@ -135,12 +137,20 @@ $('.reset-btn').click(function () {
     resetGame();
 })
 
+//--- Mute button
+
+$('#muteButton').click(function() {
+    muteAudio();
+    //toggles between icons on mute button
+    $('#muteButton i').toggleClass('fa-volume-off');
+});
+
+//--- Modal buttons
+
 $('#win-modal-close-btn').click(function () {
     resetGame();
     $('#winModal').modal('hide');
 })
-
-
 
 // resets game, but not difficulty level or style selections
 function resetGame() {
@@ -161,13 +171,11 @@ function resetGame() {
     countTurns();
 }
 
-//--- mute button
 
 // mute audio function, original code from: https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
-
 function muteAudio() {
 
-    let allaudio = document.getElementsByTagName('audio');
+    let allaudio = document.getElementsByTagName('audio'); // BUG: audio button no longer working since moving audio file links to js. 
     
     if (silence) {
         for (let j = 0; j < allaudio.length; j++) {
@@ -181,12 +189,6 @@ function muteAudio() {
         silence = true;
     }
 }
-
-$('#muteButton').click(function() {
-    muteAudio();
-    //toggles between icons on mute button
-    $('#muteButton i').toggleClass('fa-volume-off');
-});
 
 // finds how many cards are visible, returns number of images needed for new pack
 function howManyCards () {
@@ -202,7 +204,6 @@ function howManyCards () {
 function makeCardPack(arr, num) {
     
     let cutArray = cutDeck(arr,num);
-    	
     let doubleCardsArray = duplicateCards(cutArray);
     let shuffledCardsArray = [];
 
@@ -216,6 +217,12 @@ function makeCardPack(arr, num) {
 	return shuffledCardsArray;
 }
 
+// cuts the deck for different difficulty levels
+function cutDeck(arr, num) {
+    let cards = arr.slice(0, num);
+    return cards;
+}
+
 // returns an array with element elem repeated twice.
 function duplicateCards(elem){
     let arr = [];
@@ -225,14 +232,6 @@ function duplicateCards(elem){
         };
         return arr;
 }
-
-// cuts the deck for different difficulty levels
-function cutDeck(arr, num) {
-    let cards = arr.slice(0, num);
-    return cards;
-}
-
-
 
 // turns counter
 
@@ -246,7 +245,7 @@ function countTurns() {
     $('.turns-counter').text(turnsCounted);
 }
 
-// flips cards over on click, only allows two clicks at a time. 
+// flips cards over on click, only allows two clicks at a time. Fixes bug caused by clicking cards too fast. 
 $('.flip-card').click(function() {
     
     if (checkCounter()) {
@@ -267,7 +266,7 @@ function checkCounter() {
     }
 }
 
-// displays cards
+// displays shuffled cards on the screen
 function displayCards(cards){ 
     $('.flip-card-back').each(function(i){
         //finds the last class in html element and assigns it to lastClass
@@ -282,6 +281,9 @@ function displayCards(cards){
     });
 }
 
+// checks if two cards selected match: 
+// leaves matched cards flipped over, and disables them, then checks for win.
+// Flips unmatched cards back. 
 function checkMatch() {
 
     if (document.getElementsByClassName('selected').length == 2) {
@@ -296,15 +298,18 @@ function checkMatch() {
                 countSelected = 0;
                 flipCounter++;
                 countTurns();
+                // delays correct match sound
                 setTimeout(function() {
                     correctBing.play();
                 }, 800);
+                // delays win modal from popping up too early.
                 setTimeout(function() {
                     checkForWin();
                 }, 1500);
             })
         } else {
             // turn cards back over if not matched 
+            // delays flip so user can see what was on the card before it is turned over again.
             setTimeout(function() {
                 $('.selected').each(function(x) {
                     $(this).removeClass('face-up selected disabled').addClass('face-down');

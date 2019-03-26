@@ -131,6 +131,7 @@ function displayUserData() {
 
 //--- play button click audio
 $('.btn').click(function() {
+    $('#buttonClickAudio')[0].currentTime=0;
     $('#buttonClickAudio')[0].play();
 });
 
@@ -218,6 +219,7 @@ $('.reset-btn').click(function () {
 //--- Mute button
 
 $('#muteButton').click(function() {
+    $('#buttonClickAudio')[0].currentTime=0;
     $('#buttonClickAudio')[0].play();
     muteAudio();
     //toggles between icons on mute button
@@ -333,6 +335,7 @@ function countTurns() {
 $('.flip-card').click(function() {
     
     if (checkCounter()) {
+        $('#cardFlipAudio')[0].currentTime=0;
         $('#cardFlipAudio')[0].play();
         if ($(this).hasClass('face-down')) {
             $(this).addClass('face-up disabled selected').removeClass('face-down');
@@ -405,6 +408,7 @@ function checkMatch() {
 function delayedCorrectSound() {
     // delays correct match sound
     setTimeout(function() {
+        $('#correctBingAudio')[0].currentTime=0;
         $('#correctBingAudio')[0].play();
     }, 600);    
 }

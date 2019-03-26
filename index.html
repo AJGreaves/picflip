@@ -20,244 +20,245 @@
     <!--GAME SECTION-->
     <div id="body-wrapper">
         <div id="body-container" class="container-fluid p-0">
-        <div class="row">
-            
-            <!--Dashboard-->
-            
-            <div class="col-12 col-md-5 col-lg-4 dashboard px-3 pt-xl-3">
-                <!--User info section-->
-                <div class="row dashboard-section box-white-curved-corners mx-auto">
-                    <!--User name-->
-                    <div class="col-12 username-container"><h3 class="username">Name</h3></div><!--Put username variable here -->
-                    <div class="col-12 px-1 text-center">
-                        <!--User avatar-->
-                        <div class="background-cover-center avatar avatar-default show-modal box-white-curved-corners"></div> 
-                        <!--Trophy image-->
-                        <div class="trophy"></div>
-                    </div>
-                    <!--User high score-->
-                    <div class="col-12 text-center">
-                        <h5 id="dashboard-high-score-text">Your high score: Hard</h5>
-                        <div class="stars">
-                            <i class="dashboard-score-star star far fa-star" aria-hidden="true"></i>
-                            <i class="dashboard-score-star star far fa-star" aria-hidden="true"></i>
-                            <i class="dashboard-score-star star far fa-star" aria-hidden="true"></i>
-                            <i class="dashboard-score-star star far fa-star" aria-hidden="true"></i>
-                            <i class="dashboard-score-star star far fa-star" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <!-- Selection section -->
-                <div class="row dashboard-section box-white-curved-corners mx-auto">
-                    <div class="col-12 selection-button px-1 text-center">
-                        <button id="easyButton" type="button" class="dashboard-btn btn btn-success">
-                            <p>Easy
-                            <br>
-                            <i class="star fas fa-star" aria-hidden="true"></i>
-                            </p>
-                        </button>
-                        <button id="mediumButton" type="button" class="dashboard-btn btn btn-warning">
-                            <p>Med
-                            <br>
-                            <i class="star fas fa-star" aria-hidden="true"></i>
-                            <i class="star fas fa-star" aria-hidden="true"></i>
-                            </p>
-                        </button>
-                        <button id="hardButton" type="button" class="dashboard-btn btn btn-danger">
-                            <p>Hard
-                            <br>
-                            <i class="star fas fa-star" aria-hidden="true"></i>
-                            <i class="star fas fa-star" aria-hidden="true"></i>
-                            <i class="star fas fa-star" aria-hidden="true"></i>
-                            </p>
-                        </button>
-                    </div>
-                    <!--card pack selection section-->
-                    <div class="col-12 selection-button px-1 text-center">
-                        <button type="button" class="dashboard-btn btn background-cover-center cars-cover">
-                        </button>
-                        <button type="button" class="dashboard-btn btn background-cover-center frozen-cover">
-                        </button>
-                        <button type="button" class="dashboard-btn btn background-cover-center toystory-cover">
-                        </button>
-                    </div>
-                </div>
+            <div class="row">
                 
-                <!-- dashboard controls -->
-                <div class="row my-3">
-                    <div class="col-12 selection-button px-1 text-center">
-                        <!-- Info modal pops up when clicked -->
-                        <button type="button" class="dashboard-btn btn btn-light circle-btn info-btn" data-toggle="modal" data-target="#infoModal"> 
-                            <i class="fas fa-question"></i>
-                        </button>
-                        <button type="button" id="muteButton" class="dashboard-btn btn btn-light circle-btn mute-btn">
-                            <i class="fas fa-volume-mute"></i> 
-                        </button>
-                        <button type="button" class="dashboard-btn btn btn-light circle-btn reset-btn"> 
-                            <i class="fas fa-undo-alt"></i>
-                        </button>
-                    </div>
-                </div>
-            </div><!--End Dashboard-->
-            
-            <!--game column-->
-            
-            <div class="col-12 col-md-7 col-lg-8 game-board">
-                <div class="row game-board-header">
-                    <!--game header-->
-                    <div class="col-8 my-3">
-                        <h1>Match the cards</h1>
-                    </div>
-                    <!-- game turns counter --> <!-- TO DO: Code logic to count num turns taken and display -->
-                    <div class="col-4 my-3">
-                        <h4 class="turns-counter"></h4>
-                    </div>
-                </div>
+                <!--Dashboard-->
                 
-                <!-- game board -->
-                <div class="container-fluid pb-sm-2 pt-5 pb-4 p-md-4">
-                    <div class="row justify-content-center">
-                        
-                        <div class="col-4 col-sm-3 my-card-column-easy visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
-                                </div>
+                <div class="col-12 col-md-5 col-lg-4 dashboard px-3 pt-xl-3">
+                    <!--User info section-->
+                    <div class="row dashboard-section box-white-curved-corners mx-auto">
+                        <!--User name-->
+                        <div class="col-12 username-container"><h3 class="username">Name</h3></div><!--Put username variable here -->
+                        <div class="col-12 px-1 text-center">
+                            <!--User avatar-->
+                            <div class="background-cover-center avatar avatar-default show-modal box-white-curved-corners"></div> 
+                            <!--Trophy image-->
+                            <div class="trophy"></div>
+                        </div>
+                        <!--User high score-->
+                        <div class="col-12 text-center">
+                            <h5 id="dashboard-high-score-text">Your high score: Hard</h5>
+                            <div class="stars">
+                                <i class="dashboard-score-star star far fa-star" aria-hidden="true"></i>
+                                <i class="dashboard-score-star star far fa-star" aria-hidden="true"></i>
+                                <i class="dashboard-score-star star far fa-star" aria-hidden="true"></i>
+                                <i class="dashboard-score-star star far fa-star" aria-hidden="true"></i>
+                                <i class="dashboard-score-star star far fa-star" aria-hidden="true"></i>
                             </div>
                         </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-easy visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                    </div>
+                    <!-- Selection section -->
+                    <div class="row dashboard-section box-white-curved-corners mx-auto">
+                        <div class="col-12 selection-button px-1 text-center">
+                            <button id="easyButton" type="button" class="dashboard-btn btn btn-success">
+                                <p>Easy
+                                <br>
+                                <i class="star fas fa-star" aria-hidden="true"></i>
+                                </p>
+                            </button>
+                            <button id="mediumButton" type="button" class="dashboard-btn btn btn-warning">
+                                <p>Med
+                                <br>
+                                <i class="star fas fa-star" aria-hidden="true"></i>
+                                <i class="star fas fa-star" aria-hidden="true"></i>
+                                </p>
+                            </button>
+                            <button id="hardButton" type="button" class="dashboard-btn btn btn-danger">
+                                <p>Hard
+                                <br>
+                                <i class="star fas fa-star" aria-hidden="true"></i>
+                                <i class="star fas fa-star" aria-hidden="true"></i>
+                                <i class="star fas fa-star" aria-hidden="true"></i>
+                                </p>
+                            </button>
+                        </div>
+                        <!--card pack selection section-->
+                        <div class="col-12 selection-button px-1 text-center">
+                            <button type="button" class="dashboard-btn btn background-cover-center cars-cover">
+                            </button>
+                            <button type="button" class="dashboard-btn btn background-cover-center frozen-cover">
+                            </button>
+                            <button type="button" class="dashboard-btn btn background-cover-center toystory-cover">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- dashboard controls -->
+                    <div class="row my-3">
+                        <div class="col-12 selection-button px-1 text-center">
+                            <!-- Info modal pops up when clicked -->
+                            <button type="button" class="dashboard-btn btn btn-light circle-btn info-btn" data-toggle="modal" data-target="#infoModal"> 
+                                <i class="fas fa-question"></i>
+                            </button>
+                            <button type="button" id="muteButton" class="dashboard-btn btn btn-light circle-btn mute-btn">
+                                <i class="fas fa-volume-mute"></i> 
+                            </button>
+                            <button type="button" class="dashboard-btn btn btn-light circle-btn reset-btn"> 
+                                <i class="fas fa-undo-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div><!--End Dashboard-->
+                
+                <!--game column-->
+                
+                <div class="col-12 col-md-7 col-lg-8 game-board">
+                    <div class="row game-board-header">
+                        <!--game header-->
+                        <div class="col-8 my-3">
+                            <h1>Match the cards</h1>
+                        </div>
+                        <!-- game turns counter --> <!-- TO DO: Code logic to count num turns taken and display -->
+                        <div class="col-4 my-3">
+                            <h4 class="turns-counter"></h4>
+                        </div>
+                    </div>
+                    
+                    <!-- game board -->
+                    <div class="container-fluid pb-sm-2 pt-5 pb-4 p-md-4">
+                        <div class="row justify-content-center">
+                            
+                            <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-easy visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-easy visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-easy visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-easy visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-easy visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-easy visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-medium visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-medium visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-medium visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-medium visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-medium visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-medium visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-medium visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-hard visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-medium visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-hard visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-hard visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-hard visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-hard visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="col-4 col-sm-3 my-card-column-hard visible">
-                            <div class="flip-card card-container mx-auto face-down">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front game-card game-card-back"></div>
-                                    <div class="flip-card-back game-card dummyclass"></div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-hard visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-4 col-sm-3 my-card-column-hard visible">
+                                <div class="flip-card card-container mx-auto face-down">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front game-card game-card-back"></div>
+                                        <div class="flip-card-back game-card dummyclass"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -265,7 +266,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
     
     <!-- USER MODAL -->
@@ -320,7 +320,7 @@
     
     <!-- INFO MODAL -->
     <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="container-fluid">
@@ -531,6 +531,22 @@
         </div>
     </div>
     
+    <!-- FOOTER -->
+		<footer class="page-footer bg-secondary text-white">
+			<div class="container">
+				<div class="row text-center py-3">
+					<div class="col-12">
+						<!-- Developer info and link  -->
+						<div class="text-shadow developer-info text-center">
+							<h5 class="picflip-footer">PicFlip!</h5> Designed and developed by AJGreaves © 2019 
+    						<a class="github-icon text-white" href="https://github.com/AJGreaves" target="_blank" aria-label="Find me on GithHub" rel="noopener">
+	    						<i class="fab fa-github-alt fa-lg fa-2x"></i>
+		    				</a>
+		    			</div>
+					</div>
+				</div>
+			</div>	
+		</footer>
     
     <!-- AUDIO FILES -->
     <audio id="buttonClickAudio" src="assets/audio/button.mp3"></audio>

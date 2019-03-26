@@ -39,6 +39,11 @@
     .my-card-column-hard {
         height: 130px;
     }
+    .github-icon, 
+    .developer-info, 
+    .picflip-footer {
+    padding: 0.4rem;
+}
 }
 
 @media screen and (max-width: 576px){ /*small phones*/

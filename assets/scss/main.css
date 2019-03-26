@@ -162,6 +162,7 @@ button p {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
 /*----------------------------------- FOOTER */
+/* see media queries for smaller padding on mobiles*/
 .github-icon,
 .developer-info,
 .picflip-footer {
@@ -525,7 +526,12 @@ and ajusted to project needs*/
   .my-card-column-easy,
   .my-card-column-medium,
   .my-card-column-hard {
-    height: 130px; } }
+    height: 130px; }
+
+  .github-icon,
+  .developer-info,
+  .picflip-footer {
+    padding: 0.4rem; } }
 @media screen and (max-width: 576px) {
   /*small phones*/
   button .star {

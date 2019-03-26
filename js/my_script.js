@@ -151,11 +151,6 @@ $('#confirmDeleteData').click(function() {
     deleteData();
 })
 
-//--- card flip actions
-$('.flip-card').click(function() {
-    flipCards();
-})
-
 
 // ---------- on click event functions
 
@@ -279,16 +274,17 @@ function muteAudio() {
 }
 
 // flips cards over on click, only allows two clicks at a time. Fixes bug caused by clicking cards too fast. 
-function flipCards() {
+// BUG FIX - has to remain inside a click-function for $(this) to work
+$('.flip-card').click(function() {
+    
     if (checkCounter()) {
-        $('#cardFlipAudio')[0].currentTime=0;
         $('#cardFlipAudio')[0].play();
         if ($(this).hasClass('face-down')) {
             $(this).addClass('face-up disabled selected').removeClass('face-down');
         }
         checkMatch();
-    }    
-}
+    } 
+})
 
 // ---------- Display functions
 

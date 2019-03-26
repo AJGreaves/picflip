@@ -370,17 +370,17 @@ function makeCardPack(arr, num) {
 	return shuffledCardsArray;
 }
 
-// cuts the deck for different difficulty levels
-function cutDeck(arr, num) {
-    let cards = arr.slice(0, num);
-    return cards;
-}
-
 // finds how many cards are visible, returns number of images needed for new pack
 function howManyCards () {
     let num = document.getElementsByClassName('visible').length;
     let halfNum = (num/2);
     return halfNum;
+}
+
+// cuts the deck for different difficulty levels
+function cutDeck(arr, num) {
+    let cards = arr.slice(0, num);
+    return cards;
 }
 
 // returns an array with element elem repeated twice.
@@ -444,32 +444,6 @@ function checkMatch() {
                 })
             },1000);  
         }
-    } else {
-        return;
-    }
-}
-
-// checks for when player has won. Works for all card pack sizes.
-function checkForWin() {
-    let matchedNum = $('.matched').length;
-    let visibleNum = $('.visible').length;
-    
-    // checks if all visible cards have been turned over
-    if (matchedNum == visibleNum) {
-        activeScore = checkScore();
-        if (checkIfHighScore()) {
-
-            // launch new high score modal if beats old score
-            delayDisplayModal('#newHighScoreModal');
-            displayScore(activeHighScore, highWinStar);
-            displayScore(activeHighScore, dashStar);
-            return;
-        } else {
-            // launch win modal if doesn't beat old score
-            displayScore(activeScore, winStar);
-            delayDisplayModal('#winModal');
-            return;
-        };
     } else {
         return;
     }
@@ -543,6 +517,32 @@ function checkScore() {
         }
     } else {
         return console.log('checkScore function error!');
+    }
+}
+
+// checks for when player has won. Works for all card pack sizes.
+function checkForWin() {
+    let matchedNum = $('.matched').length;
+    let visibleNum = $('.visible').length;
+    
+    // checks if all visible cards have been turned over
+    if (matchedNum == visibleNum) {
+        activeScore = checkScore();
+        if (checkIfHighScore()) {
+
+            // launch new high score modal if beats old score
+            delayDisplayModal('#newHighScoreModal');
+            displayScore(activeHighScore, highWinStar);
+            displayScore(activeHighScore, dashStar);
+            return;
+        } else {
+            // launch win modal if doesn't beat old score
+            displayScore(activeScore, winStar);
+            delayDisplayModal('#winModal');
+            return;
+        };
+    } else {
+        return;
     }
 }
 

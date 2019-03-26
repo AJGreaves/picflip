@@ -276,6 +276,7 @@ function muteAudio() {
 $('.flip-card').click(function() {
     
     if (checkCounter()) {
+        $('#cardFlipAudio')[0].currentTime=0;
         $('#cardFlipAudio')[0].play();
         if ($(this).hasClass('face-down')) {
             $(this).addClass('face-up disabled selected').removeClass('face-down');

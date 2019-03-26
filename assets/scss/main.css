@@ -70,7 +70,7 @@ button p {
 .trophy, .avatar {
   width: 120px;
   height: 120px;
-  margin: 0.5rem;
+  margin: 0.3rem;
   position: relative;
   display: inline-block;
   background-size: contain; }
@@ -501,6 +501,10 @@ and ajusted to project needs*/
   .my-card-column-medium,
   .my-card-column-hard {
     height: 90px; }
+
+  .trophy, .avatar {
+    width: 100px;
+    height: 100px; }
 
   [type=radio], #avatar-radio {
     height: 60px;

@@ -38,7 +38,7 @@ let highWinStar = 'win-modal-score-star';
 
 // checks for user data, if no data then launches modal to collect it
 function checkForUserData() { 
-    if ((typeof userName === null) || (typeof userAvatar === null)) {
+    if ((userAvatar === "default") || (isNaN(userAvatar))) {
         setTimeout(function() {
             // background on user data modal can't be clicked away, input must be given first
             $("#userInfoModal").modal({
@@ -118,6 +118,9 @@ function displayUserData() {
         case 'plant':
             $('.avatar').addClass('plant-cover').removeClass('avatar-default strawberry-cover toycar-cover');
             break;
+        case 'default':
+            $('.avatar').addClass('avatar-default').removeClass('plant-cover strawberry-cover toycar-cover');
+            break;
         default:
             break;
     }
@@ -151,19 +154,37 @@ $('#deleteDataModal').click(function() {
     $('#parentCheckModal').modal('show');
 })
 
-$('#confirmDeleteData').click(function() {  // DISPLAY SCORES ON DASHBOARD NOT FIXED YET
+$('#confirmDeleteData').click(function() {  
+    
+    // resets all user data
     localStorage.setItem("easyHighScore", 0);
     localStorage.setItem("mediumHighScore", 0);
     localStorage.setItem("hardHighScore", 0);
+    localStorage.setItem("userName", "Player");
+    localStorage.setItem("userAvatar", "default");
+
+    // reinitialises all user data
+    easyHighScore = localStorage.getItem("hardHighScore");
+    mediumHighScore = localStorage.getItem("hardHighScore");
+    hardHighScore = localStorage.getItem("hardHighScore");
+    userName = localStorage.getItem("userName");
+    userAvatar = localStorage.getItem("userAvatar");
+    
+    // redisplays all user data
+    activeHighScore = hardHighScore;
+    displayUserData();
     displayScore(activeHighScore, dashStar);
+    
+    // hides modal
     $('#parentCheckModal').modal('hide');
+    checkForUserData();
 })
 
 //--- difficulty selection buttons
 
 $('#easyButton').click(function() {
     $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
-    $('#dashboard-high-score-text').text('Your high score: Easy')
+    $('#dashboard-high-score-text').text('Your high score: Easy');
     activeHighScore = easyHighScore;
     displayScore(activeHighScore, dashStar);
     resetGame();
@@ -384,7 +405,7 @@ function delayedCorrectSound() {
     // delays correct match sound
     setTimeout(function() {
         $('#correctBingAudio')[0].play();
-    }, 800);    
+    }, 600);    
 }
 
 

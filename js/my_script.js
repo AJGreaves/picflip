@@ -78,12 +78,6 @@ function checkForUserData() {
 
 // ---------- on click events
 
-//--- collect and submit user info
-// This button is on the user info modal
-$('#user-info-submit-button').click(function() {
-    userInfoSubmitButton ();
-});
-
 //--- play button click audio on all button elements
 $('.btn').click(function() {
     clickButton();
@@ -102,7 +96,53 @@ $('.toystory-cover').click(function() {
     styleButton(toystoryCardsArray);
 })
 
+//--- difficulty selection buttons
+
+$('#easyButton').click(function() {
+    easyButton();
+    difficultyButton(easyHighScore);
+})
+
+$('#mediumButton').click(function() {
+    mediumButton();
+    difficultyButton(mediumHighScore);
+})
+
+$('#hardButton').click(function() {
+    hardButton();
+    difficultyButton(hardHighScore);
+})
+
+//--- Reset button
+$('.reset-btn').click(function () {
+    resetGame();
+})
+
+//--- Mute button
+
+$('#muteButton').click(function() {
+    muteAudio();
+});
+
+//------ Modal buttons
+
+$('#win-modal-close-btn').click(function () {
+    resetGame();
+    $('#winModal').modal('hide');
+})
+
+$('#high-score-modal-close-btn').click(function () {
+    resetGame();
+})
+
+//--- collect and submit user info
+// This button is on the user info modal
+$('#user-info-submit-button').click(function() {
+    userInfoSubmitButton ();
+});
+
 //--- delete modal and button
+
 $('#deleteDataModal').click(function() {
     launchParentModal();
 })
@@ -110,6 +150,12 @@ $('#deleteDataModal').click(function() {
 $('#confirmDeleteData').click(function() {
     deleteData();
 })
+
+//--- card flip actions
+$('.flip-card').click(function() {
+    flipCards();
+})
+
 
 // ---------- on click event functions
 
@@ -171,61 +217,28 @@ function deleteData() {
     checkForUserData();
 }
 
-//--- difficulty selection buttons
-
-$('#easyButton').click(function() {
+function easyButton() {
     $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
     $('#dashboard-high-score-text').text('Your high score: Easy');
-    activeHighScore = easyHighScore;
-    displayScore(activeHighScore, dashStar);
-    resetGame();
-})
+}
 
-$('#mediumButton').click(function() {
+function mediumButton() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('invisible').removeClass('visible');
-    $('#dashboard-high-score-text').text('Your high score: Medium')
-    activeHighScore = mediumHighScore;
-    displayScore(activeHighScore, dashStar);
-    resetGame();
-})
+    $('#dashboard-high-score-text').text('Your high score: Medium');
+}
 
-$('#hardButton').click(function() {
+function hardButton() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('visible').removeClass('invisible');
-    $('#dashboard-high-score-text').text('Your high score: Hard')
-    activeHighScore = hardHighScore;
+    $('#dashboard-high-score-text').text('Your high score: Hard');
+}
+
+function difficultyButton(score) {
+    activeHighScore = score;
     displayScore(activeHighScore, dashStar);
     resetGame();
-})
-
-//--- Reset button
-
-$('.reset-btn').click(function () {
-    resetGame();
-})
-
-//--- Mute button
-
-$('#muteButton').click(function() {
-    $('#buttonClickAudio')[0].currentTime=0;
-    $('#buttonClickAudio')[0].play();
-    muteAudio();
-    //toggles between icons on mute button
-    $('#muteButton i').toggleClass('fa-volume-off');
-});
-
-//--- Modal buttons
-
-$('#win-modal-close-btn').click(function () {
-    resetGame();
-    $('#winModal').modal('hide');
-})
-
-$('#high-score-modal-close-btn').click(function () {
-    resetGame();
-})
-
+}
 
 // resets game, but not difficulty level or style selections
 function resetGame() {
@@ -246,7 +259,6 @@ function resetGame() {
     countTurns();
 }
 
-
 // mute audio function, original code from: https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
 function muteAudio() {
 
@@ -263,66 +275,11 @@ function muteAudio() {
         }
         silence = true;
     }
-}
-
-// finds how many cards are visible, returns number of images needed for new pack
-function howManyCards () {
-    let num = document.getElementsByClassName('visible').length;
-    let halfNum = (num/2);
-    return halfNum;
-}
-
-
-//------------------ GAME
-
-// creates pack by cutting difficulty selection, then duplicating, shuffling then returning it. 
-function makeCardPack(arr, num) {
-    
-    let cutArray = cutDeck(arr,num);
-    let doubleCardsArray = duplicateCards(cutArray);
-    let shuffledCardsArray = [];
-
-	// loop to randomize doubleCardsArray and push to displayCardsArray.
-	for (i = 0; i < num*2; i++) {
-	    let randIndex = Math.floor(Math.random() * doubleCardsArray.length);
-        let rand = doubleCardsArray[randIndex];
-        doubleCardsArray.splice(randIndex, 1);
-        shuffledCardsArray.push(rand);
-	}
-	return shuffledCardsArray;
-}
-
-// cuts the deck for different difficulty levels
-function cutDeck(arr, num) {
-    let cards = arr.slice(0, num);
-    return cards;
-}
-
-// returns an array with element elem repeated twice.
-function duplicateCards(elem){
-    let arr = [];
-
-        for (let i = 0; i < 2; i++) {
-            arr = arr.concat(elem);
-        };
-        return arr;
-}
-
-// turns counter
-
-function countTurns() {
-    
-    let turnsCounted = ("Turns: " + turnsCounter);
-    // counts flips, when 2 flips have been done the number of turns goes up by one.
-    if ((flipCounter % 2) == 0 ) {
-        turnsCounter++; 
-    }
-    $('.turns-counter').text(turnsCounted);
+    $('#muteButton i').toggleClass('fa-volume-off');
 }
 
 // flips cards over on click, only allows two clicks at a time. Fixes bug caused by clicking cards too fast. 
-$('.flip-card').click(function() {
-    
+function flipCards() {
     if (checkCounter()) {
         $('#cardFlipAudio')[0].currentTime=0;
         $('#cardFlipAudio')[0].play();
@@ -330,22 +287,12 @@ $('.flip-card').click(function() {
             $(this).addClass('face-up disabled selected').removeClass('face-down');
         }
         checkMatch();
-    } 
-})
-
-function checkCounter() {
-    countSelected++;
-    if (countSelected <= 2) {
-        return true;
-    } else {
-        return false;
-    }
+    }    
 }
 
 // ---------- Display functions
 
 function displayUserData() {
-    
     $('.username').text(userName); 
     
     // checks for which avatar choice was made and changes html to display it in avatar box
@@ -380,6 +327,93 @@ function displayCards(cards){
         $(this).removeClass(lastClass).addClass(cards[i]);
         }
     });
+}
+
+// displays score stars in selected place
+function displayScore(numOfStars, className) {
+    
+    let StarElems = document.getElementsByClassName(className);
+    
+    for (i=0; i<numOfStars; i++) {
+        if ($(StarElems[i]).hasClass('far')) {
+                $(StarElems[i]).addClass('fas').removeClass('far');
+        }
+    }
+    for (i=numOfStars; i<5; i++) {
+        if ($(StarElems[i]).hasClass('fas')) {
+                $(StarElems[i]).addClass('far').removeClass('fas');
+        }
+    }
+}
+
+// delays function so win modals do not pop up too early
+// BUG fix: moved delay into it's own function to prevent functions repeating when they shouldn't
+function delayDisplayModal(modalId) {
+    setTimeout(function() {
+        $(modalId).modal('show');
+        $('#applauseAudio')[0].play();
+    }, 1500);
+}
+
+//------------------ GAME
+
+// creates pack by cutting difficulty selection, then duplicating, shuffling then returning it. 
+function makeCardPack(arr, num) {
+    
+    let cutArray = cutDeck(arr,num);
+    let doubleCardsArray = duplicateCards(cutArray);
+    let shuffledCardsArray = [];
+
+	// loop to randomize doubleCardsArray and push to displayCardsArray.
+	for (i = 0; i < num*2; i++) {
+	    let randIndex = Math.floor(Math.random() * doubleCardsArray.length);
+        let rand = doubleCardsArray[randIndex];
+        doubleCardsArray.splice(randIndex, 1);
+        shuffledCardsArray.push(rand);
+	}
+	return shuffledCardsArray;
+}
+
+// cuts the deck for different difficulty levels
+function cutDeck(arr, num) {
+    let cards = arr.slice(0, num);
+    return cards;
+}
+
+// finds how many cards are visible, returns number of images needed for new pack
+function howManyCards () {
+    let num = document.getElementsByClassName('visible').length;
+    let halfNum = (num/2);
+    return halfNum;
+}
+
+// returns an array with element elem repeated twice.
+function duplicateCards(elem){
+    let arr = [];
+
+        for (let i = 0; i < 2; i++) {
+            arr = arr.concat(elem);
+        };
+        return arr;
+}
+
+// turns counter
+function countTurns() {
+    let turnsCounted = ("Turns: " + turnsCounter);
+    // counts flips, when 2 flips have been done the number of turns goes up by one.
+    if ((flipCounter % 2) == 0 ) {
+        turnsCounter++; 
+    }
+    $('.turns-counter').text(turnsCounted);
+}
+
+function checkCounter() {
+    countSelected++;
+    if (countSelected <= 2) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 // checks if two cards selected match: 
@@ -419,15 +453,6 @@ function checkMatch() {
     }
 }
 
-function delayedCorrectSound() {
-    // delays correct match sound
-    setTimeout(function() {
-        $('#correctBingAudio')[0].play();
-    }, 600);    
-}
-
-
-
 // checks for when player has won. Works for all card pack sizes.
 function checkForWin() {
     let matchedNum = $('.matched').length;
@@ -452,15 +477,6 @@ function checkForWin() {
     } else {
         return;
     }
-}
-
-// delays function so win modals do not pop up too early
-// BUG fix: moved delay into it's own function to prevent functions repeating when they shouldn't
-function delayDisplayModal(modalId) {
-    setTimeout(function() {
-        $(modalId).modal('show');
-        $('#applauseAudio')[0].play();
-    }, 1500);
 }
 
 // gets score out of 5 based on difficulty level selected and turns taken to win.
@@ -556,26 +572,17 @@ function checkIfHighScore(){
     }
 }
 
+//--- misc functions
 
-// displays score stars in selected place
-function displayScore(numOfStars, className) {
-    
-    let StarElems = document.getElementsByClassName(className);
-    
-    for (i=0; i<numOfStars; i++) {
-        if ($(StarElems[i]).hasClass('far')) {
-                $(StarElems[i]).addClass('fas').removeClass('far');
-        }
-    }
-    for (i=numOfStars; i<5; i++) {
-        if ($(StarElems[i]).hasClass('fas')) {
-                $(StarElems[i]).addClass('far').removeClass('fas');
-        }
-    }
+function delayedCorrectSound() {
+    // delays correct match sound
+    setTimeout(function() {
+        $('#correctBingAudio')[0].play();
+    }, 600);    
 }
 
 
-//default setting for cards when page is first loaded
+//--- default setting for cards when page is first loaded
 displayCardsArray = makeCardPack(carsCardsArray, 8);
 displayCards(displayCardsArray);
 countTurns();

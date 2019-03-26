@@ -49,9 +49,27 @@ function checkForUserData() {
     } else {
         userName = localStorage.getItem("userName");
         userAvatar = localStorage.getItem("userAvatar");
-        easyHighScore = localStorage.getItem("easyHighScore");
-        mediumHighScore = localStorage.getItem("mediumHighScore");
-        hardHighScore = localStorage.getItem("hardHighScore");
+        
+        // Bug fix: uninitialised high scores on reload of page caused high score stars to display incorrectly. 
+        // these isNaN statments fixed it.
+        if (isNaN(localStorage.getItem("easyHighScore"))) {
+            easyHighScore = 0;
+        } else {
+            easyHighScore = localStorage.getItem("easyHighScore");
+        }
+        
+        if (isNaN(localStorage.getItem("mediumHighScore"))) {
+            mediumHighScore = 0;
+        } else {
+            mediumHighScore = localStorage.getItem("mediumHighScore");
+        }
+        
+        if (isNaN(localStorage.getItem("hardHighScore"))) {
+            hardHighScore = 0;
+        } else {
+            hardHighScore = localStorage.getItem("hardHighScore");
+        }
+        
         activeHighScore = hardHighScore;
         return;
     }
@@ -133,7 +151,6 @@ $('.toystory-cover').click(function() {
 $('#easyButton').click(function() {
     $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
     $('#dashboard-high-score-text').text('Your high score: Easy')
-    debugger;
     activeHighScore = easyHighScore;
     displayScore(activeHighScore, dashStar);
     resetGame();
@@ -492,10 +509,6 @@ function checkIfHighScore(){
 function displayScore(numOfStars, className) {
     
     let StarElems = document.getElementsByClassName(className);
-    
-    if (isNaN(numOfStars)) {
-        numOfStars = 0;
-    };
     
     for (i=0; i<numOfStars; i++) {
         if ($(StarElems[i]).hasClass('far')) {

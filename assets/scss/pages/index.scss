@@ -98,6 +98,7 @@ button p {
     }
 }
 
+/* see media querues for size adjustment on mobiles */
 .trophy, .avatar {
     width: 120px;
     height: 120px;
@@ -107,6 +108,7 @@ button p {
     background-size: contain;
 }
 
+/* raises avatar image up when hovered */
 .avatar {
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
@@ -157,8 +159,8 @@ button p {
 }
 
 .info-modal-background {
-    background-color: $light-green;
     background-image: url("https://i.ibb.co/M2hwYnc/comic-green-bg.jpg");
+    background-color: $light-green;
 }
 
 .win-modal-background {
@@ -166,7 +168,7 @@ button p {
     background-color: $orange;
 }
 
-/* removes bootstrap background settings on modal */
+/* removes bootstrap background settings on modal so my custom ones show up */
 .modal-content {
     background-color: transparent;
     border: none;

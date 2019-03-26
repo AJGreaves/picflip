@@ -1,13 +1,5 @@
 /*----------------------------------- DASHBOARD */
 
-.dashboard {
-    height: 100vh;
-    background-color: $light-blue;
-    box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22);
-    padding: 0;
-    z-index: 1;
-}
-
 /* USER INFO SECTION */
 
 .user-info {
@@ -15,6 +7,7 @@
 }
 
 .dashboard-section {
+    width: 300px;
     margin: 1rem;
     padding: 1rem 0rem;
     box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22);
@@ -41,6 +34,10 @@
 }
 
 /* DIFFICULTY SELECTION SECTION */
+
+.dashboard-btn {
+    margin: 0.3rem;
+}
 
 .btn,
 #avatar-radio {

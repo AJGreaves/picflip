@@ -67,6 +67,7 @@ button p {
   background-size: cover;
   background-position: center center; }
 
+/* see media querues for size adjustment on mobiles */
 .trophy, .avatar {
   width: 120px;
   height: 120px;
@@ -75,6 +76,7 @@ button p {
   display: inline-block;
   background-size: contain; }
 
+/* raises avatar image up when hovered */
 .avatar {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
 
@@ -113,14 +115,14 @@ button p {
   border-radius: 8px; }
 
 .info-modal-background {
-  background-color: #66cc99;
-  background-image: url("https://i.ibb.co/M2hwYnc/comic-green-bg.jpg"); }
+  background-image: url("https://i.ibb.co/M2hwYnc/comic-green-bg.jpg");
+  background-color: #66cc99; }
 
 .win-modal-background {
   background-image: url("https://i.ibb.co/T294Qz7/comic-orange-bg.jpg");
   background-color: #ffcc33; }
 
-/* removes bootstrap background settings on modal */
+/* removes bootstrap background settings on modal so my custom ones show up */
 .modal-content {
   background-color: transparent;
   border: none; }
@@ -163,18 +165,12 @@ button p {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
 /*----------------------------------- DASHBOARD */
-.dashboard {
-  height: 100vh;
-  background-color: #33cccc;
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.22);
-  padding: 0;
-  z-index: 1; }
-
 /* USER INFO SECTION */
 .user-info {
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.22); }
 
 .dashboard-section {
+  width: 300px;
   margin: 1rem;
   padding: 1rem 0rem;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.22); }
@@ -196,6 +192,9 @@ button p {
   font-size: 1.5rem; }
 
 /* DIFFICULTY SELECTION SECTION */
+.dashboard-btn {
+  margin: 0.3rem; }
+
 .btn,
 #avatar-radio {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -472,8 +471,11 @@ and ajusted to project needs*/
   .my-card-column-easy,
   .my-card-column-medium,
   .my-card-column-hard {
-    height: 100px; } }
-@media screen and (max-width: 768px) {
+    height: 100px; }
+
+  .dashboard-section {
+    width: 290px; } }
+@media screen and (max-width: 767px) {
   /*phones*/
   /* fixes dashboard height issue on phones*/
   .dashboard {
@@ -492,7 +494,9 @@ and ajusted to project needs*/
     height: 130px; } }
 @media screen and (max-width: 576px) {
   /*small phones*/
-  /* fixes dashboard height issue on phones*/
+  button .star {
+    font-size: 0.4rem; }
+
   .card-container {
     width: 80px;
     height: 80px; }
@@ -502,9 +506,16 @@ and ajusted to project needs*/
   .my-card-column-hard {
     height: 90px; }
 
+  .dashboard-section {
+    width: auto; }
+
   .trophy, .avatar {
     width: 100px;
     height: 100px; }
+
+  .selection-button button {
+    height: 70px;
+    width: 70px; }
 
   [type=radio], #avatar-radio {
     height: 60px;

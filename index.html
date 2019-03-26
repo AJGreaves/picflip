@@ -24,9 +24,9 @@
             
             <!--Dashboard-->
             
-            <div class="col-12 col-md-5 dashboard">
+            <div class="col-12 col-md-5 col-lg-4 dashboard px-3 pt-xl-3">
                 <!--User info section-->
-                <div class="row dashboard-section box-white-curved-corners">
+                <div class="row dashboard-section box-white-curved-corners mx-auto">
                     <!--User name-->
                     <div class="col-12 username-container"><h3 class="username">Name</h3></div><!--Put username variable here -->
                     <div class="col-12 px-1 text-center">
@@ -48,26 +48,22 @@
                     </div>
                 </div>
                 <!-- Selection section -->
-                <div class="row dashboard-section box-white-curved-corners justify-content-center">
-                    <div class="col-4 my-2 selection-button text-right p-0">
-                        <button id="easyButton" type="button" class="btn btn-success">
+                <div class="row dashboard-section box-white-curved-corners mx-auto">
+                    <div class="col-12 selection-button px-1 text-center">
+                        <button id="easyButton" type="button" class="dashboard-btn btn btn-success">
                             <p>Easy
                             <br>
                             <i class="star fas fa-star" aria-hidden="true"></i>
                             </p>
                         </button>
-                    </div>
-                    <div class="col-4 my-2 selection-button text-center p-0">
-                        <button id="mediumButton" type="button" class="btn btn-warning">
+                        <button id="mediumButton" type="button" class="dashboard-btn btn btn-warning">
                             <p>Med
                             <br>
                             <i class="star fas fa-star" aria-hidden="true"></i>
                             <i class="star fas fa-star" aria-hidden="true"></i>
                             </p>
                         </button>
-                    </div>
-                    <div class="col-4 my-2 selection-button text-left p-0">
-                        <button id="hardButton" type="button" class="btn btn-danger">
+                        <button id="hardButton" type="button" class="dashboard-btn btn btn-danger">
                             <p>Hard
                             <br>
                             <i class="star fas fa-star" aria-hidden="true"></i>
@@ -77,37 +73,27 @@
                         </button>
                     </div>
                     <!--card pack selection section-->
-                    <div class="col-4 text-right selection-button my-2 p-0">
-                        <button type="button" class="btn background-cover-center cars-cover">
+                    <div class="col-12 selection-button px-1 text-center">
+                        <button type="button" class="dashboard-btn btn background-cover-center cars-cover">
                         </button>
-                    </div>
-                    <div class="col-4 text-center selection-button my-2 p-0">
-                        <button type="button" class="btn background-cover-center frozen-cover">
+                        <button type="button" class="dashboard-btn btn background-cover-center frozen-cover">
                         </button>
-                    </div>
-                    <div class="col-4 text-left selection-button my-2 p-0">
-                        <button type="button" class="btn background-cover-center toystory-cover">
+                        <button type="button" class="dashboard-btn btn background-cover-center toystory-cover">
                         </button>
                     </div>
                 </div>
                 
                 <!-- dashboard controls -->
-                <div class="row m-3">
-                    <div class="col-4 text-right p-0">
+                <div class="row my-3">
+                    <div class="col-12 selection-button px-1 text-center">
                         <!-- Info modal pops up when clicked -->
-                        <button type="button" class="btn btn-light circle-btn info-btn" data-toggle="modal" data-target="#infoModal"> 
+                        <button type="button" class="dashboard-btn btn btn-light circle-btn info-btn" data-toggle="modal" data-target="#infoModal"> 
                             <i class="fas fa-question"></i>
                         </button>
-                    </div>
-                    <!-- TO DO: write logic to show this icon when clicked: <i class="fas fa-volume-off"></i> -->
-                    <div class="col-4 text-center p-0">
-                        <button type="button" id="muteButton" class="btn btn-light circle-btn mute-btn">
+                        <button type="button" id="muteButton" class="dashboard-btn btn btn-light circle-btn mute-btn">
                             <i class="fas fa-volume-mute"></i> 
                         </button>
-                    </div>
-                    <!-- TO DO: Resets game & reshuffles cards when clicked. Does not rest difficulty or style setting -->
-                    <div class="col-4 text-left p-0">
-                        <button type="button" class="btn btn-light circle-btn reset-btn"> 
+                        <button type="button" class="dashboard-btn btn btn-light circle-btn reset-btn"> 
                             <i class="fas fa-undo-alt"></i>
                         </button>
                     </div>
@@ -116,7 +102,7 @@
             
             <!--game column-->
             
-            <div class="col-12 col-md-7 game-board">
+            <div class="col-12 col-md-7 col-lg-8 game-board">
                 <div class="row game-board-header">
                     <!--game header-->
                     <div class="col-8 my-3">

@@ -36,7 +36,7 @@ let highWinStar = 'win-modal-score-star';
 
 //--- User Data Modal
 
-// checks for user data, if no data then launches modal to collect it
+// checks for user data, if no data, or data has been deleted then launches modal to collect it
 function checkForUserData() { 
     if ((userAvatar === "default")||(userName === null)) {
         setTimeout(function() {
@@ -47,6 +47,7 @@ function checkForUserData() {
             })
         },500)
     } else {
+        // loads locally stored data for returning player
         userName = localStorage.getItem("userName");
         userAvatar = localStorage.getItem("userAvatar");
         

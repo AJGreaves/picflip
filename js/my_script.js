@@ -38,7 +38,7 @@ let highWinStar = 'win-modal-score-star';
 
 // checks for user data, if no data then launches modal to collect it
 function checkForUserData() { 
-    if ((userAvatar === "default") || (isNaN(userAvatar))) {
+    if ((userAvatar === "default")||(userName === null)) {
         setTimeout(function() {
             // background on user data modal can't be clicked away, input must be given first
             $("#userInfoModal").modal({

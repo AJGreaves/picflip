@@ -332,19 +332,19 @@
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
-                                    <div class="col-12 text-center">
+                                    <div class="col-12 text-center p-0">
                                         <div class="box-white-curved-corners info-box m-2 px-3 py-1">
                                             <i class="far fa-clone fa-3x py-2"></i>
                                             <p>Turn over two cards each turn to find the matching pairs.</p>
                                         </div>
                                     </div>
-                                    <div class="col-12 text-center">
+                                    <div class="col-12 text-center p-0">
                                         <div class="box-white-curved-corners info-box m-2 px-3 py-1">
                                             <i class="fas fa-trophy fa-3x py-2"></i>
                                             <p>You win when all the pairs have been found.</p>
                                         </div>
                                     </div>
-                                    <div class="col-12 text-center">
+                                    <div class="col-12 text-center p-0">
                                         <div class="box-white-curved-corners info-box m-2 px-3 py-1">
                                             <i class="fas fa-star fa-3x py-2"></i>
                                             <p>The fewer turns you use to win, the higher your score.</p>
@@ -354,6 +354,17 @@
                                         <button type="button" class="btn btn-light circle-btn tick-btn" data-dismiss="modal"> 
                                             <i class="fas fa-check"></i>
                                         </button>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-12 my-modal-title">
+                                        <h3>Parents only!</h3>
+                                    </div>
+                                    <div class="col-12 text-center p-0">
+                                        <div class="box-white-curved-corners info-box m-2 px-3 py-1">
+                                            <i id="deleteDataModal" class="far fa-hand-paper fa-3x py-2"></i>
+                                            <p>To delete all high score data, click on the red hand.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -413,11 +424,11 @@
                                         <h1>New high score!!</h1>
                                     </div>
                                     
-                                    <div class="col-12 text-center">
+                                    <div class="col-12 text-center p-0">
                                         <div class="trophy mx-auto"></div>
                                     </div>
                                     
-                                    <div class="col-12 text-center">
+                                    <div class="col-12 text-center p-0">
                                         <div class="stars win-stars">
                                             <i class="win-modal-score-star star far fa-star" aria-hidden="true"></i>
                                             <i class="win-modal-score-star star far fa-star" aria-hidden="true"></i>
@@ -439,6 +450,87 @@
             </div>
         </div>
     </div>
+    
+    <!-- PARENTAL CHECK MODAL -->
+     <div class="modal fade" id="parentCheckModal" tabindex="-1" role="dialog" aria-labelledby="parentCheckModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 modal-background background-cover-center info-modal-background pb-2 mb-3">
+                                <div class="row justify-content-center">
+                                    <div class="col-12 my-modal-title">
+                                        <h1>Delete Profile!</h1>
+                                        <p> Deleting this profile will remove all high score data. <br>
+                                            To continue, please confirm you are an adult by clicking the answer to this question: </p>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="row justify-content-center box-white-curved-corners py-2 mb-3">
+                                            <div class="col-12">
+                                                <h5 id="math-question">19 - ? = 12</h5>
+                                            </div>
+                                            <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
+                                                    <p class="answer-option">1</p>
+                                                </button>
+                                            </div>
+                                            <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
+                                                    <p class="answer-option">2</p>
+                                                </button>
+                                            </div>
+                                            <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
+                                                    <p class="answer-option">3</p>
+                                                </button>
+                                            </div>
+                                            <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
+                                                    <p class="answer-option">4</p>
+                                                </button>
+                                            </div>
+                                            <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
+                                                    <p class="answer-option">5</p>
+                                                </button>
+                                            </div>
+                                            <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
+                                                    <p class="answer-option">6</p>
+                                                </button>
+                                            </div>
+                                            <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
+                                                <button id="confirmDeleteData" type="button" class="btn answer-option-btn"> 
+                                                    <p class="answer-option">7</p>
+                                                </button>
+                                            </div>
+                                            <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
+                                                    <p class="answer-option">8</p>
+                                                </button>
+                                            </div>
+                                            <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
+                                                    <p class="answer-option">9</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center p-0">
+                                        <button id="parental-check-modal-close-btn" type="button" class="btn btn-light circle-btn tick-btn" data-dismiss="modal"> 
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     
     <!-- AUDIO FILES -->
     <audio id="buttonClickAudio" src="assets/audio/button.mp3"></audio>

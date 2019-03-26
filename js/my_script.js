@@ -146,6 +146,19 @@ $('.toystory-cover').click(function() {
     resetGame();
 })
 
+$('#deleteDataModal').click(function() {
+    $('#infoModal').modal('hide');
+    $('#parentCheckModal').modal('show');
+})
+
+$('#confirmDeleteData').click(function() {  // DISPLAY SCORES ON DASHBOARD NOT FIXED YET
+    localStorage.setItem("easyHighScore", 0);
+    localStorage.setItem("mediumHighScore", 0);
+    localStorage.setItem("hardHighScore", 0);
+    displayScore(activeHighScore, dashStar);
+    $('#parentCheckModal').modal('hide');
+})
+
 //--- difficulty selection buttons
 
 $('#easyButton').click(function() {
@@ -529,4 +542,5 @@ displayCards(displayCardsArray);
 countTurns();
 checkForUserData();
 displayUserData();
+displayScore(activeHighScore, dashStar);
 })

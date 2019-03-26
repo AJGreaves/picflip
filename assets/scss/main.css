@@ -441,6 +441,9 @@ and ajusted to project needs*/
 .fa-trophy {
   color: #ffcc33; }
 
+.fa-hand-paper {
+  color: red; }
+
 .fa-3x {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
 
@@ -455,6 +458,23 @@ and ajusted to project needs*/
 .win-stars {
   margin-top: 1rem;
   margin-bottom: 2rem; }
+
+/* PARENT CHECK MODAL */
+#math-question {
+  font-size: 3rem;
+  color: #33cccc; }
+
+.answer-option-box {
+  margin: 0.3rem;
+  max-width: 74px; }
+
+.answer-option-btn {
+  width: 55px;
+  background-color: white; }
+
+.answer-option {
+  font-size: 2rem;
+  color: #33cccc; }
 
 /*----------------------------------- MEDIA QUERIES */
 @media screen and (max-width: 1200px) {

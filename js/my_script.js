@@ -76,16 +76,44 @@ function checkForUserData() {
     }
 }
 
-// launches user info modal again if avatar clicked
-$(".show-modal").click(function(){
-    $("#userInfoModal").modal({
-        backdrop: 'static',
-        keyboard: false
-    });
+// ---------- on click events
+
+//--- collect and submit user info
+// This button is on the user info modal
+$('#user-info-submit-button').click(function() {
+    userInfoSubmitButton ();
 });
 
-$('#user-info-submit-button').click(function(e) {
-	
+//--- play button click audio on all button elements
+$('.btn').click(function() {
+    clickButton();
+})
+
+//--- style selection buttons
+$('.cars-cover').click(function() {
+    styleButton(carsCardsArray);
+})
+
+$('.frozen-cover').click(function() {
+    styleButton(frozenCardsArray);
+})
+
+$('.toystory-cover').click(function() {
+    styleButton(toystoryCardsArray);
+})
+
+//--- delete modal and button
+$('#deleteDataModal').click(function() {
+    launchParentModal();
+})
+
+$('#confirmDeleteData').click(function() {
+    deleteData();
+})
+
+// ---------- on click event functions
+
+function userInfoSubmitButton() {
     // collects data from form and assigns to variables
     userName = $('#username').val();
     userAvatar = $('input[name=avatarRadios]:checked').val();
@@ -101,63 +129,24 @@ $('#user-info-submit-button').click(function(e) {
 		//overrides submit part of button that was closing modal even when all input fields not included
 		 e.preventDefault();
     }
-
-});
-
-function displayUserData() {
-    
-    $('.username').text(userName); 
-    
-    // checks for which avatar choice was made and changes html to display it in avatar box
-    switch (userAvatar) {
-        case 'strawberry':
-            $('.avatar').addClass('strawberry-cover').removeClass('avatar-default toycar-cover plant-cover');
-            break;
-        case 'car':
-            $('.avatar').addClass('toycar-cover').removeClass('avatar-default strawberry-cover plant-cover');
-            break;
-        case 'plant':
-            $('.avatar').addClass('plant-cover').removeClass('avatar-default strawberry-cover toycar-cover');
-            break;
-        case 'default':
-            $('.avatar').addClass('avatar-default').removeClass('plant-cover strawberry-cover toycar-cover');
-            break;
-        default:
-            break;
-    }
 }
 
-//------------------ BUTTONS
-
-//--- play button click audio
-$('.btn').click(function() {
+function clickButton() {
     $('#buttonClickAudio')[0].currentTime=0;
     $('#buttonClickAudio')[0].play();
-});
+}
 
-//--- style selection buttons
-$('.cars-cover').click(function() {
-    activeCardsArray = carsCardsArray;
-    resetGame();
-})
+function styleButton(arr) {
+    activeCardsArray = arr;
+    resetGame();    
+}
 
-$('.frozen-cover').click(function() {
-    activeCardsArray = frozenCardsArray;
-    resetGame();
-})
-
-$('.toystory-cover').click(function() {
-    activeCardsArray = toystoryCardsArray;
-    resetGame();
-})
-
-$('#deleteDataModal').click(function() {
+function launchParentModal() {
     $('#infoModal').modal('hide');
     $('#parentCheckModal').modal('show');
-})
+}
 
-$('#confirmDeleteData').click(function() {  
-    
+function deleteData() {
     // resets all user data
     localStorage.setItem("easyHighScore", 0);
     localStorage.setItem("mediumHighScore", 0);
@@ -180,7 +169,7 @@ $('#confirmDeleteData').click(function() {
     // hides modal
     $('#parentCheckModal').modal('hide');
     checkForUserData();
-})
+}
 
 //--- difficulty selection buttons
 
@@ -353,6 +342,31 @@ function checkCounter() {
     }
 }
 
+// ---------- Display functions
+
+function displayUserData() {
+    
+    $('.username').text(userName); 
+    
+    // checks for which avatar choice was made and changes html to display it in avatar box
+    switch (userAvatar) {
+        case 'strawberry':
+            $('.avatar').addClass('strawberry-cover').removeClass('avatar-default toycar-cover plant-cover');
+            break;
+        case 'car':
+            $('.avatar').addClass('toycar-cover').removeClass('avatar-default strawberry-cover plant-cover');
+            break;
+        case 'plant':
+            $('.avatar').addClass('plant-cover').removeClass('avatar-default strawberry-cover toycar-cover');
+            break;
+        case 'default':
+            $('.avatar').addClass('avatar-default').removeClass('plant-cover strawberry-cover toycar-cover');
+            break;
+        default:
+            break;
+    }
+}
+
 // displays shuffled cards on the screen
 function displayCards(cards){ 
     $('.flip-card-back').each(function(i){
@@ -408,7 +422,6 @@ function checkMatch() {
 function delayedCorrectSound() {
     // delays correct match sound
     setTimeout(function() {
-        $('#correctBingAudio')[0].currentTime=0;
         $('#correctBingAudio')[0].play();
     }, 600);    
 }

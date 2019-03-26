@@ -14,8 +14,8 @@ let flipCounter = 0;
 let turnsCounter = 0;
 let countSelected = 0;
 
-let userName;
-let userAvatar;
+let userName = localStorage.getItem("userName");
+let userAvatar = localStorage.getItem("userAvatar");
 
 let easyScore = 0;
 let mediumScore = 0;
@@ -31,13 +31,13 @@ let dashStar = 'dashboard-score-star';
 let winStar = 'score-star';
 let highWinStar = 'win-modal-score-star';
 
+
 //------------------ MODALS
 
 //--- User Data Modal
 
 // checks for user data, if no data then launches modal to collect it
-
-/* function checkForUserData() {                                                                        <-- SWITCH BACK ON BEFORE LAUNCHING
+function checkForUserData() { 
     if ((typeof userName === 'undefined') || (typeof userAvatar === 'undefined')) {
         setTimeout(function() {
             // background on user data modal can't be clicked away, input must be given first
@@ -47,9 +47,15 @@ let highWinStar = 'win-modal-score-star';
             })
         },500)
     } else {
+        userName = localStorage.getItem("userName");
+        userAvatar = localStorage.getItem("userAvatar");
+        easyHighScore = localStorage.getItem("easyHighScore");
+        mediumHighScore = localStorage.getItem("mediumHighScore");
+        hardHighScore = localStorage.getItem("hardHighScore");
+        activeHighScore = hardHighScore;
         return;
     }
-} */
+}
 
 // launches user info modal again if avatar clicked
 $(".show-modal").click(function(){
@@ -64,6 +70,22 @@ $('#user-info-submit-button').click(function(e) {
     // collects data from form and assigns to variables
     userName = $('#username').val();
     userAvatar = $('input[name=avatarRadios]:checked').val();
+    
+    localStorage.setItem("userName", userName);
+    localStorage.setItem("userAvatar", userAvatar);
+    
+    displayUserData()
+
+    // only closes modal if both username and avatar have been chosen
+	if (userName && userAvatar) {
+		$('#userInfoModal').modal('hide');	
+		//overrides submit part of button that was closing modal even when all input fields not included
+		 e.preventDefault();
+    }
+
+});
+
+function displayUserData() {
     
     $('.username').text(userName); 
     
@@ -81,14 +103,7 @@ $('#user-info-submit-button').click(function(e) {
         default:
             break;
     }
-    // only closes modal if both username and avatar have been chosen
-	if (userName && userAvatar) {
-		$('#userInfoModal').modal('hide');	
-		//overrides submit part of button that was closing modal even when all input fields not included
-		 e.preventDefault();
-    }
-
-});
+}
 
 //------------------ BUTTONS
 
@@ -118,6 +133,7 @@ $('.toystory-cover').click(function() {
 $('#easyButton').click(function() {
     $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
     $('#dashboard-high-score-text').text('Your high score: Easy')
+    debugger;
     activeHighScore = easyHighScore;
     displayScore(activeHighScore, dashStar);
     resetGame();
@@ -352,7 +368,7 @@ function checkForWin() {
     if (matchedNum == visibleNum) {
         activeScore = checkScore();
         if (checkIfHighScore()) {
-        //    debugger;
+
             // launch new high score modal if beats old score
             delayDisplayModal('#newHighScoreModal');
             displayScore(activeHighScore, highWinStar);
@@ -454,14 +470,17 @@ function checkIfHighScore(){
     if (easyScore > easyHighScore) {
         easyHighScore = easyScore;
         activeHighScore = easyHighScore;
+        localStorage.setItem("easyHighScore", easyHighScore);
         return true;
     } else if (mediumScore > mediumHighScore) {
         mediumHighScore = mediumScore;
         activeHighScore = mediumHighScore;
+        localStorage.setItem("mediumHighScore", mediumHighScore);
         return true;
     } else if (hardScore > hardHighScore) {
         hardHighScore = hardScore;
         activeHighScore = hardHighScore;
+        localStorage.setItem("hardHighScore", hardHighScore);
         return true;
     } else {
         return false;
@@ -473,6 +492,10 @@ function checkIfHighScore(){
 function displayScore(numOfStars, className) {
     
     let StarElems = document.getElementsByClassName(className);
+    
+    if (isNaN(numOfStars)) {
+        numOfStars = 0;
+    };
     
     for (i=0; i<numOfStars; i++) {
         if ($(StarElems[i]).hasClass('far')) {
@@ -492,4 +515,5 @@ displayCardsArray = makeCardPack(carsCardsArray, 8);
 displayCards(displayCardsArray);
 countTurns();
 checkForUserData();
+displayUserData();
 })

@@ -1,6 +1,6 @@
 $(document).ready(function() {
     
-// variables 
+//------------------ Variables 
 
 let carsCardsArray = ["cruz","lightning","mater","jackson-storm", "doc", "mac", "fillmore", "sally"];
 let frozenCardsArray = ["elsa","anna", "olaf", "kristoff", "hans", "sven", "elsa-anna", "olaf-sven"];
@@ -32,9 +32,7 @@ let winStar = 'score-star';
 let highWinStar = 'win-modal-score-star';
 
 
-//------------------ MODALS
-
-//--- User Data Modal
+//------------------ User Data Modal
 
 // checks for user data, if no data, or data has been deleted then launches modal to collect it
 function checkForUserData() { 
@@ -76,7 +74,7 @@ function checkForUserData() {
     }
 }
 
-// ---------- on click events
+//------------------ on click events
 
 //--- play button click audio on all button elements
 $('.btn').click(function() {
@@ -124,7 +122,7 @@ $('#muteButton').click(function() {
     muteAudio();
 });
 
-//------ Modal buttons
+//--- Modal buttons
 
 $('#win-modal-close-btn').click(function () {
     resetGame();
@@ -313,8 +311,10 @@ function displayUserData() {
 // displays shuffled cards on the screen
 function displayCards(cards){ 
     $('.flip-card-back').each(function(i){
+        
         //finds the last class in html element and assigns it to lastClass
         let lastClass = $(this).attr('class').split(' ').pop();
+        
         // need to keep 'game-card' class, so add it back in and add card from suffled array 
         if (lastClass == 'game-card') {
             $(this).addClass('game-card').addClass(cards[i]);

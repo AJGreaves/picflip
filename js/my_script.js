@@ -38,7 +38,7 @@ let highWinStar = 'win-modal-score-star';
 
 // checks for user data, if no data then launches modal to collect it
 function checkForUserData() { 
-    if ((typeof userName === 'undefined') || (typeof userAvatar === 'undefined')) {
+    if ((typeof userName === null) || (typeof userAvatar === null)) {
         setTimeout(function() {
             // background on user data modal can't be clicked away, input must be given first
             $("#userInfoModal").modal({
@@ -110,13 +110,13 @@ function displayUserData() {
     // checks for which avatar choice was made and changes html to display it in avatar box
     switch (userAvatar) {
         case 'strawberry':
-            $('.avatar-default').addClass('strawberry-cover').removeClass('avatar-default');
+            $('.avatar').addClass('strawberry-cover').removeClass('avatar-default toycar-cover plant-cover');
             break;
         case 'car':
-            $('.avatar-default').addClass('toycar-cover').removeClass('avatar-default');
+            $('.avatar').addClass('toycar-cover').removeClass('avatar-default strawberry-cover plant-cover');
             break;
         case 'plant':
-            $('.avatar-default').addClass('plant-cover').removeClass('avatar-default');
+            $('.avatar').addClass('plant-cover').removeClass('avatar-default strawberry-cover toycar-cover');
             break;
         default:
             break;

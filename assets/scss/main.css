@@ -67,25 +67,25 @@ button p {
   background-size: cover;
   background-position: center center; }
 
-.avatar {
+.trophy, .avatar {
   width: 120px;
   height: 120px;
-  background-size: contain;
+  margin: 0.5rem;
   position: relative;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  display: inline-block;
+  background-size: contain; }
 
-.avatar-default {
-  background-image: url("https://i.ibb.co/DQkPDHb/main-logo.png"); }
+.avatar {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
 
 .avatar:hover {
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.22); }
 
+.avatar-default {
+  background-image: url("https://i.ibb.co/DQkPDHb/main-logo.png"); }
+
 .trophy {
-  width: 120px;
-  height: 120px;
-  background-image: url("https://i.ibb.co/1JD5mS2/trophy.png");
-  background-size: contain;
-  position: relative; }
+  background-image: url("https://i.ibb.co/1JD5mS2/trophy.png"); }
 
 .cars-cover {
   background-image: url("https://i.ibb.co/x1wmBCq/lightning-main.jpg"); }
@@ -199,7 +199,7 @@ button p {
 .btn,
 #avatar-radio {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  border-radius: 2px;
+  border-radius: 8px;
   border: 3px solid #336666; }
 
 button .star {
@@ -480,7 +480,7 @@ and ajusted to project needs*/
     height: 100%; }
 
   h1, h4 {
-    font-size: 25px; }
+    font-size: 22px; }
 
   .card-container {
     width: 120px;

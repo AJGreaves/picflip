@@ -98,28 +98,29 @@ button p {
     }
 }
 
-.avatar {
+.trophy, .avatar {
     width: 120px;
     height: 120px;
-    background-size: contain;
+    margin: 0.5rem;
     position: relative;
+    display: inline-block;
+    background-size: contain;
+}
+
+.avatar {
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.avatar:hover { 
+    box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22); 
 }
 
 .avatar-default {
     background-image: url("https://i.ibb.co/DQkPDHb/main-logo.png");
 }
 
-.avatar:hover { 
-  box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22); 
-}
-
 .trophy {
-    width: 120px;
-    height: 120px;
     background-image: url("https://i.ibb.co/1JD5mS2/trophy.png");
-    background-size: contain;
-    position: relative;
 }
 
 .cars-cover {

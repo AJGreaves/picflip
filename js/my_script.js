@@ -332,13 +332,13 @@ function displayScore(numOfStars, className) {
     let StarElems = document.getElementsByClassName(className);
     
     for (i=0; i<numOfStars; i++) {
-        if ($(StarElems[i]).hasClass('far')) {
-                $(StarElems[i]).addClass('fas').removeClass('far');
+        if ($(StarElems[i]).hasClass('empty-star')) {
+                $(StarElems[i]).addClass('win-star').removeClass('empty-star');
         }
     }
     for (i=numOfStars; i<5; i++) {
-        if ($(StarElems[i]).hasClass('fas')) {
-                $(StarElems[i]).addClass('far').removeClass('fas');
+        if ($(StarElems[i]).hasClass('win-star')) {
+                $(StarElems[i]).addClass('empty-star').removeClass('win-star');
         }
     }
 }

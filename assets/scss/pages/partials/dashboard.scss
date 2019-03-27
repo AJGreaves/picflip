@@ -22,11 +22,16 @@
     text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
-.star.fas, .star.far {
+.win-star {
     color: $yellow;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
-.star.far {
-    text-shadow: none;
+
+// gives effect of slightly embossed hole for a star to go into.
+.empty-star {
+    color: #e0e0e0;
+	opacity: 0.3;
+    text-shadow: 0px 1px 1px #4d4d4d;
 }
 
 .stars .star {

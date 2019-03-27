@@ -197,11 +197,14 @@ button p {
 .star {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
 
-.star.fas, .star.far {
-  color: #ffe933; }
+.win-star {
+  color: #ffe933;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
 
-.star.far {
-  text-shadow: none; }
+.empty-star {
+  color: #e0e0e0;
+  opacity: 0.3;
+  text-shadow: 0px 1px 1px #4d4d4d; }
 
 .stars .star {
   font-size: 1.5rem; }

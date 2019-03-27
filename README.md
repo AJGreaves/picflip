@@ -1,9 +1,34 @@
-# Your Project's Name
+<h1 align="center">
+  <img src="https://i.ibb.co/SdxYJty/pic-Flipbanner.png" alt="PicFlip! logo"/>
+</h1>
+<h2 align="center">
+  <img src="https://i.ibb.co/f8g0CYk/tagline.png" alt="Memory card game for pre-school kids" >
+</h2>
 
-One or two paragraphs providing an overview of your project.
+[PicFlip!](https://ajgreaves.github.io/picflip/) is an engaging and entertaining memeory card game, designed for children aged between 1 and 5 years old. 
+Features include easy to operate controls, 3 levels of difficulty, entertaining animations and sounds,
+characters that children enjoy, and an overall feel of child friendly entertainment. 
 
-Essentially, this part is your sales pitch.
- 
+## Table of Contents
+
+- [**UX**](#add-later)
+
+- [**Features**](#add-later)<br>
+[**1. Existing Features**](#add-later)<br>
+[**2. Features Left to Implement**](#add-later)<br>
+
+- [**Technologies used**](#add-later)<br>
+
+- [**Testing**](#add-later)<br>
+
+- [**Deployment**](#add-later)<br>
+
+- [**Credits**](#add-later)<br>
+[**1. Content**](#add-later)<br>
+[**2. Media**](#add-later)<br>
+[**3. Code**](#add-later)<br>
+[**4. Acknowledgements**](#add-later)<br>
+
 ## UX
  
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.

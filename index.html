@@ -295,8 +295,9 @@
                                     <div class="col-12 text-center">
                                         <form class="userInfoModalForm">
                                             <div class="form-group">
-                                                <!-- BUG: No limit to characters you could enter here.  FIX: max length of input field set to 15 characters -->
-                                                <input type="text" class="form-control form-control-lg" name="username" id="username" maxlength="15" required>
+                                                <!-- BUG: No limit to number or type characters you could enter here.  
+                                                FIX: pattern attribute limits input to letters only, max length of input field set to 15 characters -->
+                                                <input type="text" class="form-control form-control-lg" name="username" id="username" pattern="[A-Za-z]" maxlength="15" required>
                                             </div>
                                             <div class="row">
                                                 <div class="col-12 info-title">

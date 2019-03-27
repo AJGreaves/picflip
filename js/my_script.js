@@ -36,7 +36,7 @@ let highWinStar = 'win-modal-score-star';
 
 // checks for user data, if no data, or data has been deleted then launches modal to collect it
 function checkForUserData() { 
-    if ((userAvatar === "default")||(userName === null)) {
+    if ((userAvatar === "default-avatar")||(userName === null)) {
         setTimeout(function() {
             // background on user data modal can't be clicked away, input must be given first
             $("#userInfoModal").modal({
@@ -48,6 +48,10 @@ function checkForUserData() {
         // loads locally stored data for returning player
         userName = localStorage.getItem("userName");
         userAvatar = localStorage.getItem("userAvatar");
+        
+        // adds correct title attribite to avatar
+        $('.avatar').attr('title').split().pop();
+        $('.avatar').attr('title', userAvatar);
         
         // Bug fix: uninitialised high scores on reload of page caused high score stars to display incorrectly. 
         // these isNaN statments fixed it.
@@ -159,7 +163,7 @@ function userInfoSubmitButton() {
     
     localStorage.setItem("userName", userName);
     localStorage.setItem("userAvatar", userAvatar);
-    
+
     displayUserData()
 
     // only closes modal if both username and avatar have been chosen
@@ -191,7 +195,7 @@ function deleteData() {
     localStorage.setItem("mediumHighScore", 0);
     localStorage.setItem("hardHighScore", 0);
     localStorage.setItem("userName", "Player");
-    localStorage.setItem("userAvatar", "default");
+    localStorage.setItem("userAvatar", "default-avatar");
 
     // reinitialises all user data
     easyHighScore = localStorage.getItem("easyHighScore");
@@ -199,6 +203,10 @@ function deleteData() {
     hardHighScore = localStorage.getItem("hardHighScore");
     userName = localStorage.getItem("userName");
     userAvatar = localStorage.getItem("userAvatar");
+    
+    // sets avatar attribute back to default
+    $('.avatar').attr('title').split().pop();
+    $('.avatar').attr('title', userAvatar);
     
     // redisplays all user data
     activeHighScore = hardHighScore;
@@ -290,6 +298,10 @@ $('.flip-card').click(function() {
 function displayUserData() {
     $('.username').text(userName); 
     
+    // sets avatar title attribute
+    $('.avatar').attr('title').split().pop();
+    $('.avatar').attr('title', userAvatar);
+    
     // checks for which avatar choice was made and changes html to display it in avatar box
     switch (userAvatar) {
         case 'strawberry':
@@ -310,7 +322,7 @@ function displayUserData() {
 }
 
 // displays shuffled cards on the screen
-function displayCards(cards){ 
+function displayCards(cards) { 
     $('.flip-card-back').each(function(i){
         
         //finds the last class in html element and assigns it to lastClass
@@ -323,8 +335,15 @@ function displayCards(cards){
         // adds the class from the shuffled cards array
         $(this).removeClass(lastClass).addClass(cards[i]);
         }
+        
+        $(this).attr('title').split().pop();
+        $(this).attr('title', (cards[i]));
+        
     });
 }
+
+$('#yourElementId').attr('title', 'your new title');
+
 
 // displays score stars in selected place
 function displayScore(numOfStars, className) {

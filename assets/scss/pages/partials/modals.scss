@@ -84,6 +84,8 @@ and ajusted to project needs*/
 .answer-option-btn {
     width: 55px;
     background-color: white;
+    font-family: $fun-font;
+    color: $light-blue!important; // overrides white!important on button css earlier in file. 
 }
 
 .answer-option {

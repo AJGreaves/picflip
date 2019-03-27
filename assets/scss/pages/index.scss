@@ -83,14 +83,13 @@ p {
     color: $dark-blue;
 }
 
-button p {
+button {
     font: {
         family: $fun-font;
-        size: 20px;
+        size: 20px!important; //overrides default styles on bootstrap
         weight: 100;
     }
-    text-align: center;
-    color: white;
+    color: white!important; //overrides default styles on bootstrap
 }
 
 /*----------------------------------- BACKGROUNDS */

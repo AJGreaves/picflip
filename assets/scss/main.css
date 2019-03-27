@@ -58,12 +58,11 @@ p {
   text-align: center;
   color: #336666; }
 
-button p {
+button {
   font-family: "Bubblegum Sans", cursive;
-  font-size: 20px;
+  font-size: 20px !important;
   font-weight: 100;
-  text-align: center;
-  color: white; }
+  color: white !important; }
 
 /*----------------------------------- BACKGROUNDS */
 .background-cover-center {
@@ -488,7 +487,9 @@ and ajusted to project needs*/
 
 .answer-option-btn {
   width: 55px;
-  background-color: white; }
+  background-color: white;
+  font-family: "Bubblegum Sans", cursive;
+  color: #33cccc !important; }
 
 .answer-option {
   font-size: 2rem;

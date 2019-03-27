@@ -43,19 +43,19 @@
                         <div class="col-12 username-container"><h4 class="username">Name</h4></div><!--Put username variable here -->
                         <div class="col-12 px-1 text-center">
                             <!--User avatar-->
-                            <picture class="background-cover-center avatar avatar-default show-modal box-white-curved-corners" title="Avatar"></picture> 
+                            <figure class="background-cover-center avatar avatar-default show-modal box-white-curved-corners" title="Avatar"></figure> 
                             <!--Trophy image-->
-                            <picture class="trophy" title="trophy"></picture>
+                            <figure class="trophy" title="trophy"></figure>
                         </div>
                         <!--User high score-->
                         <div class="col-12 text-center">
                             <h6 id="dashboard-high-score-text">Hard mode high score</h6>
                             <div id="starsDisplay" class="stars" title="Score out of 5 stars">
-                                <i class="dashboard-score-star star fas fa-star empty-star" aria-label="no star"></i>
-                                <i class="dashboard-score-star star fas fa-star empty-star" aria-label="no star"></i>
-                                <i class="dashboard-score-star star fas fa-star empty-star" aria-label="no star"></i>
-                                <i class="dashboard-score-star star fas fa-star empty-star" aria-label="no star"></i>
-                                <i class="dashboard-score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
+                                <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
+                                <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
+                                <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
+                                <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
                             </div>
                         </div>
                     </div>
@@ -63,25 +63,19 @@
                     <div class="row dashboard-section box-white-curved-corners mx-auto">
                         <div class="col-12 selection-button px-1 text-center">
                             <button id="easyButton" type="button" class="dashboard-btn btn btn-success">
-                                <p>Easy
-                                <br>
+                                Easy<br>
                                 <i class="star fas fa-star" aria-hidden="true"></i>
-                                </p>
                             </button>
                             <button id="mediumButton" type="button" class="dashboard-btn btn btn-warning">
-                                <p>Med
-                                <br>
+                                Med<br>
                                 <i class="star fas fa-star" aria-hidden="true"></i>
                                 <i class="star fas fa-star" aria-hidden="true"></i>
-                                </p>
                             </button>
                             <button id="hardButton" type="button" class="dashboard-btn btn btn-danger">
-                                <p>Hard
-                                <br>
+                                Hard<br>
                                 <i class="star fas fa-star" aria-hidden="true"></i>
                                 <i class="star fas fa-star" aria-hidden="true"></i>
                                 <i class="star fas fa-star" aria-hidden="true"></i>
-                                </p>
                             </button>
                         </div>
                         <!--card pack selection section-->
@@ -100,13 +94,13 @@
                         <div class="col-12 selection-button px-1 text-center">
                             <!-- Info modal pops up when clicked -->
                             <button type="button" class="dashboard-btn btn btn-light circle-btn info-btn" data-toggle="modal" data-target="#infoModal"> 
-                                <i class="fas fa-question" aria-label="question mark"></i>
+                                <i class="fas fa-question" title="question mark"></i>
                             </button>
                             <button type="button" id="muteButton" class="dashboard-btn btn btn-light circle-btn mute-btn">
-                                <i class="fas fa-volume-mute" aria-label="mute button"></i> 
+                                <i class="fas fa-volume-mute" title="mute button"></i> 
                             </button>
                             <button type="button" class="dashboard-btn btn btn-light circle-btn reset-btn"> 
-                                <i class="fas fa-undo-alt" aria-label="reset cards button"></i>
+                                <i class="fas fa-undo-alt" title="reset cards button"></i>
                             </button>
                         </div>
                     </div>
@@ -122,7 +116,7 @@
                         </header>
                         <!-- game turns counter --> <!-- TO DO: Code logic to count num turns taken and display -->
                         <div class="col-4 my-3">
-                            <h5 class="turns-counter"></h5>
+                            <h5 class="turns-counter">Turns: 0</h5>
                         </div>
                     </div>
                     
@@ -307,18 +301,18 @@
                                             <div class="row box-white-curved-corners info-box py-1 my-2">
                                                 <label class="col-4 text-right selection-button my-2 p-0">
                                                     <input class="form-check-input" type="radio" name="avatarRadios" id="avatarRadios1" value="plant" required>
-                                                    <img id="avatar-radio"class="background-cover-center plant-cover" title="Cute plant illustration"></img>
+                                                    <img src="https://i.ibb.co/j3T7F2Y/plant.jpg" class="background-cover-center plant-cover" alt="Cute plant illustration">
                                                 </label>
                                                 <label class="col-4 text-center selection-button my-2 p-0">
                                                     <input class="form-check-input" type="radio" name="avatarRadios" id="avatarRadios2" value="car" required>
-                                                    <img id="avatar-radio"class="background-cover-center toycar-cover" title="Yellow car illustration"></img>
+                                                    <img src="https://i.ibb.co/dfMH7zb/car.png" class="background-cover-center toycar-cover" alt="Yellow car illustration">
                                                 </label>
                                                 <label class="col-4 text-left selection-button my-2 p-0">
                                                     <input class="form-check-input" type="radio" name="avatarRadios" id="avatarRadios3" value="strawberry" required>
-                                                    <img id="avatar-radio"class="background-cover-center strawberry-cover" title="Strawberry illustration"></img>
+                                                    <img src="https://i.ibb.co/LZhQ7dG/strawberry.png" class="background-cover-center strawberry-cover" alt="Strawberry illustration">
                                                 </label>
                                             </div>
-                                            <button type="input" id="user-info-submit-button" class="btn btn-light circle-btn tick-btn"> 
+                                            <button id="user-info-submit-button" class="btn btn-light circle-btn tick-btn"> 
                                                 <i class="fas fa-check"></i>
                                             </button>
                                         </form>
@@ -404,11 +398,11 @@
                                     </div>
                                     <div class="col-12 text-center">
                                         <div id="starsWinModal" class="stars win-stars" title="Score out of 5 stars">
-                                            <i class="score-star star fas fa-star empty-star" aria-label="no star"></i>
-                                            <i class="score-star star fas fa-star empty-star" aria-label="no star"></i>
-                                            <i class="score-star star fas fa-star empty-star" aria-label="no star"></i>
-                                            <i class="score-star star fas fa-star empty-star" aria-label="no star"></i>
-                                            <i class="score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                            <i class="score-star star fas fa-star empty-star" title="no star"></i>
+                                            <i class="score-star star fas fa-star empty-star" title="no star"></i>
+                                            <i class="score-star star fas fa-star empty-star" title="no star"></i>
+                                            <i class="score-star star fas fa-star empty-star" title="no star"></i>
+                                            <i class="score-star star fas fa-star empty-star" title="no star"></i>
                                         </div>
                                     </div>
                                     <div class="col-12 text-center p-0">
@@ -439,16 +433,16 @@
                                     </div>
                                     
                                     <div class="col-12 text-center p-0">
-                                        <picture class="trophy mx-auto" title="trophy"></picture>
+                                        <figure class="trophy mx-auto" title="trophy"></figure>
                                     </div>
                                     
                                     <div class="col-12 text-center p-0">
                                         <div id="starsHighScoreModal" class="stars win-stars" title="score out of 5 stars">
-                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-label="no star"></i>
-                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-label="no star"></i>
-                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-label="no star"></i>
-                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-label="no star"></i>
-                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                            <i class="win-modal-score-star star fas fa-star empty-star" title="no star"></i>
+                                            <i class="win-modal-score-star star fas fa-star empty-star" title="no star"></i>
+                                            <i class="win-modal-score-star star fas fa-star empty-star" title="no star"></i>
+                                            <i class="win-modal-score-star star fas fa-star empty-star" title="no star"></i>
+                                            <i class="win-modal-score-star star fas fa-star empty-star" title="no star"></i>
                                         </div>
                                     </div>
                                     <div class="col-12 text-center p-0">
@@ -474,61 +468,43 @@
                         <div class="row">
                             <div class="col-12 modal-background background-cover-center info-modal-background pb-2 mb-3">
                                 <div class="row justify-content-center">
-                                    <strong class="col-12 my-modal-title">
+                                    <div class="col-12 my-modal-title">
                                         <h2>Delete Profile!</h2>
-                                        <p> Deleting this profile will remove all high score data. <br>
+                                            <p> Deleting this profile will remove all high score data. <br>
                                             To continue, please confirm you are an adult by clicking the answer to this question: 
                                         </p>
-                                    </strong>
+                                    </div>
                                     <div class="col-12">
                                         <div class="row justify-content-center box-white-curved-corners py-2 mb-3">
                                             <div class="col-12">
                                                 <h6 id="math-question">19 - ? = 12</h6>
                                             </div>
                                             <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
-                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
-                                                    <p class="answer-option">1</p>
-                                                </button>
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal">1</button>
                                             </div>
                                             <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
-                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
-                                                    <p class="answer-option">2</p>
-                                                </button>
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal">2</button>
                                             </div>
                                             <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
-                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
-                                                    <p class="answer-option">3</p>
-                                                </button>
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal">3</button>
                                             </div>
                                             <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
-                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
-                                                    <p class="answer-option">4</p>
-                                                </button>
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal">4</button>
                                             </div>
                                             <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
-                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
-                                                    <p class="answer-option">5</p>
-                                                </button>
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal">5</button>
                                             </div>
                                             <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
-                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
-                                                    <p class="answer-option">6</p>
-                                                </button>
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal">6</button>
                                             </div>
                                             <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
-                                                <button id="confirmDeleteData" type="button" class="btn answer-option-btn"> 
-                                                    <p class="answer-option">7</p>
-                                                </button>
+                                                <button id="confirmDeleteData" type="button" class="btn answer-option-btn">7</button>
                                             </div>
                                             <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
-                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
-                                                    <p class="answer-option">8</p>
-                                                </button>
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal">8</button>
                                             </div>
                                             <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
-                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
-                                                    <p class="answer-option">9</p>
-                                                </button>
+                                                <button type="button" class="btn answer-option-btn" data-dismiss="modal">9</button>
                                             </div>
                                         </div>
                                     </div>
@@ -578,7 +554,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> 
-	<script type="text/javascript" src="js/my_script.js"></script>
+	<script src="js/my_script.js"></script>
 	
 	
 </body>

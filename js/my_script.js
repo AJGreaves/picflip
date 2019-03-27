@@ -194,8 +194,8 @@ function deleteData() {
     localStorage.setItem("userAvatar", "default");
 
     // reinitialises all user data
-    easyHighScore = localStorage.getItem("hardHighScore");
-    mediumHighScore = localStorage.getItem("hardHighScore");
+    easyHighScore = localStorage.getItem("easyHighScore");
+    mediumHighScore = localStorage.getItem("mediumHighScore");
     hardHighScore = localStorage.getItem("hardHighScore");
     userName = localStorage.getItem("userName");
     userAvatar = localStorage.getItem("userAvatar");

@@ -5,7 +5,7 @@
   <img src="https://i.ibb.co/f8g0CYk/tagline.png" alt="Memory card game for pre-school kids" >
 </h2>
 
-<div style="text-align:center"> 
+<div align="center"> 
 
 [PicFlip!](https://ajgreaves.github.io/picflip/) is an engaging and entertaining memeory card game, designed for children aged between 1 and 5 years old. 
 Features include easy to operate controls, 3 levels of difficulty, entertaining animations and sounds,
@@ -18,7 +18,7 @@ characters that children enjoy, and an overall feel of child friendly entertainm
 
 ## Table of Contents
 
-- [**UX**](#two-target-audiences)
+- [**UX**](#add-later)
 
 - [**Features**]()<br>
 [**1. Existing Features**](#add-later)<br>

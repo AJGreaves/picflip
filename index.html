@@ -30,7 +30,7 @@
 <body>
     
     <!--GAME SECTION-->
-    <div id="body-wrapper">
+    <main id="body-wrapper">
         <div id="body-container" class="container-fluid p-0">
             <div class="row">
                 
@@ -40,7 +40,7 @@
                     <!--User info section-->
                     <div class="row dashboard-section box-white-curved-corners mx-auto">
                         <!--User name-->
-                        <div class="col-12 username-container"><h3 class="username">Name</h3></div><!--Put username variable here -->
+                        <div class="col-12 username-container"><h4 class="username">Name</h4></div><!--Put username variable here -->
                         <div class="col-12 px-1 text-center">
                             <!--User avatar-->
                             <div class="background-cover-center avatar avatar-default show-modal box-white-curved-corners" title="Avatar"></div> 
@@ -49,7 +49,7 @@
                         </div>
                         <!--User high score-->
                         <div class="col-12 text-center">
-                            <h5 id="dashboard-high-score-text">Hard mode high score</h5>
+                            <h6 id="dashboard-high-score-text">Hard mode high score</h6>
                             <div id="starsDisplay" class="stars" title="Score out of 5 stars">
                                 <i class="dashboard-score-star star fas fa-star empty-star" aria-label="no star"></i>
                                 <i class="dashboard-score-star star fas fa-star empty-star" aria-label="no star"></i>
@@ -117,12 +117,12 @@
                 <div class="col-12 col-md-7 col-lg-8 game-board">
                     <div class="row game-board-header">
                         <!--game header-->
-                        <div class="col-8 my-3">
+                        <header class="col-8 my-3">
                             <h1>Match the cards</h1>
-                        </div>
+                        </header>
                         <!-- game turns counter --> <!-- TO DO: Code logic to count num turns taken and display -->
                         <div class="col-4 my-3">
-                            <h4 class="turns-counter"></h4>
+                            <h5 class="turns-counter"></h5>
                         </div>
                     </div>
                     
@@ -278,7 +278,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
     
     <!-- USER MODAL -->
     <div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="userInfoModal" aria-hidden="true">
@@ -290,7 +290,7 @@
                             <div class="col-12 modal-background background-cover-center info-modal-background pb-2 mb-3">
                                 <div class="row justify-content-center">
                                     <div class="col-12 my-modal-title">
-                                        <h1>Who wants to play?</h1>
+                                        <h2>Who wants to play?</h2>
                                     </div>
                                     <div class="col-12 text-center">
                                         <form class="userInfoModalForm">
@@ -299,7 +299,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-12 info-title">
-                                                    <h1>Choose a picture</h1>
+                                                    <h3>Choose a picture</h3>
                                                 </div>
                                             </div>
                                             <div class="row box-white-curved-corners info-box py-1 my-2">
@@ -340,7 +340,7 @@
                             <div class="col-12 background-cover-center modal-background info-modal-background pb-2 mb-3">
                                 <div class="row justify-content-center">
                                     <div class="col-12 my-modal-title">
-                                        <h1>How to play</h1>
+                                        <h2>How to play</h2>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
@@ -370,7 +370,7 @@
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 my-modal-title">
-                                        <h3>Parents only!</h3>
+                                        <h4>Parents only!</h4>
                                     </div>
                                     <div class="col-12 text-center p-0">
                                         <div class="box-white-curved-corners info-box m-2 px-3 py-1">
@@ -397,8 +397,8 @@
                             <div class="col-12 modal-background background-cover-center win-modal-background pb-2 mb-3">
                                 <div class="row justify-content-center">
                                     <div class="col-12 my-modal-title">
-                                        <h1>Woohoo!!</h1>
-                                        <h2>You win!</h2>
+                                        <h2>Woohoo!!</h2>
+                                        <h3>You win!</h3>
                                     </div>
                                     <div class="col-12 text-center">
                                         <figure id="starsWinModal" class="stars win-stars" title="Score out of 5 stars">
@@ -433,7 +433,7 @@
                             <div class="col-12 modal-background background-cover-center win-modal-background pb-2 mb-3">
                                 <div class="row justify-content-center">
                                     <div class="col-12 my-modal-title">
-                                        <h1>New high score!!</h1>
+                                        <h2>New high score!!</h2>
                                     </div>
                                     
                                     <div class="col-12 text-center p-0">
@@ -473,14 +473,14 @@
                             <div class="col-12 modal-background background-cover-center info-modal-background pb-2 mb-3">
                                 <div class="row justify-content-center">
                                     <div class="col-12 my-modal-title">
-                                        <h1>Delete Profile!</h1>
+                                        <h2>Delete Profile!</h2>
                                         <p> Deleting this profile will remove all high score data. <br>
                                             To continue, please confirm you are an adult by clicking the answer to this question: </p>
                                     </div>
                                     <div class="col-12">
                                         <div class="row justify-content-center box-white-curved-corners py-2 mb-3">
                                             <div class="col-12">
-                                                <h5 id="math-question">19 - ? = 12</h5>
+                                                <h6 id="math-question">19 - ? = 12</h6>
                                             </div>
                                             <div class="col-2 col-sm-1 answer-option-box p-0 text-center">
                                                 <button type="button" class="btn answer-option-btn" data-dismiss="modal"> 
@@ -549,7 +549,7 @@
 		    <!-- Developer info and link  -->
 			<div class="row text-center">
 				<div class="col-12 col-sm-2 py-sm-2 developer-info pb-0 text-center">
-				    <h5 class="picflip-footer">PicFlip!</h5>
+				    <h6 class="picflip-footer">PicFlip!</h6>
 				</div>
 				<div class="col-12 col-sm-8 py-sm-2 developer-info text-center">
 				    Designer & Developer AJGreaves

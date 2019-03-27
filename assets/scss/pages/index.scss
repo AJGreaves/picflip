@@ -1,6 +1,6 @@
 /*----------------------------------- HEADINGS */
 
-h1 {
+h1, h2 {
     font: {
         family: $simple-font;
         size: 40px;
@@ -13,7 +13,7 @@ h1 {
     color: $dark-blue;
 }
 
-h2 {
+h3 {
     font: {
         family: $fun-font;
         size: 30px;
@@ -23,7 +23,7 @@ h2 {
     color: $dark-blue;
 }
 
-.info-title h2 {
+.info-title h3 {
     font: {
         family: $simple-font;
         size: 35px;
@@ -36,7 +36,7 @@ h2 {
     color: $dark-blue;
 }
 
-h3 {
+h4 {
     font: {
         family: $simple-font;
         size: 25px;
@@ -46,7 +46,7 @@ h3 {
     color: $dark-blue;
 }
 
-h4 {
+h5 {
     font: {
         family: $fun-font;
         size: 40px;
@@ -58,7 +58,7 @@ h4 {
     color: $dark-blue;
 }
 
-h5 {
+h6 {
     font: {
         family: $simple-font;
         size: 20px;

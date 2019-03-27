@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Bubblegum+Sans:100,200,300,400,500,600,700|Fredoka+One:100,200,300,400,500,600,700");
 /*----------------------------------- HEADINGS */
-h1 {
+h1, h2 {
   font-family: "Fredoka One", cursive;
   font-size: 40px;
   font-weight: 100;
@@ -8,14 +8,14 @@ h1 {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   color: #336666; }
 
-h2 {
+h3 {
   font-family: "Bubblegum Sans", cursive;
   font-size: 30px;
   font-weight: 100;
   text-align: center;
   color: #336666; }
 
-.info-title h2 {
+.info-title h3 {
   font-family: "Fredoka One", cursive;
   font-size: 35px;
   font-weight: 100;
@@ -23,14 +23,14 @@ h2 {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   color: #336666; }
 
-h3 {
+h4 {
   font-family: "Fredoka One", cursive;
   font-size: 25px;
   font-weight: 200;
   text-align: center;
   color: #336666; }
 
-h4 {
+h5 {
   font-family: "Bubblegum Sans", cursive;
   font-size: 40px;
   font-weight: 100;
@@ -40,7 +40,7 @@ h4 {
   /*fixes alignment with h1*/
   color: #336666; }
 
-h5 {
+h6 {
   font-family: "Fredoka One", cursive;
   font-size: 20px;
   font-weight: 100;

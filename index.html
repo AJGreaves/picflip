@@ -295,7 +295,8 @@
                                     <div class="col-12 text-center">
                                         <form class="userInfoModalForm">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-lg" name="username" id="username" required>
+                                                <!-- BUG: No limit to characters you could enter here.  FIX: max length of input field set to 15 characters -->
+                                                <input type="text" class="form-control form-control-lg" name="username" id="username" maxlength="15" required>
                                             </div>
                                             <div class="row">
                                                 <div class="col-12 info-title">

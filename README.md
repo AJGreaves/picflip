@@ -5,15 +5,22 @@
   <img src="https://i.ibb.co/f8g0CYk/tagline.png" alt="Memory card game for pre-school kids" >
 </h2>
 
+<div style="text-align:center"> 
+
 [PicFlip!](https://ajgreaves.github.io/picflip/) is an engaging and entertaining memeory card game, designed for children aged between 1 and 5 years old. 
 Features include easy to operate controls, 3 levels of difficulty, entertaining animations and sounds,
-characters that children enjoy, and an overall feel of child friendly entertainment. 
+characters that children enjoy, and an overall feel of child friendly entertainment.
+<br>
+
+[View the PicFlip! page.](https://ajgreaves.github.io/picflip/)
+
+</div>
 
 ## Table of Contents
 
-- [**UX**](#add-later)
+- [**UX**](#two-target-audiences)
 
-- [**Features**](#add-later)<br>
+- [**Features**]()<br>
 [**1. Existing Features**](#add-later)<br>
 [**2. Features Left to Implement**](#add-later)<br>
 
@@ -30,7 +37,10 @@ characters that children enjoy, and an overall feel of child friendly entertainm
 [**4. Acknowledgements**](#add-later)<br>
 
 ## UX
+PicFlip! has `two target audiences`: Pre-school children and their parents. 
  
+----
+
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:

@@ -47,6 +47,7 @@ h6 {
   text-align: center;
   color: #336666; }
 
+/* Other fonts */
 .picflip-footer {
   font-size: 17px;
   color: white; }
@@ -64,21 +65,7 @@ button {
   font-weight: 100;
   color: white !important; }
 
-/*----------------------------------- BACKGROUNDS */
-.background-cover-center {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center; }
-
-/* see media querues for size adjustment on mobiles */
-.trophy, .avatar {
-  width: 120px;
-  height: 120px;
-  margin: 0.3rem;
-  position: relative;
-  display: inline-block;
-  background-size: contain; }
-
+/* BACKGROUNDS */
 .avatar-default {
   background-image: url("https://i.ibb.co/DQkPDHb/main-logo.png"); }
 
@@ -123,7 +110,21 @@ button {
   background-color: transparent;
   border: none; }
 
-/*----------------------------------- CONTAINERS */
+.background-cover-center {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+/* see media querues for size adjustment on mobiles */
+.trophy, .avatar {
+  width: 120px;
+  height: 120px;
+  margin: 0.3rem;
+  position: relative;
+  display: inline-block;
+  background-size: contain; }
+
+/* CONTAINERS */
 /* to get rid of overflow on pages*/
 .row, .container-fluid {
   margin-left: 0;
@@ -134,7 +135,7 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  /* fixes background image so it does not scroll. BUG fix for mobile screens */
+  /* fixes background image so it does not scroll. BUG fix for mobile screens in media queries */
   background-attachment: fixed; }
 
 .box-white-curved-corners {
@@ -160,7 +161,7 @@ button {
   width: 80px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
-/*----------------------------------- FOOTER */
+/* FOOTER */
 /* see media queries for smaller padding on mobiles*/
 .github-icon,
 .developer-info,
@@ -179,10 +180,7 @@ button {
   transform: scale(1.2); }
 
 /*----------------------------------- DASHBOARD */
-/* USER INFO SECTION */
-.user-info {
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.22); }
-
+/* containers */
 .dashboard-section {
   width: 300px;
   margin: 1rem;
@@ -193,6 +191,7 @@ button {
   width: 150px;
   height: 35px; }
 
+/* icons */
 .star {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
 
@@ -208,7 +207,8 @@ button {
 .stars .star {
   font-size: 1.5rem; }
 
-/* DIFFICULTY SELECTION SECTION */
+/* BUTTONS */
+/* Difficulty selection section */
 .dashboard-btn {
   margin: 0.3rem; }
 
@@ -218,15 +218,7 @@ button {
   border-radius: 8px;
   border: 3px solid #336666; }
 
-button .star {
-  font-size: 0.6rem;
-  color: white !important; }
-
-button p {
-  line-height: 1.5rem;
-  margin-bottom: 0.5rem; }
-
-/* DASHBOARD CONTROLS */
+/* Dashboard controls */
 .circle-btn {
   height: 80px;
   width: 80px;
@@ -240,6 +232,11 @@ button p {
   color: #336666; }
 
 /*----------------------------------- GAME BOARD */
+/* lines up this font with the other next to it */
+.turns-counter {
+  padding-top: 0.4rem; }
+
+/* containers */
 .game-board-header {
   background-color: #f5f5f5;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
@@ -247,12 +244,12 @@ button p {
 .my-card-column-easy,
 .my-card-column-medium,
 .my-card-column-hard {
-  /*see media queries below for adjustments to card column size to fit other screens*/
+  /*see media queries for adjustments to card column size to fit other screens*/
   height: 130px;
   padding: 0; }
 
 .card-container {
-  /*see media queries below for adjustments to card size to fit other screens*/
+  /*see media queries for adjustments to card size to fit other screens*/
   width: 120px;
   height: 120px;
   border-radius: 8px; }
@@ -264,9 +261,57 @@ button p {
   background-size: cover;
   background-position: center;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5);
-  /*clearer shadow to stand out on picture background*/ }
+  /*clearer shadow to stand out on picture background*/
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.5); }
 
+/* Code for flipping cards taken from w3schools and adjusted to my needs: https://www.w3schools.com/howto/howto_css_flip_card.asp */
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+  /* for 3D effect */ }
+
+/* Positions the cards */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: scale(1); }
+
+/* Horizontal flip when you click flip box container */
+.flip-card.face-up .flip-card-inner {
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
+
+/* Positions the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; }
+
+/* animation on flipping back */
+.flip-card-back {
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
+
+/* indents card slightly on click, before flip */
+.flip-card:active {
+  transform: scale(0.97);
+  transition: transform .2s; }
+
+.disabled {
+  pointer-events: none; }
+
+/* CARD BACKGROUND IMAGES */
 .game-card-back {
   background-image: url("https://i.ibb.co/Cvpst56/card-back.png");
   border-radius: 8px; }
@@ -367,60 +412,6 @@ button p {
   background-image: url("https://i.ibb.co/0GPn4CN/Bullseye.jpg");
   border-radius: 8px; }
 
-/* Code for flipping cards taken from w3schools and adjusted to my needs: https://www.w3schools.com/howto/howto_css_flip_card.asp */
-.flip-card {
-  background-color: transparent;
-  perspective: 1000px;
-  /* for 3D effect */ }
-
-/* Positions the front and back sides of card */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  transform: scale(1); }
-
-/* indents card slightly on click, before flip */
-.flip-card:active {
-  transform: scale(0.97);
-  transition: transform .2s; }
-
-/* Horizontal flip when you click flip box container */
-.flip-card.face-up .flip-card-inner {
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  transform: rotateY(180deg); }
-
-.turnBack {
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  transform: rotateY(180deg); }
-
-/* Positions the front and back side */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; }
-
-/* Styles the back side */
-.flip-card-back {
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  transform: rotateY(180deg); }
-
-.disabled {
-  pointer-events: none; }
-
 /*----------------------------------- MODALS */
 .my-modal-title {
   padding-top: 1rem; }
@@ -496,11 +487,9 @@ and ajusted to project needs*/
   color: #33cccc; }
 
 /*----------------------------------- MEDIA QUERIES */
-@media screen and (max-width: 1200px) {
-  /*phones, tablets and smaller desktops*/ }
 @media screen and (max-width: 992px) {
   /*phones and tablets*/
-  h1, h4 {
+  h1, h2, h5 {
     font-size: 30px; }
 
   .card-container {
@@ -520,8 +509,14 @@ and ajusted to project needs*/
   .dashboard {
     height: 100%; }
 
-  h1, h4 {
+  h1 {
+    font-size: 26px; }
+
+  h2 {
     font-size: 22px; }
+
+  h5 {
+    font-size: 24px; }
 
   .card-container {
     width: 120px;
@@ -561,7 +556,7 @@ and ajusted to project needs*/
     height: 70px;
     width: 70px; }
 
-  [type=radio], #avatar-radio {
+  [type=radio], .radio {
     height: 60px;
     width: 60px; }
 

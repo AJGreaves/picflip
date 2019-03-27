@@ -68,6 +68,8 @@ h6 {
     color: $dark-blue;
 }
 
+/* Other fonts */
+
 .picflip-footer {
     font-size: 17px;
     color: white;
@@ -92,25 +94,7 @@ button {
     color: white!important; //overrides default styles on bootstrap
 }
 
-/*----------------------------------- BACKGROUNDS */
-
-.background-cover-center {
-    background: {
-        repeat: no-repeat;
-        size: cover;
-        position: center center;
-    }
-}
-
-/* see media querues for size adjustment on mobiles */
-.trophy, .avatar {
-    width: 120px;
-    height: 120px;
-    margin: 0.3rem;
-    position: relative;
-    display: inline-block;
-    background-size: contain;
-}
+/* BACKGROUNDS */
 
 .avatar-default {
     background-image: url("https://i.ibb.co/DQkPDHb/main-logo.png");
@@ -169,7 +153,25 @@ button {
     border: none;
 }
 
-/*----------------------------------- CONTAINERS */
+.background-cover-center {
+    background: {
+        repeat: no-repeat;
+        size: cover;
+        position: center center;
+    }
+}
+
+/* see media querues for size adjustment on mobiles */
+.trophy, .avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0.3rem;
+    position: relative;
+    display: inline-block;
+    background-size: contain;
+}
+
+/* CONTAINERS */
 
 /* to get rid of overflow on pages*/
 .row, .container-fluid { 
@@ -186,7 +188,7 @@ button {
         size: cover;
         position: center center;
     }
-    /* fixes background image so it does not scroll. BUG fix for mobile screens */
+    /* fixes background image so it does not scroll. BUG fix for mobile screens in media queries */
     background-attachment: fixed;
 }
 
@@ -218,7 +220,7 @@ button {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-/*----------------------------------- FOOTER */
+/* FOOTER */
 
 /* see media queries for smaller padding on mobiles*/
 .github-icon, 

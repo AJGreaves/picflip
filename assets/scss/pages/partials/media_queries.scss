@@ -1,11 +1,8 @@
 /*----------------------------------- MEDIA QUERIES */
 
-@media screen and (max-width: 1200px) {  /*phones, tablets and smaller desktops*/
-    
-}
-
 @media screen and (max-width: 992px) { /*phones and tablets*/
-    h1, h4 {
+
+    h1, h2, h5 {
     font-size: 30px;
     }
     .card-container {
@@ -27,8 +24,14 @@
     .dashboard {
         height: 100%;
     }
-    h1, h4 {
+    h1 {
+        font-size: 26px;
+    }
+    h2{
         font-size: 22px;
+    }
+    h5 {
+       font-size: 24px; 
     }
     .card-container {
         width: 120px;
@@ -70,7 +73,7 @@
         height: 70px;
         width: 70px;
     }
-    [type=radio], #avatar-radio {
+    [type=radio], .radio {
         height: 60px;
         width: 60px;
     }

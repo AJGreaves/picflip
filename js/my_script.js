@@ -212,19 +212,19 @@ function deleteData() {
 
 function easyButton() {
     $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
-    $('#dashboard-high-score-text').text('Your high score: Easy');
+    $('#dashboard-high-score-text').text('Easy mode high score');
 }
 
 function mediumButton() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('invisible').removeClass('visible');
-    $('#dashboard-high-score-text').text('Your high score: Medium');
+    $('#dashboard-high-score-text').text('Medium mode high score');
 }
 
 function hardButton() {
     $('.my-card-column-medium').addClass('visible').removeClass('invisible');
     $('.my-card-column-hard').addClass('visible').removeClass('invisible');
-    $('#dashboard-high-score-text').text('Your high score: Hard');
+    $('#dashboard-high-score-text').text('Hard mode high score');
 }
 
 function difficultyButton(score) {

@@ -45,17 +45,17 @@
                             <!--User avatar-->
                             <div class="background-cover-center avatar avatar-default show-modal box-white-curved-corners" title="Avatar"></div> 
                             <!--Trophy image-->
-                            <div class="trophy"></div>
+                            <div class="trophy" title="trophy"></div>
                         </div>
                         <!--User high score-->
                         <div class="col-12 text-center">
                             <h5 id="dashboard-high-score-text">Hard mode high score</h5>
-                            <div class="stars">
-                                <i class="dashboard-score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                <i class="dashboard-score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                <i class="dashboard-score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                <i class="dashboard-score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                <i class="dashboard-score-star star fas fa-star empty-star" aria-hidden="true"></i>
+                            <div id="starsDisplay" class="stars" title="Score out of 5 stars">
+                                <i class="dashboard-score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                <i class="dashboard-score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                <i class="dashboard-score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                <i class="dashboard-score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                <i class="dashboard-score-star star fas fa-star empty-star" aria-label="no star"></i>
                             </div>
                         </div>
                     </div>
@@ -86,11 +86,11 @@
                         </div>
                         <!--card pack selection section-->
                         <div class="col-12 selection-button px-1 text-center">
-                            <button type="button" class="dashboard-btn btn background-cover-center cars-cover">
+                            <button type="button" class="dashboard-btn btn background-cover-center cars-cover" title="Cars">
                             </button>
-                            <button type="button" class="dashboard-btn btn background-cover-center frozen-cover">
+                            <button type="button" class="dashboard-btn btn background-cover-center frozen-cover" title="Frozen">
                             </button>
-                            <button type="button" class="dashboard-btn btn background-cover-center toystory-cover">
+                            <button type="button" class="dashboard-btn btn background-cover-center toystory-cover" title="Toy Story">
                             </button>
                         </div>
                     </div>
@@ -305,15 +305,15 @@
                                             <div class="row box-white-curved-corners info-box py-1 my-2">
                                                 <label class="col-4 text-right selection-button my-2 p-0">
                                                     <input class="form-check-input" type="radio" name="avatarRadios" id="avatarRadios1" value="plant" required>
-                                                    <img id="avatar-radio"class="background-cover-center plant-cover"></img>
+                                                    <img id="avatar-radio"class="background-cover-center plant-cover" title="Cute plant illustration"></img>
                                                 </label>
                                                 <label class="col-4 text-center selection-button my-2 p-0">
                                                     <input class="form-check-input" type="radio" name="avatarRadios" id="avatarRadios2" value="car" required>
-                                                    <img id="avatar-radio"class="background-cover-center toycar-cover"></img>
+                                                    <img id="avatar-radio"class="background-cover-center toycar-cover" title="Yellow car illustration"></img>
                                                 </label>
                                                 <label class="col-4 text-left selection-button my-2 p-0">
                                                     <input class="form-check-input" type="radio" name="avatarRadios" id="avatarRadios3" value="strawberry" required>
-                                                    <img id="avatar-radio"class="background-cover-center strawberry-cover"></img>
+                                                    <img id="avatar-radio"class="background-cover-center strawberry-cover" title="Strawberry illustration"></img>
                                                 </label>
                                             </div>
                                             <button type="input" id="user-info-submit-button" class="btn btn-light circle-btn tick-btn"> 
@@ -374,7 +374,7 @@
                                     </div>
                                     <div class="col-12 text-center p-0">
                                         <div class="box-white-curved-corners info-box m-2 px-3 py-1">
-                                            <i id="deleteDataModal" class="far fa-hand-paper fa-3x py-2"></i>
+                                            <i id="deleteDataModal" class="far fa-hand-paper fa-3x py-2" title="red hand icon"></i>
                                             <p>To delete all high score data, click on the red hand.</p>
                                         </div>
                                     </div>
@@ -401,13 +401,13 @@
                                         <h2>You win!</h2>
                                     </div>
                                     <div class="col-12 text-center">
-                                        <div class="stars win-stars">
-                                            <i class="score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                            <i class="score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                            <i class="score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                            <i class="score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                            <i class="score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                        </div>
+                                        <figure id="starsWinModal" class="stars win-stars" title="Score out of 5 stars">
+                                            <i class="score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                            <i class="score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                            <i class="score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                            <i class="score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                            <i class="score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                        </figure>
                                     </div>
                                     <div class="col-12 text-center p-0">
                                         <button id="win-modal-close-btn" type="button" class="btn btn-light circle-btn tick-btn"> 
@@ -437,21 +437,21 @@
                                     </div>
                                     
                                     <div class="col-12 text-center p-0">
-                                        <div class="trophy mx-auto"></div>
+                                        <figure class="trophy mx-auto" title="trophy"></figure>
                                     </div>
                                     
                                     <div class="col-12 text-center p-0">
-                                        <div class="stars win-stars">
-                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-hidden="true"></i>
-                                        </div>
+                                        <figure id="starsHighScoreModal" class="stars win-stars" title="score out of 5 stars">
+                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                            <i class="win-modal-score-star star fas fa-star empty-star" aria-label="no star"></i>
+                                        </figure>
                                     </div>
                                     <div class="col-12 text-center p-0">
                                         <button id="high-score-modal-close-btn" type="button" class="btn btn-light circle-btn tick-btn" data-dismiss="modal"> 
-                                            <i class="fas fa-check"></i>
+                                            <i class="fas fa-check" aria-hidden="true"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -569,6 +569,8 @@
     <audio id="cardFlipAudio" src="assets/audio/card-flip.wav"></audio>
     <audio id="correctBingAudio" src="assets/audio/correct.wav"></audio>
     
+    
+    <!-- scripts -->
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

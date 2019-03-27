@@ -353,11 +353,15 @@ function displayScore(numOfStars, className) {
     for (i=0; i<numOfStars; i++) {
         if ($(StarElems[i]).hasClass('empty-star')) {
                 $(StarElems[i]).addClass('win-star').removeClass('empty-star');
+                $(StarElems[i]).attr('aria-label').split().pop();
+                $(StarElems[i]).attr('title', 'star');
         }
     }
     for (i=numOfStars; i<5; i++) {
         if ($(StarElems[i]).hasClass('win-star')) {
                 $(StarElems[i]).addClass('empty-star').removeClass('win-star');
+                $(StarElems[i]).attr('aria-label').split().pop();
+                $(StarElems[i]).attr('title', 'no star');
         }
     }
 }

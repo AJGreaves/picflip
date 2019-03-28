@@ -81,7 +81,11 @@
     .game-board {
     height: auto;
     }
+    #footerTabContainer.active-footer {
+    margin-top: -145px;
     footer {
+        // see media queries for larger height on mobiles
         height: 110px;
     }
+}
 }

@@ -181,21 +181,20 @@ button {
 .pull-up-tab {
   border-radius: 8px 8px 0px 0px;
   width: 150px;
-  height: 35px;
-  /* code generated at https://cssmatic.com/box-shadow*/
-  -webkit-box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39);
-  -moz-box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39);
-  box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39); }
+  height: 35px; }
 
 #footerTabContainer {
   margin-top: -35px;
+  overflow: hidden;
   z-index: 2; }
 
-footer {
-  -webkit-box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39);
-  -moz-box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39);
-  box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39);
-  height: 45px; }
+.hide-zero-height {
+  height: 0; }
+
+#footerTabContainer.active-footer {
+  margin-top: -80px; }
+  #footerTabContainer.active-footer footer {
+    height: 45px; }
 
 .pull-up-tab p {
   font-family: "Bubblegum Sans", cursive;
@@ -590,7 +589,9 @@ and ajusted to project needs*/
   .game-board {
     height: auto; }
 
-  footer {
-    height: 110px; } }
+  #footerTabContainer.active-footer {
+    margin-top: -145px; }
+    #footerTabContainer.active-footer footer {
+      height: 110px; } }
 
 /*# sourceMappingURL=main.css.map */

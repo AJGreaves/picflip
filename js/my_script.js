@@ -153,6 +153,11 @@ $('#confirmDeleteData').click(function() {
     deleteData();
 })
 
+// Footer tab open on click
+$('#pullUpTab').click(function() {
+    $('#footerTabContainer').toggleClass('active-footer');
+})
+
 
 // ---------- on click event functions
 

@@ -130,6 +130,14 @@ button {
   margin-left: 0;
   margin-right: 0; }
 
+/* fix display issues on mobiles*/
+body {
+  display: flex;
+  flex-direction: column; }
+
+main {
+  flex: 1; }
+
 #body-wrapper {
   background-image: url("https://i.ibb.co/yYJqmDn/trains-background.jpg");
   background-repeat: no-repeat;
@@ -569,11 +577,8 @@ and ajusted to project needs*/
   .picflip-footer {
     padding: 0.4rem; }
 
-  /* fixes background image display issue on 5se mobiles */
-  .dashboard,
   .game-board {
-    height: auto;
-    padding-bottom: 2rem; } }
+    height: 100%; } }
 @media screen and (max-width: 576px) {
   /*small phones*/
   button .star {
@@ -599,7 +604,8 @@ and ajusted to project needs*/
     height: 70px;
     width: 70px; }
 
-  [type=radio], .radio {
+  [type=radio],
+  img .radio {
     height: 60px;
     width: 60px; }
 

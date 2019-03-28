@@ -45,13 +45,10 @@
     .github-icon, 
     .developer-info, 
     .picflip-footer {
-    padding: 0.4rem;
+        padding: 0.4rem;
     }
-    /* fixes background image display issue on 5se mobiles */
-    .dashboard,
     .game-board {
-    height: auto;
-    padding-bottom: 2rem;
+        height: 100%;
     }
 }
 
@@ -79,15 +76,15 @@
         height: 70px;
         width: 70px;
     }
-    [type=radio], .radio {
+    [type=radio], 
+    img .radio {
         height: 60px;
         width: 60px;
     }
     #footerTabContainer.active-footer {
     margin-top: -145px;
-    footer {
-        // see media queries for larger height on mobiles
-        height: 110px;
+        footer {
+            height: 110px; 
+        }
     }
-}
 }

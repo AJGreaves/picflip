@@ -180,6 +180,15 @@ button {
         right: 0;
     }
 }
+/* fix display issues on mobiles*/
+body {
+	display: flex;
+    flex-direction: column;
+}
+
+main {
+	flex: 1;
+}
 
 #body-wrapper {
     background: {
@@ -271,7 +280,6 @@ button {
     -webkit-transition: all 0.3s ease-in-out 0.3s;
     transform: height, margin;
     margin-top: -80px;
-    // see media queries for larger height on mobiles
     footer {
         height: 45px;
     }

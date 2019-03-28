@@ -186,12 +186,24 @@ button {
 #footerTabContainer {
   margin-top: -35px;
   overflow: hidden;
-  z-index: 2; }
+  z-index: 2;
+  transform: margin;
+  transition: all 0.3s ease-in-out 0.3s;
+  -moz-transition: all 0.3s ease-in-out 0.3s;
+  -webkit-transition: all 0.3s ease-in-out 0.3s; }
 
 .hide-zero-height {
-  height: 0; }
+  height: 0;
+  transform: height;
+  transition: all 0.3s ease-in-out 0.3s;
+  -moz-transition: all 0.3s ease-in-out 0.3s;
+  -webkit-transition: all 0.3s ease-in-out 0.3s; }
 
 #footerTabContainer.active-footer {
+  transition: all 0.3s ease-in-out 0.3s;
+  -moz-transition: all 0.3s ease-in-out 0.3s;
+  -webkit-transition: all 0.3s ease-in-out 0.3s;
+  transform: height, margin;
   margin-top: -80px; }
   #footerTabContainer.active-footer footer {
     height: 45px; }

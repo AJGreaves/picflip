@@ -12,32 +12,32 @@ Features include easy to operate controls, 3 levels of difficulty, entertaining 
 characters that children enjoy, and an overall feel of child friendly entertainment.
 <br>
 
-[View the PicFlip! page.](https://ajgreaves.github.io/picflip/)
+[View the PicFlip! page](https://ajgreaves.github.io/picflip/)
 
 </div>
 
 ## Table of Contents
 
-- [**UX**](#add-later)
+- [**UX**](#ux)
 
 - [**Features**]()<br>
-[**1. Existing Features**](#add-later)<br>
-[**2. Features Left to Implement**](#add-later)<br>
+[**1. Existing Features**](#existing-features)<br>
+[**2. Features Left to Implement**](#features-left-to-implement)<br>
 
-- [**Technologies used**](#add-later)<br>
+- [**Technologies used**](#technologies-used)<br>
 
-- [**Testing**](#add-later)<br>
+- [**Testing**](#testing)<br>
 
-- [**Deployment**](#add-later)<br>
+- [**Deployment**](#deployment)<br>
 
-- [**Credits**](#add-later)<br>
-[**1. Content**](#add-later)<br>
-[**2. Media**](#add-later)<br>
-[**3. Code**](#add-later)<br>
-[**4. Acknowledgements**](#add-later)<br>
+- [**Credits**](#credits)<br>
+[**1. Content**](#content)<br>
+[**2. Media**](#media)<br>
+[**3. Code**](#code)<br>
+[**4. Acknowledgements**](#acknowledgements)<br>
 
 ## UX
-PicFlip! has `two target audiences`: Pre-school children and their parents. 
+PicFlip! has two target audiences: Pre-school children and their parents. 
  
 ----
 

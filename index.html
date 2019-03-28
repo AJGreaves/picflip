@@ -28,264 +28,265 @@
     <title>PicFlip!</title>
 </head>
 <body>
-    
-    <!--GAME SECTION-->
-    <main id="body-wrapper">
-        <div id="body-container" class="container-fluid p-0">
-            <div class="row">
-                
-                <!--Dashboard-->
-                
-                <div class="col-12 col-md-5 col-lg-4 dashboard px-3 pb-3 pt-xl-3">
-                    <!--User info section-->
-                    <div class="row dashboard-section box-white-curved-corners mx-auto">
-                        <!--User name-->
-                        <div class="col-12 username-container"><h4 class="username">Name</h4></div><!--Put username variable here -->
-                        <div class="col-12 px-1 text-center">
-                            <!--User avatar-->
-                            <figure class="background-cover-center avatar avatar-default show-modal box-white-curved-corners" title="Avatar"></figure> 
-                            <!--Trophy image-->
-                            <figure class="trophy" title="trophy"></figure>
-                        </div>
-                        <!--User high score-->
-                        <div class="col-12 text-center">
-                            <h6 id="dashboard-high-score-text">Hard mode high score</h6>
-                            <div id="starsDisplay" class="stars" title="Score out of 5 stars">
-                                <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
-                                <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
-                                <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
-                                <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
-                                <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Selection section -->
-                    <div class="row dashboard-section box-white-curved-corners mx-auto">
-                        <div class="col-12 selection-button px-1 text-center">
-                            <button id="easyButton" type="button" class="dashboard-btn btn btn-success">Easy</button>
-                            <button id="mediumButton" type="button" class="dashboard-btn btn btn-warning">Med</button>
-                            <button id="hardButton" type="button" class="dashboard-btn btn btn-danger">Hard</button>
-                        </div>
-                        <!--card pack selection section-->
-                        <div class="col-12 selection-button px-1 text-center">
-                            <button type="button" class="dashboard-btn btn background-cover-center cars-cover" title="Cars">
-                            </button>
-                            <button type="button" class="dashboard-btn btn background-cover-center frozen-cover" title="Frozen">
-                            </button>
-                            <button type="button" class="dashboard-btn btn background-cover-center toystory-cover" title="Toy Story">
-                            </button>
-                        </div>
-                    </div>
+    <div id="content-wrapper">
+        <!--GAME SECTION-->
+        <main id="body-wrapper">
+            <div id="body-container" class="container-fluid p-0">
+                <div class="row">
                     
-                    <!-- dashboard controls -->
-                    <div class="row my-3">
-                        <div class="col-12 selection-button px-1 text-center">
-                            <!-- Info modal pops up when clicked -->
-                            <button type="button" class="dashboard-btn btn btn-light circle-btn info-btn" data-toggle="modal" data-target="#infoModal"> 
-                                <i class="fas fa-question" title="question mark"></i>
-                            </button>
-                            <button type="button" id="muteButton" class="dashboard-btn btn btn-light circle-btn mute-btn">
-                                <i class="fas fa-volume-mute" title="mute button"></i> 
-                            </button>
-                            <button type="button" class="dashboard-btn btn btn-light circle-btn reset-btn"> 
-                                <i class="fas fa-undo-alt" title="reset cards button"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div><!--End Dashboard-->
-                
-                <!--game column-->
-                
-                <div class="col-12 col-md-7 col-lg-8 game-board">
-                    <div class="row game-board-header">
-                        <!--game header-->
-                        <header class="col-8 my-3 p-1">
-                            <h1>Match the cards</h1>
-                        </header>
-                        <!-- game turns counter -->
-                        <div class="col-4 my-3">
-                            <h5 class="turns-counter">Turns: 0</h5>
-                        </div>
-                    </div>
+                    <!--Dashboard-->
                     
-                    <!-- game board -->
-                    <div class="container-fluid py-5 pb-5 p-md-4">
-                        <div class="row justify-content-center">
-                            
-                            <div class="col-4 col-sm-3 my-card-column-easy visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
-                                    </div>
+                    <div class="col-12 col-md-5 col-lg-4 dashboard px-3 pb-5 pt-xl-3">
+                        <!--User info section-->
+                        <div class="row dashboard-section box-white-curved-corners mx-auto">
+                            <!--User name-->
+                            <div class="col-12 username-container"><h4 class="username">Name</h4></div><!--Put username variable here -->
+                            <div class="col-12 px-1 text-center">
+                                <!--User avatar-->
+                                <figure class="background-cover-center avatar avatar-default show-modal box-white-curved-corners" title="Avatar"></figure> 
+                                <!--Trophy image-->
+                                <figure class="trophy" title="trophy"></figure>
+                            </div>
+                            <!--User high score-->
+                            <div class="col-12 text-center">
+                                <h6 id="dashboard-high-score-text">Hard mode high score</h6>
+                                <div id="starsDisplay" class="stars" title="Score out of 5 stars">
+                                    <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
+                                    <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
+                                    <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
+                                    <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
+                                    <i class="dashboard-score-star star fas fa-star empty-star" title="no star"></i>
                                 </div>
                             </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-easy visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                        </div>
+                        <!-- Selection section -->
+                        <div class="row dashboard-section box-white-curved-corners mx-auto">
+                            <div class="col-12 selection-button px-1 text-center">
+                                <button id="easyButton" type="button" class="dashboard-btn btn btn-success">Easy</button>
+                                <button id="mediumButton" type="button" class="dashboard-btn btn btn-warning">Med</button>
+                                <button id="hardButton" type="button" class="dashboard-btn btn btn-danger">Hard</button>
+                            </div>
+                            <!--card pack selection section-->
+                            <div class="col-12 selection-button px-1 text-center">
+                                <button type="button" class="dashboard-btn btn background-cover-center cars-cover" title="Cars">
+                                </button>
+                                <button type="button" class="dashboard-btn btn background-cover-center frozen-cover" title="Frozen">
+                                </button>
+                                <button type="button" class="dashboard-btn btn background-cover-center toystory-cover" title="Toy Story">
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- dashboard controls -->
+                        <div class="row my-3">
+                            <div class="col-12 selection-button px-1 text-center">
+                                <!-- Info modal pops up when clicked -->
+                                <button type="button" class="dashboard-btn btn btn-light circle-btn info-btn" data-toggle="modal" data-target="#infoModal"> 
+                                    <i class="fas fa-question" title="question mark"></i>
+                                </button>
+                                <button type="button" id="muteButton" class="dashboard-btn btn btn-light circle-btn mute-btn">
+                                    <i class="fas fa-volume-mute" title="mute button"></i> 
+                                </button>
+                                <button type="button" class="dashboard-btn btn btn-light circle-btn reset-btn"> 
+                                    <i class="fas fa-undo-alt" title="reset cards button"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div><!--End Dashboard-->
+                    
+                    <!--game column-->
+                    
+                    <div class="col-12 col-md-7 col-lg-8 pb-5 game-board">
+                        <div class="row game-board-header">
+                            <!--game header-->
+                            <header class="col-8 my-3 p-1">
+                                <h1>Match the cards</h1>
+                            </header>
+                            <!-- game turns counter -->
+                            <div class="col-4 my-3">
+                                <h5 class="turns-counter">Turns: 0</h5>
+                            </div>
+                        </div>
+                        
+                        <!-- game board -->
+                        <div class="container-fluid py-5 pb-5 p-md-4">
+                            <div class="row justify-content-center">
+                                
+                                <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-easy visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-easy visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-easy visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-easy visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-easy visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-easy visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-medium visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-easy visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-medium visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-medium visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-medium visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-medium visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-medium visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-medium visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-hard visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-medium visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-hard visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-hard visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-hard visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-hard visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-4 col-sm-3 my-card-column-hard visible">
-                                <div class="flip-card card-container mx-auto face-down">
-                                    <div class="flip-card-inner">
-                                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
-                                        <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-hard visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-4 col-sm-3 my-card-column-hard visible">
+                                    <div class="flip-card card-container mx-auto face-down">
+                                        <div class="flip-card-inner">
+                                            <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                                            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
-                    
                 </div>
             </div>
-        </div>
-    </main>
-    <!-- FOOTER -->
-    <div id="footerTabContainer" class="container-fluid p-0">
-        <div class="row">
-            <div class="col-12 p-0 m-0">
-                <div class="row d-flex justify-content-end ">
-                    <div class="col-7 col-md-4 footer-tab-column">
-                        <div id="pullUpTab" class="pull-up-tab bg-secondary text-center mx-auto">
-                            <p class="mb-0">Pull<i class="fas fa-arrow-up p-2" aria-hidden="true"></i></p>
+        </main>
+        <!-- FOOTER -->
+        <div id="footerTabContainer" class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12 p-0 m-0">
+                    <div class="row d-flex justify-content-end ">
+                        <div class="col-7 col-md-4 footer-tab-column">
+                            <div id="pullUpTab" class="pull-up-tab bg-secondary text-center mx-auto">
+                                <p class="mb-0">Pull<i class="fas fa-arrow-up p-2" aria-hidden="true"></i></p>
+                            </div>
                         </div>
                     </div>
+                    <footer class="row text-center bg-secondary text-white hide-zero-height">
+                        <div class="col-12 col-sm-2 col-md-3 py-sm-2 developer-info pb-0 text-center hide-zero-height">
+                            <h6 class="picflip-footer hide-zero-height">PicFlip!</h6>
+                        </div>
+                        <div class="col-12 col-sm-8 col-md-6 py-sm-2 developer-info text-center hide-zero-height">
+                            Designer & Developer AJGreaves
+                        </div>
+                        <div class="col-12 col-sm-2 col-md-3 py-sm-2 developer-info text-center hide-zero-height">
+                            <a class="github-icon text-white hide-zero-height" href="https://github.com/AJGreaves" target="_blank" aria-label="Find me on GithHub" rel="noopener">
+            					<i class="fab fa-github-alt fa-lg fa-2x hide-zero-height"></i>
+            				</a>
+                        </div>
+                    </footer>
                 </div>
-                <footer class="row text-center bg-secondary text-white hide-zero-height">
-                    <div class="col-12 col-sm-2 col-md-3 py-sm-2 developer-info pb-0 text-center hide-zero-height">
-                        <h6 class="picflip-footer hide-zero-height">PicFlip!</h6>
-                    </div>
-                    <div class="col-12 col-sm-8 col-md-6 py-sm-2 developer-info text-center hide-zero-height">
-                        Designer & Developer AJGreaves
-                    </div>
-                    <div class="col-12 col-sm-2 col-md-3 py-sm-2 developer-info text-center hide-zero-height">
-                        <a class="github-icon text-white hide-zero-height" href="https://github.com/AJGreaves" target="_blank" aria-label="Find me on GithHub" rel="noopener">
-        					<i class="fab fa-github-alt fa-lg fa-2x hide-zero-height"></i>
-        				</a>
-                    </div>
-                </footer>
             </div>
         </div>
     </div>

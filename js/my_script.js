@@ -501,7 +501,7 @@ function checkScore() {
             easyScore = 1;
             return 1;
         } else {
-            return console.log('checkScore function error easyScore if statement!');
+            return;
         }
     } else if (len === 12) {
         // score for medium mode
@@ -521,7 +521,7 @@ function checkScore() {
             mediumScore = 1;
             return 1;
         } else {
-            return console.log('checkScore function error mediumScore if statement!');
+            return console.log;
         }
         
     } else if (len === 16) {
@@ -542,10 +542,10 @@ function checkScore() {
             hardScore = 1;
             return 1;
         } else {
-            return console.log('checkScore function error HardScore if statement!');
+            return;
         }
     } else {
-        return console.log('checkScore function error!');
+        return;
     }
 }
 

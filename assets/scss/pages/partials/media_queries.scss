@@ -47,6 +47,12 @@
     .picflip-footer {
     padding: 0.4rem;
     }
+    /* fixes background image display issue on 5se mobiles */
+    .dashboard,
+    .game-board {
+    height: auto;
+    padding-bottom: 2rem;
+    }
 }
 
 @media screen and (max-width: 576px){ /*small phones*/
@@ -76,10 +82,6 @@
     [type=radio], .radio {
         height: 60px;
         width: 60px;
-    }
-    /* fixes background image display issue on 5se mobiles */
-    .game-board {
-    height: auto;
     }
     #footerTabContainer.active-footer {
     margin-top: -145px;

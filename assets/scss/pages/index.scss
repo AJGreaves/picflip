@@ -271,8 +271,8 @@ button {
     -webkit-transition: all 0.3s ease-in-out 0.3s;
     transform: height, margin;
     margin-top: -80px;
+    // see media queries for larger height on mobiles
     footer {
-        // see media queries for larger height on mobiles
         height: 45px;
     }
 }

@@ -203,7 +203,6 @@ button {
     background-color: $light-blue;
     box-shadow: 0 3px 9px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22);
     padding: 0;
-    z-index: 1;
 }
 
 .game-board {
@@ -251,6 +250,11 @@ button {
     -moz-box-shadow: 0px -2px 4px 0px rgba(0,0,0,0.39);
     box-shadow: 0px -2px 4px 0px rgba(0,0,0,0.39);
 
+}
+
+#footerTabContainer {
+    margin-top: -35px;
+    z-index: 2;
 }
 
 footer {

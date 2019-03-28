@@ -147,8 +147,7 @@ button {
   height: 100vh;
   background-color: #33cccc;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.22);
-  padding: 0;
-  z-index: 1; }
+  padding: 0; }
 
 .game-board {
   height: 100vh;
@@ -187,6 +186,10 @@ button {
   -webkit-box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39);
   -moz-box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39);
   box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39); }
+
+#footerTabContainer {
+  margin-top: -35px;
+  z-index: 2; }
 
 footer {
   -webkit-box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39);

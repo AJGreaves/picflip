@@ -167,7 +167,7 @@ button {
 .developer-info,
 .picflip-footer {
   display: inline;
-  padding: 1rem;
+  padding: 1rem 1rem 0rem 1rem;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.5); }
 
 .fa-github-alt {
@@ -178,6 +178,29 @@ button {
 .fa-github-alt:hover {
   color: black;
   transform: scale(1.2); }
+
+.pull-up-tab {
+  border-radius: 8px 8px 0px 0px;
+  width: 150px;
+  height: 35px;
+  /* code generated at https://cssmatic.com/box-shadow*/
+  -webkit-box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39);
+  box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39); }
+
+footer {
+  -webkit-box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39);
+  box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.39);
+  height: 45px; }
+
+.pull-up-tab p {
+  font-family: "Bubblegum Sans", cursive;
+  color: white; }
+
+.fa-arrow-up {
+  color: white;
+  font-size: 18px; }
 
 /*----------------------------------- DASHBOARD */
 /* containers */
@@ -562,6 +585,9 @@ and ajusted to project needs*/
 
   /* fixes background image display issue on 5se mobiles */
   .game-board {
-    height: auto; } }
+    height: auto; }
+
+  footer {
+    height: 110px; } }
 
 /*# sourceMappingURL=main.css.map */

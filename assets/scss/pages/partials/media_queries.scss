@@ -46,7 +46,7 @@
     .developer-info, 
     .picflip-footer {
     padding: 0.4rem;
-}
+    }
 }
 
 @media screen and (max-width: 576px){ /*small phones*/
@@ -80,5 +80,8 @@
     /* fixes background image display issue on 5se mobiles */
     .game-board {
     height: auto;
+    }
+    footer {
+        height: 110px;
     }
 }

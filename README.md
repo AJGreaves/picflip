@@ -126,6 +126,7 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ### Code
 - Code for the card flip animation taken from https://www.w3schools.com/howto/howto_css_flip_card.asp
+- box shadow code generated at https://cssmatic.com/box-shadow
 
 ### Acknowledgements
 

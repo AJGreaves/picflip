@@ -82,7 +82,7 @@ function checkForUserData() {
 
 //--- play button click audio on all button elements
 $('.btn').click(function() {
-    clickButton();
+    playButtonAudio();
 })
 
 //--- style selection buttons
@@ -179,7 +179,7 @@ function userInfoSubmitButton() {
     }
 }
 
-function clickButton() {
+function playButtonAudio() {
     $('#buttonClickAudio')[0].currentTime=0;
     $('#buttonClickAudio')[0].play();
 }

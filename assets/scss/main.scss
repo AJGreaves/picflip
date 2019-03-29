@@ -1,7 +1,7 @@
-@import "helpers/variables";
+@import "helpers/_variables";
 
-@import "pages/index";
-@import "pages/partials/dashboard";
-@import "pages/partials/game_board";
-@import "pages/partials/modals";
-@import "pages/partials/media_queries";
+@import "pages/_index";
+@import "pages/partials/_dashboard";
+@import "pages/partials/_game-board";
+@import "pages/partials/_modals";
+@import "pages/partials/_media-queries";

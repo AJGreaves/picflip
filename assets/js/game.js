@@ -7,6 +7,10 @@ $(document).ready(function() {
     const toystoryCardsArray = ["woody", "buzz", "rex", "alien", "jessie", "potato", "lotso", "bullseye"];
     let displayCardsArray = [];
     let activeCardsArray = carsCardsArray;
+    
+    const easyScoresArray = [7, 9, 11, 13, 15];
+    const mediumScoresArray = [13, 16, 19, 22, 24];
+    const hardScoresArray = [14, 18, 22, 26, 30];
 
     let silence = false;
 
@@ -484,91 +488,47 @@ $(document).ready(function() {
             $('#correctBingAudio')[0].play();
         }, 600);
     }
-
+    
+    function getDifficultyLevelArr(len) {
+        
+        switch(len) {
+            case 8:
+                return easyScoresArray;
+                break;
+            case 12:
+                return mediumScoresArray;
+                break;
+            case 16:
+                return hardScoresArray;
+                break;
+            default:
+                break;
+        }
+    }
+    
     // gets score out of 5 based on difficulty level selected and turns taken to win.
-    function checkScore() {
+    function checkScore(arr) {
+        
+        let result;
 
-        let len = $('.visible').length;
-
-        if (len === 8) {
-            if (turnsCounter <= 7) {
-                easyScore = 5;
-                return 5;
-            }
-            else if (turnsCounter <= 9) {
-                easyScore = 4;
-                return 4;
-            }
-            else if (turnsCounter <= 11) {
-                easyScore = 3;
-                return 3;
-            }
-            else if (turnsCounter <= 13) {
-                easyScore = 2;
-                return 2;
-            }
-            else if (turnsCounter >= 15) {
-                easyScore = 1;
-                return 1;
-            }
-            else {
-                return;
+        for (let i = 0; i < 5; i++) {
+            if (turnsCounter <= arr[i]) {
+                result = (5 - i);
+                break;
             }
         }
-        else if (len === 12) {
-            if (turnsCounter <= 13) {
-                mediumScore = 5;
-                return 5;
-            }
-            else if (turnsCounter <= 16) {
-                mediumScore = 4;
-                return 4;
-            }
-            else if (turnsCounter <= 19) {
-                mediumScore = 3;
-                return 3;
-            }
-            else if (turnsCounter <= 22) {
-                mediumScore = 2;
-                return 2;
-            }
-            else if (turnsCounter >= 24) {
-                mediumScore = 1;
-                return 1;
-            }
-            else {
-                return console.log;
-            }
-
-        }
-        else if (len === 16) {
-            if (turnsCounter <= 14) {
-                hardScore = 5;
-                return 5;
-            }
-            else if (turnsCounter <= 18) {
-                hardScore = 4;
-                return 4;
-            }
-            else if (turnsCounter <= 22) {
-                hardScore = 3;
-                return 3;
-            }
-            else if (turnsCounter <= 26) {
-                hardScore = 2;
-                return 2;
-            }
-            else if (turnsCounter >= 30) {
-                hardScore = 1;
-                return 1;
-            }
-            else {
-                return;
-            }
-        }
-        else {
+        
+        if (arr.includes(15)) {
+            easyScore = result;
+        } else if (arr.includes(24)) {
+            mediumScore = result;
+        } else if (arr.includes(30)) {
+            hardScore = result;
+        } else {
             return;
         }
+        
+        return result;
     }
 
     /**
@@ -582,9 +542,11 @@ $(document).ready(function() {
     function checkForWin() {
         let matchedNum = $('.matched').length;
         let visibleNum = $('.visible').length;
+        let difficultyArray = [];
 
         if (matchedNum == visibleNum) {
-            activeScore = checkScore();
+            difficultyArray = getDifficultyLevelArr(visibleNum);
+            activeScore = checkScore(difficultyArray);
             if (checkIfHighScore()) {
 
                 delayDisplayModal('#newHighScoreModal');

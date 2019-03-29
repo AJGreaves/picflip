@@ -49,8 +49,8 @@ $(document).ready(function() {
                 $("#userInfoModal").modal({
                     backdrop: 'static',
                     keyboard: false
-                })
-            }, 500)
+                });
+            }, 500);
         }
         else {
             userName = localStorage.getItem("userName");
@@ -89,7 +89,7 @@ $(document).ready(function() {
     // play button click audio on all button elements
     $('.btn').click(function() {
         playButtonAudio();
-    })
+    });
 
     function playButtonAudio() {
         $('#buttonClickAudio')[0].currentTime = 0;
@@ -99,15 +99,15 @@ $(document).ready(function() {
     // style selection buttons
     $('.cars-cover').click(function() {
         styleButton(carsCardsArray);
-    })
+    });
 
     $('.frozen-cover').click(function() {
         styleButton(frozenCardsArray);
-    })
+    });
 
     $('.toystory-cover').click(function() {
         styleButton(toystoryCardsArray);
-    })
+    });
 
     function styleButton(arr) {
         activeCardsArray = arr;
@@ -118,17 +118,17 @@ $(document).ready(function() {
     $('#easyButton').click(function() {
         easyButton();
         difficultyButton(easyHighScore);
-    })
+    });
 
     $('#mediumButton').click(function() {
         mediumButton();
         difficultyButton(mediumHighScore);
-    })
+    });
 
     $('#hardButton').click(function() {
         hardButton();
         difficultyButton(hardHighScore);
-    })
+    });
 
     function easyButton() {
         $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
@@ -156,17 +156,17 @@ $(document).ready(function() {
     // Reset button
     $('.reset-btn').click(function() {
         resetGame();
-    })
+    });
 
     // Modal buttons
     $('#win-modal-close-btn').click(function() {
         resetGame();
         $('#winModal').modal('hide');
-    })
+    });
 
     $('#high-score-modal-close-btn').click(function() {
         resetGame();
-    })
+    });
 
     /**
      * resetGame() resets game, but not difficulty level or style selections
@@ -221,16 +221,16 @@ $(document).ready(function() {
 
     $('#deleteDataModal').click(function() {
         launchParentModal();
-    })
+    });
 
     $('#confirmResetData').click(function() {
         resetUserData();
-    })
+    });
 
     // Footer tab open on click
     $('#pullUpTab').click(function() {
         $('#footerTabContainer').toggleClass('active-footer');
-    })
+    });
 
     /**
      * userInfoSubmitButton() collects data from the user info modal and assigns to the correct variables
@@ -244,7 +244,7 @@ $(document).ready(function() {
         localStorage.setItem("userName", userName);
         localStorage.setItem("userAvatar", userAvatar);
 
-        displayUserData()
+        displayUserData();
 
         if ((userName && userAvatar) || ((userName != 'Player') && (userAvatar))) {
             $('#userInfoModal').modal('hide');
@@ -298,7 +298,7 @@ $(document).ready(function() {
             }
             checkMatch();
         }
-    })
+    });
 
     /**
      * displayUserData() sets avatar title attribute, then checks for which avatar choice was made 
@@ -368,7 +368,7 @@ $(document).ready(function() {
                 $(StarElems[i]).attr('title', 'star');
             }
         }
-        for (i = numOfStars; i < 5; i++) {
+        for (let i = numOfStars; i < 5; i++) {
             if ($(StarElems[i]).hasClass('win-star')) {
                 $(StarElems[i]).addClass('empty-star').removeClass('win-star');
                 $(StarElems[i]).attr('title').split().pop();
@@ -388,7 +388,7 @@ $(document).ready(function() {
         let doubleCardsArray = duplicateCards(cutArray);
         let shuffledCardsArray = [];
 
-        for (i = 0; i < num * 2; i++) {
+        for (let i = 0; i < num * 2; i++) {
             let randIndex = Math.floor(Math.random() * doubleCardsArray.length);
             let rand = doubleCardsArray[randIndex];
             doubleCardsArray.splice(randIndex, 1);
@@ -416,7 +416,7 @@ $(document).ready(function() {
 
         for (let i = 0; i < 2; i++) {
             doubledCards = doubledCards.concat(elem);
-        };
+        }
         return doubledCards;
     }
 
@@ -464,7 +464,7 @@ $(document).ready(function() {
                     delayedCorrectSound();
                     checkForWin();
                     return;
-                })
+                });
             }
             else {
                 setTimeout(function() {
@@ -473,7 +473,7 @@ $(document).ready(function() {
                         countSelected = 0;
                         flipCounter++;
                         countTurns();
-                    })
+                    });
                 }, 1000);
             }
         }
@@ -516,7 +516,7 @@ $(document).ready(function() {
                 displayScore(activeScore, winStar);
                 delayDisplayModal('#winModal');
                 return;
-            };
+            }
         }
         else {
             return;
@@ -529,13 +529,10 @@ $(document).ready(function() {
         switch(numOfVisibleCards) {
             case 8:
                 return easyScoresArray;
-                break;
             case 12:
                 return mediumScoresArray;
-                break;
             case 16:
                 return hardScoresArray;
-                break;
             default:
                 break;
         }
@@ -613,4 +610,4 @@ $(document).ready(function() {
     checkForUserData();
     displayUserData();
     displayScore(activeHighScore, dashStar);
-})
+});

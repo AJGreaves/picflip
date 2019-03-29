@@ -90,7 +90,6 @@
 }
 
 .disabled {
-    //BUG - screen readers can't read titles on images that are disabled in this way.
     pointer-events: none;
 }
 

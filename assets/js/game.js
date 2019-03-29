@@ -506,7 +506,10 @@ $(document).ready(function() {
         }
     }
     
-    // gets score out of 5 based on difficulty level selected and turns taken to win.
+    /**
+     * checkScore() gets the score out of 5 using the array of score boundaries sent to it, and asigns the score to result.
+     * then function assigns the result to the corresponding score function depending on the array the function was passed.
+    **/
     function checkScore(scoreBoundariesArray) {
         
         let result;
@@ -518,11 +521,11 @@ $(document).ready(function() {
             }
         }
         
-        if (scoreBoundariesArray.includes(15)) {
+        if (scoreBoundariesArray === easyScoresArray) {
             easyScore = result;
-        } else if (scoreBoundariesArray.includes(24)) {
+        } else if (scoreBoundariesArray === mediumScoresArray) {
             mediumScore = result;
-        } else if (scoreBoundariesArray.includes(30)) {
+        } else if (scoreBoundariesArray === hardScoresArray) {
             hardScore = result;
         } else {
             return;

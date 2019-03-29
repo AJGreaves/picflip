@@ -551,10 +551,6 @@ and ajusted to project needs*/
     width: 290px; } }
 @media screen and (max-width: 767px) {
   /*phones*/
-  /* fixes dashboard height issue on phones*/
-  .dashboard {
-    height: 100%; }
-
   h1 {
     font-size: 26px; }
 
@@ -563,6 +559,17 @@ and ajusted to project needs*/
 
   h5 {
     font-size: 24px; }
+
+  .info-box > p {
+    font-size: 17px;
+    line-height: 1.5rem; }
+
+  .info-box {
+    margin: 0.5em 0em !important;
+    padding: 1em !important; }
+
+  .fa-3x {
+    font-size: 2em; }
 
   .card-container {
     width: 120px;
@@ -578,8 +585,13 @@ and ajusted to project needs*/
   .picflip-footer {
     padding: 0.4rem; }
 
+  /* fixes dashboard and gameboard height issue on phones*/
+  .dashboard,
   .game-board {
-    height: auto; } }
+    height: auto; }
+
+  .dashboard {
+    min-height: auto; } }
 @media screen and (max-width: 576px) {
   /*small phones*/
   button .star {
@@ -606,9 +618,9 @@ and ajusted to project needs*/
     width: 70px; }
 
   [type=radio],
-  img .radio {
-    height: 60px;
-    width: 60px; }
+  img.radio {
+    height: 50px;
+    width: 50px; }
 
   #footerTabContainer.active-footer {
     margin-top: -145px; }

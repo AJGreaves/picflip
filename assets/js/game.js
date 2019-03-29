@@ -489,9 +489,44 @@ $(document).ready(function() {
         }, 600);
     }
     
-    function getDifficultyLevelArr(len) {
+    /**
+     * checkForWin() checks for when player has won. Works for all card pack sizes.
+     * Checks if all visible cards have been turned over, 
+     * then checks if player has a new high score. 
+     * if yes, launches new high score modal if beats old score
+     * if no, launches win modal
+     * 
+    **/
+    function checkForWin() {
+        let matchedNum = $('.matched').length;
+        let visibleNum = $('.visible').length;
+        let difficultyArray = [];
+
+        if (matchedNum == visibleNum) {
+            difficultyArray = getDifficultyLevelArr(visibleNum);
+            activeScore = checkScore(difficultyArray);
+            if (checkIfHighScore()) {
+
+                delayDisplayModal('#newHighScoreModal');
+                displayScore(activeHighScore, highWinStar);
+                displayScore(activeHighScore, dashStar);
+                return;
+            }
+            else {
+                displayScore(activeScore, winStar);
+                delayDisplayModal('#winModal');
+                return;
+            };
+        }
+        else {
+            return;
+        }
+    }
+    
+    // returns the correct array of score boundaries based on the number of cards visible (ie the difficulty level chosen).
+    function getDifficultyLevelArr(numOfVisibleCards) {
         
-        switch(len) {
+        switch(numOfVisibleCards) {
             case 8:
                 return easyScoresArray;
                 break;
@@ -534,51 +569,6 @@ $(document).ready(function() {
         return result;
     }
 
-    /**
-     * checkForWin() checks for when player has won. Works for all card pack sizes.
-     * Checks if all visible cards have been turned over, 
-     * then checks if player has a new high score. 
-     * if yes, launches new high score modal if beats old score
-     * if no, launches win modal
-     * 
-    **/
-    function checkForWin() {
-        let matchedNum = $('.matched').length;
-        let visibleNum = $('.visible').length;
-        let difficultyArray = [];
-
-        if (matchedNum == visibleNum) {
-            difficultyArray = getDifficultyLevelArr(visibleNum);
-            activeScore = checkScore(difficultyArray);
-            if (checkIfHighScore()) {
-
-                delayDisplayModal('#newHighScoreModal');
-                displayScore(activeHighScore, highWinStar);
-                displayScore(activeHighScore, dashStar);
-                return;
-            }
-            else {
-                displayScore(activeScore, winStar);
-                delayDisplayModal('#winModal');
-                return;
-            };
-        }
-        else {
-            return;
-        }
-    }
-
-    /**
-     * delayDisplayModal(modalId) delays function so win modals do not pop up too early
-     * BUG fix: moved delay into it's own function to prevent functions repeating when they shouldn't
-    **/ 
-    function delayDisplayModal(modalId) {
-        setTimeout(function() {
-            $(modalId).modal('show');
-            $('#applauseAudio')[0].play();
-        }, 1500);
-    }
-
     // compares new score to highscore 
     function checkIfHighScore() {
         if (easyScore > easyHighScore) {
@@ -602,6 +592,17 @@ $(document).ready(function() {
         else {
             return false;
         }
+    }
+    
+    /**
+     * delayDisplayModal(modalId) delays function so win modals do not pop up too early
+     * BUG fix: moved delay into it's own function to prevent functions repeating when they shouldn't
+    **/ 
+    function delayDisplayModal(modalId) {
+        setTimeout(function() {
+            $(modalId).modal('show');
+            $('#applauseAudio')[0].play();
+        }, 1500);
     }
 
 

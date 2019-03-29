@@ -405,19 +405,19 @@ $(document).ready(function() {
     }
 
     // cuts the deck for different difficulty levels
-    function cutDeck(arr, num) {
-        let cards = arr.slice(0, num);
-        return cards;
+    function cutDeck(cards, num) {
+        let cutCards = cards.slice(0, num);
+        return cutCards;
     }
 
     // returns an array with element elem repeated twice.
     function duplicateCards(elem) {
-        let arr = [];
+        let doubledCards = [];
 
         for (let i = 0; i < 2; i++) {
-            arr = arr.concat(elem);
+            doubledCards = doubledCards.concat(elem);
         };
-        return arr;
+        return doubledCards;
     }
 
     // countTurns() counts flips, when 2 flips have been done the number of turns goes up by one.
@@ -507,22 +507,22 @@ $(document).ready(function() {
     }
     
     // gets score out of 5 based on difficulty level selected and turns taken to win.
-    function checkScore(arr) {
+    function checkScore(scoreBoundariesArray) {
         
         let result;
 
         for (let i = 0; i < 5; i++) {
-            if (turnsCounter <= arr[i]) {
+            if (turnsCounter <= scoreBoundariesArray[i]) {
                 result = (5 - i);
                 break;
             }
         }
         
-        if (arr.includes(15)) {
+        if (scoreBoundariesArray.includes(15)) {
             easyScore = result;
-        } else if (arr.includes(24)) {
+        } else if (scoreBoundariesArray.includes(24)) {
             mediumScore = result;
-        } else if (arr.includes(30)) {
+        } else if (scoreBoundariesArray.includes(30)) {
             hardScore = result;
         } else {
             return;

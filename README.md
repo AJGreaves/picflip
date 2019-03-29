@@ -1,8 +1,8 @@
 <h1 align="center">
-  <img src="https://i.ibb.co/SdxYJty/pic-Flipbanner.png" alt="PicFlip! logo"/>
+  <a href="https://ajgreaves.github.io/picflip/" target="_blank"><img src="https://i.ibb.co/SdxYJty/pic-Flipbanner.png" alt="PicFlip! logo"/></a>
 </h1>
 <h2 align="center">
-  <img src="https://i.ibb.co/f8g0CYk/tagline.png" alt="Memory card game for pre-school kids" >
+<a href="https://ajgreaves.github.io/picflip/" target="_blank"><img src="https://i.ibb.co/f8g0CYk/tagline.png" alt="Memory card game for pre-school kids" ></a>
 </h2>
 
 <div align="center"> 

@@ -1,10 +1,10 @@
 $(document).ready(function() {
     
-//------------------ Variables 
+// Variables 
 
-let carsCardsArray = ["cruz","lightning","mater","jackson-storm", "doc", "mac", "fillmore", "sally"];
-let frozenCardsArray = ["elsa","anna", "olaf", "kristoff", "hans", "sven", "elsa-anna", "olaf-sven"];
-let toystoryCardsArray = ["woody","buzz","rex","alien","jessie","potato","lotso","bullseye"];
+const carsCardsArray = ["cruz","lightning","mater","jackson-storm", "doc", "mac", "fillmore", "sally"];
+const frozenCardsArray = ["elsa","anna", "olaf", "kristoff", "hans", "sven", "elsa-anna", "olaf-sven"];
+const toystoryCardsArray = ["woody","buzz","rex","alien","jessie","potato","lotso","bullseye"];
 let displayCardsArray = [];
 let activeCardsArray = carsCardsArray;
 
@@ -27,13 +27,12 @@ let mediumHighScore = 0;
 let hardHighScore = 0;
 let activeHighScore = hardHighScore;
 
-let dashStar = 'dashboard-score-star';
-let winStar = 'score-star';
-let highWinStar = 'win-modal-score-star';
+const dashStar = 'dashboard-score-star';
+const winStar = 'score-star';
+const highWinStar = 'win-modal-score-star';
 
 
-//------------------ User Data Modal
-
+// User Data Modal
 // checks for user data, if no data, or data has been deleted then launches modal to collect it
 function checkForUserData() { 
     if ((userAvatar === "default-avatar")||(userName === null)) {
@@ -78,14 +77,17 @@ function checkForUserData() {
     }
 }
 
-//------------------ on click events
-
-//--- play button click audio on all button elements
+// play button click audio on all button elements
 $('.btn').click(function() {
     playButtonAudio();
 })
 
-//--- style selection buttons
+function playButtonAudio() {
+    $('#buttonClickAudio')[0].currentTime=0;
+    $('#buttonClickAudio')[0].play();
+}
+
+// style selection buttons
 $('.cars-cover').click(function() {
     styleButton(carsCardsArray);
 })
@@ -98,7 +100,12 @@ $('.toystory-cover').click(function() {
     styleButton(toystoryCardsArray);
 })
 
-//--- difficulty selection buttons
+function styleButton(arr) {
+    activeCardsArray = arr;
+    resetGame();    
+}
+
+// difficulty selection buttons
 
 $('#easyButton').click(function() {
     easyButton();
@@ -115,19 +122,35 @@ $('#hardButton').click(function() {
     difficultyButton(hardHighScore);
 })
 
-//--- Reset button
+function easyButton() {
+    $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
+    $('#dashboard-high-score-text').text('Easy mode high score');
+}
+
+function mediumButton() {
+    $('.my-card-column-medium').addClass('visible').removeClass('invisible');
+    $('.my-card-column-hard').addClass('invisible').removeClass('visible');
+    $('#dashboard-high-score-text').text('Medium mode high score');
+}
+
+function hardButton() {
+    $('.my-card-column-medium').addClass('visible').removeClass('invisible');
+    $('.my-card-column-hard').addClass('visible').removeClass('invisible');
+    $('#dashboard-high-score-text').text('Hard mode high score');
+}
+
+function difficultyButton(score) {
+    activeHighScore = score;
+    displayScore(activeHighScore, dashStar);
+    resetGame();
+}
+
+// Reset button
 $('.reset-btn').click(function () {
     resetGame();
 })
 
-//--- Mute button
-
-$('#muteButton').click(function() {
-    muteAudio();
-});
-
-//--- Modal buttons
-
+// Modal buttons
 $('#win-modal-close-btn').click(function () {
     resetGame();
     $('#winModal').modal('hide');
@@ -137,29 +160,69 @@ $('#high-score-modal-close-btn').click(function () {
     resetGame();
 })
 
-//--- collect and submit user info
-// This button is on the user info modal
-$('#user-info-submit-button').click(function() {
-    userInfoSubmitButton ();
+// resets game, but not difficulty level or style selections
+function resetGame() {
+    // flips and face-up cards back over
+    $('.face-up').addClass('face-down').removeClass('face-up disabled matched selected');
+    // makes a new pack of cards, size depending on difficulty setting
+    let num = howManyCards();
+    let cards = makeCardPack(activeCardsArray, num);
+    // delays new cards being displayed until cards have flipped back over
+    setTimeout(function() {
+      displayCards(cards);  
+    },500);
+    //resets counters
+    flipCounter = 0;
+    turnsCounter = 0;
+    countSelected = 0;
+    //displays turns counter on screen
+    countTurns();
+}
+
+// Mute button
+$('#muteButton').click(function() {
+    muteAudio();
 });
 
-//--- delete modal and button
+// mute audio function, original code from: https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
+function muteAudio() {
+
+    let allaudio = document.getElementsByTagName('audio'); // BUG: audio button no longer working since moving audio file links to js. 
+    
+    if (silence) {
+        for (let j = 0; j < allaudio.length; j++) {
+        allaudio[j].muted = false;
+        }
+        silence = false;
+    } else {
+        for (let j = 0; j < allaudio.length; j++) {
+        allaudio[j].muted = true;
+        }
+        silence = true;
+    }
+    $('#muteButton i').toggleClass('fa-volume-off');
+}
+
+// collect and submit user info
+// This button is on the user info modal
+$('#user-info-submit-button').click(function() {
+    userInfoSubmitButton();
+});
+
+// delete modal and button
 
 $('#deleteDataModal').click(function() {
     launchParentModal();
 })
 
-$('#confirmDeleteData').click(function() {
-    deleteData();
+$('#confirmResetData').click(function() {
+    resetUserData();
 })
 
 // Footer tab open on click
 $('#pullUpTab').click(function() {
     $('#footerTabContainer').toggleClass('active-footer');
 })
-
-
-// ---------- on click event functions
 
 function userInfoSubmitButton() {
     // collects data from form and assigns to variables
@@ -179,22 +242,12 @@ function userInfoSubmitButton() {
     }
 }
 
-function playButtonAudio() {
-    $('#buttonClickAudio')[0].currentTime=0;
-    $('#buttonClickAudio')[0].play();
-}
-
-function styleButton(arr) {
-    activeCardsArray = arr;
-    resetGame();    
-}
-
 function launchParentModal() {
     $('#infoModal').modal('hide');
     $('#parentCheckModal').modal('show');
 }
 
-function deleteData() {
+function resetUserData() {
     // resets all user data
     localStorage.setItem("easyHighScore", 0);
     localStorage.setItem("mediumHighScore", 0);
@@ -223,67 +276,6 @@ function deleteData() {
     checkForUserData();
 }
 
-function easyButton() {
-    $('.my-card-column-medium, .my-card-column-hard').addClass('invisible').removeClass('visible');
-    $('#dashboard-high-score-text').text('Easy mode high score');
-}
-
-function mediumButton() {
-    $('.my-card-column-medium').addClass('visible').removeClass('invisible');
-    $('.my-card-column-hard').addClass('invisible').removeClass('visible');
-    $('#dashboard-high-score-text').text('Medium mode high score');
-}
-
-function hardButton() {
-    $('.my-card-column-medium').addClass('visible').removeClass('invisible');
-    $('.my-card-column-hard').addClass('visible').removeClass('invisible');
-    $('#dashboard-high-score-text').text('Hard mode high score');
-}
-
-function difficultyButton(score) {
-    activeHighScore = score;
-    displayScore(activeHighScore, dashStar);
-    resetGame();
-}
-
-// resets game, but not difficulty level or style selections
-function resetGame() {
-    // flips and face-up cards back over
-    $('.face-up').addClass('face-down').removeClass('face-up disabled matched selected');
-    // makes a new pack of cards, size depending on difficulty setting
-    let num = howManyCards();
-    let cards = makeCardPack(activeCardsArray, num);
-    // delays new cards being displayed until cards have flipped back over
-    setTimeout(function() {
-      displayCards(cards);  
-    },500);
-    //resets counters
-    flipCounter = 0;
-    turnsCounter = 0;
-    countSelected = 0;
-    //displays turns counter on screen
-    countTurns();
-}
-
-// mute audio function, original code from: https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
-function muteAudio() {
-
-    let allaudio = document.getElementsByTagName('audio'); // BUG: audio button no longer working since moving audio file links to js. 
-    
-    if (silence) {
-        for (let j = 0; j < allaudio.length; j++) {
-        allaudio[j].muted = false;
-        }
-        silence = false;
-    } else {
-        for (let j = 0; j < allaudio.length; j++) {
-        allaudio[j].muted = true;
-        }
-        silence = true;
-    }
-    $('#muteButton i').toggleClass('fa-volume-off');
-}
-
 // flips cards over on click, only allows two clicks at a time. Fixes bug caused by clicking cards too fast. 
 // BUG FIX - has to remain inside a click-function for $(this) to work
 $('.flip-card').click(function() {
@@ -297,8 +289,6 @@ $('.flip-card').click(function() {
         checkMatch();
     } 
 })
-
-// ---------- Display functions
 
 function displayUserData() {
     $('.username').text(userName); 
@@ -347,9 +337,6 @@ function displayCards(cards) {
     });
 }
 
-$('#yourElementId').attr('title', 'your new title');
-
-
 // displays score stars in selected place
 function displayScore(numOfStars, className) {
     
@@ -371,16 +358,7 @@ function displayScore(numOfStars, className) {
     }
 }
 
-// delays function so win modals do not pop up too early
-// BUG fix: moved delay into it's own function to prevent functions repeating when they shouldn't
-function delayDisplayModal(modalId) {
-    setTimeout(function() {
-        $(modalId).modal('show');
-        $('#applauseAudio')[0].play();
-    }, 1500);
-}
-
-//------------------ GAME
+// GAME
 
 // creates pack by cutting difficulty selection, then duplicating, shuffling then returning it. 
 function makeCardPack(arr, num) {
@@ -476,6 +454,13 @@ function checkMatch() {
     } else {
         return;
     }
+}
+
+function delayedCorrectSound() {
+    // delays correct match sound
+    setTimeout(function() {
+        $('#correctBingAudio')[0].play();
+    }, 600);    
 }
 
 // gets score out of 5 based on difficulty level selected and turns taken to win.
@@ -575,6 +560,15 @@ function checkForWin() {
     }
 }
 
+// delays function so win modals do not pop up too early
+// BUG fix: moved delay into it's own function to prevent functions repeating when they shouldn't
+function delayDisplayModal(modalId) {
+    setTimeout(function() {
+        $(modalId).modal('show');
+        $('#applauseAudio')[0].play();
+    }, 1500);
+}
+
 // compares new score to highscore 
 function checkIfHighScore(){
     if (easyScore > easyHighScore) {
@@ -597,17 +591,8 @@ function checkIfHighScore(){
     }
 }
 
-//--- misc functions
 
-function delayedCorrectSound() {
-    // delays correct match sound
-    setTimeout(function() {
-        $('#correctBingAudio')[0].play();
-    }, 600);    
-}
-
-
-//--- default setting for cards when page is first loaded
+// default setting for cards when page is first loaded
 displayCardsArray = makeCardPack(carsCardsArray, 8);
 displayCards(displayCardsArray);
 countTurns();

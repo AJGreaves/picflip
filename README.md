@@ -21,7 +21,7 @@ characters that children enjoy, with an overall feel of child friendly entertain
 - [**UX**](#ux)<br>
 [**Project Goals**](#project-goals)<br>
 [**Player goals**](#player-goals)<br>
-[**Parental goals**](#parental goals)<br>
+[**Parental goals**](#parental-goals)<br>
 [**Developer/Buinsess Goals**](#developer-business-goals)<br>
 [**User Stories**](#user-stories)<br>
 
@@ -52,7 +52,7 @@ PicFlip! has two target audiences: Pre-school children and their parents.
 
 The central target audience for this game are pre-school children aged 1 to 5 years old.
 
-**Players goals are:**
+Players goals are:
 - A fun game to play.
 - Child friendly controls.
 - Large buttons and clickable areas for young fingers to operate.
@@ -60,7 +60,7 @@ The central target audience for this game are pre-school children aged 1 to 5 ye
 - Fun images and sounds. 
 - Visual and audio rewards while playing.
 
-**PicFlip! is a great way to help players meet these needs because:**
+PicFlip! is a great way to help players meet these needs because:
 - The planning and design process took all these needs into account before starting to build it. 
 - Controls are grouped together clearly.
 - Game controls are large, utlising icons and colors to commuinicate their purpose before any words that a child would not be able to read. 
@@ -72,14 +72,14 @@ The central target audience for this game are pre-school children aged 1 to 5 ye
 Parents of pre-school children have a large amount of say about what games their children are exposed to, 
 therefore parental needs must also be at the forfront of any project designed for children in this age group. 
 
-**Parents goals are:**
+Parents goals are:
 - A game with child development value. In this case to improve their memory and spacial awareness.
 - Usability for the range of abilties in pre-school kids.
 - A visiualy appealing, well functioning game. 
 - The ability to for parent to reset the stored player profile. 
 - A mute button.
 
-**PicFlip! is a great way to help parents meet these needs because:**
+PicFlip! is a great way to help parents meet these needs because:
 - PicFLip! gives a child a fun enviroment in which to practice their memory skills. 
 - Game includes 3 levels of difficulty ranging from 8 to 16 cards.
 - It has been designed with user experience as a priority, not only for a child using it but also for a parent.
@@ -94,7 +94,6 @@ For example, that the game cannot be broken by clicking many areas quickly, or i
 
 #### User Stories
 
-**Players goals are:**
 As a player, I want:
 - The ability to easily find and understand the controls for the game, so that I can operate them easily. 
 - A large easy to press buttons and controls, so that my young fingers can use them easily on all devices.
@@ -104,12 +103,6 @@ As a player, I want:
 - Visual icons and images that I recoginise, so that I understand when I have achiveved something in the game. For example stars out of five, and a trophy for high score.
 - The ability to see my old scores when I return to the game, so I can try to beat them.
 
-#### Parental goals
-
-As parents of pre-school children have a large amount of say about what games their children are exposed to, 
-parental needs must also be at the forfront of any project designed for children in this age group. 
-
-**Parents goals are:**
 As a parent of a player, I want:
 - Levels of difficulty for my child to choose from, so that they are engaged for longer and the game is useable for a wider age range.
 - A visually and operationally appealing game, so that I also have a positive expeience when using it with my child.
@@ -122,15 +115,15 @@ As a parent of a player, I want:
 
 These wireframes were created using [Balsamiq](https://balsamiq.com/) during the Scope Plane part of the design and planning process for this project. 
 
-[User info modal](https://i.ibb.co/FWBy68Q/Create-profile.png)
-[Game page](https://i.ibb.co/H2XtCW9/Game-page.png)
-[Win pop-up](https://i.ibb.co/5809P3Q/Win-popup.png)
+- [User info modal](https://i.ibb.co/FWBy68Q/Create-profile.png)
+- [Game page](https://i.ibb.co/H2XtCW9/Game-page.png)
+- [Win pop-up](https://i.ibb.co/5809P3Q/Win-popup.png)
 
 ## Features
  
 ### Existing Features
 
-**Player info modal**
+1. Player info modal
 - On arriving at the page for the first time, this modal pops up to collect the players name and their choice of avatar image from the three available. 
 - This modal is also activated if stored player data is reset. 
 - The modal has been programmed to not close unless both the name has been filled out at an avatar has been chosen. Tooltips appear to guide the user to choose both.
@@ -140,35 +133,35 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 <img src="https://i.ibb.co/NpXs3QC/user-info-modal.jpg" alt="Screenshot: User info modal" >
 </div>
 
-#### Dashboard
+2. Dashboard
 - The game dashboard contains the player info display, difficulty selection, character selection, info, mute and reset buttons. 
 
 <div align="center">
 <img src="https://i.ibb.co/pwn3GFV/game-board.jpg" alt="Screenshot: Game board" >
 </div>
 
-**Player info display**
+3. Player info display
 - At the top of the dashboard the players name is displayed with their chosen avatar. 
 - Underneeth this is the display to show their heighest score (out of 5 stars) for the currently selected difficulty level. 
 - The star display changes if a different level is selected. 
 
-**Difficulty selection buttons**
+4. Difficulty selection buttons
 - Players can select from three difficutly levels: Easy (8 cards), Medium (12 cards) and Hard (16 cards).
 - The difficilty buttons are coloured green, yellow and red for users who can't read to tell them apart.
 - Selecting any of these buttons turns any face-up cards back over and reshuffles the cards.
 
-**Character selection buttons**
+5. Character selection buttons
 - Players can choose from three different disney movie characters to disaply on the memory cards.
 - Selecting any of these buttons turns any face-up cards back over and reshuffles the cards.
 
-**Mute button**
+6. Mute button
 - The mute button switches off all audio in the game. It is represented by a large speaker icon, which switches to one with a cross next to it when active.
  
-**Reset button**
+7. Reset button
 - The reset button, represented by a curved arrow, resets the game, when it is pressed the game turns any face-up cards back over, reshuffles them and resets the turns counter back to 0. 
 - It does not reset the diffculty level or characters chosen for the cards. 
 
-**Info button**
+8. Info button
 - Represented by a large question mark, the info button opens the info modal. 
 - The info modal offers easy to understand instuctions on how to play the game. 
 - Underneeth how to play instructions there is inforamtion on how to open the modal to delete the players profile. 
@@ -178,7 +171,7 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 <img src="https://i.ibb.co/xJ7PbS2/info-modal.jpg" alt="Screenshot: Info Modal" >
 </div>
 
-**Parental check modal**
+9. Parental check modal
 - This modal appears if the correct icon is clicked in the info modal. 
 - It explains that deleting the player profile will remove all game data including high scores. 
 - Then it asks a simple maths question with 9 possible answers to choose from, only if the correct answer is clicked will the player profile be deleted. 
@@ -189,11 +182,11 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 <img src="https://i.ibb.co/nrRkQsq/delete-data-modal.jpg" alt="Screenshot: Parental check modal" >
 </div>
 
-**Turns counter**
+10. Turns counter
 - Located above the game cards, the turns counter counts the number of turns the playe has taken in the current game. 
 - This total is then used to give the player a score out of 5 stars when the game is complete.
 
-**Game board and cards**
+11. Game board and cards
 - The game board is where the memory cards are displayed. 
 - The cards are laid out in a grid 4 cards wide on medium to large screens, and 3 cards wide on phones to allow the size to remain easy for young fingers to tap on.
 - The number of rows of cards visible changes depending on the difficulty level selected. 
@@ -202,7 +195,7 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 <img src="https://i.ibb.co/q5sDjB4/mobile-view.jpg" alt="Screenshot: game board mobile view" >
 </div>
 
-**Win modals** 
+12. Win modals 
 - PicFlip! has two possible win modals that pop up when a game is completed. 
 - Both win modals display the number of stars the player won for the game they just played.
 - The standard win modal is launched if the player completed the game, but did not beat their previous high score.
@@ -212,21 +205,21 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 <img src="https://i.ibb.co/YRjzhw5/high-score-modal.jpg" alt="Screenshot: high score modal" >
 </div>
 
-**Footer tab**
+13. Footer tab
 - a small tab is displayed at the bottom of the website that when clicked pulls up a short footer with developer information on. 
 
 ### Features Left to Implement
-**Improvements to the parental check modal**
+1. Improvements to the parental check modal
 In the future more functionality can be added to the parental check modal to: 
 - Randomize the math question and active number to click to prove you are an adult. 
 - if the incorrect answer is given the math question/answer is randomised again. 
 - If the incorrect choice is made 5 times in a row then the modal closes. 
 
-**Additional difficilty level**
+2. Additional difficilty level
 - Add level "insane" for older kids to try. 
 - This would only be possible on mobiles if converted into a mobile app, as the full screen would be needed to make enough room for all the cards.
 
-**Conversion to a mobile App**
+3. Conversion to a mobile App
 - If this project were to become commercial the current card pictures would have to be changed to ones commissioned specifically for it, rather than using disney images.
 
 ------

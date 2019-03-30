@@ -171,8 +171,7 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 
 <div align="center">
 <img src="https://i.ibb.co/xJ7PbS2/info-modal.jpg" alt="Screenshot: Info Modal" >
-</div>
-
+</div><br>
 
 9. **Parental check modal**
     - This modal appears if the correct icon is clicked in the info modal. 
@@ -236,7 +235,8 @@ In the future more functionality can be added to the parental check modal to:
 - This project uses HTML, CSS and JavaScript programming languages.
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
-- [Cloud9](https://c9.io) - Developer used **Cloud9** for their IDE while building the website.
+- [Cloud9](https://c9.io) 
+    - Developer used **Cloud9** for their IDE while building the website.
 - [BootstrapCDN](https://www.bootstrapcdn.com/)
     - The project uses **Bootstrap4** to simplify the structure of the website and make the website responsive easily.
     - The project also uses BootstrapCDN to provide icons from [FontAwesome](https://www.bootstrapcdn.com/fontawesome/)

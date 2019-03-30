@@ -116,7 +116,7 @@ button {
   background-position: center center; }
 
 /* see media querues for size adjustment on mobiles */
-.trophy, .avatar {
+.trophy, #avatar {
   width: 120px;
   height: 120px;
   margin: 0.3rem;
@@ -609,7 +609,7 @@ and ajusted to project needs*/
   .dashboard-section {
     width: auto; }
 
-  .trophy, .avatar {
+  .trophy, #avatar {
     width: 100px;
     height: 100px; }
 

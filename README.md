@@ -53,22 +53,37 @@ PicFlip! has two target audiences: Pre-school children and their parents.
 The central target audience for this game are pre-school children aged 1 to 5 years old.
 
 **Players goals are:**
+- A fun game to play.
 - Child friendly controls.
 - Large buttons and clickable areas for young fingers to operate.
 - All game controls laid out together and in an intuative way. 
 - Fun images and sounds. 
 - Visual and audio rewards while playing.
 
+**PicFlip! is a great way to help players meet these needs because:**
+- The planning and design process took all these needs into account before starting to build it. 
+- Controls are grouped together clearly.
+- Game controls are large, utlising icons and colors to commuinicate their purpose before any words that a child would not be able to read. 
+- PicFlip! includes audio and visual rewards as part of the game.
+- The overall feel of PicFLip! is fun and child-friendly.
+
 #### Parental goals
 
-As parents of pre-school children have a large amount of say about what games their children are exposed to, 
-parental needs must also be at the forfront of any project designed for children in this age group. 
+Parents of pre-school children have a large amount of say about what games their children are exposed to, 
+therefore parental needs must also be at the forfront of any project designed for children in this age group. 
 
 **Parents goals are:**
+- A game with child development value. In this case to improve their memory and spacial awareness.
 - Usability for the range of abilties in pre-school kids.
 - A visiualy appealing, well functioning game. 
 - The ability to for parent to reset the stored player profile. 
 - A mute button.
+
+**PicFlip! is a great way to help parents meet these needs because:**
+- PicFLip! gives a child a fun enviroment in which to practice their memory skills. 
+- Game includes 3 levels of difficulty ranging from 8 to 16 cards.
+- It has been designed with user experience as a priority, not only for a child using it but also for a parent.
+- The game includes a reset data option, which is easy to find an operate by an adult who can read and do simple mathematics.
 
 #### Developer/Buinsess Goals
 
@@ -86,9 +101,8 @@ As a player, I want:
 - Audio and/or visual feedback when I play the game, so that I know when I have clicked or not clicked something.
 - The ability to choose from cards with my favourite childrens characters on, so that I am even more engaged in finding them in the game.
 - Postitive audio feedback when I complete a step in the game (for example when I find a matching pair of cards), because this increases my enjoyment from playing.
-- Visual symbols and images that I recoginise, so that I understand when I have achiveved something in the game. For example stars out of five, and a trophy for high score.
-- The ability to see my old scores if I return to the game, so I can try to beat them.
-
+- Visual icons and images that I recoginise, so that I understand when I have achiveved something in the game. For example stars out of five, and a trophy for high score.
+- The ability to see my old scores when I return to the game, so I can try to beat them.
 
 #### Parental goals
 
@@ -114,6 +128,42 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 ## Features
  
 ### Existing Features
+
+**Player info modal**
+- On arriving at the page for the first time, this modal pops up to collect the players name and their choice of avatar image from the three available. 
+- This modal is also activated if stored player data is reset. 
+- The modal has been programmed to not close unless both the name has been filled out at an avatar has been chosen. Tooltips appear to guide the user to choose both.
+- The default setting for modals that they can be closed if clicking on the modal background has also been disabled.  
+
+<div align="center">
+<img src="https://i.ibb.co/NpXs3QC/user-info-modal.jpg" alt="Screenshot: User info modal" >
+</div>
+
+**Dashboard**
+- The game dashboard contains the player info display, difficulty selection, character selection, info, mute and reset buttons. 
+
+<div align="center">
+<img src="https://i.ibb.co/pwn3GFV/game-board.jpg" alt="Screenshot: Game board" >
+</div>
+
+**Player info display**
+- At the top of the dashboard the players name is displayed with their chosen avatar. 
+- Underneeth this is the display to show their heighest score (out of 5 stars) for the currently selected difficulty level. 
+- The star display changes if a different level is selected. 
+
+**Difficulty selection buttons**
+- Players can select from three difficutly levels: Easy (8 cards), Medium (12 cards) and Hard (16 cards).
+- Selecting any of these buttons turns any face-up cards back over and reshuffles the cards
+
+- Character selection buttons
+- Info button
+- Mute button
+- Reset button
+- Turns counter
+- Game board and cards
+- Win modals win or new high score
+- Modal to remove player profile
+- Footer tab
 
 ------
 - Feature 1 - allows users X to achieve Y, by having them fill out Z

@@ -42,7 +42,7 @@ describe('turnsCounter function', function() {
 describe('muteAudio function', function() {
     
     beforeEach(() => {
-        let silence = true; 
+        silence = true; 
     });
     
     it('should return silence = false', function(){
@@ -64,6 +64,23 @@ describe('muteAudio function', function() {
         
         //assert
         expect(silence).toBe(true);
+        
+    });
+});
+
+describe('howManyCards function', function() {
+    
+    beforeEach(() => {
+        num = 0;
+    });
+    
+    it('should return 4', function() {
+        //arrange
+        num = 8;
+        //act
+        let result = howManyCards();
+        //assert
+        expect(result).toBe(4);
         
     });
 });

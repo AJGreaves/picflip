@@ -292,26 +292,36 @@ At the moment of submitting this Milestone project the Development Branch and Ma
 
 ### Content
 
-- The images for the cards were taken from: http://www.kidsunder7.com/2012/07/memory-card-game.html#.XIzkXhJ7kkI
-- Trophy imgae sourced from: https://www.kisspng.com
+- All text in this project was written by the developer.
 
+example:
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
-- the logo for this site was created using
-- The images used in this site were obtained from google images and disney.com 
-- The images for user profile were sourced from https://pngtree.com
-- comic-book style backgrounds were sourced from https://www.freepik.com
-- game board background Photo by Jason Leung on Unsplash https://unsplash.com/photos/M55JcA9wOG0
-- sound file for button click sourced from https://www.soundjay.com
-- sound file for card flip sourced from https://freesound.org/people/Splashdust/sounds
-- sound file for matched cards sourced from: https://freesound.org/people/aji_/sounds/66136/
-- sound file for fanfare sourced from https://freesound.org/people/plasterbrain/sounds
+
+#### Images
+- The PicFlip logo was created using [Hatchful](https://hatchful.shopify.com).
+- The Trophy image used was sourced from [Kissping](https://www.kisspng.com).
+- The images for the user avatar were sourced from [Pngtree](https://pngtree.com).
+- The images used for the memory cards were obtained from [Google Images](https://www.google.com/imghp?hl=en) and are used for educational purposes only. 
+Copyright for the memory card images belong to [Disney](https://www.thewaltdisneycompany.com/) and [Pixar](https://www.pixar.com/).
+- The comic-book style modal backgrounds were sourced from [freepik](https://www.freepik.com)
+- The game board background photograph was obtained from [Jason Leung on Unsplash](https://unsplash.com/photos/M55JcA9wOG0).
+
+#### Audio
+- The audio file for button click sound was sourced from [SoundJay](https://www.soundjay.com).
+- The audio files for card flip sound, matched cards sound and children applauding were sourced from [FreeSound](https://freesound.org/).
 
 ### Code
-- Code for the card flip animation taken from https://www.w3schools.com/howto/howto_css_flip_card.asp
-- box shadow code generated at https://cssmatic.com/box-shadow
+- Code for the card flip animation taken from [W3Schools](https://www.w3schools.com/howto/howto_css_flip_card.asp).
+- Box shadow codes were generated at [CSS matic | box-shadow](https://cssmatic.com/box-shadow).
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+Special thanks to: 
+- Code Institute Mentor Simen Daehlin for his time and support in explaining and demonstrating areas of code this developer was struggling to understand.
+- Alumni John Longgately and Robin Zigmond for their help in guiding this developer in understanding JavaScript, jQuery and Jasmine testing. 
+
+**Disclaimer**
+
+The content of this Website, including the images used, are for educational purposes only.

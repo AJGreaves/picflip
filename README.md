@@ -249,7 +249,7 @@ In the future more functionality can be added to the parental check modal to:
 - [GitHub](https://github.com/)
     - This project uses **GitHub** to store and share all project code remotely. 
 
-## Testing
+## Testing < STILL TO BE COMPLETED
 
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. 
 Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, 
@@ -275,15 +275,18 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+To deploy PicFlip! to GitHub Pages from its GitHub repository, the following steps were taken: 
+1. Log into GitHub. 
+2. From the list of repositories on the screen, select **AJGreaves/picflip**.
+3. From the menu items near the top of the page, select **Settings*.
+4. Scroll down to the **GitHub Pages** section.
+5. Under **Source** click the drop-down menu labeled **None** and select **Master Branch**
+6. On selecting Master Branch the page is automatically refreshed, PicFlip! Is now deployed. 
+7. Scroll back down to the **GitHub Pages** section to retrieve the link to the deployed website.
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
-
-In addition, if it is not obvious, you should also describe how to run your code locally.
-
+The PicFlip project made use of several branches for development, testing and bug fixing. 
+The Master Branch has always been the one deployed to GitHUb Pages as the developer tries to keep the master branch to optimal code only when displaying live.
+At the moment of submitting this Milestone project the Development Branch and Master Branch are identical. 
 
 ## Credits
 

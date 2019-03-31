@@ -94,7 +94,7 @@ For example, that the game cannot be broken by clicking many areas quickly, or i
 
 #### User Stories
 
-As a player, I want:
+As a player aged between 1-5 years old, I want:
 1. The ability to easily find and understand the controls for the game, so that I can operate them easily. 
 2. A large easy to press buttons and controls, so that my young fingers can use them easily on all devices.
 3. Audio and/or visual feedback when I play the game, so that I know when I have clicked or not clicked something.

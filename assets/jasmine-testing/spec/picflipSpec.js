@@ -78,7 +78,7 @@ describe('howManyCards function', function() {
         //arrange
         num = 8;
         //act
-        let result = howManyCards();
+        let result = howManyCards(num);
         //assert
         expect(result).toBe(4);
         

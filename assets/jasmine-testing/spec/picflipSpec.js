@@ -171,6 +171,15 @@ describe('checkCounter function', function() {
 
 describe('checkMatch function', function() {
     
+    it('should increase flipCounter by 1', function() {
+        flipCounter = 3;
+        setTimeout(function(){
+            checkMatch();
+            expect(flipCounter).toBe(4);
+            done();
+        }, 1100); 
+    });
+    
     describe('when cards do not match', function() {
         
         beforeEach(() => {
@@ -199,18 +208,10 @@ describe('checkMatch function', function() {
                 done();
             }, 1100);
         });
-        it('should add class "face-down', function() {
+        it('should add class "face-down"', function() {
             setTimeout(function(){
                 checkMatch();
                 expect($('.flip-card')).toHaveClass('face-down');
-                done();
-            }, 1100); 
-        });
-        it('should increase flipCounter by 1', function() {
-           flipCounter = 3;
-            setTimeout(function(){
-                checkMatch();
-                expect(flipCounter).toBe(4);
                 done();
             }, 1100); 
         });
@@ -242,6 +243,11 @@ describe('checkMatch function', function() {
              checkMatch();
              expect($('.flip-card')).toHaveClass('matched');
              expect($('.flip-card')).toHaveClass('disabled');
+        });
+        it('countSelected should = 0', function() {
+            countSelected = 2;
+            checkMatch();
+            expect(countSelected).toEqual(0);
         });
     });
 });

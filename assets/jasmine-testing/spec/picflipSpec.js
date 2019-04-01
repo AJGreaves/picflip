@@ -80,3 +80,95 @@ describe('howManyCards function', function() {
     });
 });
 
+describe('difficulty button functions', function() {
+    
+    beforeEach(() => {
+        setFixtures(`
+            <div class="my-card-column-easy visible"></div>
+            <div class="my-card-column-medium visible"></div>
+            <div class="my-card-column-medium invisible"></div>
+            <div class="my-card-column-hard visible"></div>
+            <div class="my-card-column-hard invisible"></div>
+            <div></div>
+            <h6 id="dashboard-high-score-text">Hard mode high score</h6>
+            <h6></h6>
+        `)
+    });
+    
+    describe('easyButton function', function() {
+        it('should remove class "visible" from html elements with class my-card-column-medium', function() {
+            easyButton();
+            expect($('.my-card-column-medium')).not.toHaveClass('visible');
+        });
+        it('should remove class "visible" from html elements with class my-card-column-hard', function() {
+            easyButton();
+            expect($('.my-card-column-hard')).not.toHaveClass('visible');
+        });
+        it('should add class "invisible" from html elements with class my-card-column-medium', function() {
+            easyButton();
+            expect($('.my-card-column-medium')).toHaveClass('invisible');
+        });
+        it('should add class "invisible" from html elements with class my-card-column-hard', function() {
+            easyButton();
+            expect($('.my-card-column-hard')).toHaveClass('invisible');
+        });
+        it('should add text "Easy mode high score" to element with id #dashboard-high-score-text', function() {
+            easyButton();
+            expect($('#dashboard-high-score-text').text()).toEqual('Easy mode high score');
+        });
+    });
+
+    describe('mediumButton function', function() {
+        it('all html elements with class my-card-column-medium should have the class of "visible"', function() {
+            mediumButton();
+            expect($('.my-card-column-medium')).toHaveClass('visible');
+        });
+        it('all html elements with class my-card-column-medium should not have the class of "invisible"', function() {
+            mediumButton();
+            expect($('.my-card-column-medium')).not.toHaveClass('invisible');
+        });
+        it('all html elements with class my-card-column-hard should have the class of "invisible"', function() {
+            mediumButton();
+            expect($('.my-card-column-hard')).toHaveClass('invisible');
+        });
+        it('all html elements with class my-card-column-hard should not have the class of "visible"', function() {
+            mediumButton();
+            expect($('.my-card-column-hard')).not.toHaveClass('visible');
+        });
+        it('should add text "Medium mode high score" to element with id #dashboard-high-score-text', function() {
+            mediumButton();
+            expect($('#dashboard-high-score-text').text()).toEqual('Medium mode high score');
+        });
+    });
+    
+    describe('hardButton function', function() {
+        it('all html elements with class my-card-column-medium should have the class of "visible"', function() {
+            hardButton();
+            expect($('.my-card-column-medium')).toHaveClass('visible');
+        });
+        it('all html elements with class my-card-column-medium should not have the class of "invisible"', function() {
+            hardButton();
+            expect($('.my-card-column-medium')).not.toHaveClass('invisible');
+        });
+        it('all html elements with class my-card-column-hard should have the class of "visible"', function() {
+            hardButton();
+            expect($('.my-card-column-hard')).toHaveClass('visible');
+        });
+        it('all html elements with class my-card-column-hard should not have the class of "invisible"', function() {
+            hardButton();
+            expect($('.my-card-column-hard')).not.toHaveClass('invisible');
+        });
+        it('should add text "Hard mode high score" to element with id #dashboard-high-score-text', function() {
+            hardButton();
+            expect($('#dashboard-high-score-text').text()).toEqual('Hard mode high score');
+        });
+    });
+    
+    
+    
+});
+
+
+//arrange, act, assert
+
+

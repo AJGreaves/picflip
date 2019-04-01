@@ -166,9 +166,6 @@ describe('checkCounter function', function() {
     });
 });
 
-
-//arrange, act, assert
-
 describe('checkMatch function', function() {
     
     it('should increase flipCounter by 1', function() {
@@ -252,12 +249,35 @@ describe('checkMatch function', function() {
     });
 });
 
+describe('styleButton function', function() {
+    
+    beforeEach(() => {
+        const frozenCardsArray = ["elsa", "anna", "olaf", "kristoff", "hans", "sven", "elsa-anna", "olaf-sven"];
+        let activeCardsArray = [];
+    });
+        
+    it('should make activeCardsArray equal to the array styleButton function is passed', function() {
+        styleButton(frozenCardsArray);
+        expect(activeCardsArray).toEqual(frozenCardsArray);
+    });
+});
 
-/*    beforeEach(() => {
-        // How to write a spy: 
-        let object = { fakeCountTurnsFunction: function() {
-                jasmine.createSpy('countTurns', function(){});
-            }
-        }
-        const countTurnsSpy = spyOn(object, 'fakeCountTurnsFunction');
-    })*/
+describe('difficultyButton function', function() {
+    
+    beforeEach(() => {
+        let activeHighScore = 3;
+    });
+    it('should make activeHighScore equal to the score it is passed', function() {
+        let score = 4;
+        difficultyButton(score);
+        expect(activeHighScore).toEqual(4);
+    });
+    // need to understand writing dummy functions. Why is this so hard!!! 
+    xit('should call displayScore function with active score', function(){
+        let score = 4;
+        difficultyButton(score);
+        expect(displayScore).toHaveBeenCalledWith(4);
+    });
+});
+
+//arrange, act, assert

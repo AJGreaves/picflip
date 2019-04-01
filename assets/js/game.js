@@ -358,8 +358,7 @@ function displayCards(cards) {
 
 // displays score stars in selected place
 function displayScore(numOfStars, className) {
-
-    let StarElems = $(className);
+    let StarElems = document.getElementsByClassName(className);
 
     for (let i = 0; i < numOfStars; i++) {
         if ($(StarElems[i]).hasClass('empty-star')) {
@@ -399,7 +398,7 @@ function makeCardPack(arr, num) {
 
 // finds how many cards are visible, returns number of images needed for new pack
 function howManyCards() {
-    let num = $('visible').length;
+    let num = $('.visible').length;
     let halfNum = (num / 2);
     return halfNum;
 }

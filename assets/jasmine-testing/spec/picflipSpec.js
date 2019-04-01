@@ -169,4 +169,89 @@ describe('checkCounter function', function() {
 
 //arrange, act, assert
 
+describe('checkMatch function', function() {
+    
+    describe('when cards do not match', function() {
+        
+        beforeEach(() => {
+            setFixtures(`
+                <div class="flip-card card-container mx-auto face-up disabled selected">
+                    <div class="flip-card-inner">
+                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                        <figure class="flip-card-back game-card lightning" title="lightning"></figure>
+                    </div>
+                </div>
+                <div class="flip-card card-container mx-auto face-up disabled selected">
+                    <div class="flip-card-inner">
+                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                        <figure class="flip-card-back game-card mater" title="mater"></figure>
+                    </div>
+                </div>
+            `)
+         });
 
+        it('should remove classes "face-up disabled selected" ', function() {
+            setTimeout(function(){
+                checkMatch();
+                expect($('.flip-card')).not.toHaveClass('face-up');
+                expect($('.flip-card')).not.toHaveClass('disabled');
+                expect($('.flip-card')).not.toHaveClass('selected');
+                done();
+            }, 1100);
+        });
+        it('should add class "face-down', function() {
+            setTimeout(function(){
+                checkMatch();
+                expect($('.flip-card')).toHaveClass('face-down');
+                done();
+            }, 1100); 
+        });
+        it('should increase flipCounter by 1', function() {
+           flipCounter = 3;
+            setTimeout(function(){
+                checkMatch();
+                expect(flipCounter).toBe(4);
+                done();
+            }, 1100); 
+        });
+    });
+    
+    describe('when cards do match', function() {
+        beforeEach(() => {
+            setFixtures(`
+                <div class="flip-card card-container mx-auto face-up disabled selected">
+                    <div class="flip-card-inner">
+                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                        <figure class="flip-card-back game-card lightning" title="lightning"></figure>
+                    </div>
+                </div>
+                <div class="flip-card card-container mx-auto face-up disabled selected">
+                    <div class="flip-card-inner">
+                        <figure class="flip-card-front game-card game-card-back" title="Flip card face down"></figure>
+                        <figure class="flip-card-back game-card lightning" title="lightning"></figure>
+                    </div>
+                </div>
+            `)
+        });
+         
+        it('should remove class "selected"',function() {
+             checkMatch();
+             expect($('.flip-card')).not.toHaveClass('selected');
+        });
+        it('should add classes "matched disabled"',function() {
+             checkMatch();
+             expect($('.flip-card')).toHaveClass('matched');
+             expect($('.flip-card')).toHaveClass('disabled');
+        });
+    });
+});
+
+
+/*    beforeEach(() => {
+        // How to write a spy: 
+        let object = { fakeCountTurnsFunction: function() {
+                jasmine.createSpy('countTurns', function(){});
+            }
+        }
+        const countTurnsSpy = spyOn(object, 'fakeCountTurnsFunction');
+    })*/

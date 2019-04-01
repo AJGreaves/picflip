@@ -246,6 +246,8 @@ In the future more functionality can be added to the parental check modal to:
     - All external images for this project are stored on **Imgbb.com**.
 - [Jasmine](https://jasmine.github.io/)
     - This project used **Jasmine** to automatically test all JavaScript and jQuery code.
+- [Jasmine-jQuery](https://github.com/velesin/jasmine-jquery)
+    - This project used **Jasmine-jQuery** CDN to make it possible to test jQuery code using Jasmine.
 - [GitHub](https://github.com/)
     - This project uses **GitHub** to store and share all project code remotely. 
 

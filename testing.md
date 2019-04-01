@@ -68,6 +68,12 @@ The following section goes through each of the user stories from the UX section 
     - Win modals display the players score out of 5 stars. A trophy is also shown if the player also achieves a new high score.
 **7. The ability to see my old scores when I return to the game, so I can try to beat them.**
     - PicFlip! stores user name using localStorage, The users name, avatar choice and high scores for easy, medium and hard mode are loaded when the player returns to the game.
+**8. A game that won't break as I use it**
+    - PicFlip! Has been programmed with the way a child would use it in mind. 
+        - when selecting cards to match, no more than 2 cards can be selected at one time. 
+        - The game cannot be broken by clicking cards very fast to flip more than 2 over at a time.
+        - PicFlip will not create weird displays if the game is reset at unexpected times. For example when an odd number of cards are flipped over.
+        - The game was extensively tested by the developers children (4 and 9 years old).
 
 **As a parent of a player, I want:**
 **1. Levels of difficulty for my child to choose from, so that they are engaged for longer and the game is useable for a wider age range.**
@@ -82,6 +88,7 @@ The following section goes through each of the user stories from the UX section 
     - A mute button has been included on the dashboard. 
 **6. To know who made the game and how I can contact them.**
     - A discreet footer tab is included at the bottom of the game, with the developers name and a link to her github page. 
+
 
 ## Manual testing
 
@@ -112,3 +119,14 @@ The following section goes through each of the user stories from the UX section 
 
 1. Asked fellow students, friends and family to look at the site on their devices and report any issues they find.
 2. PicFlip! viewed on all devices and orientations available in Chrome DevTools, as well at a local tech store, no further issues found.
+
+### Bugs discovered: 
+#### Solved bugs
+1. Bug one 
+    - how it was solved
+2. bug two
+    - how it was solved 
+
+#### Unsolved bugs
+1. On firefox browser class `visible` effects do not appear immediately when clicking through difficulty selection buttons, despite the class name being added
+successfully to the html. If window is resized, then the cards appear.

@@ -198,7 +198,7 @@ $('#muteButton').click(function() {
 // mute audio function, original code from: https://css-tricks.com/forums/topic/mute-unmute-sounds-on-website/
 function muteAudio() {
 
-    let allaudio = document.getElementsByTagName('audio');
+    let allaudio = $('audio');
 
     if (silence) {
         for (let j = 0; j < allaudio.length; j++) {
@@ -359,7 +359,7 @@ function displayCards(cards) {
 // displays score stars in selected place
 function displayScore(numOfStars, className) {
 
-    let StarElems = document.getElementsByClassName(className);
+    let StarElems = $(className);
 
     for (let i = 0; i < numOfStars; i++) {
         if ($(StarElems[i]).hasClass('empty-star')) {
@@ -399,7 +399,7 @@ function makeCardPack(arr, num) {
 
 // finds how many cards are visible, returns number of images needed for new pack
 function howManyCards() {
-    let num = document.getElementsByClassName('visible').length;
+    let num = $('visible').length;
     let halfNum = (num / 2);
     return halfNum;
 }
@@ -451,7 +451,7 @@ function checkCounter() {
  **/
 function checkMatch() {
 
-    if (document.getElementsByClassName('selected').length == 2) {
+    if ($('.selected').length == 2) {
         let first = $('.selected').eq(0).find('.flip-card-back').attr('class');
         let second = $('.selected').eq(1).find('.flip-card-back').attr('class');
 

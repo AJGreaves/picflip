@@ -303,7 +303,7 @@ Copyright for the memory card images belong to [Disney](https://www.thewaltdisne
 Special thanks to: 
 - Code Institute Mentor Simen Daehlin for his time and support in explaining and demonstrating areas of code this developer was struggling to understand.
 - Alumni John Longgately and Robin Zigmond for their help in guiding this developer in understanding JavaScript, jQuery and Jasmine testing. 
+- Owen (4) and Declan (9) who tested the game play extensively, and offered advice on what would make it more fun for them to play.
 
 **Disclaimer**
-
-The content of this Website, including the images used, are for educational purposes only.
+The content of this website, including the images used, are for educational purposes only.

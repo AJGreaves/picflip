@@ -1,5 +1,5 @@
 describe('difficulty button functions', function() {
-    
+
     beforeEach(() => {
         setFixtures(`
             <div class="my-card-column-easy visible"></div>
@@ -12,7 +12,7 @@ describe('difficulty button functions', function() {
             <h6></h6>
         `)
     });
-    
+
     describe('easyButton function', function() {
         it('should remove class "visible" from html elements with class my-card-column-medium', function() {
             easyButton();
@@ -58,7 +58,7 @@ describe('difficulty button functions', function() {
             expect($('#dashboard-high-score-text').text()).toEqual('Medium mode high score');
         });
     });
-    
+
     describe('hardButton function', function() {
         it('all html elements with class my-card-column-medium should have the class of "visible"', function() {
             hardButton();
@@ -85,22 +85,22 @@ describe('difficulty button functions', function() {
 });
 
 describe('muteAudio function', function() {
-    
+
     beforeEach(() => {
-        silence = true; 
+        silence = true;
     });
-    
-    it('should return silence = false', function(){
+
+    it('should return silence = false', function() {
         let result = muteAudio();
         expect(silence).toBe(false);
-        
+
     });
-    
-        it('should return silence = true', function(){
+
+    it('should return silence = true', function() {
         silence = false;
         let result = muteAudio();
         expect(silence).toBe(true);
-        
+
     });
 });
 
@@ -115,7 +115,7 @@ describe('howManyCards function', function() {
         expect(result).toEqual(4);
 
     });
-    
+
     it('should return 6', function() {
         setFixtures(`
 			<div class="visible"></div><div class="visible"></div><div class="visible"></div><div class="visible"></div>
@@ -126,7 +126,7 @@ describe('howManyCards function', function() {
         expect(result).toEqual(6);
 
     });
-    
+
     it('should return 8', function() {
         setFixtures(`
 			<div class="visible"></div><div class="visible"></div><div class="visible"></div><div class="visible"></div>
@@ -140,46 +140,46 @@ describe('howManyCards function', function() {
 });
 
 describe('checkCounter function', function() {
-    
+
     beforeEach(() => {
-        countSelected = 0; 
-    });    
-    afterEach(function(){
         countSelected = 0;
     });
-    
+    afterEach(function() {
+        countSelected = 0;
+    });
+
     it('should return true when countSelected = 0', function() {
-        let result = checkCounter(); 
+        let result = checkCounter();
         expect(result).toBe(true);
-    
+
     });
-    
+
     it('should return true when countSelected = 1', function() {
-        countSelected = 1; 
-        let result = checkCounter(); 
+        countSelected = 1;
+        let result = checkCounter();
         expect(result).toBe(true);
-    
+
     });
-    
-        it('should return false when countSelected = 2', function() {
-        countSelected = 2; 
-        let result = checkCounter(); 
+
+    it('should return false when countSelected = 2', function() {
+        countSelected = 2;
+        let result = checkCounter();
         expect(result).toBe(false);
-    
+
     });
 });
 
 describe('checkMatch function', function() {
-        beforeEach(function(){
-		    jasmine.clock().install();
-        });
-        afterEach(function(){
-		    jasmine.clock().uninstall();
-        });
-    
+    beforeEach(function() {
+        jasmine.clock().install();
+    });
+    afterEach(function() {
+        jasmine.clock().uninstall();
+    });
+
     describe('when cards do not match', function() {
-        
-        beforeEach(function(){
+
+        beforeEach(function() {
             setFixtures(`
                 <div class="flip-card card-container mx-auto face-up disabled selected">
                     <div class="flip-card-inner">
@@ -208,15 +208,15 @@ describe('checkMatch function', function() {
             expect($('.flip-card')).toHaveClass('face-down');
         });
         it('countTurns function should be called', function() {
-           spyOn(window, 'countTurns');
-           checkMatch();
-           jasmine.clock().tick(1000);
-           expect(window.countTurns).toHaveBeenCalled();
+            spyOn(window, 'countTurns');
+            checkMatch();
+            jasmine.clock().tick(1000);
+            expect(window.countTurns).toHaveBeenCalled();
         });
     });
-    
+
     describe('when cards do match', function() {
-        beforeEach(function(){
+        beforeEach(function() {
             setFixtures(`
                 <div class="flip-card card-container mx-auto face-up disabled selected">
                     <div class="flip-card-inner">
@@ -232,15 +232,15 @@ describe('checkMatch function', function() {
                 </div>
             `)
         });
-         
-        it('should remove class "selected"',function() {
-             checkMatch();
-             expect($('.flip-card')).not.toHaveClass('selected');
+
+        it('should remove class "selected"', function() {
+            checkMatch();
+            expect($('.flip-card')).not.toHaveClass('selected');
         });
-        it('should add classes "matched disabled"',function() {
-             checkMatch();
-             expect($('.flip-card')).toHaveClass('matched');
-             expect($('.flip-card')).toHaveClass('disabled');
+        it('should add classes "matched disabled"', function() {
+            checkMatch();
+            expect($('.flip-card')).toHaveClass('matched');
+            expect($('.flip-card')).toHaveClass('disabled');
         });
         it('countSelected should = 0', function() {
             countSelected = 2;
@@ -248,30 +248,30 @@ describe('checkMatch function', function() {
             expect(countSelected).toEqual(0);
         });
         it('should call countTurns function', function() {
-           spyOn(window, 'countTurns');
-           checkMatch();
-           expect(window.countTurns).toHaveBeenCalled();
+            spyOn(window, 'countTurns');
+            checkMatch();
+            expect(window.countTurns).toHaveBeenCalled();
         });
         it('should call delayedCorrectSound function', function() {
-           spyOn(window, 'delayedCorrectSound');
-           checkMatch();
-           expect(window.delayedCorrectSound).toHaveBeenCalled();
+            spyOn(window, 'delayedCorrectSound');
+            checkMatch();
+            expect(window.delayedCorrectSound).toHaveBeenCalled();
         });
         it('should call checkForWin function', function() {
-           spyOn(window, 'checkForWin');
-           checkMatch();
-           expect(window.checkForWin).toHaveBeenCalled();
+            spyOn(window, 'checkForWin');
+            checkMatch();
+            expect(window.checkForWin).toHaveBeenCalled();
         });
     });
 });
 
 describe('styleButton function', function() {
-    
-    beforeEach(function(){
+
+    beforeEach(function() {
         const frozenCardsArray = ["elsa", "anna", "olaf", "kristoff", "hans", "sven", "elsa-anna", "olaf-sven"];
         let activeCardsArray = [];
     });
-        
+
     it('should make activeCardsArray equal to the array styleButton function is passed', function() {
         styleButton(frozenCardsArray);
         expect(activeCardsArray).toEqual(frozenCardsArray);
@@ -279,68 +279,51 @@ describe('styleButton function', function() {
 });
 
 describe('difficultyButton function', function() {
-    
+
     let starClass = 'dashboard-score-star';
     let score = 3;
 
     describe('it should should create a new instance of difficultyButton', function() {
-        it('difficultyButton should exist', function () {
-           expect(difficultyButton).toBeDefined(); 
+        it('difficultyButton should exist', function() {
+            expect(difficultyButton).toBeDefined();
         });
     });
-    
-    beforeEach(function(){
+
+    beforeEach(function() {
         let activeHighScore = 3;
     });
-    
+
     it('should make activeHighScore equal to the score it is passed', function() {
         let score = 4;
         difficultyButton(score);
         expect(activeHighScore).toEqual(4);
     });
-    
+
     it('difficultyButton should be called with score', function() {
         let score = 2;
         spyOn(window, 'difficultyButton');
         difficultyButton(score);
         expect(window.difficultyButton).toHaveBeenCalledWith(score);
     });
-    
-    it('should call displayScore function with activeHighScore and StarClass', function(){
+
+    it('should call displayScore function with activeHighScore and StarClass', function() {
         let score = 1;
         spyOn(window, 'displayScore');
         difficultyButton(score);
         expect(window.displayScore).toHaveBeenCalledWith(activeHighScore, starClass);
     });
-    
-    it('resetGame function should be called', function() {
-       let score = 5;
-       spyOn(window, 'resetGame');
-       difficultyButton(score);
-       expect(window.resetGame).toHaveBeenCalled();
-    });
-});
 
-xdescribe('checkForUserData function', function() {
-    // come back to this when worked out how to spy on modal
-    beforeEach(function(){
-	    jasmine.clock().install();
+    it('resetGame function should be called', function() {
+        let score = 5;
+        spyOn(window, 'resetGame');
+        difficultyButton(score);
+        expect(window.resetGame).toHaveBeenCalled();
     });
-    afterEach(function(){
-	    jasmine.clock().uninstall();
-    });
-    
-    it('should launch #userInfoModal if userAvatar is equal to "default-avatar"', function() {
-        let userAvatar = "default-avatar"; 
-        checkForUserData();
-        jasmine.clock().tick(1000);
-        expect()
-    }); 
 });
 
 describe('resetGame function', function() {
-   
-    beforeEach(function(){
+
+    beforeEach(function() {
         setFixtures(`
             <div class="flip-card card-container mx-auto face-up disabled selected">
                 <div class="flip-card-inner">
@@ -366,9 +349,9 @@ describe('resetGame function', function() {
         turnsCounter = 7;
         countSelected = 2;
     });
-    afterEach(function(){
-	    jasmine.clock().uninstall();
-	    flipCounter = 0;
+    afterEach(function() {
+        jasmine.clock().uninstall();
+        flipCounter = 0;
         turnsCounter = 0;
         countSelected = 0;
     });
@@ -376,7 +359,7 @@ describe('resetGame function', function() {
         resetGame();
         jasmine.clock().tick(1000);
         expect($('.flip-card')).toHaveClass('face-down');
-    }); 
+    });
     it('should remove classes "face-up disabled matched selected" to all card elements', function() {
         resetGame();
         jasmine.clock().tick(1000);
@@ -384,30 +367,27 @@ describe('resetGame function', function() {
         expect($('.flip-card')).not.toHaveClass('disabled');
         expect($('.flip-card')).not.toHaveClass('matched');
         expect($('.flip-card')).not.toHaveClass('selected');
-    }); 
+    });
     it('should call howManyCards function', function() {
         spyOn(window, "howManyCards").and.callFake(function() {
             return 16;
         });
         resetGame();
-        expect(window.howManyCards).toHaveBeenCalled(); 
+        expect(window.howManyCards).toHaveBeenCalled();
     });
     it('should call makeCardPack function', function() {
-        spyOn(window, "makeCardPack").and.callFake(function() {
-        });
+        spyOn(window, "makeCardPack").and.callFake(function() {});
         resetGame();
         expect(window.makeCardPack).toHaveBeenCalled();
     });
     it('should call displayCards function', function() {
-        spyOn(window, "displayCards").and.callFake(function() {
-        });
+        spyOn(window, "displayCards").and.callFake(function() {});
         resetGame();
         jasmine.clock().tick(1000);
         expect(window.displayCards).toHaveBeenCalled();
     });
     it('should call countTurns function', function() {
-        spyOn(window, "countTurns").and.callFake(function() {
-        });
+        spyOn(window, "countTurns").and.callFake(function() {});
         resetGame();
         jasmine.clock().tick(1000);
         expect(window.countTurns).toHaveBeenCalled();
@@ -453,22 +433,22 @@ describe('displayCards function', function() {
         `)
         cards = ["arthur", "ford", "trillion"];
     });
-   it('should add array of cards to all elements with "flip-card-back" class', function() {
-       displayCards(cards);
-       expect($('.flip-card-back')).toHaveClass('arthur');
-       expect($('.flip-card-back')).toHaveClass('ford');
-       expect($('.flip-card-back')).toHaveClass('trillion');
-   }); 
-   it('card elements should keep class name "game-card"', function() {
-       displayCards(cards);
-       expect($('.flip-card-back')).toHaveClass('game-card');
-   });
-   it('should apply array of cards to html element titles as well as to class names', function() {
-       displayCards(cards);
-       let classes = ($('.flip-card-back').attr("class"));
-       let titles = ($('.flip-card-back').attr("title"));
-       expect(classes).toContain(titles);
-   });
+    it('should add array of cards to all elements with "flip-card-back" class', function() {
+        displayCards(cards);
+        expect($('.flip-card-back')).toHaveClass('arthur');
+        expect($('.flip-card-back')).toHaveClass('ford');
+        expect($('.flip-card-back')).toHaveClass('trillion');
+    });
+    it('card elements should keep class name "game-card"', function() {
+        displayCards(cards);
+        expect($('.flip-card-back')).toHaveClass('game-card');
+    });
+    it('should apply array of cards to html element titles as well as to class names', function() {
+        displayCards(cards);
+        let classes = ($('.flip-card-back').attr("class"));
+        let titles = ($('.flip-card-back').attr("title"));
+        expect(classes).toContain(titles);
+    });
 });
 
 describe('displayScore function', function() {
@@ -483,7 +463,7 @@ describe('displayScore function', function() {
         numOfStars = 3;
         className = 'score-star';
     });
-    it('should apply 3 win stars and leave 2 empty stars', function(){
+    it('should apply 3 win stars and leave 2 empty stars', function() {
         displayScore(numOfStars, className);
         expect($('.win-star').length).toBe(3);
         expect($('.empty-star').length).toBe(2);
@@ -505,7 +485,7 @@ describe('cutDeck function', function() {
     });
     it('should return a section of the array it was sent, cut to the size of num', function() {
         testCutArray = cutDeck(activeCardsArray, num);
-        expect(testCutArray).toEqual(frozenCardsArray.slice(0,6));
+        expect(testCutArray).toEqual(frozenCardsArray.slice(0, 6));
     });
 });
 
@@ -515,11 +495,11 @@ describe('duplicateCards function', function() {
     });
     it('should return an array with the array it was sent repeated twice', function() {
         let result = duplicateCards(testArray);
-        
+
         // code for filtering this array sourced from https://stackoverflow.com/questions/6120931/how-to-count-the-number-of-certain-element-in-an-array
         let arthur = result.filter(i => i === 'arthur').length;
         let zaphod = result.filter(i => i === 'zaphod').length;
-        
+
         expect((result).length).toEqual(8);
         expect(arthur).toEqual(2);
         expect(zaphod).toEqual(2);
@@ -539,7 +519,7 @@ describe('getDifficultyLevelArr function', function() {
 
 describe('checkScore function', function() {
     afterEach(function() {
-       turnsCounter = 0; 
+        turnsCounter = 0;
     });
     it('should return correct score for difficulty level selected', function() {
         turnsCounter = 15;

@@ -300,6 +300,7 @@ Copyright for the memory card images belong to [Disney](https://www.thewaltdisne
 - Code for the card flip animation taken from [W3Schools](https://www.w3schools.com/howto/howto_css_flip_card.asp).
 - Box shadow codes were generated at [CSS matic | box-shadow](https://cssmatic.com/box-shadow).
 - Code for filtering through an array for specific values sourced from [StackOverflow](https://stackoverflow.com/questions/6120931/how-to-count-the-number-of-certain-element-in-an-array)
+- code for spying on localStorage sourced from [StackOverflow](https://stackoverflow.com/questions/11485420/how-to-mock-localstorage-in-javascript-unit-tests)
 
 ### Acknowledgements
 

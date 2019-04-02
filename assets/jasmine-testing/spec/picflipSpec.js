@@ -169,17 +169,6 @@ describe('checkCounter function', function() {
     });
 });
 
-// dummy functions
-function countTurns() {
-    console.log('turns counted');
-};
-function delayedCorrectSound() {
-    console.log('correct sound played');
-};
-function checkForWin() {
-    console.log('checked for win');
-};
-
 describe('checkMatch function', function() {
         beforeEach(function(){
 		    jasmine.clock().install();
@@ -289,27 +278,11 @@ describe('styleButton function', function() {
     });
 });
 
-// Dummy functions for spies
-
-let starClass = 'dashboard-score-star';
-let score = 3;
-function difficultyButtonMock(score) {
-	activeHighScore = score;
-	displayScoreMock(activeHighScore, starClass);
-	resetGame();
-}
-
-function resetGameMock() {
-	console.log('game reset');
-}
-
-function displayScoreMock(act, dash) {
-	console.log(activeHighScore);
-	console.log(starClass)
-}
-
 describe('difficultyButton function', function() {
     
+    let starClass = 'dashboard-score-star';
+    let score = 3;
+
     describe('it should should create a new instance of difficultyButton', function() {
         it('difficultyButton should exist', function () {
            expect(difficultyButton).toBeDefined(); 
@@ -439,11 +412,10 @@ describe('resetGame function', function() {
         jasmine.clock().tick(1000);
         expect(window.countTurns).toHaveBeenCalled();
     });
-    it('should reset flipCounter, turnsCounter and countSelected to 0', function() {
+    it('should reset flipCounter and countSelected to 0', function() {
         resetGame();
         jasmine.clock().tick(1000);
         expect(flipCounter).toEqual(0);
-        expect(turnsCounter).toEqual(0);
         expect(countSelected).toEqual(0);
     });
 });
@@ -551,19 +523,6 @@ describe('duplicateCards function', function() {
         expect((result).length).toEqual(8);
         expect(arthur).toEqual(2);
         expect(zaphod).toEqual(2);
-    });
-});
-
-xdescribe('countTurns function', function() {
-    afterEach(function() {
-        flipCounter = 0;
-        turnsCounter = 0; 
-    });
-    it('should increase turnsCounter by one if flipCounter as an even number', function() {
-        let flipCounter = 8;
-        let turnsCounter = 3;
-        countTurns();
-        expect(turnsCounter).toEqual(4);
     });
 });
 

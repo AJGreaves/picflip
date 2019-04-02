@@ -362,17 +362,6 @@ xdescribe('checkForUserData function', function() {
     }); 
 });
 
-function howManyCardsMock() {
-    let num = 16;
-    let halfNum = (num / 2);
-    return halfNum;
-}
-
-function makeCardPackMock(act, n) {
-    let newPack = act;
-    return newPack;
-}
-
 describe('resetGame function', function() {
    
     beforeEach(function(){
@@ -450,6 +439,30 @@ describe('resetGame function', function() {
         expect(flipCounter).toEqual(0);
         expect(turnsCounter).toEqual(0);
         expect(countSelected).toEqual(0);
+    });
+});
+
+describe('displayUserData function', function() {
+    beforeEach(function() {
+        setFixtures(`
+            <h4 class="username">Name</h4>
+            <figure id="avatar" class="avatar-default" title="Avatar"></figure>
+        `)
+        userName = "Arthur";
+        userAvatar = "Towel";
+    });
+    it('should display username input on the html element with class "username"', function() {
+        displayUserData();
+        expect($('.username').text()).toEqual('Arthur');
+    });
+    it('should replace old avatar title with userAvatar value', function() {
+        displayUserData();
+        expect($('#avatar').attr('title')).toEqual('Towel');
+    });
+    it('should change #avatar elements classes to match corresponding class', function() {
+        userAvatar = "plant";
+        displayUserData();
+        expect($('#avatar')).toHaveClass('plant-cover');
     });
 });
 

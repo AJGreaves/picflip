@@ -1,3 +1,32 @@
+// Dummy functions for spies
+
+let starClass = 'dashboard-score-star';
+let score = 3;
+function difficultyButton(score) {
+	activeHighScore = score;
+	displayScore(activeHighScore, starClass);
+	resetGame();
+};
+
+function resetGame() {
+	console.log('game reset');
+};
+
+function displayScore(act, dash) {
+	console.log(activeHighScore);
+	console.log(starClass)
+};
+
+function countTurns() {
+    console.log('turns counted');
+};
+function delayedCorrectSound() {
+    console.log('correct sound played');
+};
+function checkForWin() {
+    console.log('checked for win');
+};
+
 describe('difficulty button functions', function() {
     
     beforeEach(() => {
@@ -166,17 +195,6 @@ describe('checkCounter function', function() {
     });
 });
 
-// dummy functions
-function countTurns() {
-    console.log('turns counted');
-};
-function delayedCorrectSound() {
-    console.log('correct sound played');
-};
-function checkForWin() {
-    console.log('checked for win');
-};
-
 describe('checkMatch function', function() {
         beforeEach(function(){
 		    jasmine.clock().install();
@@ -280,25 +298,6 @@ describe('styleButton function', function() {
         expect(activeCardsArray).toEqual(frozenCardsArray);
     });
 });
-
-// Dummy functions for spies
-
-let starClass = 'dashboard-score-star';
-let score = 3;
-function difficultyButton(score) {
-	activeHighScore = score;
-	displayScore(activeHighScore, starClass);
-	resetGame();
-}
-
-function resetGame() {
-	console.log('game reset');
-}
-
-function displayScore(act, dash) {
-	console.log(activeHighScore);
-	console.log(starClass)
-}
 
 describe('difficultyButton function', function() {
     

@@ -262,7 +262,32 @@ describe('styleButton function', function() {
     });
 });
 
+// Dummy functions for spies
+
+let starClass = 'dashboard-score-star';
+let score = 3;
+function difficultyButton(score) {
+	activeHighScore = score;
+	displayScore(activeHighScore, starClass);
+	resetGame();
+}
+
+function resetGame() {
+	console.log('game reset');
+}
+
+function displayScore(act, dash) {
+	console.log(activeHighScore);
+	console.log(starClass)
+}
+
 describe('difficultyButton function', function() {
+    
+    describe('it should should create a new instance of difficultyButton', function() {
+        it('difficultyButton should exist', function () {
+           expect(difficultyButton).toBeDefined(); 
+        });
+    });
     
     beforeEach(() => {
         let activeHighScore = 3;
@@ -272,12 +297,30 @@ describe('difficultyButton function', function() {
         difficultyButton(score);
         expect(activeHighScore).toEqual(4);
     });
-    // need to understand writing dummy functions. Why is this so hard!!! 
-    xit('should call displayScore function with active score', function(){
-        let score = 4;
+    
+    it('difficultyButton should be called with score', function() {
+        let score = 2;
+        spyOn(window, 'difficultyButton');
         difficultyButton(score);
-        expect(displayScore).toHaveBeenCalledWith(4);
+        expect(window.difficultyButton).toHaveBeenCalledWith(score);
+    });
+    
+    it('should call displayScore function with activeHighScore and StarClass', function(){
+        let score = 1;
+        spyOn(window, 'displayScore');
+        difficultyButton(score);
+        expect(window.displayScore).toHaveBeenCalledWith(activeHighScore, starClass);
     });
 });
 
 //arrange, act, assert
+
+/* How to write a dummy function: 
+let starClass = 'dashboard-score-star';
+let score = 3;
+function diffButton(score) {
+	activeHighScore = score;
+	displayScore(activeHighScore, starClass);
+	resetGame();
+}
+ */

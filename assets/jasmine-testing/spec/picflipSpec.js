@@ -466,4 +466,31 @@ describe('displayUserData function', function() {
     });
 });
 
+describe('displayCards function', function() {
+    beforeEach(function() {
+        setFixtures(`
+            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+            <figure class="flip-card-back game-card dummyclass" title="blank flip card face up"></figure>
+            <figure class="flip-card-back dummyclass-card game-card" title="blank flip card face up"></figure>
+        `)
+        cards = ["arthur", "ford", "trillion"];
+    });
+   it('should add array of cards to all elements with "flip-card-back" class', function() {
+       displayCards(cards);
+       expect($('.flip-card-back')).toHaveClass('arthur');
+       expect($('.flip-card-back')).toHaveClass('ford');
+       expect($('.flip-card-back')).toHaveClass('trillion');
+   }); 
+   it('card elements should keep class name "game-card"', function() {
+       displayCards(cards);
+       expect($('.flip-card-back')).toHaveClass('game-card');
+   });
+   it('should apply array of cards to html element titles as well as to class names', function() {
+       displayCards(cards);
+       let classes = ($('.flip-card-back').attr("class"));
+       let titles = ($('.flip-card-back').attr("title"));
+       expect(classes).toContain(titles);
+   });
+});
+
 //arrange, act, assert

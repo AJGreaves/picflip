@@ -143,6 +143,9 @@ describe('checkCounter function', function() {
     
     beforeEach(() => {
         countSelected = 0; 
+    });    
+    afterEach(function(){
+        countSelected = 0;
     });
     
     it('should return true when countSelected = 0', function() {
@@ -392,6 +395,9 @@ describe('resetGame function', function() {
     });
     afterEach(function(){
 	    jasmine.clock().uninstall();
+	    flipCounter = 0;
+        turnsCounter = 0;
+        countSelected = 0;
     });
     it('should add class "face-down" to all face-up card elements', function() {
         resetGame();
@@ -522,6 +528,9 @@ describe('cutDeck function', function() {
         activeCardsArray = frozenCardsArray;
         num = 6;
     });
+    afterEach(function() {
+        num = 0;
+    });
     it('should return a section of the array it was sent, cut to the size of num', function() {
         testCutArray = cutDeck(activeCardsArray, num);
         expect(testCutArray).toEqual(frozenCardsArray.slice(0,6));
@@ -546,11 +555,13 @@ describe('duplicateCards function', function() {
 });
 
 xdescribe('countTurns function', function() {
-    beforeEach(function() {
-        flipCounter = 8;
-        turnsCounter = 3; 
+    afterEach(function() {
+        flipCounter = 0;
+        turnsCounter = 0; 
     });
     it('should increase turnsCounter by one if flipCounter as an even number', function() {
+        let flipCounter = 8;
+        let turnsCounter = 3;
         countTurns();
         expect(turnsCounter).toEqual(4);
     });
@@ -564,6 +575,21 @@ describe('getDifficultyLevelArr function', function() {
         expect(easy).toEqual(easyScoresArray);
         expect(medium).toEqual(mediumScoresArray);
         expect(hard).toEqual(hardScoresArray);
+    });
+});
+
+describe('checkScore function', function() {
+    afterEach(function() {
+       turnsCounter = 0; 
+    });
+    it('should return correct score for difficulty level selected', function() {
+        turnsCounter = 15;
+        let testEasyScore = checkScore(easyScoresArray);
+        let testMediumScore = checkScore(mediumScoresArray);
+        let testHardScore = checkScore(hardScoresArray);
+        expect(testEasyScore).toEqual(1);
+        expect(testMediumScore).toEqual(4);
+        expect(testHardScore).toEqual(4);
     });
 });
 

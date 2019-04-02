@@ -1,8 +1,5 @@
 Guidelines:
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the 
-test file(s) and explain how to run them.
-
 For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly 
 useful form for describing your testing process is via scenarios, such as:
 
@@ -35,14 +32,44 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Automated Testing
 
-**Validation services**<br>
+### Validation services
 The following validation services and linter were used to check the validity of the website code.
 - [W3C Markup Validation]( https://validator.w3.org/) was used to validate HTML.
 - [W3C CSS validation](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
 - [JSHint](https://jshint.com/) was used to validate JavaScript.
 
-**Jasmine**
+### Jasmine
 
+Around 60% of PicFlip! functions have been tested with [Jasmine 3.1](https://jasmine.github.io/index.html) after the majority of the game javaScript code 
+was completed. The reason for this is that I was completely new to JavaScript and Jasmine at the start of this project, and so writing TTD Jasmine tests alongside
+while struglling to understand how my JavaScript was/wasn't working would have been impossible. Therefore I chose to test my code manually while getting to grips with 
+JavaScript, and then tackle learning Jasmine afterwards.
+
+[Jasmine-Jquery CDN](https://github.com/velesin/jasmine-jquery) has been imported into the jasmine testing to allow for jQuery within the JavaScript functions.
+
+My approach to using Jasmine was to test each function, a small part of it at a time, and slowly building up to more complex expectations. Now that I have a
+better understanding of JavaScript and Jasmine, my approach going forward is to use the TTD model and build my tests incrementally as I build my functions.
+
+The files for jasmine testing picFlip can be found here:
+- HTML page to run jasmine tests from: [jasmine-testing.html](assets/jasmine-testing/jasmine-testing.html)
+- JavaScript specifications (tests): [picflipSpec.js](assets/jasmine-testing/spec/picflipSpec.js)
+- PicFlip! javascript functions to be tested: [game.js](assets/js/game.js)
+
+#### How to run jasmine tests
+
+Before going further please make sure you have already cloned this project from the [PicFlip GitHub repository](https://github.com/AJGreaves/picflip) 
+by following the steps in the [README.md](readme.md) under "How to run this project locally" and that you have the entire project running on your own IDE.
+
+To run the jasmine tests: 
+1. Open the [jasmine-testing.html](assets/jasmine-testing/jasmine-testing.html).
+2. Run the html file and view it in your browser to see the test results. 
+
+#### How to create jasmine tests
+
+To create jasmine tests: 
+1. Open the [picflipSpec.js](assets/jasmine-testing/spec/picflipSpec.js) file.
+2. Write your own tests using the jasmine 3.1 framework.
+3. Save [picflipSpec.js](assets/jasmine-testing/spec/picflipSpec.js), and then run/refresh [jasmine-testing.html](assets/jasmine-testing/jasmine-testing.html).
 
 ## Client stories testing
 

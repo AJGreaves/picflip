@@ -34,6 +34,7 @@ characters that children enjoy, with an overall feel of child friendly entertain
 - [**Testing**](#testing)<br>
 
 - [**Deployment**](#deployment)<br>
+[**1. How to run this project locally**](#how-to-run-this-project-locally)
 
 - [**Credits**](#credits)<br>
 [**1. Content**](#content)<br>
@@ -271,6 +272,20 @@ To deploy PicFlip! to GitHub Pages from [its GitHub repository](https://github.c
 The PicFlip project made use of several branches for development, testing and bug fixing. 
 The Master Branch has always been the one deployed to GitHUb Pages as the developer tries to keep the master branch to optimal code only when displaying live.
 At the moment of submitting this Milestone project the Development Branch and Master Branch are identical. 
+
+### How to run this project locally
+
+To clone this project from GitHub:
+1. Follow this link to the [PicFlip GitHub repository](https://github.com/AJGreaves/picflip).
+2. Under the repository name, click "Clone or download".
+3. In the Clone with HTTPs section, copy the clone URL for the repository. 
+4. In your local IDE open Git Bash.
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+`$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`
+7. Press Enter. Your local clone will be created.
+
+Further reading and troubleshooting on cloning a repository from github [here](https://help.github.com/en/articles/cloning-a-repository).
 
 ## Credits
 

@@ -545,4 +545,26 @@ describe('duplicateCards function', function() {
     });
 });
 
+xdescribe('countTurns function', function() {
+    beforeEach(function() {
+        flipCounter = 8;
+        turnsCounter = 3; 
+    });
+    it('should increase turnsCounter by one if flipCounter as an even number', function() {
+        countTurns();
+        expect(turnsCounter).toEqual(4);
+    });
+});
+
+describe('getDifficultyLevelArr function', function() {
+    it('should return the correct array of scores for the number of visible cards', function() {
+        easy = getDifficultyLevelArr(8);
+        medium = getDifficultyLevelArr(12);
+        hard = getDifficultyLevelArr(16);
+        expect(easy).toEqual(easyScoresArray);
+        expect(medium).toEqual(mediumScoresArray);
+        expect(hard).toEqual(hardScoresArray);
+    });
+});
+
 //arrange, act, assert

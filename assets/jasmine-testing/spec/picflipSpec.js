@@ -493,4 +493,28 @@ describe('displayCards function', function() {
    });
 });
 
+describe('displayScore function', function() {
+    beforeEach(function() {
+        setFixtures(`
+            <i class="score-star star fas fa-star empty-star" title="no star"></i>
+            <i class="score-star star fas fa-star empty-star" title="no star"></i>
+            <i class="score-star star fas fa-star empty-star" title="no star"></i>
+            <i class="score-star star fas fa-star empty-star" title="no star"></i>
+            <i class="score-star star fas fa-star empty-star" title="no star"></i>
+        `)
+        numOfStars = 3;
+        className = 'score-star';
+    });
+    it('should apply 3 win stars and leave 2 empty stars', function(){
+        displayScore(numOfStars, className);
+        expect($('.win-star').length).toBe(3);
+        expect($('.empty-star').length).toBe(2);
+    });
+    it('should apply the corresponding titles to the html elements as well', function() {
+        displayScore(numOfStars, className);
+        expect($('.win-star').attr('title')).toEqual('star');
+        expect($('.empty-star').attr('title')).toEqual('no star');
+    });
+});
+
 //arrange, act, assert

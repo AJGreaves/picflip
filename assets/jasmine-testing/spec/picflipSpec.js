@@ -166,20 +166,28 @@ describe('checkCounter function', function() {
     });
 });
 
+// dummy functions
+function countTurns() {
+    console.log('turns counted');
+};
+function delayedCorrectSound() {
+    console.log('correct sound played');
+};
+function checkForWin() {
+    console.log('checked for win');
+};
+
 describe('checkMatch function', function() {
-    
-    it('should increase flipCounter by 1', function() {
-        flipCounter = 3;
-        setTimeout(function(){
-            checkMatch();
-            expect(flipCounter).toBe(4);
-            done();
-        }, 1100); 
-    });
+        beforeEach(function(){
+		    jasmine.clock().install();
+        });
+        afterEach(function(){
+		    jasmine.clock().uninstall();
+        });
     
     describe('when cards do not match', function() {
         
-        beforeEach(() => {
+        beforeEach(function(){
             setFixtures(`
                 <div class="flip-card card-container mx-auto face-up disabled selected">
                     <div class="flip-card-inner">
@@ -194,28 +202,39 @@ describe('checkMatch function', function() {
                     </div>
                 </div>
             `)
-         });
+            let flipCounter = 3;
+        });
+        afterEach(function() {
+            let flipCounter = 3;
+        });
 
         it('should remove classes "face-up disabled selected" ', function() {
-            setTimeout(function(){
-                checkMatch();
-                expect($('.flip-card')).not.toHaveClass('face-up');
-                expect($('.flip-card')).not.toHaveClass('disabled');
-                expect($('.flip-card')).not.toHaveClass('selected');
-                done();
-            }, 1100);
+            checkMatch();
+            jasmine.clock().tick(1000);
+            expect($('.flip-card')).not.toHaveClass('face-up');
+            expect($('.flip-card')).not.toHaveClass('disabled');
+            expect($('.flip-card')).not.toHaveClass('selected');
         });
         it('should add class "face-down"', function() {
-            setTimeout(function(){
-                checkMatch();
-                expect($('.flip-card')).toHaveClass('face-down');
-                done();
-            }, 1100); 
+            checkMatch();
+            jasmine.clock().tick(1000);
+            expect($('.flip-card')).toHaveClass('face-down');
+        });
+        it('countTurns function should be called', function() {
+           spyOn(window, 'countTurns');
+           checkMatch();
+           jasmine.clock().tick(1000);
+           expect(window.countTurns).toHaveBeenCalled();
+        });
+        it('should increase flipCounter by 1', function() {
+            checkMatch();
+            jasmine.clock().tick(1100);
+            expect(flipCounter).toBe(4);
         });
     });
     
     describe('when cards do match', function() {
-        beforeEach(() => {
+        beforeEach(function(){
             setFixtures(`
                 <div class="flip-card card-container mx-auto face-up disabled selected">
                     <div class="flip-card-inner">
@@ -251,7 +270,7 @@ describe('checkMatch function', function() {
 
 describe('styleButton function', function() {
     
-    beforeEach(() => {
+    beforeEach(function(){
         const frozenCardsArray = ["elsa", "anna", "olaf", "kristoff", "hans", "sven", "elsa-anna", "olaf-sven"];
         let activeCardsArray = [];
     });
@@ -289,9 +308,10 @@ describe('difficultyButton function', function() {
         });
     });
     
-    beforeEach(() => {
+    beforeEach(function(){
         let activeHighScore = 3;
     });
+    
     it('should make activeHighScore equal to the score it is passed', function() {
         let score = 4;
         difficultyButton(score);
@@ -310,6 +330,13 @@ describe('difficultyButton function', function() {
         spyOn(window, 'displayScore');
         difficultyButton(score);
         expect(window.displayScore).toHaveBeenCalledWith(activeHighScore, starClass);
+    });
+    
+    it('resetGame function should be called', function() {
+       let score = 5;
+       spyOn(window, 'resetGame');
+       difficultyButton(score);
+       expect(window.resetGame).toHaveBeenCalled();
     });
 });
 

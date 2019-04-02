@@ -1,32 +1,3 @@
-// Dummy functions for spies
-
-let starClass = 'dashboard-score-star';
-let score = 3;
-function difficultyButton(score) {
-	activeHighScore = score;
-	displayScore(activeHighScore, starClass);
-	resetGame();
-};
-
-function resetGame() {
-	console.log('game reset');
-};
-
-function displayScore(act, dash) {
-	console.log(activeHighScore);
-	console.log(starClass)
-};
-
-function countTurns() {
-    console.log('turns counted');
-};
-function delayedCorrectSound() {
-    console.log('correct sound played');
-};
-function checkForWin() {
-    console.log('checked for win');
-};
-
 describe('difficulty button functions', function() {
     
     beforeEach(() => {
@@ -195,6 +166,17 @@ describe('checkCounter function', function() {
     });
 });
 
+// dummy functions
+function countTurns() {
+    console.log('turns counted');
+};
+function delayedCorrectSound() {
+    console.log('correct sound played');
+};
+function checkForWin() {
+    console.log('checked for win');
+};
+
 describe('checkMatch function', function() {
         beforeEach(function(){
 		    jasmine.clock().install();
@@ -220,12 +202,7 @@ describe('checkMatch function', function() {
                     </div>
                 </div>
             `)
-            let flipCounter = 3;
         });
-        afterEach(function() {
-            let flipCounter = 3;
-        });
-
         it('should remove classes "face-up disabled selected" ', function() {
             checkMatch();
             jasmine.clock().tick(1000);
@@ -243,11 +220,6 @@ describe('checkMatch function', function() {
            checkMatch();
            jasmine.clock().tick(1000);
            expect(window.countTurns).toHaveBeenCalled();
-        });
-        it('should increase flipCounter by 1', function() {
-            checkMatch();
-            jasmine.clock().tick(1100);
-            expect(flipCounter).toBe(4);
         });
     });
     
@@ -283,6 +255,21 @@ describe('checkMatch function', function() {
             checkMatch();
             expect(countSelected).toEqual(0);
         });
+        it('should call countTurns function', function() {
+           spyOn(window, 'countTurns');
+           checkMatch();
+           expect(window.countTurns).toHaveBeenCalled();
+        });
+        it('should call delayedCorrectSound function', function() {
+           spyOn(window, 'delayedCorrectSound');
+           checkMatch();
+           expect(window.delayedCorrectSound).toHaveBeenCalled();
+        });
+        it('should call checkForWin function', function() {
+           spyOn(window, 'checkForWin');
+           checkMatch();
+           expect(window.checkForWin).toHaveBeenCalled();
+        });
     });
 });
 
@@ -298,6 +285,25 @@ describe('styleButton function', function() {
         expect(activeCardsArray).toEqual(frozenCardsArray);
     });
 });
+
+// Dummy functions for spies
+
+let starClass = 'dashboard-score-star';
+let score = 3;
+function difficultyButtonMock(score) {
+	activeHighScore = score;
+	displayScoreMock(activeHighScore, starClass);
+	resetGame();
+}
+
+function resetGameMock() {
+	console.log('game reset');
+}
+
+function displayScoreMock(act, dash) {
+	console.log(activeHighScore);
+	console.log(starClass)
+}
 
 describe('difficultyButton function', function() {
     
@@ -339,6 +345,25 @@ describe('difficultyButton function', function() {
     });
 });
 
+describe('checkForUserData function', function() {
+    // beforeEach(function() {
+    //     let userAvatar = "default-avatar"; 
+    // })
+    beforeEach(function(){
+	    jasmine.clock().install();
+    });
+    afterEach(function(){
+	    jasmine.clock().uninstall();
+    });
+    
+    it('should launch #userInfoModal if userAvatar is equal to "default-avatar"', function() {
+        let userAvatar = "default-avatar"; 
+        checkForUserData();
+        jasmine.clock().tick(1000);
+        expect()
+    }); 
+});
+
 //arrange, act, assert
 
 /* How to write a dummy function: 
@@ -348,5 +373,21 @@ function diffButton(score) {
 	activeHighScore = score;
 	displayScore(activeHighScore, starClass);
 	resetGame();
+	
+	
+// local storage solution found: https://stackoverflow.com/questions/11485420/how-to-mock-localstorage-in-javascript-unit-tests	
+	beforeEach(function () {
+  var store = {};
+
+  spyOn(localStorage, 'getItem').andCallFake(function (key) {
+    return store[key];
+  });
+  spyOn(localStorage, 'setItem').andCallFake(function (key, value) {
+    return store[key] = value + '';
+  });
+  spyOn(localStorage, 'clear').andCallFake(function () {
+      store = {};
+  });
+});
 }
  */

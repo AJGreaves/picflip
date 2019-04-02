@@ -517,4 +517,32 @@ describe('displayScore function', function() {
     });
 });
 
+describe('cutDeck function', function() {
+    beforeEach(function() {
+        activeCardsArray = frozenCardsArray;
+        num = 6;
+    });
+    it('should return a section of the array it was sent, cut to the size of num', function() {
+        testCutArray = cutDeck(activeCardsArray, num);
+        expect(testCutArray).toEqual(frozenCardsArray.slice(0,6));
+    });
+});
+
+describe('duplicateCards function', function() {
+    beforeEach(function() {
+        testArray = ["arthur", "ford", "trillion", "zaphod"];
+    });
+    it('should return an array with the array it was sent repeated twice', function() {
+        let result = duplicateCards(testArray);
+        
+        // code for filtering this array sourced from https://stackoverflow.com/questions/6120931/how-to-count-the-number-of-certain-element-in-an-array
+        let arthur = result.filter(i => i === 'arthur').length;
+        let zaphod = result.filter(i => i === 'zaphod').length;
+        
+        expect((result).length).toEqual(8);
+        expect(arthur).toEqual(2);
+        expect(zaphod).toEqual(2);
+    });
+});
+
 //arrange, act, assert

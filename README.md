@@ -24,6 +24,8 @@ characters that children enjoy, with an overall feel of child friendly entertain
 [**Parental goals**](#parental-goals)<br>
 [**Developer/Business Goals**](#developer-business-goals)<br>
 [**User Stories**](#user-stories)<br>
+[**Design choices**](#design-choices)<br>
+[**Wireframes**](#wireframes)<br>
 
 - [**Features**](#-features)<br>
 [**1. Existing Features**](#existing-features)<br>
@@ -111,6 +113,49 @@ As a parent of a player, I want:
 4. The option to delete a profile to be easy for me to find, but not easy for a child who is randomly pressing buttons to access, so that a profile is not deleted by accident.
 5. A mute button to be included, so that the sounds can be switched off when they become annoying. (If only the actual child came with one of those too!).
 6. To know who made the game and how I can contact them. 
+
+### Design Choices
+
+The overall feel of the game is one that is designed for children to enjoy. The following design choices were made with this in mind
+
+**Fonts**
+
+- The primary font **Fredoka One** was chosen because it resembles the simple letters uses in products made for pre-school children. It's likeness to fridge magnets for children is nostalgic for parents as well. 
+
+- The secondary font **Bubblegum Sans** was chosen for its childlike qualities, while complementing the primary font nicely in style because it is more compact.
+
+**Icons**
+
+- All icons used were chosen for their obvious meaning and purpose so that they can be understood by everyone.
+
+**Colours**
+
+- The primary colour choices of dark and light blue for the logo, titles and text were chosen because they have a clean clear aspect while contrasting each other well.
+- Other colours used in the project were taken from the trophy image sourced, using a colour picker in Photoshop to make sure all colours used were consistent across the entire project.
+
+**Styling**
+
+- Cards and container boxes were given rounded corners to continue the child friendly theme, many real life memory cards for children have corners like this. 
+- Repeating the same rounded corner pattern throughout the page keeps consistency in design and maintains the feeling that all elements belong together. 
+
+**Backgrounds**
+
+- The background image of toy trains was chosen to give the feeling of playing the game in a child's playroom. 
+- Specifically chosen because it is a "flat-lay" - a photograph taken from directly above - this means the background complements the game without distracting from it.
+- The background images for the modals were chosen for their comic-book like qualities, adding a little positive emotional feedback at a level that appeals to a child. 
+
+**Card images**
+
+- Disney and Pixar characters were chosen for this game because they are recognised and loved by children. 
+Cars characters were specifically chosen because it is extremely popular with boys, 
+the Frozen characters because they are very popular with girls, 
+and the Toy Story Characters because they appeal to both girls and boys. 
+
+**Audio files**
+
+- To continue the feeling of a game made for children, clicking button sounds were added that are similar to the sounds a child might hear when operating a physical toy with buttons. 
+- The card flipping sounds and "bing" on a correct match were added to give positive feedback on use of the game. 
+- The sound of applauding children played on completing the game was chosen because it appeals most to children, and again fits within the theme of PicFlip!
 
 ### Wireframes
 
@@ -250,6 +295,8 @@ In the future more functionality can be added to the parental check modal to:
     - This project used **Jasmine-jQuery** CDN to make it possible to test jQuery code using Jasmine.
 - [GitHub](https://github.com/)
     - This project uses **GitHub** to store and share all project code remotely. 
+- [Photoshop](www.adobe.com/Photoshop)
+    - This project used tools in photohshop to edit, crop and save images as well as ulitising the colour picker to ensure color consistency over the entire project.
 
 ## Testing 
 

@@ -117,19 +117,112 @@ The following section goes through each of the user stories from the UX section 
     - A discreet footer tab is included at the bottom of the game, with the developers name and a link to her github page. 
 
 
-## Manual testing
 
+## Manual testing
+Below is a detailed account of all the manual testing that has been done to confirm all areas of the site work as expected. 
+
+### Testing undertaken on desktop
+All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Explorer and on two different desktop screen sizes.
+
+1. Player info modal
+    - Opened the game in a brand new browser, and verify that the player info modal is automatically launched.
+    - Closed the page without inputting any information, the reopened the page and verified that the player info modal is launched. 
+    - Closed the page with only one of the two fields filled out, confirmed that on reloading the player info modal is still launched.
+    - Tried to close the player info modal without filling out either of the required inputs. 
+    - Confirmed that the modal will not close and alerts are given to guide the player to fill out both fields. 
+    - Tried to input a long string of letters into the username field, confirmed that it will take a maximum of 15 characters. 
+    - Input a name and chose an avatar from the 3 choices, closed the modal without hitting submit, confirmed that the modal is launched again on relaoding the page. 
+    - Input a name and chose an avatar, clicked the submit button and confirmed that the modal closes. 
+    - Reset the player data using the [parental check modal](#parental-check-modal)
+        - confirmed that the name on the dashbaord is reset to "Player", 
+        - the default avatar is displayed,
+        - any high scores are reset to 0.
+        - and that the player info modal is relaunched, behaving as it had done before.
+        - test that different avatar choices and name inputs always display correctly on the player dashboard.
+    - Hovered my mouse over each aspect of the player info modal to check that all the relevant descriptions for screen readers were showing up. 
+2. Dashboard
+    1. Player info display
+        - Confirmed that the input name and avatar choice collected from the player info modal are displayed correctly on the player dashboard.
+        - Played the game and collected high scores, checked that they were displayed correctly under the user avatar.
+    2. Difficulty selection buttons
+        - Easy Button
+            - Selected the easy button and confirmed that the game displayed 8 cards only. 
+            - played the game to find 2 matches, then clicked the easy button again, confirmed that all cards were flipped back over and the game was reset.
+            - Confirmed that when I played again that the images had been shuffled. 
+            - Completed the game in easy mode, and confirmed that the high score was visible under the user avatar. 
+            - Confirmed that when another difficult mode was clicked the high score for easy mode was replaced. 
+            - Confirmed that on clicking the easy mode button again that the correct high score for easy mode is displayed. 
+        - Medium Button & Hard Button
+            - repeated all steps done on the Easy button on both the Medium and Hard buttons. 
+            - Confirmed that correct scores were always displayed depending on the difficulty level chosen. 
+            - Clicked the difficulty selection buttons repeatedly and very quickly to confirm that this does not break their operation. 
+    3. Character selection buttons
+        - Cars cards
+            - Selected the Cars button and confirmed that the images displayed on the cards were correct for the disney movie chosen. 
+            - played the game to find 2 matches, then clicked the Cars button again, confirmed that all cards were flipped over and the game was reset. 
+            - Confirmed that clicking the Cars button reshuffles the cards. 
+        - Frozen & Toy Story cards
+            - Repeated all steps done on the Cars chacter selection button on the Frozen and Toy Story buttons.
+            - Clicked the character selection buttons repeatedly and very quickly to confirm that this does not break the operation of the game. 
+    4. Mute button
+        - Confirmed that I could hear all audio elements when playing the game.
+        - Clicked the mute button and confirmed that the icon displayed on it changed to represent muted mode.
+        - Confirmed that none of the audio elements play while the mute button is active. 
+        - Clicked the mute button again and confirmed that all audio elements play again. 
+        - Clicked the mute button repeatedly and very quickly to confirm that this does not break the mute operation. 
+    5. Reset button
+        - Played the game so several cards were face up, then clicked the reset button to confirm that the face up cards were flipped back over. 
+        - Confirmed that the turns counter in the game is also reset to 0.
+        - Confirmed that even when an odd number of cards are face up, when the reset button is clicked the turns counter is reset to 0.
+        - Played the game again to confirm that the cards had been shuffled. 
+        - Played the game so I had some high scores, pressed the reset button and confirmed that the high scores were not effected. 
+    6. Info button
+        - Pressed the info button and confirmed that the info modal was launched correctly. 
+3. Turns counter
+    - Played the game and confirmed that the turns counter increases by one for over two cards flipped over. 
+    - Confirmed that clicking the cards really fast does not break the turns counter.
+    - Confirmed that the turns counter is reset to 0 every time the game is reset (using difficulty buttons, character choice buttons or reset button).
+    - Confirmed that if the game is closed and reopened, the turns counter is also reset to 0. 
+4. Playing the game
+    - Confirmed that when two cards are flipped over, the game checks if they match.
+    - If they match, confirmed that the correct match sound is played, and the cards remain face up and cannot be clicked again. 
+    - If they don't match, confirmed that the game flips the cards back over after a delay, so that the player can see what was on the 2nd card. 
+    - Confirmed that clicking the cards really fast does not cause errors with too many cards being face up at once.
+    - Confirmed that clicking the cards really fast does not cause the card flipping audio sound to break.
+    - Played the game to completion, confirmed that the game launches the correct win modal for the score achieved. 
+5. Info modal
+    - Confirmed that the info modal is displayed correctly. 
+    - Confirmed that all text is readable.
+    - Clicked the red hand icon to confirm that the parental check modal is launched from it correctly, and that this closes the info modal at the same time.
+    - Reopened the info modal and confirmed that clicking the close button closes the modal. 
+6. Parental check modal
+    - Confirmed that the parental check modal is launched correctly. 
+    - Confirmed that clicking anything except the correct answer to the maths question causes the modal to close without resetting the player data.
+    - Confirmed that clicking the correct answer resets the player data, closes the parental check modal and launches the user data modal. 
+7. New High Score modal
+    - Played the game to get a new high score, confirmed that the high score modal (with the trophy on it) is displayed.
+    - Confirmed that the high score modal displays the correct number of stars for the new score. 
+    - Confirmed that the win audio file plays when the modal is launched. 
+    - Confirmed that clicking the close button closes the modal and reset the game.
+8. Standard win modal
+    - Played the game to get a lower score than my high score, confirmed that the standard win modal is launched. 
+    - Confirmed that the win modal displayes the correct number of stars for the score achieved in the current game.
+    - Confirmed that the win audio file plays when the modal is launched. 
+    - Confirmed that clicking the close button closes the modal and reset the game.
+9. Footer tab
+    - Clicked the footer tab at the bottom of the screen and confirmed that it lifts up without affecting the height of the browser window.
+    - Clicked the footer tab again to confirm the animation back downwards. 
+    - Hovered mouse over the github icon and confirmed that the hover effect is animated.
+    - Clicked the github icon and confirmed that the link is opened in a new tab. 
+
+### Testing undertaken on tablet and phone devices
+All steps below were repeated to test mobile specific elements on the developers 2 Samsung phones and tablet. 
+And also in the Chrome Developer Tools device simulators on all options and orientations.
 1. Player info modal
 2. Dashboard
     1. Player info display
     2. Difficulty selection buttons
-        - Easy Button
-        - Medium Button
-        - Hard Button
     3. Character selection buttons
-        - Cars
-        - Frozen
-        - Toy Story
     4. Mute button
     5. Reset button
     6. Info button
@@ -141,7 +234,6 @@ The following section goes through each of the user stories from the UX section 
 8. Standard win modal
 9. Footer tab
 
-
 ## Further testing: 
 
 1. Asked fellow students, friends and family to look at the site on their devices and report any issues they find.
@@ -149,10 +241,12 @@ The following section goes through each of the user stories from the UX section 
 
 ### Bugs discovered: 
 #### Solved bugs
-1. Bug one 
-    - how it was solved
-2. bug two
-    - how it was solved 
+1. Clicking the cards really fast caused - too may cards to be face up, 
+2. Not all flipped back over if no match was found.
+3. Turns counter counted incorrectly when cards clicked too fast. 
+4. Audio of cards flipping over did not play the second flip if cards clicked too fast.
+5. On resetting the game, the new shuffled cards could be seen before cards finished flipping back over. 
+ 
 
 #### Unsolved bugs
 1. On firefox browser class `visible` effects do not appear immediately when clicking through difficulty selection buttons, despite the class name being added

@@ -591,7 +591,10 @@ and ajusted to project needs*/
     height: auto; }
 
   .dashboard {
-    min-height: auto; } }
+    min-height: auto; }
+
+  #math-question {
+    font-size: 2.5rem; } }
 @media screen and (max-width: 576px) {
   /*small phones*/
   button .star {

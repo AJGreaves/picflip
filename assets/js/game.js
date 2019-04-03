@@ -44,7 +44,7 @@ const highWinStar = 'win-modal-score-star';
  **/
 
 function checkForUserData() {
-    if ((userAvatar === "default-avatar") || (userName === null)) {
+    if ((userAvatar === "default-avatar") || (userName === null) || (userName === "Player") || (userName === "")) {
         setTimeout(function() {
             $("#userInfoModal").modal({
                 backdrop: 'static',
@@ -246,7 +246,7 @@ function userInfoSubmitButton() {
 
     displayUserData();
 
-    if ((userName && userAvatar) || ((userName != 'Player') && (userAvatar))) {
+    if ((userName && userAvatar) || ((((userAvatar != "default-avatar") && (userName != null) && (userName != "Player") && (userName != ""))) && (userAvatar))) { 
         $('#userInfoModal').modal('hide');
     }
 }

@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Bubblegum+Sans:100,200,300,400,500,600,700|Fredoka+One:100,200,300,400,500,600,700");
+div, figure {
+  cursor: pointer; }
+
 /*----------------------------------- HEADINGS */
 h1, h2 {
   font-family: "Fredoka One", cursive;

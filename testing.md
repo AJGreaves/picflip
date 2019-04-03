@@ -244,11 +244,6 @@ And also in the Chrome Developer Tools device simulators on all options and orie
     - Confirmed that footer tab operates as expected when tapped on mobile devices.
     - Confirmed that the footer element does not cause positioning problems with screens of different sizes and dimentions. 
 
-## Further testing: 
-
-1. Asked fellow students, friends and family to look at the site on their devices and report any issues they find.
-2. PicFlip! viewed on all devices and orientations available in Chrome DevTools, as well at a local tech store, no further issues found.
-
 ### Bugs discovered: 
 #### Solved bugs
 **1. Clicking the cards really fast caused too may cards to be face up.**
@@ -273,19 +268,63 @@ This caused the turns count to go up by 1 when only half a turn had been taken.
 **5. Audio of cards flipping over did not play the second flip if cards clicked too fast.**
 The card flipping audio file is 1.5 seconds long, if the first card was clicked this would trigger the audio file to play, however if the second card was clicked before this
 audio file was completed, it would not play for the second card. 
-Fix: An extra line of code was added to reset the audio file back to 0 seconds whenever it was clicked on to play. This means you can ge 0.5s of the file, click again and it starts from the beginning again.
+- Fix: An extra line of code was added to reset the audio file back to 0 seconds whenever it was clicked on to play. This means you can ge 0.5s of the file, click again and it starts from the beginning again.
 This solution was also applied to button click audio files.
 
 **6. On resetting the game, the new shuffled cards could be seen before cards finished flipping back over.**
 The game was programmed to animate the cards flipping back over, which takes around half a second. The newly shuffled cards could be seen as the cards flipped back over.
-Fix: To fix this I used the setTimeout function to delay displaying the cards until after the animation is complete. 
+
+- Fix: To fix this I used the setTimeout function to delay displaying the cards until after the animation is complete. 
 
 **7. localStorage caused errors in display high score data if there was no data to load**
 If a player created a profile, played one or two levels of diffculty and then reloaded the page, the remaining level of difficulty displayed one star as it's high score,
 when there should have been no stars. The error here was caused when loading the data from localStorage and displaying it on the screen. 
-Fix: The checkForUserData had extra checks added to it and set the value of uninitialied data in localStorage to 0. Then the high score stars for unplayed levels displayed correctly. 
- 
+- Fix: The checkForUserData had extra checks added to it and set the value of uninitialied data in localStorage to 0. Then the high score stars for unplayed levels displayed correctly. 
+
+**8. The modal to collect user data could be closed without inputting all the fields**
+It is important for the game to collect user name and avatar choice before it will start playing. 
+The default setting for bootstrap modals is that they can be clicked away by clicking the close button or clicking on the modal background. 
+- Fix: 
+    - The default bootstrap modal functions were disabled in my own JavaScript to prevent this from happening. 
+    - The modal was programmed to only close when a name was entered and an avatar was chosen. 
+    - The modal was also programmed not to close if it had stored an empty string as the value for userName.
+
+**9. document.ready in game.js when testing with Jasmine**
+Jasmine tests could not see the code to check it because the game.js file was waiting for the document to be ready before loading.
+- Fix: ```document.ready()``` was removed from the game.js file. As the file is called at the bottom of my index.html file it was not nessasary to use anyway. 
+
+**10. checkForWin operations repeating themselves**
+This bug was caused by including setTimeout on the function to call the win modal, all of which was originally inside the checkForWin function. 
+The timeout caused elements of the checkForWin function to repeat themselves. 
+- Fix: delayDisplayModal function was created, with the setTimeout to call the win modal inside it. 
+This was then called from inside the checkForWin function and no longer conflicted with the rest of its operations.
+
+**11. No limit to the number or characters that could be entered as a user name**
+An unlimited size string could be added to the userName field, causing display issues (name going beyond the width of the area it is to be displayed in) and potential security risks.
+- Fix: The input field had a maximum lenght of 15 characters set in the html. 
+
+**12. Footer Tab displaying in odd places and cutting through game board on screens with a short height and wide width**
+This bug was caused by the height properties of the dashboard and game board. 
+Multiple solutions were tried before discovering the following code was provided by a fellow student to fix the footer to the bottom of the page successfully. 
+```
+#content-wrapper {
+	display: flex;
+	min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+	flex: 1;
+}
+```
+
 
 #### Unsolved bugs
-1. On firefox browser class `visible` effects do not appear immediately when clicking through difficulty selection buttons, despite the class name being added
-successfully to the html. If window is resized, then the cards appear.
+**1. On firefox browser class ```visible``` effects do not always appear immediately when clicking through difficulty selection buttons**
+Despite the class name being added successfully to the html. If window is resized, then the cards appear. 
+I have been unsuccessful in working out why this happens or how to to fix it, as it appears to be browser specific only to firefox and does not always happen. 
+
+## Further testing: 
+
+1. Asked fellow students, friends and family to look at the site on their devices and report any issues they find.
+2. PicFlip! viewed on all devices and orientations available in Chrome DevTools, as well at a local tech store, no further issues found.

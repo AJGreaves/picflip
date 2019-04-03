@@ -248,7 +248,7 @@ function userInfoSubmitButton() {
 
     displayUserData();
     //Bug fix: modal would close when userAvatar had been assigned the value of an empty string on reloading the page 
-    // without inputting fields, so modal could then be closed without a name given. These checks fixed that.
+    //without inputting fields, so modal could then be closed without a name given. These checks fixed that.
     
     if ((userName && userAvatar) || ((((userAvatar != "default-avatar") && (userName != null) && (userName != "Player") && (userName != ""))) && (userAvatar))) { 
         $('#userInfoModal').modal('hide');

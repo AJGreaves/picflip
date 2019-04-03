@@ -302,8 +302,11 @@ main {
 **1. On firefox browser class ```visible``` effects do not always appear immediately when clicking through difficulty selection buttons**
 Despite the class name being added successfully to the html. If window is resized, then the cards appear. 
 I have been unsuccessful in working out why this happens or how to to fix it, as it appears to be browser specific only to firefox and does not always happen. 
+**2. On iPhone8 the game cards flip back over when they shouldn't**
+There appears to be an error caused my the iPhone8 iOS which means the javascript or jQuery code is not operating as it should. 
+I have not been able to replicate this problem on any of my devices or in google DevTools. I am searching for a fix for this problem. 
 
 ## Further testing: 
 
 1. Asked fellow students, friends and family to look at the site on their devices and report any issues they find.
-2. PicFlip! viewed on all devices and orientations available in Chrome DevTools, as well at a local tech store, no further issues found.
+2. PicFlip! viewed on all devices and orientations available in Chrome DevTools, as well at a local tech store.

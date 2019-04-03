@@ -7,7 +7,7 @@
 
 <div align="center"> 
 
-[PicFlip!](https://ajgreaves.github.io/picflip/) is an engaging and entertaining memeory card game, designed for children aged between 1 and 5 years old. 
+[PicFlip!](https://ajgreaves.github.io/picflip/) is an engaging and entertaining memory card game, designed for children aged between 1 and 5 years old. 
 Features include easy to operate controls, 3 levels of difficulty, entertaining animations and sounds,
 characters that children enjoy, with an overall feel of child friendly entertainment.
 <br>
@@ -22,7 +22,7 @@ characters that children enjoy, with an overall feel of child friendly entertain
 [**Project Goals**](#project-goals)<br>
 [**Player goals**](#player-goals)<br>
 [**Parental goals**](#parental-goals)<br>
-[**Developer/Buinsess Goals**](#developer-business-goals)<br>
+[**Developer/Business Goals**](#developer-business-goals)<br>
 [**User Stories**](#user-stories)<br>
 
 - [**Features**](#-features)<br>
@@ -46,7 +46,7 @@ characters that children enjoy, with an overall feel of child friendly entertain
 
 ### Project Goals
 
-The primary goal of PicFlip! is to provide a clean, intuative and child friendly game to entertain and delight it's users.
+The primary goal of PicFlip! is to provide a clean, intuitive and child friendly game to entertain and delight it's users.
 PicFlip! has two target audiences: Pre-school children and their parents. 
 
 #### Player goals
@@ -57,36 +57,36 @@ Players goals are:
 - A fun game to play.
 - Child friendly controls.
 - Large buttons and clickable areas for young fingers to operate.
-- All game controls laid out together and in an intuative way. 
+- All game controls laid out together and in an intuitive way. 
 - Fun images and sounds. 
 - Visual and audio rewards while playing.
 
 PicFlip! is a great way to help players meet these needs because:
 - The planning and design process took all these needs into account before starting to build it. 
 - Controls are grouped together clearly.
-- Game controls are large, utlising icons and colors to commuinicate their purpose before any words that a child would not be able to read. 
+- Game controls are large, utilising icons and colours to communicate their purpose before any words that a child would not be able to read. 
 - PicFlip! includes audio and visual rewards as part of the game.
 - The overall feel of PicFLip! is fun and child-friendly.
 
 #### Parental goals
 
 Parents of pre-school children have a large amount of say about what games their children are exposed to, 
-therefore parental needs must also be at the forfront of any project designed for children in this age group. 
+therefore parental needs must also be at the forefront of any project designed for children in this age group. 
 
-Parents goals are:
-- A game with child development value. In this case to improve their memory and spacial awareness.
-- Usability for the range of abilties in pre-school kids.
-- A visiualy appealing, well functioning game. 
+Parent's goals are:
+- A game with child development value. In this case to improve their memory and spatial awareness.
+- Usability for the range of abilities in pre-school kids.
+- A visually appealing, well-functioning game. 
 - The ability to for parent to reset the stored player profile. 
 - A mute button.
 
 PicFlip! is a great way to help parents meet these needs because:
-- PicFLip! gives a child a fun enviroment in which to practice their memory skills. 
+- PicFlip! gives a child a fun environment in which to practice their memory skills. 
 - Game includes 3 levels of difficulty ranging from 8 to 16 cards.
 - It has been designed with user experience as a priority, not only for a child using it but also for a parent.
-- The game includes a reset data option, which is easy to find an operate by an adult who can read and do simple mathematics.
+- The game includes a reset data option, which is easy to find and operate by an adult who can read and do simple mathematics.
 
-#### Developer/Buinsess Goals
+#### Developer/Business Goals
 
 - Well thought out programming that prepares for a child's random and unpredictable use of PicFlip! 
 For example, that the game cannot be broken by clicking many areas quickly, or if it is restarted at an unexpected moment. 
@@ -99,18 +99,18 @@ As a player aged between 1-5 years old, I want:
 1. The ability to easily find and understand the controls for the game, so that I can operate them easily. 
 2. A large easy to press buttons and controls, so that my young fingers can use them easily on all devices.
 3. Audio and/or visual feedback when I play the game, so that I know when I have clicked or not clicked something.
-4. The ability to choose from cards with my favourite childrens characters on, so that I am even more engaged in finding them in the game.
-5. Postitive audio feedback when I complete a step in the game (for example when I find a matching pair of cards), because this increases my enjoyment from playing.
-6. Visual icons and images that I recoginise, so that I understand when I have achiveved something in the game. For example stars out of five, and a trophy for high score.
+4. The ability to choose from cards with my favourite children’s characters on, so that I am even more engaged in finding them in the game.
+5. Positive audio feedback when I complete a step in the game (for example when I find a matching pair of cards), because this increases my enjoyment from playing.
+6. Visual icons and images that I recognise, so that I understand when I have achieved something in the game. For example stars out of five, and a trophy for high score.
 7. The ability to see my old scores when I return to the game, so I can try to beat them.
 
 As a parent of a player, I want:
 1. Levels of difficulty for my child to choose from, so that they are engaged for longer and the game is useable for a wider age range.
-2. A visually and operationally appealing game, so that I also have a positive expeience when using it with my child.
+2. A visually and operationally appealing game, so that I also have a positive experience when using it with my child.
 3. The ability to delete a stored profile, so that I can reset the game for another go, or for another child. 
 4. The option to delete a profile to be easy for me to find, but not easy for a child who is randomly pressing buttons to access, so that a profile is not deleted by accident.
 5. A mute button to be included, so that the sounds can be switched off when they become annoying. (If only the actual child came with one of those too!).
-6. to know who made the game and how I can contact them. 
+6. To know who made the game and how I can contact them. 
 
 ### Wireframes
 
@@ -145,16 +145,16 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 
 3. **Player info display**
     - At the top of the dashboard the players name is displayed with their chosen avatar. 
-    - Underneeth this is the display to show their heighest score (out of 5 stars) for the currently selected difficulty level. 
+    - Underneath this is the display to show their highest score (out of 5 stars) for the currently selected difficulty level. 
     - The star display changes if a different level is selected. 
 
 4. **Difficulty selection buttons**
-    - Players can select from three difficutly levels: Easy (8 cards), Medium (12 cards) and Hard (16 cards).
-    - The difficilty buttons are coloured green, yellow and red for users who can't read to tell them apart.
+    - Players can select from three difficulty levels: Easy (8 cards), Medium (12 cards) and Hard (16 cards).
+    - The difficulty buttons are coloured green, yellow and red for users who can't read to tell them apart.
     - Selecting any of these buttons turns any face-up cards back over and reshuffles the cards.
 
 5. **Character selection buttons**
-    - Players can choose from three different disney movie characters to disaply on the memory cards.
+    - Players can choose from three different Disney movie characters to display on the memory cards.
     - Selecting any of these buttons turns any face-up cards back over and reshuffles the cards.
 
 6. **Mute button**
@@ -162,12 +162,12 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
  
 7. **Reset button**
     - The reset button, represented by a curved arrow, resets the game, when it is pressed the game turns any face-up cards back over, reshuffles them and resets the turns counter back to 0. 
-    - It does not reset the diffculty level or characters chosen for the cards. 
+    - It does not reset the difficulty level or characters chosen for the cards. 
 
 8. **Info button**
     - Represented by a large question mark, the info button opens the info modal. 
-    - The info modal offers easy to understand instuctions on how to play the game. 
-    - Underneeth how to play instructions there is inforamtion on how to open the modal to delete the players profile. 
+    - The info modal offers easy to understand instructions on how to play the game. 
+    - Underneath how to play instructions there is information on how to open the modal to delete the player’s profile. 
     - The place to click is easy for an adult to see, but not an obvious button to click for a child. 
 
 <div align="center">
@@ -179,7 +179,7 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
     - It explains that deleting the player profile will remove all game data including high scores. 
     - Then it asks a simple maths question with 9 possible answers to choose from, only if the correct answer is clicked will the player profile be deleted. 
     - All other choices will close the modal when clicked with no further effects to the game.
-    - At this point the maths question and correct answer are static. This is a feature I would like to upadate in the future (see [Features Left to Implement](#Features-left-to-implement) for more inforamtion)
+    - At this point the maths question and correct answer are static. This is a feature I would like to update in the future (see [Features Left to Implement](#Features-left-to-implement) for more information)
 
 <div align="center">
 <img src="https://i.ibb.co/nrRkQsq/delete-data-modal.jpg" alt="Screenshot: Parental check modal" >
@@ -187,7 +187,7 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 
 
 10. **Turns counter**
-    - Located above the game cards, the turns counter counts the number of turns the playe has taken in the current game. 
+    - Located above the game cards, the turns counter counts the number of turns the player has taken in the current game. 
     - This total is then used to give the player a score out of 5 stars when the game is complete.
 
 11. **Game board and cards**
@@ -212,7 +212,7 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 
 
 13. **Footer tab**
-    - a small tab is displayed at the bottom of the website that when clicked pulls up a short footer with developer information on. 
+    - A small tab is displayed at the bottom of the website that when clicked pulls up a short footer with developer information on. 
 
 ### Features Left to Implement
 
@@ -223,14 +223,13 @@ In the future more functionality can be added to the parental check modal to:
     - if the incorrect answer is given the math question/answer is randomised again. 
     - If the incorrect choice is made 5 times in a row then the modal closes. 
 
-2. **Additional difficilty level**
+2. **Additional difficulty level**
     - Add level "insane" for older kids to try. 
     - This would only be possible on mobiles if converted into a mobile app, as the full screen would be needed to make enough room for all the cards.
 
 3. **Conversion to a mobile App**
-    - If this project were to become commercial the current card pictures would have to be changed to ones commissioned specifically for it, rather than using disney images.
+    - If this project were to become commercial the current card pictures would have to be changed to ones commissioned specifically for it, rather than using Disney images.
 
-------
 ## Technologies Used
 
 - This project uses HTML, CSS and JavaScript programming languages.
@@ -263,14 +262,14 @@ This project was developed using the [Cloud9 IDE](https://c9.io), committed to g
 To deploy PicFlip! to GitHub Pages from [its GitHub repository](https://github.com/AJGreaves/picflip), the following steps were taken: 
 1. Log into GitHub. 
 2. From the list of repositories on the screen, select **AJGreaves/picflip**.
-3. From the menu items near the top of the page, select **Settings*.
+3. From the menu items near the top of the page, select **Settings**.
 4. Scroll down to the **GitHub Pages** section.
-5. Under **Source** click the drop-down menu labeled **None** and select **Master Branch**
-6. On selecting Master Branch the page is automatically refreshed, PicFlip! Is now deployed. 
+5. Under **Source** click the drop-down menu labelled **None** and select **Master Branch**
+6. On selecting Master Branch the page is automatically refreshed, PicFlip! is now deployed. 
 7. Scroll back down to the **GitHub Pages** section to retrieve the link to the deployed website.
 
 The PicFlip project made use of several branches for development, testing and bug fixing. 
-The Master Branch has always been the one deployed to GitHUb Pages as the developer tries to keep the master branch to optimal code only when displaying live.
+The Master Branch has always been the one deployed to GitHUb Pages. When displaying the website life, the developer tries to keep the master branch to optimal code only.
 At the moment of submitting this Milestone project the Development Branch and Master Branch are identical. 
 
 ### How to run this project locally
@@ -281,20 +280,17 @@ To clone this project from GitHub:
 3. In the Clone with HTTPs section, copy the clone URL for the repository. 
 4. In your local IDE open Git Bash.
 5. Change the current working directory to the location where you want the cloned directory to be made.
-6. Type ```git clone```, and then paste the URL you copied in Step 3.
+6. Type ```git clone```, and then paste the URL you copied in Step 3. <br>
 ```$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY```
 7. Press Enter. Your local clone will be created.
 
-Further reading and troubleshooting on cloning a repository from github [here](https://help.github.com/en/articles/cloning-a-repository).
+Further reading and troubleshooting on cloning a repository from GitHub [here](https://help.github.com/en/articles/cloning-a-repository).
 
 ## Credits
 
 ### Content
 
 - All text in this project was written by the developer.
-
-example:
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
 
@@ -316,6 +312,7 @@ Copyright for the memory card images belong to [Disney](https://www.thewaltdisne
 - Box shadow codes were generated at [CSS matic | box-shadow](https://cssmatic.com/box-shadow).
 - Code for filtering through an array for specific values sourced from [StackOverflow](https://stackoverflow.com/questions/6120931/how-to-count-the-number-of-certain-element-in-an-array)
 - code for spying on localStorage sourced from [StackOverflow](https://stackoverflow.com/questions/11485420/how-to-mock-localstorage-in-javascript-unit-tests)
+- code for making images into radio buttons sourced from [StackOverflow](https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons)
 
 ### Acknowledgements
 

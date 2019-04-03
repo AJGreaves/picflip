@@ -218,21 +218,31 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 ### Testing undertaken on tablet and phone devices
 All steps below were repeated to test mobile specific elements on the developers 2 Samsung phones and tablet. 
 And also in the Chrome Developer Tools device simulators on all options and orientations.
+
 1. Player info modal
+    - Checked the player info modal fits on small and medium screens easily.
+    - Confirmed that font sizes are responsive so screen size so it is displayed in a way that all users can use.
+    - Confirmed fields and buttons are large enough to click easily, but small enough to fit comfortably on the screen.
 2. Dashboard
+    - Confirmed that on mobile phones the dashboard is displayed first at full width, and scrolling down the game board is underneeth it.
     1. Player info display
-    2. Difficulty selection buttons
-    3. Character selection buttons
-    4. Mute button
-    5. Reset button
-    6. Info button
+        - Checked that player info displays correctly on smaller screens, not too much space, and no squashing or overlapping of elements even on smallest screens.
+    2. All dashboard buttons
+        - Checked that all buttons are large enough for young fingers to click easily, but small enough to fit comfortably on small screens. 
 3. Turns counter
+    - Checked that turns counter is visible when playing. 
+    - On a small mobile phone when in hard mode (16 cards) the turns counter cannot be seen, however making the cards smaller would hinder the gameplay. Player can easily scroll up to see the turns counter if they wish.
 4. Playing the game
-5. Info modal
-6. Parental check modal
-7. New High Score modal
-8. Standard win modal
+    - All cards can be seen at once in hard mode (16 cards), even on smallest mobile phone screens. 
+    - Checked that game board is full width of the screen on mobile devices.
+5. Modals for Info, parental check, win and high score:
+    - Checked the info modals fit on small and medium screens easily.
+    - Confirmed that font sizes are responsive so screen size so they are displayed in a way that all users can use.
+    - Confirmed that all buttons are large enough to click easily, but small enough to fit comfortably on the screen.
 9. Footer tab
+    - Confirmed that footer tab is always at the bottom of the content on all screen sizes. 
+    - Confirmed that footer tab operates as expected when tapped on mobile devices.
+    - Confirmed that the footer element does not cause positioning problems with screens of different sizes and dimentions. 
 
 ## Further testing: 
 
@@ -241,11 +251,39 @@ And also in the Chrome Developer Tools device simulators on all options and orie
 
 ### Bugs discovered: 
 #### Solved bugs
-1. Clicking the cards really fast caused - too may cards to be face up, 
-2. Not all flipped back over if no match was found.
-3. Turns counter counted incorrectly when cards clicked too fast. 
-4. Audio of cards flipping over did not play the second flip if cards clicked too fast.
-5. On resetting the game, the new shuffled cards could be seen before cards finished flipping back over. 
+**1. Clicking the cards really fast caused too may cards to be face up.**
+Though my function to check a card match was set to activate when two cards were selected, 
+clicking fast meant that 3 or more cards could be flipped over before the check for a match had been done. 
+- Fix: The checkCounter function was created to limit the number of times a user can select cards in each turn. 
+
+**2. Not all flipped back over if no match was found.**
+This issue came with the one listed above, if three cards were flipped over (by clicking very fast) 
+before the program checked if they matched, there were many errors with the 3rd card, including it not flipping back over again until the next turn was taken. 
+- Fix: See above.
+
+**3. Turns counter counted incorrectly when cards clicked too fast.**
+The turns counter was also confused by fast clicking of cards. Fortunatly the fix above solved this as well! 
+- Fix: See above.
+
+**4. Turns counter did not reset correctly if the game was reset when an odd number of cards were face-up**
+The turnsCounter relies on the flipCounter to tell it when to increase it's count by 1, I had forgotten to reset the flipCounter to 0 as well on resetting the game.
+This caused the turns count to go up by 1 when only half a turn had been taken.
+- Fix: I reset the flipCounter to 0 as well as the turnsCounter whenever the game was reset.  
+
+**5. Audio of cards flipping over did not play the second flip if cards clicked too fast.**
+The card flipping audio file is 1.5 seconds long, if the first card was clicked this would trigger the audio file to play, however if the second card was clicked before this
+audio file was completed, it would not play for the second card. 
+Fix: An extra line of code was added to reset the audio file back to 0 seconds whenever it was clicked on to play. This means you can ge 0.5s of the file, click again and it starts from the beginning again.
+This solution was also applied to button click audio files.
+
+**6. On resetting the game, the new shuffled cards could be seen before cards finished flipping back over.**
+The game was programmed to animate the cards flipping back over, which takes around half a second. The newly shuffled cards could be seen as the cards flipped back over.
+Fix: To fix this I used the setTimeout function to delay displaying the cards until after the animation is complete. 
+
+**7. localStorage caused errors in display high score data if there was no data to load**
+If a player created a profile, played one or two levels of diffculty and then reloaded the page, the remaining level of difficulty displayed one star as it's high score,
+when there should have been no stars. The error here was caused when loading the data from localStorage and displaying it on the screen. 
+Fix: The checkForUserData had extra checks added to it and set the value of uninitialied data in localStorage to 0. Then the high score stars for unplayed levels displayed correctly. 
  
 
 #### Unsolved bugs

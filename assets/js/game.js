@@ -234,7 +234,9 @@ $('#pullUpTab').click(function() {
 
 /**
  * userInfoSubmitButton() collects data from the user info modal and assigns to the correct variables
- * it will only close modal if both username and avatar have been chosen
+ * it will only close modal if both username and avatar have been chosen. 
+ * Bug Fix: Additional checks added to the if statment before closing modal, 
+ * to fix bug causing it to be closed even when userName had stored an empty string as it's value.
  **/
 
 function userInfoSubmitButton() {
@@ -245,7 +247,9 @@ function userInfoSubmitButton() {
     localStorage.setItem("userAvatar", userAvatar);
 
     displayUserData();
-
+    //Bug fix: modal would close when userAvatar had been assigned the value of an empty string on reloading the page 
+    // without inputting fields, so modal could then be closed without a name given. These checks fixed that.
+    
     if ((userName && userAvatar) || ((((userAvatar != "default-avatar") && (userName != null) && (userName != "Player") && (userName != ""))) && (userAvatar))) { 
         $('#userInfoModal').modal('hide');
     }

@@ -1,22 +1,3 @@
-Guidelines:
-
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly 
-useful form for describing your testing process is via scenarios, such as:
-
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
-
-----
-
 # PicFlip! - Testing details
 
 [Main README.md file](README.md)
@@ -42,7 +23,7 @@ The following validation services and linter were used to check the validity of 
 
 Around 60% of PicFlip! functions have been tested with [Jasmine 3.1](https://jasmine.github.io/index.html) after the majority of the game javaScript code 
 was completed. The reason for this is that I was completely new to JavaScript and Jasmine at the start of this project, and so writing TTD Jasmine tests alongside
-while struglling to understand how my JavaScript was/wasn't working would have been impossible. Therefore I chose to test my code manually while getting to grips with 
+while struggling to understand how my JavaScript was/wasn't working would have been impossible. Therefore I chose to test my code manually while getting to grips with 
 JavaScript, and then tackle learning Jasmine afterwards.
 
 [Jasmine-Jquery CDN](https://github.com/velesin/jasmine-jquery) has been imported into the jasmine testing to allow for jQuery within the JavaScript functions.
@@ -84,39 +65,37 @@ The following section goes through each of the user stories from the UX section 
 **2. Large easy to press buttons and controls, so that my young fingers can use them easily on all devices.**
     - All buttons are large enough for young fingers to operate, on mobile the cards are stacked in columns of three to allow them more space. 
 **3. Audio and/or visual feedback when I play the game, so that I know when I have clicked or not clicked something.**
-    - When each button on the game is pressed there is a visial queue that it has been clicked as well as a clicking audio file that plays too. 
+    - When each button on the game is pressed there is a visual queue that it has been clicked as well as a clicking audio file that plays too. 
     - When a card is clicked first it is slightly indented, to give the impression of being pressed down, then it flips over with a satisfying animation and card flipping sound.
-**4. The ability to choose from cards with my favourite childrens characters on, so that I am even more engaged in finding them in the game.**
-    - 3 popular disney & pixar movie characters were chosen for the memory card.
-    - The character choice buttons use the most recognised character from their disney movie, so a child can choose which cards they want easily.
-**5. Postitive audio feedback when I complete a step in the game (for example when I find a matching pair of cards), because this increases my enjoyment from playing.**
-    - A bing sound is played when a correct match is found, applause and cheering is heard when a game has been completed.
-**6. Visual icons and images that I recoginise, so that I understand when I have achiveved something in the game. For example stars out of five, and a trophy for high score.**
-    - Win modals display the players score out of 5 stars. A trophy is also shown if the player also achieves a new high score.
+**4. The ability to choose from cards with my favourite children’s characters on, so that I am even more engaged in finding them in the game.**
+    - 3 popular Disney & Pixar movie characters were chosen for the memory card.
+    - The character choice buttons use the most recognised character from their Disney movie, so a child can choose which cards they want easily.
+**5. Positive audio feedback when I complete a step in the game (for example when I find a matching pair of cards), because this increases my enjoyment from playing.**
+    - A “bing” sound is played when a correct match is found, applause and cheering is heard when a game has been completed.
+**6. Visual icons and images that I recognise, so that I understand when I have achieved something in the game. For example stars out of five, and a trophy for high score.**
+    - Win modals display the player’s score out of 5 stars. A trophy is also shown if the player also achieves a new high score.
 **7. The ability to see my old scores when I return to the game, so I can try to beat them.**
     - PicFlip! stores user name using localStorage, The users name, avatar choice and high scores for easy, medium and hard mode are loaded when the player returns to the game.
 **8. A game that won't break as I use it**
     - PicFlip! Has been programmed with the way a child would use it in mind. 
-        - when selecting cards to match, no more than 2 cards can be selected at one time. 
+        - When selecting cards to match, no more than 2 cards can be selected at one time. 
         - The game cannot be broken by clicking cards very fast to flip more than 2 over at a time.
         - PicFlip will not create weird displays if the game is reset at unexpected times. For example when an odd number of cards are flipped over.
-        - The game was extensively tested by the developers children (4 and 9 years old).
+        - The game was extensively tested by the developer’s children (4 and 9 years old).
 
 **As a parent of a player, I want:**
 **1. Levels of difficulty for my child to choose from, so that they are engaged for longer and the game is useable for a wider age range.**
-    - The game includes 3 levels of difficlty, from 8, 12 or 16 cards to search though and find matching pairs. 
-**2. A visually and operationally appealing game, so that I also have a positive expeience when using it with my child.**
+    - The game includes 3 levels of difficulty, from 8, 12 or 16 cards to search though and find matching pairs. 
+**2. A visually and operationally appealing game, so that I also have a positive experience when using it with my child.**
     - Much thought and time has been put into designing a clean and attractive game that brings a positive user experience to both kids and adults alike. 
 **3. The ability to delete a stored profile, so that I can reset the game for another go, or for another child.** 
-    - This functionality has been incorperated into the game through the parental contol modal.
+    - This functionality has been incorporated into the game through the parental control modal.
 **4. The option to delete a profile to be easy for me to find, but not easy for a child who is randomly pressing buttons to access, so that a profile is not deleted by accident.**
-    - For an a user who can read and do simple maths, the steps to find and complete deletion of a user profile is easy to find. A toddler who is randomly pressing buttons has a very low probability of stumbling on the correct order of buttons to delete their profile by accident.
+    - For a user who can read and do simple maths, the steps to find and complete deletion of a user profile is easy to find. A toddler who is randomly pressing buttons has a very low probability of stumbling on the correct order of buttons to delete their profile by accident.
 **5. A mute button to be included, so that the sounds can be switched off when they become annoying. (If only the actual child came with one of those too!).**
     - A mute button has been included on the dashboard. 
 **6. To know who made the game and how I can contact them.**
-    - A discreet footer tab is included at the bottom of the game, with the developers name and a link to her github page. 
-
-
+    - A discreet footer tab is included at the bottom of the game, with the developers name and a link to her GitHub page. 
 
 ## Manual testing
 Below is a detailed account of all the manual testing that has been done to confirm all areas of the site work as expected. 
@@ -131,14 +110,14 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
     - Tried to close the player info modal without filling out either of the required inputs. 
     - Confirmed that the modal will not close and alerts are given to guide the player to fill out both fields. 
     - Tried to input a long string of letters into the username field, confirmed that it will take a maximum of 15 characters. 
-    - Input a name and chose an avatar from the 3 choices, closed the modal without hitting submit, confirmed that the modal is launched again on relaoding the page. 
+    - Input a name and chose an avatar from the 3 choices, closed the modal without hitting submit, confirmed that the modal is launched again on reloading the page. 
     - Input a name and chose an avatar, clicked the submit button and confirmed that the modal closes. 
     - Reset the player data using the [parental check modal](#parental-check-modal)
-        - confirmed that the name on the dashbaord is reset to "Player", 
-        - the default avatar is displayed,
-        - any high scores are reset to 0.
-        - and that the player info modal is relaunched, behaving as it had done before.
-        - test that different avatar choices and name inputs always display correctly on the player dashboard.
+        - Confirmed that the name on the dashboard is reset to "Player", 
+        - The default avatar is displayed,
+        - Any high scores are reset to 0.
+        - And that the player info modal is relaunched, behaving as it had done before.
+        - Test that different avatar choices and name inputs always display correctly on the player dashboard.
     - Hovered my mouse over each aspect of the player info modal to check that all the relevant descriptions for screen readers were showing up. 
 2. Dashboard
     1. Player info display
@@ -158,11 +137,11 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
             - Clicked the difficulty selection buttons repeatedly and very quickly to confirm that this does not break their operation. 
     3. Character selection buttons
         - Cars cards
-            - Selected the Cars button and confirmed that the images displayed on the cards were correct for the disney movie chosen. 
+            - Selected the Cars button and confirmed that the images displayed on the cards were correct for the Disney movie chosen. 
             - played the game to find 2 matches, then clicked the Cars button again, confirmed that all cards were flipped over and the game was reset. 
             - Confirmed that clicking the Cars button reshuffles the cards. 
         - Frozen & Toy Story cards
-            - Repeated all steps done on the Cars chacter selection button on the Frozen and Toy Story buttons.
+            - Repeated all steps done on the Cars character selection button on the Frozen and Toy Story buttons.
             - Clicked the character selection buttons repeatedly and very quickly to confirm that this does not break the operation of the game. 
     4. Mute button
         - Confirmed that I could hear all audio elements when playing the game.
@@ -206,14 +185,14 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
     - Confirmed that clicking the close button closes the modal and reset the game.
 8. Standard win modal
     - Played the game to get a lower score than my high score, confirmed that the standard win modal is launched. 
-    - Confirmed that the win modal displayes the correct number of stars for the score achieved in the current game.
+    - Confirmed that the win modal displays the correct number of stars for the score achieved in the current game.
     - Confirmed that the win audio file plays when the modal is launched. 
     - Confirmed that clicking the close button closes the modal and reset the game.
 9. Footer tab
     - Clicked the footer tab at the bottom of the screen and confirmed that it lifts up without affecting the height of the browser window.
     - Clicked the footer tab again to confirm the animation back downwards. 
-    - Hovered mouse over the github icon and confirmed that the hover effect is animated.
-    - Clicked the github icon and confirmed that the link is opened in a new tab. 
+    - Hovered mouse over the GitHub icon and confirmed that the hover effect is animated.
+    - Clicked the GitHub icon and confirmed that the link is opened in a new tab. 
 
 ### Testing undertaken on tablet and phone devices
 All steps below were repeated to test mobile specific elements on the developers 2 Samsung phones and tablet. 
@@ -224,7 +203,7 @@ And also in the Chrome Developer Tools device simulators on all options and orie
     - Confirmed that font sizes are responsive so screen size so it is displayed in a way that all users can use.
     - Confirmed fields and buttons are large enough to click easily, but small enough to fit comfortably on the screen.
 2. Dashboard
-    - Confirmed that on mobile phones the dashboard is displayed first at full width, and scrolling down the game board is underneeth it.
+    - Confirmed that on mobile phones the dashboard is displayed first at full width, and scrolling down the game board is underneath it.
     1. Player info display
         - Checked that player info displays correctly on smaller screens, not too much space, and no squashing or overlapping of elements even on smallest screens.
     2. All dashboard buttons
@@ -242,7 +221,7 @@ And also in the Chrome Developer Tools device simulators on all options and orie
 9. Footer tab
     - Confirmed that footer tab is always at the bottom of the content on all screen sizes. 
     - Confirmed that footer tab operates as expected when tapped on mobile devices.
-    - Confirmed that the footer element does not cause positioning problems with screens of different sizes and dimentions. 
+    - Confirmed that the footer element does not cause positioning problems with screens of different sizes and dimensions. 
 
 ### Bugs discovered: 
 #### Solved bugs
@@ -257,11 +236,11 @@ before the program checked if they matched, there were many errors with the 3rd 
 - Fix: See above.
 
 **3. Turns counter counted incorrectly when cards clicked too fast.**
-The turns counter was also confused by fast clicking of cards. Fortunatly the fix above solved this as well! 
+The turns counter was also confused by fast clicking of cards. Fortunately the fix above solved this as well! 
 - Fix: See above.
 
 **4. Turns counter did not reset correctly if the game was reset when an odd number of cards were face-up**
-The turnsCounter relies on the flipCounter to tell it when to increase it's count by 1, I had forgotten to reset the flipCounter to 0 as well on resetting the game.
+The turnsCounter relies on the flipCounter to tell it when to increase its count by 1, I had forgotten to reset the flipCounter to 0 as well on resetting the game.
 This caused the turns count to go up by 1 when only half a turn had been taken.
 - Fix: I reset the flipCounter to 0 as well as the turnsCounter whenever the game was reset.  
 
@@ -277,9 +256,9 @@ The game was programmed to animate the cards flipping back over, which takes aro
 - Fix: To fix this I used the setTimeout function to delay displaying the cards until after the animation is complete. 
 
 **7. localStorage caused errors in display high score data if there was no data to load**
-If a player created a profile, played one or two levels of diffculty and then reloaded the page, the remaining level of difficulty displayed one star as it's high score,
+If a player created a profile, played one or two levels of difficulty and then reloaded the page, the remaining level of difficulty displayed one star as it's high score,
 when there should have been no stars. The error here was caused when loading the data from localStorage and displaying it on the screen. 
-- Fix: The checkForUserData had extra checks added to it and set the value of uninitialied data in localStorage to 0. Then the high score stars for unplayed levels displayed correctly. 
+- Fix: The checkForUserData had extra checks added to it and set the value of uninitialized data in localStorage to 0. Then the high score stars for unplayed levels displayed correctly. 
 
 **8. The modal to collect user data could be closed without inputting all the fields**
 It is important for the game to collect user name and avatar choice before it will start playing. 
@@ -291,7 +270,7 @@ The default setting for bootstrap modals is that they can be clicked away by cli
 
 **9. document.ready in game.js when testing with Jasmine**
 Jasmine tests could not see the code to check it because the game.js file was waiting for the document to be ready before loading.
-- Fix: ```document.ready()``` was removed from the game.js file. As the file is called at the bottom of my index.html file it was not nessasary to use anyway. 
+- Fix: ```document.ready()``` was removed from the game.js file. As the file is called at the bottom of my index.html file it was not necessary to use anyway. 
 
 **10. checkForWin operations repeating themselves**
 This bug was caused by including setTimeout on the function to call the win modal, all of which was originally inside the checkForWin function. 
@@ -301,7 +280,7 @@ This was then called from inside the checkForWin function and no longer conflict
 
 **11. No limit to the number or characters that could be entered as a user name**
 An unlimited size string could be added to the userName field, causing display issues (name going beyond the width of the area it is to be displayed in) and potential security risks.
-- Fix: The input field had a maximum lenght of 15 characters set in the html. 
+- Fix: The input field had a maximum length of 15 characters set in the html. 
 
 **12. Footer Tab displaying in odd places and cutting through game board on screens with a short height and wide width**
 This bug was caused by the height properties of the dashboard and game board. 

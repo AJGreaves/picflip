@@ -21,12 +21,14 @@
 
 .card-container {
     /*see media queries for adjustments to card size to fit other screens*/
+    cursor: pointer; 
     width: 120px;
     height: 120px;
     border-radius: 8px;
 }
 
 .game-card {
+    cursor: pointer; 
     width: 100%;
     height: 100%;
     background: {
@@ -41,12 +43,14 @@
 
 /* Code for flipping cards taken from w3schools and adjusted to my needs: https://www.w3schools.com/howto/howto_css_flip_card.asp */
 .flip-card {
+    cursor: pointer; 
     background-color: transparent;
     perspective: 1000px; /* for 3D effect */
 }
 
 /* Positions the cards */
 .flip-card-inner {
+    cursor: pointer; 
     position: relative;
     width: 100%;
     height: 100%;
@@ -67,6 +71,7 @@
 
 /* Positions the front and back side */
 .flip-card-front, .flip-card-back {
+    cursor: pointer; 
     position: absolute;
     width: 100%;
     height: 100%;
@@ -75,11 +80,12 @@
 
 /* animation on flipping back */
 .flip-card-back {
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  transform: rotateY(180deg); 
+    cursor: pointer; 
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg); 
 } 
 
 

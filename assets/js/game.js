@@ -59,7 +59,7 @@ function checkForUserData() {
         $('#avatar').removeAttr("title");
         $('#avatar').attr('title', userAvatar);
 
-        // Bug fix: uninitialised high scores on reload of page caused high score stars to display incorrectly, these isNaN checks fixed it.
+        // Bug fix: uninitialized high scores on reload of page caused high score stars to display incorrectly, these isNaN checks fixed it.
         if (isNaN(localStorage.getItem("easyHighScore"))) {
             easyHighScore = 0;
         }
@@ -336,7 +336,7 @@ function displayUserData() {
 /**
  * displayCards(cards) displays shuffled cards on the screen. 
  * first it finds the last class in html element and assigns it to lastClass
- * as we need to keep 'game-card' class, if that class is present then function adds it back in and adds the card from suffled array 
+ * as we need to keep 'game-card' class, if that class is present then function adds it back in and adds the card from shuffled array 
  * if game-card class is not present it simply adds the class from the shuffled cards array
  * lastly it adds the correct title attribute description to each html element, for screen readers.
  **/
@@ -433,7 +433,7 @@ function countTurns() {
 }
 
 /**
- * BUG FIX: clicking cards fast resulted in mutiple display issues. 
+ * BUG FIX: clicking cards fast resulted in multiple display issues. 
  * this function makes sure that only 2 cards can be selected at once.
  **/
 function checkCounter() {
@@ -542,7 +542,7 @@ function getDifficultyLevelArr(numOfVisibleCards) {
 }
 
 /**
- * checkScore() gets the score out of 5 using the array of score boundaries sent to it, and asigns the score to result.
+ * checkScore() gets the score out of 5 using the array of score boundaries sent to it, and assigns the score to result.
  * then function assigns the result to the corresponding score function depending on the array the function was passed.
  **/
 function checkScore(scoreBoundariesArray) {
@@ -599,7 +599,7 @@ function checkIfHighScore() {
 
 /**
  * delayDisplayModal(modalId) delays function so win modals do not pop up too early
- * BUG fix: moved delay into it's own function to prevent functions repeating when they shouldn't
+ * BUG fix: moved delay into its own function to prevent functions repeating when they shouldn't
  **/
 function delayDisplayModal(modalId) {
     setTimeout(function() {

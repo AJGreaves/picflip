@@ -183,11 +183,11 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 
 2. **Dashboard**
     - The game dashboard contains the player info display, difficulty selection, character selection, info, mute and reset buttons. 
+    - On mobile devices a chevron arrow is displayed to tell the player to scroll downwards to the game board. 
 
 <div align="center">
-<img src="https://i.ibb.co/pwn3GFV/game-board.jpg" alt="Screenshot: Game board" >
+<img src="https://i.ibb.co/pwn3GFV/game-board.jpg" alt="Screenshot: Game board" style="margin: 7px;" ><img src="https://i.ibb.co/JFr93rH/mobile-view-dashboard.jpg" alt="Screenshot: dashboard mobile view" style="margin: 7px;" >
 </div>
-
 
 3. **Player info display**
     - At the top of the dashboard the players name is displayed with their chosen avatar. 

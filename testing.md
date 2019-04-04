@@ -34,7 +34,7 @@ better understanding of JavaScript and Jasmine, my approach going forward is to 
 The files for jasmine testing picFlip can be found here:
 - HTML page to run jasmine tests from: [jasmine-testing.html](assets/jasmine-testing/jasmine-testing.html)
 - JavaScript specifications (tests): [picflipSpec.js](assets/jasmine-testing/spec/picflipSpec.js)
-- PicFlip! javascript functions to be tested: [game.js](assets/js/game.js)
+- PicFlip! JavaScript functions to be tested: [game.js](assets/js/game.js)
 
 #### How to run jasmine tests
 
@@ -154,7 +154,7 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
         - Confirmed that the turns counter in the game is also reset to 0.
         - Confirmed that even when an odd number of cards are face up, when the reset button is clicked the turns counter is reset to 0.
         - Played the game again to confirm that the cards had been shuffled. 
-        - Played the game so I had some high scores, pressed the reset button and confirmed that the high scores were not effected. 
+        - Played the game so I had some high scores, pressed the reset button and confirmed that the high scores were not affected. 
     6. Info button
         - Pressed the info button and confirmed that the info modal was launched correctly. 
 3. Turns counter
@@ -303,12 +303,12 @@ This bug was caused by Safari not recognising the css styling ```backface-visibi
 
 **14. On firefox browser class ```visible``` effects did not always appear immediately when clicking through difficulty selection buttons**
 Despite the class name being added successfully to the html the previously invisible cards did not become visible again. If window was resized, then the cards would appear. 
-- Fix: After applying the [AutoPrefixer](https://autoprefixer.github.io/) suggestions to my code, this bug disappered.
+- Fix: After applying the [AutoPrefixer](https://autoprefixer.github.io/) suggestions to my code, this bug disappeared.
 
 
 #### Unsolved bugs
 **1. Audio bugs in Safari browser**
-The Safari browser does not like auto playing audio files, which means the aplause sound when a game is completed does not play.
+The Safari browser does not like auto playing audio files, which means the applause sound when a game is completed does not play.
 Safari also limits the number of times an audio file can be played, I have not yet been able to find a solution. 
 I have not been able to find a way to get around this "user protection" that Safari has in place, ideally this game would be better suited to an app on mobile devices, 
 which would not be bound by the limits set by browsers. But as this piece of coursework is for a web based application, I cannot find a way to fix this bug at the moment. 

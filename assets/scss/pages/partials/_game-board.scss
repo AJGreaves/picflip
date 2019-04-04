@@ -38,14 +38,16 @@
     }
     border-radius: 8px;
     /*clearer shadow to stand out on picture background*/
-    box-shadow: 0 1px 3px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.5);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.5);
 }
 
 /* Code for flipping cards taken from w3schools and adjusted to my needs: https://www.w3schools.com/howto/howto_css_flip_card.asp */
 .flip-card {
     cursor: pointer; 
     background-color: transparent;
-    perspective: 1000px; /* for 3D effect */
+    -webkit-perspective: 1000px; /* for 3D effect */
+            perspective: 1000px;
 }
 
 /* Positions the cards */
@@ -55,15 +57,20 @@
     width: 100%;
     height: 100%;
     text-align: center;
+    -webkit-transition: -webkit-transform 0.8s;
+    transition: -webkit-transform 0.8s;
+    -o-transition: transform 0.8s;
     transition: transform 0.8s;
-    transform-style: preserve-3d;
-    transform: scale(1);
+    transition: transform 0.8s, -webkit-transform 0.8s;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
 }
 
 /* Horizontal flip when you click flip box container */
 .flip-card.face-up .flip-card-inner {
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
   transform: rotateY(180deg); 
@@ -76,15 +83,13 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    // Bug fix: Cards were not staying flipped over on Safari browser, this line of code fixed it.
+    /* Bug fix: Cards were not staying flipped over on Safari browser, this line of code fixed it.*/
     -webkit-backface-visibility: hidden;
 }
 
 /* animation on flipping back */
 .flip-card-back {
-    cursor: pointer; 
-    -moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
+    cursor: pointer;
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     transform: rotateY(180deg); 
@@ -93,8 +98,14 @@
 
 /* indents card slightly on click, before flip */
 .flip-card:active {
-    transform: scale(.97);
+    -webkit-transform: scale(.97);
+        -ms-transform: scale(.97);
+            transform: scale(.97);
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    -o-transition: transform .2s;
     transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
 }
 
 .disabled {

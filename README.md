@@ -299,6 +299,8 @@ In the future more functionality can be added to the parental check modal to:
     - This project used tools in **Photohshop** to edit, crop and save images as well as ulitising the colour picker to ensure color consistency over the entire project.
 - [Browserstack](https://www.browserstack.com/)
     - The project used **Browserstack** to test functionality on all browsers and devices.
+- [AutoPrefixer](https://autoprefixer.github.io/)
+    - The project used **AutoPrefixer** to make sure all css prefixes were the most up to date versions. 
 
 ## Testing 
 
@@ -359,9 +361,10 @@ Copyright for the memory card images belong to [Disney](https://www.thewaltdisne
 ### Code
 - Code for the card flip animation taken from [W3Schools](https://www.w3schools.com/howto/howto_css_flip_card.asp).
 - Box shadow codes were generated at [CSS matic | box-shadow](https://cssmatic.com/box-shadow).
-- Code for filtering through an array for specific values sourced from [StackOverflow](https://stackoverflow.com/questions/6120931/how-to-count-the-number-of-certain-element-in-an-array)
-- code for spying on localStorage sourced from [StackOverflow](https://stackoverflow.com/questions/11485420/how-to-mock-localstorage-in-javascript-unit-tests)
-- code for making images into radio buttons sourced from [StackOverflow](https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons)
+- Code for filtering through an array for specific values sourced from [StackOverflow](https://stackoverflow.com/questions/6120931/how-to-count-the-number-of-certain-element-in-an-array).
+- code for spying on localStorage sourced from [StackOverflow](https://stackoverflow.com/questions/11485420/how-to-mock-localstorage-in-javascript-unit-tests).
+- code for making images into radio buttons sourced from [StackOverflow](https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons).
+- code for adding the correct prefixes to css was created using [AutoPrefixer](https://autoprefixer.github.io/).
 
 ### Acknowledgements
 

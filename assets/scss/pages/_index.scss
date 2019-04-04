@@ -182,13 +182,23 @@ button {
 }
 /* fix display issues on mobiles*/
 #content-wrapper {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
 	min-height: 100vh;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 main {
-	flex: 1;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
 }
 
 #body-wrapper {
@@ -227,7 +237,8 @@ main {
 .selection-button img {
     height: 80px;
     width: 80px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 /* FOOTER */
@@ -242,6 +253,7 @@ main {
 }
 
 .fa-github-alt {
+    -o-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
     -moz-transition: all 0.3s ease-in-out 0.3s;
     -webkit-transition: all 0.3s ease-in-out 0.3s;
@@ -249,7 +261,9 @@ main {
 
 .fa-github-alt:hover {
     color: black;
-    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2);
 }
 
 .pull-up-tab {
@@ -262,6 +276,7 @@ main {
     margin-top: -35px;
     overflow: hidden;
     z-index: 2;
+    -o-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
     -moz-transition: all 0.3s ease-in-out 0.3s;
     -webkit-transition: all 0.3s ease-in-out 0.3s;
@@ -269,12 +284,14 @@ main {
 
 .hide-zero-height {
     height: 0;
+    -o-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
     -moz-transition: all 0.3s ease-in-out 0.3s;
     -webkit-transition: all 0.3s ease-in-out 0.3s;
 }
 
 #footerTabContainer.active-footer {
+    -o-transition: all 0.3s ease-in-out 0.3s;
     transition: all 0.3s ease-in-out 0.3s;
     -moz-transition: all 0.3s ease-in-out 0.3s;
     -webkit-transition: all 0.3s ease-in-out 0.3s;

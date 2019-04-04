@@ -80,7 +80,7 @@ Parent's goals are:
 - A game with child development value. In this case to improve their memory and spatial awareness.
 - Usability for the range of abilities in pre-school kids.
 - A visually appealing, well-functioning game. 
-- The ability to for parent to reset the stored player profile. 
+- The ability for a parent to reset the stored player profile. 
 - A mute button.
 
 PicFlip! is a great way to help parents meet these needs because:
@@ -100,7 +100,7 @@ For example, that the game cannot be broken by clicking many areas quickly, or i
 
 As a player aged between 1-5 years old, I want:
 1. The ability to easily find and understand the controls for the game, so that I can operate them easily. 
-2. A large easy to press buttons and controls, so that my young fingers can use them easily on all devices.
+2. A large easy to press buttons and controls, so that my young fingers can use on all devices.
 3. Audio and/or visual feedback when I play the game, so that I know when I have clicked or not clicked something.
 4. The ability to choose from cards with my favourite children’s characters on, so that I am even more engaged in finding them in the game.
 5. Positive audio feedback when I complete a step in the game (for example when I find a matching pair of cards), because this increases my enjoyment from playing.
@@ -117,11 +117,11 @@ As a parent of a player, I want:
 
 ### Design Choices
 
-The overall feel of the game is one that is designed for children to enjoy. The following design choices were made with this in mind
+The overall feel of the game is one that is designed for children to enjoy. The following design choices were made with this in mind:
 
 **Fonts**
 
-- The primary font **Fredoka One** was chosen because it resembles the simple letters uses in products made for pre-school children. It's likeness to fridge magnets for children is nostalgic for parents as well. 
+- The primary font **Fredoka One** was chosen because it resembles the simple letters used in products made for pre-school children. It's likeness to fridge magnets for children is nostalgic for parents as well. 
 
 - The secondary font **Bubblegum Sans** was chosen for its childlike qualities, while complementing the primary font nicely in style because it is more compact.
 
@@ -173,8 +173,8 @@ These wireframes were created using [Balsamiq](https://balsamiq.com/) during the
 1. **Player info modal**
     - On arriving at the page for the first time, this modal pops up to collect the players name and their choice of avatar image from the three available. 
     - This modal is also activated if stored player data is reset. 
-    - The modal has been programmed to not close unless both the name has been filled out at an avatar has been chosen. Tooltips appear to guide the user to choose both.
-    - The default setting for modals that they can be closed if clicking on the modal background has also been disabled.  
+    - The modal has been programmed to not close unless both the name has been filled out at an avatar has been chosen. Tooltips appear to guide the user to enter both.
+    - The default setting for modals that they can be closed if clicking on the modal background has also been disabled for this modal specifically.  
 
 <div align="center">
 <img src="https://i.ibb.co/NpXs3QC/user-info-modal.jpg" alt="Screenshot: User info modal" >
@@ -311,7 +311,7 @@ Testing information can be found in separate [testing.md](testing.md) file
 
 This project was developed using the [Cloud9 IDE](https://c9.io), committed to git and pushed to GitHub using the built in function within cloud9. 
 
-To deploy PicFlip! to GitHub Pages from [its GitHub repository](https://github.com/AJGreaves/picflip), the following steps were taken: 
+To deploy PicFlip! to GitHub Pages from its [GitHub repository](https://github.com/AJGreaves/picflip), the following steps were taken: 
 1. Log into GitHub. 
 2. From the list of repositories on the screen, select **AJGreaves/picflip**.
 3. From the menu items near the top of the page, select **Settings**.
@@ -333,7 +333,7 @@ To clone this project from GitHub:
 4. In your local IDE open Git Bash.
 5. Change the current working directory to the location where you want the cloned directory to be made.
 6. Type ```git clone```, and then paste the URL you copied in Step 3. <br>
-```$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY```
+```$ git clone https://github.com/USERNAME/REPOSITORY```
 7. Press Enter. Your local clone will be created.
 
 Further reading and troubleshooting on cloning a repository from GitHub [here](https://help.github.com/en/articles/cloning-a-repository).
@@ -363,9 +363,8 @@ Copyright for the memory card images belong to [Disney](https://www.thewaltdisne
 - Code for the card flip animation taken from [W3Schools](https://www.w3schools.com/howto/howto_css_flip_card.asp).
 - Box shadow codes were generated at [CSS matic | box-shadow](https://cssmatic.com/box-shadow).
 - Code for filtering through an array for specific values sourced from [StackOverflow](https://stackoverflow.com/questions/6120931/how-to-count-the-number-of-certain-element-in-an-array).
-- code for spying on localStorage sourced from [StackOverflow](https://stackoverflow.com/questions/11485420/how-to-mock-localstorage-in-javascript-unit-tests).
-- code for making images into radio buttons sourced from [StackOverflow](https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons).
-- code for adding the correct prefixes to css was created using [AutoPrefixer](https://autoprefixer.github.io/).
+- Code for making images into radio buttons sourced from [StackOverflow](https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons).
+- Code for adding the correct prefixes to css was created using [AutoPrefixer](https://autoprefixer.github.io/).
 
 ### Acknowledgements
 

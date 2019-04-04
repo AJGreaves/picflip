@@ -76,6 +76,7 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    // Bug fix: Cards were not staying flipped over on Safari browser, this line of code fixed it.
     -webkit-backface-visibility: hidden;
 }
 

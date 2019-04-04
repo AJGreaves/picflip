@@ -296,7 +296,9 @@ In the future more functionality can be added to the parental check modal to:
 - [GitHub](https://github.com/)
     - This project uses **GitHub** to store and share all project code remotely. 
 - [Photoshop](www.adobe.com/Photoshop)
-    - This project used tools in photohshop to edit, crop and save images as well as ulitising the colour picker to ensure color consistency over the entire project.
+    - This project used tools in **Photohshop** to edit, crop and save images as well as ulitising the colour picker to ensure color consistency over the entire project.
+- [Browserstack](https://www.browserstack.com/)
+    - The project used **Browserstack** to test functionality on all browsers and devices.
 
 ## Testing 
 

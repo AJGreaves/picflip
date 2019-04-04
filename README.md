@@ -17,32 +17,33 @@ characters that children enjoy, with an overall feel of child friendly entertain
 </div>
 
 ## Table of Contents
+1. [**UX**](#ux)
+    - [**Project Goals**](#project-goals)
+    - [**Player goals**](#player-goals)
+    - [**Parental goals**](#parental-goals)
+    - [**Developer and Business Goals**](#developer-and-Business-Goals)
+    - [**User Stories**](#user-stories)
+    - [**Design choices**](#design-choices)
+    - [**Wireframes**](#wireframes)
 
-- [**UX**](#ux)<br>
-[**Project Goals**](#project-goals)<br>
-[**Player goals**](#player-goals)<br>
-[**Parental goals**](#parental-goals)<br>
-[**Developer/Business Goals**](#developer-business-goals)<br>
-[**User Stories**](#user-stories)<br>
-[**Design choices**](#design-choices)<br>
-[**Wireframes**](#wireframes)<br>
+2. [**Features**](#features)
+    - [**Existing Features**](#existing-features)
+    - [**Features Left to Implement**](#features-left-to-implement)
 
-- [**Features**](#-features)<br>
-[**1. Existing Features**](#existing-features)<br>
-[**2. Features Left to Implement**](#features-left-to-implement)<br>
+3. [**Technologies used**](#technologies-used)
 
-- [**Technologies used**](#technologies-used)<br>
+4. [**Testing**](#testing)
 
-- [**Testing**](#testing)<br>
+5. [**Deployment**](#deployment)
+    - [**How to run this project locally**](#how-to-run-this-project-locally)
 
-- [**Deployment**](#deployment)<br>
-[**1. How to run this project locally**](#how-to-run-this-project-locally)
+6. [**Credits**](#credits)
+    - [**Content**](#content)
+    - [**Media**](#media)
+    - [**Code**](#code)
+    - [**Acknowledgements**](#acknowledgements)
 
-- [**Credits**](#credits)<br>
-[**1. Content**](#content)<br>
-[**2. Media**](#media)<br>
-[**3. Code**](#code)<br>
-[**4. Acknowledgements**](#acknowledgements)<br>
+7. [**Disclaimer**](#disclaimer)
 
 ## UX
 
@@ -53,7 +54,7 @@ PicFlip! has two target audiences: Pre-school children and their parents.
 
 #### Player goals
 
-The central target audience for this game are pre-school children aged 1 to 5 years old.
+The central target audience for this game is pre-school children aged 1 to 5 years old.
 
 Players goals are:
 - A fun game to play.
@@ -88,7 +89,7 @@ PicFlip! is a great way to help parents meet these needs because:
 - It has been designed with user experience as a priority, not only for a child using it but also for a parent.
 - The game includes a reset data option, which is easy to find and operate by an adult who can read and do simple mathematics.
 
-#### Developer/Business Goals
+#### Developer and Business Goals
 
 - Well thought out programming that prepares for a child's random and unpredictable use of PicFlip! 
 For example, that the game cannot be broken by clicking many areas quickly, or if it is restarted at an unexpected moment. 
@@ -373,5 +374,5 @@ Special thanks to:
 - Alumni John Longgately and Robin Zigmond for their help in guiding this developer in understanding JavaScript, jQuery and Jasmine testing. 
 - Owen (4) and Declan (9) who tested the game play extensively, and offered advice on what would make it more fun for them to play.
 
-**Disclaimer**
+#### Disclaimer
 The content of this website, including the images used, are for educational purposes only.

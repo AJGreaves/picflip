@@ -298,14 +298,21 @@ main {
 ```
 **13. In the Safari browser the game cards flip back over when they shouldn't**
 This bug was caused by Safari not recognising the css styling ```backface-visibility: hidden;``` for the game cards. 
-- Fix: ```-webkit-backface-visibility: hidden;``` was added to the relevant css.
+- Fix: ```-webkit-backface-visibility: hidden;``` was added to the relevant css. 
+- This bug led me to discovering [AutoPrefixer](https://autoprefixer.github.io/) which I then used to prefix the rest of my relevant code.
+
+**14. On firefox browser class ```visible``` effects did not always appear immediately when clicking through difficulty selection buttons**
+Despite the class name being added successfully to the html the previously invisible cards did not become visible again. If window was resized, then the cards would appear. 
+- Fix: After applying the [AutoPrefixer](https://autoprefixer.github.io/) suggestions to my code, this bug disappered.
 
 
 #### Unsolved bugs
-**1. On firefox browser class ```visible``` effects do not always appear immediately when clicking through difficulty selection buttons**
-Despite the class name being added successfully to the html. If window is resized, then the cards appear. 
-I have been unsuccessful in working out why this happens or how to to fix it, as it appears to be browser specific only to firefox and does not always happen. 
-## Further testing: 
+**1. Audio bugs in Safari browser**
+The Safari browser does not like auto playing audio files, which means the aplause sound when a game is completed does not play.
+Safari also limits the number of times an audio file can be played, I have not yet been able to find a solution. 
+I have not been able to find a way to get around this "user protection" that Safari has in place, ideally this game would be better suited to an app on mobile devices, 
+which would not be bound by the limits set by browsers. But as this piece of coursework is for a web based application, I cannot find a way to fix this bug at the moment. 
 
-1. Asked fellow students, friends and family to look at the site on their devices and report any issues they find.
+## Further testing: 
+1. Asked fellow students, friends and family to look at the site on their devices and report any issues they found.
 2. PicFlip! viewed on all devices and orientations available in Chrome DevTools, as well at a local tech store.

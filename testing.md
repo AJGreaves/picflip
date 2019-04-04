@@ -208,6 +208,8 @@ And also in the Chrome Developer Tools device simulators on all options and orie
         - Checked that player info displays correctly on smaller screens, not too much space, and no squashing or overlapping of elements even on smallest screens.
     2. All dashboard buttons
         - Checked that all buttons are large enough for young fingers to click easily, but small enough to fit comfortably on small screens. 
+    3. Content hinting chevron
+        - confirmed that chevron arrow appears on smaller devices to let the player know they need to scroll downwards to see the game.
 3. Turns counter
     - Checked that turns counter is visible when playing. 
     - On a small mobile phone when in hard mode (16 cards) the turns counter cannot be seen, however making the cards smaller would hinder the gameplay. Player can easily scroll up to see the turns counter if they wish.

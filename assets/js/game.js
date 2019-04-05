@@ -41,6 +41,8 @@ const highWinStar = 'win-modal-score-star';
  * then launches modal to collect user data
  * background on user data modal can't be clicked away, input must be given first.
  * if user data is present, it sets the variables and displays the applicable data on screen
+ * bug fix: uninitialised values for displaying scores caused 1 star to be shown as a high score on levels not played yet. 
+ * initalising the values to 0 when a new profile is created fixed this.
  **/
 
 function checkForUserData() {

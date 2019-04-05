@@ -260,7 +260,7 @@ The game was programmed to animate the cards flipping back over, which takes aro
 **7. localStorage caused errors in display high score data if there was no data to load**
 If a player created a profile, played one or two levels of difficulty and then reloaded the page, the remaining level of difficulty displayed one star as it's high score,
 when there should have been no stars. The error here was caused when loading the data from localStorage and displaying it on the screen. 
-- Fix: The checkForUserData had extra checks added to it and set the value of uninitialized data in localStorage to 0. Then the high score stars for unplayed levels displayed correctly. 
+- Fix: localStorage values for all levels of difficulty are set to 0 when a new user profile is created. 
 
 **8. The modal to collect user data could be closed without inputting all the fields**
 It is important for the game to collect user name and avatar choice before it will start playing. 

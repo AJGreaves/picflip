@@ -346,7 +346,7 @@
 
     <!-- INFO MODAL -->
     <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
                     <section class="container-fluid">
@@ -359,27 +359,12 @@
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 text-center p-0">
-                                        <div class="box-white-curved-corners info-box m-2 px-3 py-1">
-                                            <i class="far fa-clone fa-3x py-2"></i>
-                                            <p>Turn over two cards each turn to find the matching pairs.</p>
+                                        <div class="box-white-curved-corners info-box m-2 px-3 py-2">
+                                            <i class="fas fa-trophy fa-2x py-2"></i>
+                                            <p class="info-modal-text">1. Flip two cards each turn to find the matching pairs.</p>
+                                            <p class="info-modal-text">2. You win when all the pairs have been found.</p>
+                                            <p class="info-modal-text">3. The fewer turns you use to win, the higher your score.</p>
                                         </div>
-                                    </div>
-                                    <div class="col-12 text-center p-0">
-                                        <div class="box-white-curved-corners info-box m-2 px-3 py-1">
-                                            <i class="fas fa-trophy fa-3x py-2"></i>
-                                            <p>You win when all the pairs have been found.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 text-center p-0">
-                                        <div class="box-white-curved-corners info-box m-2 px-3 py-1">
-                                            <i class="fas fa-star star-icon fa-3x py-2"></i>
-                                            <p>The fewer turns you use to win, the higher your score.</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 text-center p-0">
-                                        <button type="button" class="btn btn-light circle-btn tick-btn" data-dismiss="modal" aria-label="Close button"> 
-                                            <i class="fas fa-check"></i>
-                                        </button>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
@@ -388,9 +373,14 @@
                                     </div>
                                     <div class="col-12 text-center p-0">
                                         <div class="box-white-curved-corners info-box m-2 px-3 py-1">
-                                            <i id="deleteDataModal" class="far fa-hand-paper fa-3x py-2" title="red hand icon"></i>
-                                            <p>To delete all high score data, click on the red hand.</p>
+                                            <i id="deleteDataModal" class="far fa-hand-paper fa-2x py-2" title="red hand icon"></i>
+                                            <p class="info-modal-text">To delete all high score data, click on the red hand.</p>
                                         </div>
+                                    </div>
+                                    <div class="col-12 text-center p-0">
+                                        <button type="button" class="btn btn-light circle-btn tick-btn" data-dismiss="modal" aria-label="Close button"> 
+                                            <i class="fas fa-check"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

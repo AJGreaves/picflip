@@ -45,6 +45,9 @@ const highWinStar = 'win-modal-score-star';
 
 function checkForUserData() {
     if ((userAvatar === "default-avatar") || (userName === null) || (userName === "Player") || (userName === "")) {
+        localStorage.setItem("easyHighScore", 0);
+        localStorage.setItem("mediumHighScore", 0);
+        localStorage.setItem("hardHighScore", 0);
         setTimeout(function() {
             $("#userInfoModal").modal({
                 backdrop: 'static',
@@ -59,28 +62,9 @@ function checkForUserData() {
         $('#avatar').removeAttr("title");
         $('#avatar').attr('title', userAvatar);
 
-        // Bug fix: uninitialized high scores on reload of page caused high score stars to display incorrectly, these isNaN checks fixed it.
-        if (isNaN(localStorage.getItem("easyHighScore"))) {
-            easyHighScore = 0;
-        }
-        else {
-            easyHighScore = localStorage.getItem("easyHighScore");
-        }
-
-        if (isNaN(localStorage.getItem("mediumHighScore"))) {
-            mediumHighScore = 0;
-        }
-        else {
-            mediumHighScore = localStorage.getItem("mediumHighScore");
-        }
-
-        if (isNaN(localStorage.getItem("hardHighScore"))) {
-            hardHighScore = 0;
-        }
-        else {
-            hardHighScore = localStorage.getItem("hardHighScore");
-        }
-
+        easyHighScore = localStorage.getItem("easyHighScore");
+        mediumHighScore = localStorage.getItem("mediumHighScore");
+        hardHighScore = localStorage.getItem("hardHighScore");
         activeHighScore = hardHighScore;
         return;
     }

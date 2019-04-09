@@ -216,6 +216,23 @@ $('#confirmResetData').click(function() {
 // Footer tab open on click
 $('#pullUpTab').click(function() {
     $('#footerTabContainer').toggleClass('active-footer');
+    
+    setTimeout(function() {
+        $('#pullUpTabText').toggleText('Pull', 'Push');
+        
+        if ($('#pullUpTabIcon').hasClass('fa-arrow-up')) {
+             $('#pullUpTabIcon').addClass('fa-arrow-down').removeClass('fa-arrow-up');
+        } else {
+            $('#pullUpTabIcon').addClass('fa-arrow-up').removeClass('fa-arrow-down');
+        }
+    }, 800);
+});
+
+// Function to toggle text in the pull up tab from push to pull taken from: https://stackoverflow.com/questions/2155453/jquery-toggle-text
+$.fn.extend({
+    toggleText: function(a, b){
+        return this.text(this.text() == b ? a : b);
+    }
 });
 
 /**

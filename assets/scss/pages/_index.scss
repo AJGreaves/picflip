@@ -278,6 +278,7 @@ main {
     border-radius: 8px 8px 0px 0px;
     width: 150px;
     height: 35px;
+    cursor: pointer;
 }
 
 #footerTabContainer {
@@ -288,6 +289,11 @@ main {
     transition: all 0.3s ease-in-out 0.3s;
     -moz-transition: all 0.3s ease-in-out 0.3s;
     -webkit-transition: all 0.3s ease-in-out 0.3s;
+}
+
+#pullUpTabIcon, 
+#pullUpTabText {
+    display: inline;
 }
 
 .hide-zero-height {
@@ -314,7 +320,8 @@ main {
     color: white;
 }
 
-.fa-arrow-up {
+.fa-arrow-up,
+.fa-arrow-down {
     color: white;
     font-size: 18px;
 }

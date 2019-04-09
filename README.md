@@ -364,11 +364,12 @@ Copyright for the memory card images belong to [Disney](https://www.thewaltdisne
 - The audio files for card flip sound, matched cards sound and children applauding were sourced from [FreeSound](https://freesound.org/).
 
 ### Code
-- Code for the card flip animation taken from [W3Schools](https://www.w3schools.com/howto/howto_css_flip_card.asp).
+- Code for the card flip animation taken from this [W3Schools](https://www.w3schools.com/howto/howto_css_flip_card.asp) post.
 - Box shadow codes were generated at [CSS matic | box-shadow](https://cssmatic.com/box-shadow).
-- Code for filtering through an array for specific values sourced from [StackOverflow](https://stackoverflow.com/questions/6120931/how-to-count-the-number-of-certain-element-in-an-array).
-- Code for making images into radio buttons sourced from [StackOverflow](https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons).
+- Code for filtering through an array for specific values sourced from this [StackOverflow](https://stackoverflow.com/questions/6120931/how-to-count-the-number-of-certain-element-in-an-array) post.
+- Code for making images into radio buttons sourced from this [StackOverflow](https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons) post.
 - Code for adding the correct prefixes to css was created using [AutoPrefixer](https://autoprefixer.github.io/).
+- Function to toggle text in the pull up tab from push to pull taken from this [StackOverflow](https://stackoverflow.com/questions/2155453/jquery-toggle-text) post.
 
 ### Acknowledgements
 

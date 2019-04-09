@@ -6,10 +6,10 @@
 
 ## Table of Contents
 
-[**Automated Testing**](#automated-testing)<br>
-[**Client Stories Testing**](#client-stories-testing)<br>
-[**Manual Testing**](#manual-testing)<br>
-[**Further Testing**](#further-testing)<br>
+1. [**Automated Testing**](#automated-testing)
+2. [**Client Stories Testing**](#client-stories-testing)
+3. [**Manual Testing**](#manual-testing)
+4. [**Further Testing**](#further-testing)
 
 ## Automated Testing
 
@@ -57,26 +57,42 @@ To create jasmine tests:
 The following section goes through each of the user stories from the UX section of [README.md](README.md)
 
 **As a player, I want:**
-**1. The ability to easily find and understand the controls for the game, so that I can operate them easily. **
+
+1. **The ability to easily find and understand the controls for the game, so that I can operate them easily.**
+
     - All the controls are in the dashboard, which is on the left side of the screen on medium to large devices, and at the top of the screen on mobiles. 
     - All the controls rely on symbols and colours before any words to communicate their purpose. 
     - Easy mode is green, medium mode is orange, hard is red. Like colours on a traffic light. 
     - The info, mute and reset buttons use conventional icons to signify their meaning.
-**2. Large easy to press buttons and controls, so that my young fingers can use them easily on all devices.**
+    
+2. **Large easy to press buttons and controls, so that my young fingers can use them easily on all devices.**
+
     - All buttons are large enough for young fingers to operate, on mobile the cards are stacked in columns of three to allow them more space. 
-**3. Audio and/or visual feedback when I play the game, so that I know when I have clicked or not clicked something.**
+    
+3. **Audio and/or visual feedback when I play the game, so that I know when I have clicked or not clicked something.**
+
     - When each button on the game is pressed there is a visual queue that it has been clicked as well as a clicking audio file that plays too. 
     - When a card is clicked first it is slightly indented, to give the impression of being pressed down, then it flips over with a satisfying animation and card flipping sound.
-**4. The ability to choose from cards with my favourite children’s characters on, so that I am even more engaged in finding them in the game.**
+
+4. **The ability to choose from cards with my favourite children’s characters on, so that I am even more engaged in finding them in the game.**
+
     - 3 popular Disney & Pixar movie characters were chosen for the memory card.
     - The character choice buttons use the most recognised character from their Disney movie, so a child can choose which cards they want easily.
-**5. Positive audio feedback when I complete a step in the game (for example when I find a matching pair of cards), because this increases my enjoyment from playing.**
+
+5. **Positive audio feedback when I complete a step in the game (for example when I find a matching pair of cards), because this increases my enjoyment from playing.**
+
     - A “bing” sound is played when a correct match is found, applause and cheering is heard when a game has been completed.
-**6. Visual icons and images that I recognise, so that I understand when I have achieved something in the game. For example stars out of five, and a trophy for high score.**
+
+6. **Visual icons and images that I recognise, so that I understand when I have achieved something in the game. For example stars out of five, and a trophy for high score.**
+
     - Win modals display the player’s score out of 5 stars. A trophy is also shown if the player also achieves a new high score.
-**7. The ability to see my old scores when I return to the game, so I can try to beat them.**
+
+7. **The ability to see my old scores when I return to the game, so I can try to beat them.**
+
     - PicFlip! stores user name using localStorage, The users name, avatar choice and high scores for easy, medium and hard mode are loaded when the player returns to the game.
-**8. A game that won't break as I use it**
+
+8. **A game that won't break as I use it**
+
     - PicFlip! Has been programmed with the way a child would use it in mind. 
         - When selecting cards to match, no more than 2 cards can be selected at one time. 
         - The game cannot be broken by clicking cards very fast to flip more than 2 over at a time.
@@ -84,23 +100,36 @@ The following section goes through each of the user stories from the UX section 
         - The game was extensively tested by the developer’s children (4 and 9 years old).
 
 **As a parent of a player, I want:**
-**1. Levels of difficulty for my child to choose from, so that they are engaged for longer and the game is useable for a wider age range.**
+
+1. **Levels of difficulty for my child to choose from, so that they are engaged for longer and the game is useable for a wider age range.**
+    
     - The game includes 3 levels of difficulty, from 8, 12 or 16 cards to search though and find matching pairs. 
-**2. A visually and operationally appealing game, so that I also have a positive experience when using it with my child.**
+
+2. **A visually and operationally appealing game, so that I also have a positive experience when using it with my child.**
+    
     - Much thought and time has been put into designing a clean and attractive game that brings a positive user experience to both kids and adults alike. 
-**3. The ability to delete a stored profile, so that I can reset the game for another go, or for another child.** 
+
+3. **The ability to delete a stored profile, so that I can reset the game for another go, or for another child.** 
+
     - This functionality has been incorporated into the game through the parental control modal.
-**4. The option to delete a profile to be easy for me to find, but not easy for a child who is randomly pressing buttons to access, so that a profile is not deleted by accident.**
+
+4. **The option to delete a profile to be easy for me to find, but not easy for a child who is randomly pressing buttons to access, so that a profile is not deleted by accident.**
+
     - For a user who can read and do simple maths, the steps to find and complete deletion of a user profile is easy to find. A toddler who is randomly pressing buttons has a very low probability of stumbling on the correct order of buttons to delete their profile by accident.
-**5. A mute button to be included, so that the sounds can be switched off when they become annoying. (If only the actual child came with one of those too!).**
+
+5. **A mute button to be included, so that the sounds can be switched off when they become annoying. (If only the actual child came with one of those too!).**
+
     - A mute button has been included on the dashboard. 
-**6. To know who made the game and how I can contact them.**
+
+6. **To know who made the game and how I can contact them.**
+
     - A discreet footer tab is included at the bottom of the game, with the developers name and a link to her GitHub page. 
 
 ## Manual testing
 Below is a detailed account of all the manual testing that has been done to confirm all areas of the site work as expected. 
 
 ### Testing undertaken on desktop
+
 All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Explorer and on two different desktop screen sizes.
 
 1. Player info modal
@@ -287,7 +316,7 @@ An unlimited size string could be added to the userName field, causing display i
 **12. Footer Tab displaying in odd places and cutting through game board on screens with a short height and wide width**
 This bug was caused by the height properties of the dashboard and game board. 
 Multiple solutions were tried before discovering the following code was provided by a fellow student to fix the footer to the bottom of the page successfully. 
-```
+```css
 #content-wrapper {
 	display: flex;
 	min-height: 100vh;
@@ -300,7 +329,10 @@ main {
 ```
 **13. In the Safari browser the game cards flip back over when they shouldn't**
 This bug was caused by Safari not recognising the css styling ```backface-visibility: hidden;``` for the game cards. 
-- Fix: ```-webkit-backface-visibility: hidden;``` was added to the relevant css. 
+- Fix: the following code was added to the relevant css. 
+```css
+-webkit-backface-visibility: hidden;
+```
 - This bug led me to discovering [AutoPrefixer](https://autoprefixer.github.io/) which I then used to prefix the rest of my relevant code.
 
 **14. On firefox browser class ```visible``` effects did not always appear immediately when clicking through difficulty selection buttons**

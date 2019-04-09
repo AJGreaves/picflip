@@ -284,9 +284,9 @@ In the future more functionality can be added to the parental check modal to:
     - The project uses **JQuery** to simplify DOM manipulation.
 - [Cloud9](https://c9.io) 
     - Developer used **Cloud9** for their IDE while building the website.
-- [BootstrapCDN](https://www.bootstrapcdn.com/)
-    - The project uses **Bootstrap4** to simplify the structure of the website and make the website responsive easily.
-    - The project also uses BootstrapCDN to provide icons from [FontAwesome](https://www.bootstrapcdn.com/fontawesome/)
+- [Bootstrap](https://www.bootstrapcdn.com/)
+    - The project uses **Bootstrap** to simplify the structure of the website and make the website responsive easily.
+    - The project also uses Bootstrap to provide icons from [FontAwesome](https://www.bootstrapcdn.com/fontawesome/)
 - [Google Fonts](https://fonts.google.com/)
     - The project uses **Google fonts** to style the website fonts.
 - [Imgbb](https://imgbb.com)
@@ -297,6 +297,7 @@ In the future more functionality can be added to the parental check modal to:
     - This project used **Jasmine-jQuery** CDN to make it possible to test jQuery code using Jasmine.
 - [GitHub](https://github.com/)
     - This project uses **GitHub** to store and share all project code remotely. 
+    - The new GitHub Projects planner was utilised to plan and keep track of this project. This project plan can be viewed [here](https://github.com/AJGreaves/picflip/projects/1).
 - [Photoshop](www.adobe.com/Photoshop)
     - This project used tools in **Photohshop** to edit, crop and save images as well as ulitising the colour picker to ensure color consistency over the entire project.
 - [Browserstack](https://www.browserstack.com/)
@@ -333,8 +334,10 @@ To clone this project from GitHub:
 3. In the Clone with HTTPs section, copy the clone URL for the repository. 
 4. In your local IDE open Git Bash.
 5. Change the current working directory to the location where you want the cloned directory to be made.
-6. Type ```git clone```, and then paste the URL you copied in Step 3. <br>
-```$ git clone https://github.com/USERNAME/REPOSITORY```
+6. Type ```git clone```, and then paste the URL you copied in Step 3.
+```console
+git clone https://github.com/USERNAME/REPOSITORY
+```
 7. Press Enter. Your local clone will be created.
 
 Further reading and troubleshooting on cloning a repository from GitHub [here](https://help.github.com/en/articles/cloning-a-repository).

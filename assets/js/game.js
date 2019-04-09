@@ -237,7 +237,7 @@ function footerTabPushPull() {
             $('#pullUpTabIcon').addClass('fa-arrow-up').removeClass('fa-arrow-down');
         }
     }, 800);
-};
+}
 
 /**
  * userInfoSubmitButton() collects data from the user info modal and assigns to the correct variables
@@ -496,7 +496,7 @@ function checkMatch() {
 function delayedCorrectSound() {
     setTimeout(function() {
         $('#correctBingAudio')[0].play();
-    }, 600);
+    }, 800);
 }
 
 /**

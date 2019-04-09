@@ -215,6 +215,17 @@ $('#confirmResetData').click(function() {
 
 // Footer tab open on click
 $('#pullUpTab').click(function() {
+    footerTabPushPull();
+});
+
+// Function to toggle text in the pull up tab from push to pull taken from: https://stackoverflow.com/questions/2155453/jquery-toggle-text
+$.fn.extend({
+    toggleText: function(a, b){
+        return this.text(this.text() == b ? a : b);
+    }
+});
+
+function footerTabPushPull() {
     $('#footerTabContainer').toggleClass('active-footer');
     
     setTimeout(function() {
@@ -226,14 +237,7 @@ $('#pullUpTab').click(function() {
             $('#pullUpTabIcon').addClass('fa-arrow-up').removeClass('fa-arrow-down');
         }
     }, 800);
-});
-
-// Function to toggle text in the pull up tab from push to pull taken from: https://stackoverflow.com/questions/2155453/jquery-toggle-text
-$.fn.extend({
-    toggleText: function(a, b){
-        return this.text(this.text() == b ? a : b);
-    }
-});
+};
 
 /**
  * userInfoSubmitButton() collects data from the user info modal and assigns to the correct variables

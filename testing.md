@@ -220,6 +220,7 @@ All steps on desktop were repeated in browsers: Firefox, Chrome and Internet Exp
 9. Footer tab
     - Clicked the footer tab at the bottom of the screen and confirmed that it lifts up without affecting the height of the browser window.
     - Clicked the footer tab again to confirm the animation back downwards. 
+    - Confirmed that the footer tab text and icon toggle between push and pull with slight delay.
     - Hovered mouse over the GitHub icon and confirmed that the hover effect is animated.
     - Clicked the GitHub icon and confirmed that the link is opened in a new tab. 
 

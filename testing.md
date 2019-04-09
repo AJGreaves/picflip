@@ -257,42 +257,43 @@ And also in the Chrome Developer Tools device simulators on all options and orie
 
 ### Bugs discovered: 
 #### Solved bugs
-**1. Clicking the cards really fast caused too may cards to be face up.**
+1. **Clicking the cards really fast caused too may cards to be face up.**
+
 Though my function to check a card match was set to activate when two cards were selected, 
 clicking fast meant that 3 or more cards could be flipped over before the check for a match had been done. 
 - Fix: The checkCounter function was created to limit the number of times a user can select cards in each turn. 
 
-**2. Not all flipped back over if no match was found.**
+2. **Not all flipped back over if no match was found.**
 This issue came with the one listed above, if three cards were flipped over (by clicking very fast) 
 before the program checked if they matched, there were many errors with the 3rd card, including it not flipping back over again until the next turn was taken. 
 - Fix: See above.
 
-**3. Turns counter counted incorrectly when cards clicked too fast.**
+3. **Turns counter counted incorrectly when cards clicked too fast.**
 The turns counter was also confused by fast clicking of cards. Fortunately the fix above solved this as well! 
 - Fix: See above.
 
-**4. Turns counter did not reset correctly if the game was reset when an odd number of cards were face-up**
+4. **Turns counter did not reset correctly if the game was reset when an odd number of cards were face-up**
 The turnsCounter relies on the flipCounter to tell it when to increase its count by 1, I had forgotten to reset the flipCounter to 0 as well on resetting the game.
 This caused the turns count to go up by 1 when only half a turn had been taken.
 - Fix: I reset the flipCounter to 0 as well as the turnsCounter whenever the game was reset.  
 
-**5. Audio of cards flipping over did not play the second flip if cards clicked too fast.**
+5. **Audio of cards flipping over did not play the second flip if cards clicked too fast.**
 The card flipping audio file is 1.5 seconds long, if the first card was clicked this would trigger the audio file to play, however if the second card was clicked before this
 audio file was completed, it would not play for the second card. 
 - Fix: An extra line of code was added to reset the audio file back to 0 seconds whenever it was clicked on to play. This means you can ge 0.5s of the file, click again and it starts from the beginning again.
 This solution was also applied to button click audio files.
 
-**6. On resetting the game, the new shuffled cards could be seen before cards finished flipping back over.**
+6. **On resetting the game, the new shuffled cards could be seen before cards finished flipping back over.**
 The game was programmed to animate the cards flipping back over, which takes around half a second. The newly shuffled cards could be seen as the cards flipped back over.
 
 - Fix: To fix this I used the setTimeout function to delay displaying the cards until after the animation is complete. 
 
-**7. localStorage caused errors in display high score data if there was no data to load**
+7. **localStorage caused errors in display high score data if there was no data to load**
 If a player created a profile, played one or two levels of difficulty and then reloaded the page, the remaining level of difficulty displayed one star as it's high score,
 when there should have been no stars. The error here was caused when loading the data from localStorage and displaying it on the screen. 
 - Fix: localStorage values for all levels of difficulty are set to 0 when a new user profile is created. 
 
-**8. The modal to collect user data could be closed without inputting all the fields**
+8. **The modal to collect user data could be closed without inputting all the fields**
 It is important for the game to collect user name and avatar choice before it will start playing. 
 The default setting for bootstrap modals is that they can be clicked away by clicking the close button or clicking on the modal background. 
 - Fix: 
@@ -300,21 +301,21 @@ The default setting for bootstrap modals is that they can be clicked away by cli
     - The modal was programmed to only close when a name was entered and an avatar was chosen. 
     - The modal was also programmed not to close if it had stored an empty string as the value for userName.
 
-**9. document.ready in game.js when testing with Jasmine**
+9. **document.ready in game.js when testing with Jasmine**
 Jasmine tests could not see the code to check it because the game.js file was waiting for the document to be ready before loading.
 - Fix: ```document.ready()``` was removed from the game.js file. As the file is called at the bottom of my index.html file it was not necessary to use anyway. 
 
-**10. checkForWin operations repeating themselves**
+10. **checkForWin operations repeating themselves**
 This bug was caused by including setTimeout on the function to call the win modal, all of which was originally inside the checkForWin function. 
-The timeout caused elements of the checkForWin function to repeat themselves. 
+The timeout caused elements of the checkForWin function to repeat themselves, this was discovered using Chrome debugger.
 - Fix: delayDisplayModal function was created, with the setTimeout to call the win modal inside it. 
 This was then called from inside the checkForWin function and no longer conflicted with the rest of its operations.
 
-**11. No limit to the number or characters that could be entered as a user name**
+11. **No limit to the number or characters that could be entered as a user name**
 An unlimited size string could be added to the userName field, causing display issues (name going beyond the width of the area it is to be displayed in) and potential security risks.
 - Fix: The input field had a maximum length of 15 characters set in the html. 
 
-**12. Footer Tab displaying in odd places and cutting through game board on screens with a short height and wide width**
+12. **Footer Tab displaying in odd places and cutting through game board on screens with a short height and wide width**
 This bug was caused by the height properties of the dashboard and game board. 
 Multiple solutions were tried before discovering the following code was provided by a fellow student to fix the footer to the bottom of the page successfully. 
 ```css
@@ -328,7 +329,7 @@ main {
 	flex: 1;
 }
 ```
-**13. In the Safari browser the game cards flip back over when they shouldn't**
+13. **In the Safari browser the game cards flip back over when they shouldn't**
 This bug was caused by Safari not recognising the css styling ```backface-visibility: hidden;``` for the game cards. 
 - Fix: the following code was added to the relevant css. 
 ```css
@@ -336,17 +337,17 @@ This bug was caused by Safari not recognising the css styling ```backface-visibi
 ```
 - This bug led me to discovering [AutoPrefixer](https://autoprefixer.github.io/) which I then used to prefix the rest of my relevant code.
 
-**14. On firefox browser class ```visible``` effects did not always appear immediately when clicking through difficulty selection buttons**
+14. **On firefox browser class ```visible``` effects did not always appear immediately when clicking through difficulty selection buttons**
 Despite the class name being added successfully to the html the previously invisible cards did not become visible again. If window was resized, then the cards would appear. 
 - Fix: After applying the [AutoPrefixer](https://autoprefixer.github.io/) suggestions to my code, this bug disappeared.
 
 
 #### Unsolved bugs
-**1. Audio bugs in Safari browser**
-The Safari browser does not like auto playing audio files, which means the applause sound when a game is completed does not play.
-Safari also limits the number of times an audio file can be played, I have not yet been able to find a solution. 
+1. **Audio bugs in Safari browser**
+    - The Safari browser does not like auto playing audio files, which means the applause sound when a game is completed does not play.
+    - Safari also limits the number of times an audio file can be played, I have not yet been able to find a solution. 
 I have not been able to find a way to get around this "user protection" that Safari has in place, ideally this game would be better suited to an app on mobile devices, 
-which would not be bound by the limits set by browsers. But as this piece of coursework is for a web based application, I cannot find a way to fix this bug at the moment. 
+which would not be bound by the limits set by browsers. But as this piece of coursework is for a web based application, I cannot find a way to fix this issue at the moment. 
 
 ## Further testing: 
 1. Asked fellow students, friends and family to look at the site on their devices and report any issues they found.
